@@ -35,15 +35,21 @@ public class Author
 
     public void AddArtwork(Artwork artwork) throws IllegalArgumentException
     {
-        if (artwork == null || artworks.contains(artwork))
+        if (artwork == null)
             throw new IllegalArgumentException(Utils.ARTWORK_NOT_VALID);
-        artwork.setAuthor(this);
         artworks.add(artwork);
+        artwork.setAuthor(this);
+
     }
 
     public void RemoveArtwork(Artwork artwork)
     {
         artworks.remove(artwork);
         artwork.setAuthor(null);
+    }
+
+    public boolean containsArtwork(Artwork artwork)
+    {
+        return artworks.contains(artwork);
     }
 }

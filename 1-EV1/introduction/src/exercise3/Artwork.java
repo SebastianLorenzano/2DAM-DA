@@ -40,18 +40,22 @@ public class Artwork
             }
             this.room = room;
         }
-
     }
 
     public void setAuthor(Author author)
     {
-        if (this.author != null)
+        if (!author.containsArtwork(this))
+            author.AddArtwork(this);
+        else
         {
-            Author aux = this.author;
-            this.author = null;
-            aux.RemoveArtwork(this);
+            if (this.author != null)
+            {
+                Author aux = this.author;
+                this.author = null;
+                aux.RemoveArtwork(this);
+            }
+            this.author = author;
         }
-        this.author = author;
 
     }
 }

@@ -25,12 +25,23 @@ public class Room
 
     public void setMuseum(Museum museum)
     {
-        this.museum = museum;
+        if (!museum.containsRoom(this))
+            museum.AddRoom(this);
+        else
+        {
+            if (this.museum != null)
+            {
+                Museum aux = this.museum;
+                this.museum = null;
+                aux.RemoveRoom(this);
+            }
+            this.museum = museum;
+        }
     }
 
     public void AddArtwork(Artwork artwork) throws IllegalArgumentException
     {
-        if (artwork == null || artworks.contains(artwork))
+        if (artwork == null)
             throw new IllegalArgumentException(Utils.ARTWORK_NOT_VALID);
         artworks.add(artwork);
         artwork.setRoom(this);
