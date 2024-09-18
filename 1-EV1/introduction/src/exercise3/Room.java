@@ -2,10 +2,10 @@ package exercise3;
 
 import java.util.HashSet;
 
-public class Author
+public class Room
 {
     private String name;
-    private String nacionality;
+    private Museum museum;
     private HashSet<Artwork> artworks = new HashSet<>();
 
     public String getName()
@@ -18,32 +18,33 @@ public class Author
         this.name = name;
     }
 
-    public String getNacionality()
+    public Museum getMuseum()
     {
-        return nacionality;
+        return museum;
     }
 
-    public void setNacionality(String nacionality)
+    public void setMuseum(Museum museum)
     {
-        this.nacionality = nacionality;
-    }
-
-    public int getArworksCount()
-    {
-        return artworks.size();
+        this.museum = museum;
     }
 
     public void AddArtwork(Artwork artwork) throws IllegalArgumentException
     {
         if (artwork == null || artworks.contains(artwork))
             throw new IllegalArgumentException(Utils.ARTWORK_NOT_VALID);
-        artwork.setAuthor(this);
         artworks.add(artwork);
+        artwork.setRoom(this);
+
     }
 
     public void RemoveArtwork(Artwork artwork)
     {
         artworks.remove(artwork);
-        artwork.setAuthor(null);
+        artwork.setRoom(null);
+    }
+
+    public boolean containsArtwork(Artwork artwork)
+    {
+        return artworks.contains(artwork);
     }
 }
