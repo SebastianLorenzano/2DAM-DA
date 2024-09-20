@@ -5,6 +5,9 @@ public class MyDate
     private int year;
     private int month;
     private int day;
+    private int hour;
+    private int min;
+    private int sec;
 
     public MyDate() {
     }
@@ -20,6 +23,19 @@ public class MyDate
     public int getDay()
     {
         return day;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public int getSec()
+    {
+        return sec;
     }
 
     public void setYear(int year)
@@ -40,19 +56,24 @@ public class MyDate
             throw new IllegalArgumentException(Utils.DAY_NOT_VALID);
     }
 
-    private boolean isDayValid(int day)
-    {
-        if (day > 0 || day <= 31)
-            return true;
-        if (day == 31 && monthHas31())
-            return true;
-        if (day == 30 || day == 29 && month != 2)
-            return true;
-        if (day isYearLeap())
-            return true;
-        return false;
-    }
+    public boolean IsValid()
+    {  // 1, 3, 5, 7, 8, 10, 12
+        if (month > 12 || day > 31 || hour > 23 || min > 59 || sec > 59 ||
+                month < 1 || day < 1 || hour < 0 || min < 0 || sec < 0)
+            return false;
+        if (_month == 2 && _day > 28)
+        {
+            if (IsLeap() && _day > 29)
+                return false;
 
+            if (!IsLeap() && _day > 28)
+                return false;
+        }
+
+        if (_month == 2 || _month == 4 || _month == 6 || _month == 9 || _month == 11 && _day == 31)
+            return false;
+        return true;
+    }
     private boolean monthHas31()
     {
         return month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12;
@@ -63,3 +84,5 @@ public class MyDate
         return true;
     }
 }
+
+
