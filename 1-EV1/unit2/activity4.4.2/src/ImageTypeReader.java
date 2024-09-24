@@ -1,23 +1,20 @@
 import java.io.Closeable;
 import java.io.FileInputStream;
 import java.io.IOException;
-
-public class Main
+public class ImageTypeReader
 {
     final static int BYTES_LENGTH = 6;
 
-    public static void main(String[] args)
+    public static Utils.FileType run(String filePath)
     {
         FileInputStream fIn = null;
-        String fileToRead = "1.bmp";
 
         try
         {
-            fIn = new FileInputStream(fileToRead);
+            fIn = new FileInputStream(filePath);
             byte[] bytes = new byte[BYTES_LENGTH];
             fIn.read(bytes, 0, BYTES_LENGTH);
-            Utils.FileType result = getFiletype(bytes);
-            System.out.println("The type of the file is " + result.name());
+            return getFiletype(bytes);
         }
         catch (Exception e)
         {
@@ -27,19 +24,20 @@ public class Main
         {
             closeStream(fIn);
         }
+        return null;
     }
 
     private static Utils.FileType getFiletype(byte[] a)
     {
-        if (compareBytes(a, Utils.GIF_IDENTIFIER1) || compareBytes(a, Utils.GIF_IDENTIFIER2))
+        if (compareBytes(a, Utils.GIF_HEADER1) || compareBytes(a, Utils.GIF_HEADER2))
             return Utils.FileType.GIF;
-        if (compareBytes(a, Utils.BMP_IDENTIFIER))
+        if (compareBytes(a, Utils.BMP_HEADER))
             return Utils.FileType.BMP;
-        if (compareBytes(a, Utils.ICO_IDENTIFIER))
+        if (compareBytes(a, Utils.ICO_HEADER))
             return Utils.FileType.ICO;
-        if (compareBytes(a, Utils.JPEG_IDENTIFIER))
+        if (compareBytes(a, Utils.JPEG_HEADER))
             return Utils.FileType.JPEG;
-        if (compareBytes(a, Utils.PNG_IDENTIFIER))
+        if (compareBytes(a, Utils.PNG_HEADER))
             return Utils.FileType.PNG;
         return Utils.FileType.UNKNOWN;
     }
@@ -50,7 +48,6 @@ public class Main
 
         for (int x = 0; x < b.length; x++)
         {
-            System.out.println(a[x] + " | " + b[x]);
             if (a[x] != b[x])
                 return false;
         }
