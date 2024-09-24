@@ -36,10 +36,11 @@ public class BMPFileReader
             byte[] bitsNumBytes = new byte[SIZEBYTES_SIZE];
             fIn.read(sizeBytes, BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE);
 
-            long size = readBytes(sizeBytes);
-            long width = readBytes(widthBytes);
-            long height = readBytes(heightBytes);
-            long bitsNum = readBytes(bitsNumBytes);
+            long size = readLittleEndian(sizeBytes);
+            long width = readLittleEndian(widthBytes);
+            long height = readLittleEndian(heightBytes);
+            long bitsNum = readLittleEndian(bitsNumBytes);
+            System.out.println();
 
 
         }
@@ -54,16 +55,13 @@ public class BMPFileReader
     }
 
 
-    private static long readBytes(byte[] bytes)
+    private static long readLittleEndian(byte[] b)
     {
 
-        if (bytes == null)
+        if (b == null)
             return -1;
-        long result = 0;
-        for (int x = 0; x < bytes.length; x++)
-        {
-            result += bytes[x] * (long)Math.pow(256, x);
-        }
+        long result = (b[0] + 256 * (b[1] + 256 * (b[2] + 256 * b[3])));
+
         return result;
     }
 
