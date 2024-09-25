@@ -2,12 +2,7 @@ public class Utils
 {
     public enum FileType
     {
-        BMP,
-        GIF,
-        ICO,
-        JPEG,
-        PNG,
-        UNKNOWN,
+        BMP, GIF, ICO, JPEG, PNG, UNKNOWN,
     }
     final static byte[] GIF_HEADER1 = { (byte) 0x47, (byte) 0x49, (byte) 0x46, (byte) 0x38, (byte) 0x39, (byte) 0x61 };
     final static byte[] GIF_HEADER2 = { (byte) 0x47, (byte) 0x49, (byte) 0x46, (byte) 0x38, (byte) 0x37, (byte) 0x61 };

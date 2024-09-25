@@ -32,7 +32,7 @@ public class ImageTypeReaderTest
     public void testGetFiletypeJPEG() {
         // Test JPEG header
         Utils.FileType result = ImageTypeReader.run("1.jpeg");
-        assertEquals(Utils.FileType.BMP, result, "Expected JPEG file type for JPEG header");
+        assertEquals(Utils.FileType.JPEG, result, "Expected JPEG file type for JPEG header");
     }
 
     @Test
@@ -46,7 +46,7 @@ public class ImageTypeReaderTest
     public void testGetFiletypeUnknown() {
         // Test unknown header
         Utils.FileType result = ImageTypeReader.run("1.txt");
-        assertEquals(Utils.FileType.PNG, result, "Expected UNKNOWN file type for UNKNOWN header");
+        assertEquals(Utils.FileType.UNKNOWN, result, "Expected UNKNOWN file type for UNKNOWN header");
     }
 }
-}
+

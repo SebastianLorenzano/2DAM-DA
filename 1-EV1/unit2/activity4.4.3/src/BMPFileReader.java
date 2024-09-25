@@ -13,36 +13,44 @@ public class BMPFileReader
     final static int BITSNUMBYTES_OFFSET = 28;
     final static int BITSNUMBYTES_SIZE = 4;
 
-
+    public record Result(long size, long width, long height, long bitsNum)
+    {
+        public void printInfo()
+        {
+            System.out.println("Size: " + size);
+            System.out.println("width: " + width);
+            System.out.println("Height: " + height);
+            System.out.println("BitsNum: " + bitsNum);
+        }
+    }
 
     public static void main(String[] args)
     {
+        run("1.bmp").printInfo();
+    }
+
+    public static Result run(String filePath)
+    {
         FileInputStream fIn = null;
-        String filePath = "1.bmp";
+        if (ImageTypeReader.run(filePath) != Utils.FileType.BMP)
+        {
+            System.err.println("Format type is not supported.");
+            return null;
+        }
 
         try
         {
             fIn = new FileInputStream(filePath);
-            byte[] sizeBytes = new byte[SIZEBYTES_SIZE];
-            fIn.read(sizeBytes, SIZEBYTES_OFFSET, SIZEBYTES_SIZE);
-
-
-            byte[] widthBytes = new byte[SIZEBYTES_SIZE];
-            fIn.read(sizeBytes, WIDTHBYTES_OFFSET, WIDTHBYTES_SIZE);
-
-            byte[] heightBytes = new byte[SIZEBYTES_SIZE];
-            fIn.read(sizeBytes, HEIGHTBYTES_OFFSET, HEIGHTBYTES_SIZE);
-
-            byte[] bitsNumBytes = new byte[SIZEBYTES_SIZE];
-            fIn.read(sizeBytes, BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE);
-
-            long size = readLittleEndian(sizeBytes);
-            long width = readLittleEndian(widthBytes);
-            long height = readLittleEndian(heightBytes);
-            long bitsNum = readLittleEndian(bitsNumBytes);
-            System.out.println();
-
-
+            System.out.println("Checkpoint 1.");
+            long size = readLittleEndian(readBytesFromFile(SIZEBYTES_OFFSET, SIZEBYTES_SIZE, fIn));
+            System.out.println("Checkpoint 2.");
+            long width = readLittleEndian(readBytesFromFile(WIDTHBYTES_OFFSET, WIDTHBYTES_SIZE, fIn));
+            System.out.println("Checkpoint 3.");
+            long height = readLittleEndian(readBytesFromFile(HEIGHTBYTES_OFFSET, HEIGHTBYTES_SIZE, fIn));
+            System.out.println("Checkpoint 4.");
+            long bitsNum = readLittleEndian(readBytesFromFile(BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE, fIn));
+            System.out.println("Checkpoint 5.");
+            return new Result(size, width, height, bitsNum);
         }
         catch (Exception e)
         {
@@ -52,17 +60,23 @@ public class BMPFileReader
         {
             closeStream(fIn);
         }
+        return null;
     }
 
+    private static byte[] readBytesFromFile(int offset, int size, FileInputStream file) throws IOException
+    {
+        file.skip(offset);
+        byte[] result = new byte[size];
+        file.read(result, 0, size);
+        return result;
+    }
 
     private static long readLittleEndian(byte[] b)
     {
-
         if (b == null)
             return -1;
-        long result = (b[0] + 256 * (b[1] + 256 * (b[2] + 256 * b[3])));
-
-        return result;
+        return (Byte.toUnsignedInt(b[0]) + 256 * (Byte.toUnsignedInt(b[1]) + 256 *
+                (Byte.toUnsignedInt(b[2]) + 256 * Byte.toUnsignedInt(b[3]))));
     }
 
     public static void closeStream(Closeable s){
