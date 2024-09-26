@@ -11,14 +11,14 @@ public class BMPFileReader
     final static int HEIGHTBYTES_OFFSET = 22;
     final static int HEIGHTBYTES_SIZE = 4;
     final static int BITSNUMBYTES_OFFSET = 28;
-    final static int BITSNUMBYTES_SIZE = 4;
+    final static int BITSNUMBYTES_SIZE = 2;
 
     public record Result(long size, long width, long height, long bitsNum)
     {
         public void printInfo()
         {
             System.out.println("Size: " + size);
-            System.out.println("width: " + width);
+            System.out.println("Width: " + width);
             System.out.println("Height: " + height);
             System.out.println("BitsNum: " + bitsNum);
         }
@@ -42,13 +42,13 @@ public class BMPFileReader
         {
             fIn = new FileInputStream(filePath);
             System.out.println("Checkpoint 1.");
-            long size = readLittleEndian(readBytesFromFile(SIZEBYTES_OFFSET, SIZEBYTES_SIZE, fIn));
+            long size = readLittleEndian(readBytesFromFile(SIZEBYTES_OFFSET, SIZEBYTES_SIZE, fIn), SIZEBYTES_SIZE);
             System.out.println("Checkpoint 2.");
-            long width = readLittleEndian(readBytesFromFile(WIDTHBYTES_OFFSET, WIDTHBYTES_SIZE, fIn));
+            long width = readLittleEndian(readBytesFromFile(WIDTHBYTES_OFFSET, WIDTHBYTES_SIZE, fIn), WIDTHBYTES_SIZE);
             System.out.println("Checkpoint 3.");
-            long height = readLittleEndian(readBytesFromFile(HEIGHTBYTES_OFFSET, HEIGHTBYTES_SIZE, fIn));
+            long height = readLittleEndian(readBytesFromFile(HEIGHTBYTES_OFFSET, HEIGHTBYTES_SIZE, fIn), HEIGHTBYTES_SIZE);
             System.out.println("Checkpoint 4.");
-            long bitsNum = readLittleEndian(readBytesFromFile(BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE, fIn));
+            long bitsNum = readLittleEndian(readBytesFromFile(BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE, fIn), BITSNUMBYTES_SIZE);
             System.out.println("Checkpoint 5.");
             return new Result(size, width, height, bitsNum);
         }
@@ -71,12 +71,20 @@ public class BMPFileReader
         return result;
     }
 
-    private static long readLittleEndian(byte[] b)
+    private static long readLittleEndian(byte[] b, int size)
     {
         if (b == null)
             return -1;
-        return (Byte.toUnsignedInt(b[0]) + 256 * (Byte.toUnsignedInt(b[1]) + 256 *
-                (Byte.toUnsignedInt(b[2]) + 256 * Byte.toUnsignedInt(b[3]))));
+        if (size == 4)
+        {
+            return (Byte.toUnsignedInt(b[0]) +
+                    256L * (Byte.toUnsignedInt(b[1]) +
+                            256L * (Byte.toUnsignedInt(b[2]) +
+                                    256L * Byte.toUnsignedInt(b[3]))));
+
+        }
+        else
+            return (Byte.toUnsignedInt(b[0]) + 256 * (Byte.toUnsignedInt(b[1])));
     }
 
     public static void closeStream(Closeable s){
