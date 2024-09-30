@@ -8,16 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BMPFileReaderTest {
 
     @ParameterizedTest
-    @CsvSource({"1.bmp,500,500,500", "2.bmp,500,500,500"})
-    public void testRunValidFile(String filePath, long size, long width, long height, long bitsNum)
+    @CsvSource({"1.bmp,818058,640,426, 24", "2.bmp,3275658,1280,853,24"})
+    public void testValidResults(String filePath, long size, long width, long height, long bitsNum)
     {
         // Assuming a valid BMP file exists at this path
-        BMPFileReader.Result result = BMPFileReader.run("valid.bmp");
-        assertNotNull(result, "Result should not be null for valid BMP file");
-        assertTrue(result.size() > 0, "Size should be greater than 0");
-        assertTrue(result.width() > 0, "Width should be greater than 0");
-        assertTrue(result.height() > 0, "Height should be greater than 0");
-        assertTrue(result.bitsNum() > 0, "BitsNum should be greater than 0");
+        BMPFileReader.Result result = BMPFileReader.run(filePath);
+        assertEquals(size, result.size());
+        assertEquals(width, result.width());
+        assertEquals(height, result.height());
+        assertEquals(bitsNum, result.bitsNum());
+
+
     }
 
     @Test

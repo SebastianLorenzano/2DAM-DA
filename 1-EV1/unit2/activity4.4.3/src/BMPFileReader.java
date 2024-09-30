@@ -12,6 +12,7 @@ public class BMPFileReader
     final static int HEIGHTBYTES_SIZE = 4;
     final static int BITSNUMBYTES_OFFSET = 28;
     final static int BITSNUMBYTES_SIZE = 2;
+    final static int HEADERBYTES_SIZE = 55;
 
     public record Result(long size, long width, long height, long bitsNum)
     {
@@ -26,7 +27,7 @@ public class BMPFileReader
 
     public static void main(String[] args)
     {
-        run("1.bmp").printInfo();
+        run("2.bmp").printInfo();
     }
 
     public static Result run(String filePath)
@@ -41,15 +42,11 @@ public class BMPFileReader
         try
         {
             fIn = new FileInputStream(filePath);
-            System.out.println("Checkpoint 1.");
-            long size = readLittleEndian(readBytesFromFile(SIZEBYTES_OFFSET, SIZEBYTES_SIZE, fIn), SIZEBYTES_SIZE);
-            System.out.println("Checkpoint 2.");
-            long width = readLittleEndian(readBytesFromFile(WIDTHBYTES_OFFSET, WIDTHBYTES_SIZE, fIn), WIDTHBYTES_SIZE);
-            System.out.println("Checkpoint 3.");
-            long height = readLittleEndian(readBytesFromFile(HEIGHTBYTES_OFFSET, HEIGHTBYTES_SIZE, fIn), HEIGHTBYTES_SIZE);
-            System.out.println("Checkpoint 4.");
-            long bitsNum = readLittleEndian(readBytesFromFile(BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE, fIn), BITSNUMBYTES_SIZE);
-            System.out.println("Checkpoint 5.");
+            byte[] header = readBytesFromFile(0, HEADERBYTES_SIZE, fIn);
+            long size = readLittleEndian(header, SIZEBYTES_OFFSET, SIZEBYTES_SIZE);
+            long width = readLittleEndian(header, WIDTHBYTES_OFFSET, WIDTHBYTES_SIZE);
+            long height = readLittleEndian(header, HEIGHTBYTES_OFFSET, HEIGHTBYTES_SIZE);
+            long bitsNum = readLittleEndian(header, BITSNUMBYTES_OFFSET, BITSNUMBYTES_SIZE);
             return new Result(size, width, height, bitsNum);
         }
         catch (Exception e)
@@ -71,20 +68,20 @@ public class BMPFileReader
         return result;
     }
 
-    private static long readLittleEndian(byte[] b, int size)
+    private static long readLittleEndian(byte[] b, int offset, int size)
     {
         if (b == null)
             return -1;
         if (size == 4)
         {
-            return (Byte.toUnsignedInt(b[0]) +
-                    256L * (Byte.toUnsignedInt(b[1]) +
-                            256L * (Byte.toUnsignedInt(b[2]) +
-                                    256L * Byte.toUnsignedInt(b[3]))));
+            return (Byte.toUnsignedInt(b[offset]) +
+                    256L * (Byte.toUnsignedInt(b[offset + 1]) +
+                            256L * (Byte.toUnsignedInt(b[offset + 2]) +
+                                    256L * Byte.toUnsignedInt(b[offset + 3]))));
 
         }
         else
-            return (Byte.toUnsignedInt(b[0]) + 256 * (Byte.toUnsignedInt(b[1])));
+            return (Byte.toUnsignedInt(b[offset]) + 256 * (Byte.toUnsignedInt(b[offset + 1])));
     }
 
     public static void closeStream(Closeable s){
