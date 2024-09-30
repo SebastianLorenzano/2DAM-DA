@@ -35,7 +35,7 @@ public class BMPFileReader
         FileInputStream fIn = null;
         if (ImageTypeReader.run(filePath) != Utils.FileType.BMP)
         {
-            System.err.println("Format type is not supported.");
+            System.err.println(Utils.FORMAT_NOT_SUPPORTED);
             return null;
         }
 
@@ -84,11 +84,11 @@ public class BMPFileReader
             return (Byte.toUnsignedInt(b[offset]) + 256 * (Byte.toUnsignedInt(b[offset + 1])));
     }
 
-    public static void closeStream(Closeable s){
+    public static void closeStream(Closeable file){
         try
         {
-            if(s!=null)
-                s.close();
+            if(file!=null)
+                file.close();
         }
         catch(IOException e)
         {

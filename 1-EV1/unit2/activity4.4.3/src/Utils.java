@@ -10,4 +10,5 @@ public class Utils
     final static byte[] ICO_HEADER = { (byte) 0x00, (byte) 0x00, (byte) 0x01, (byte) 0x00 };
     final static byte[] JPEG_HEADER = { (byte) 0xFF, (byte) 0xD8, (byte) 0xFF };
     final static byte[] PNG_HEADER = { (byte) 0x89, (byte) 0x50, (byte) 0x4E, (byte) 0x47 };
+    final static String FORMAT_NOT_SUPPORTED = "Format type is not supported.";
 }
