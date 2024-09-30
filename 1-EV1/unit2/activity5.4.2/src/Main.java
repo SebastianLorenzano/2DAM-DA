@@ -1,20 +1,48 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Ctrl+F5 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++)
+
+    }
+
+    public static void main(String path1, String path2)
+    {
+        File file1 = new File(path1);
+        File file2 = new File(path2);
+        try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file1,false))))
         {
+            if (!file1.exists())
+                if (file1.createNewFile()) throw new IllegalArgumentException();
+            List<String> content1 = new ArrayList<>();
+            List<String> content2 = new ArrayList<>();
 
-            // Press Alt+F5 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing F9.
-            System.out.println("i = " + i);
+            try (BufferedReader reader = new BufferedReader(new FileReader(file1)))
+            {
+                String line;
+                while ((line = reader.readLine()) != null)
+                    content1.add(line);
+            }
+
+            try (BufferedReader reader = new BufferedReader(new FileReader(file2)))
+            {
+                String line;
+                while ((line = reader.readLine()) != null)
+                    content2.add(line);
+            }
+
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (IllegalArgumentException e)
+        {
+            System.err.println(e.getMessage());
         }
     }
 }
