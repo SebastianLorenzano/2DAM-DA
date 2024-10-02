@@ -14,35 +14,38 @@ public class Main
     {
         File file1 = new File(path1);
         File file2 = new File(path2);
-        try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file1,false))))
+        try(PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file1,false)));
+                BufferedReader reader1 = new BufferedReader(new FileReader(file1));
+                BufferedReader reader2 = new BufferedReader(new FileReader(file2)))
         {
             if (!file1.exists())
                 if (file1.createNewFile()) throw new IllegalArgumentException();
             List<String> content1 = new ArrayList<>();
             List<String> content2 = new ArrayList<>();
-
-            try (BufferedReader reader = new BufferedReader(new FileReader(file1)))
+            for (String line1 = reader1.readLine(); line1 != null;)
             {
-                String line;
-                while ((line = reader.readLine()) != null)
-                    content1.add(line);
+                content1.add(line1);
+                line1 = reader1.readLine();
+            }
+            for (String line2 = reader1.readLine(); line2 != null;)
+            {
+                content2.add(line2);
+                line2 = reader1.readLine();
             }
 
-            try (BufferedReader reader = new BufferedReader(new FileReader(file2)))
-            {
-                String line;
-                while ((line = reader.readLine()) != null)
-                    content2.add(line);
-            }
+            List<String> result = new ArrayList<>();
+            while
+
 
 
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        catch (IllegalArgumentException e)
+        catch (FileNotFoundException e)
         {
             System.err.println(e.getMessage());
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
         }
     }
 }
