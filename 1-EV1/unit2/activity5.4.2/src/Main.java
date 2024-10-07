@@ -21,26 +21,19 @@ public class Main
         {
             if (!outputFile.exists())
                 if (outputFile.createNewFile()) throw new IllegalArgumentException();
-            String line1 = null;
-            String line2 = null;
-            while (true)
+            String line1 = reader1.readLine();
+            String line2 = reader2.readLine();
+            while (line1 != null || line2 != null)
             {
-                if (line1 == null)
-                    line1 = reader1.readLine();
-                if (line2 == null)
-                    line2 = reader2.readLine();
-                if (line1 == null && line2 == null)
-                        break;
-
                 if (line2 == null || line1 != null && line1.compareTo(line2) < 0)
                 {
                     writer.println(line1);
-                    line1 = null;
+                    line1 = reader1.readLine();
                 }
                 else if (line2 != null)  // if line1.compareTo(line2) > 0 is implied
                 {
                     writer.println(line2);
-                    line2 = null;
+                    line2 = reader2.readLine();
                 }
             }
         }
