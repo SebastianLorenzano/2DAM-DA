@@ -21,8 +21,8 @@ public class Main
         {
             if (!outputFile.exists())
                 if (outputFile.createNewFile()) throw new IllegalArgumentException();
-            String line1 = new String();
-            String line2 = new String();
+            String line1 = null;
+            String line2 = null;
             while (true)
             {
                 if (line1 == null)
