@@ -20,7 +20,7 @@ public class Main
                 BufferedReader reader2 = new BufferedReader(new FileReader(file2)))
         {
             if (!outputFile.exists())
-                if (outputFile.createNewFile()) throw new IllegalArgumentException();
+                outputFile.createNewFile();
             String line1 = reader1.readLine();
             String line2 = reader2.readLine();
             while (line1 != null || line2 != null)

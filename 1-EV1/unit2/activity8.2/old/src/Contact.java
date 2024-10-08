@@ -7,7 +7,7 @@ public class Contact
     private String description;
 
     public Contact(String name, String surname, String email,
-                   String number, String description)
+                    String number, String description)
     {
         this.name = name;
         this.surname = surname;
@@ -86,4 +86,5 @@ public class Contact
     {
         return new Contact(name, surname, email, number, description);
     }
+
 }

@@ -1,8 +1,7 @@
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
-public class ContactList implements Serializable
+public class ContactList
 {
     private ArrayList<Contact> contacts = new ArrayList<Contact>();
 
@@ -71,6 +70,11 @@ public class ContactList implements Serializable
     {
         remove(indexOf(contact));
     }
+
+
+
+
+
 
 
 }
