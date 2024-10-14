@@ -4,6 +4,7 @@ import java.util.function.Predicate;
 
 public class ContactList implements Serializable
 {
+    private final static String PATH = "contactList.obj";
     private ArrayList<Contact> contacts = new ArrayList<Contact>();
 
     public int count()
@@ -70,6 +71,16 @@ public class ContactList implements Serializable
     public void remove(Contact contact)
     {
         remove(indexOf(contact));
+    }
+
+    public void save()
+    {
+        ContactListParser.Serialize(this, PATH);
+    }
+
+    public void load()
+    {
+         ContactListParser.Deserialize(PATH);
     }
 
 
