@@ -11,19 +11,11 @@ public class ContactListParser
         try (FileOutputStream file = new FileOutputStream(outputFile);
              ObjectOutputStream outStream = new ObjectOutputStream(file))
         {
-            {
-                if (!outputFile.exists())
-                    outputFile.createNewFile();
-                outStream.writeObject(contactList);
-            }
-        }
-        catch (FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
+            outStream.writeObject(contactList);
         }
         catch (IOException e)
         {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error occurred during serialization", e);
         }
     }
 
