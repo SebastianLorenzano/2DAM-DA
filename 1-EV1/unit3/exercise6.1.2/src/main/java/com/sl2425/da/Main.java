@@ -12,27 +12,27 @@ public class Main {
         String url = "jdbc:postgresql://localhost:5432/VTInstitute_SL_2425";
         String user = "postgres";
         String password = "postgres";
-        String SQLsentence = "INSERT INTO subjects (Name, Year, Hours) VALUES (?, ?, ?)";
+        String SQLCreateTable = "CREATE TABLE courses (code SERIAL PRIMARY KEY, name VARCHAR(255) NOT NULL)";
+        String SQLInsert = "INSERT INTO courses (name) VALUES (?) RETURNING code";
         try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement preparedStatement = con.prepareStatement(SQLsentence))
+             PreparedStatement preparedCreate = con.prepareStatement(SQLCreateTable);
+             PreparedStatement preparedInsert = con.prepareStatement(SQLInsert))
         {
+            int result;
+            result = preparedCreate.executeUpdate();
+            System.out.println("Resultado: " + result);
             Scanner scanner = new Scanner(System.in);
-            String name; int year; int hours;
+            String name;
             while (true)
             {
-                System.out.println("Adding a new Asignature");
+                System.out.println("Adding a new Course");
                 System.out.println("Name: ");
                 name = scanner.nextLine();
-                System.out.println("Year: ");
-                year = Integer.parseInt(scanner.nextLine());
-                System.out.println("Hours: ");
-                hours = Integer.parseInt(scanner.nextLine());
-
-                preparedStatement.setString(1, name);
-                preparedStatement.setInt(2, year);
-                preparedStatement.setInt(3, hours);
-                int result = preparedStatement.executeUpdate();
-                System.out.println(result);
+                preparedInsert.setString(1, name);
+                ResultSet rs = preparedInsert.executeQuery();
+                rs.next();
+                int generatedCode = rs.getInt(1);
+                System.out.println("The auto-generated code is: " + generatedCode);
 
                 System.out.println("Do you want to continue? (y/n)");
                 if (!scanner.nextLine().equalsIgnoreCase("y"))

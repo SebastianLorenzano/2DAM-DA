@@ -20,7 +20,6 @@ public class Main {
             preparedStatement.setInt(3, 0);
             int result = preparedStatement.executeUpdate();
             System.out.println(result);
-
         }
 
     }
