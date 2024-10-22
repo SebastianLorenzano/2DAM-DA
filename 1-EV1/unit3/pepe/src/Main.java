@@ -2,9 +2,12 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello world!");
+
     }
 
+
+
+}
     /// exercise7.4.1 ///
     /*
 
@@ -27,7 +30,6 @@ $BODY$;
 
 ALTER FUNCTION public.employee_list_by_job(character varying)
     OWNER TO postgres;
-
 
      */
 
@@ -93,5 +95,5 @@ ALTER FUNCTION public.employee_list_by_name(character varying, character varying
     OWNER TO postgres;
 
      */
-}
+
 
