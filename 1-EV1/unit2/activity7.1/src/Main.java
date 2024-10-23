@@ -34,7 +34,7 @@ public class Main {
                     System.out.print("Enter contact's description: ");
                     String description = scanner.nextLine();
 
-                    Contact newContact = new Contact(name, surname, number, email, description);
+                    Contact newContact = new Contact(name, surname, email, number, description);
                     if (contactList.add(newContact)) {
                         System.out.println("Contact added successfully!");
                     } else {

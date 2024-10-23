@@ -40,7 +40,10 @@ public class ContactList implements Serializable {
             return -1;
         for (int x = 0; x < contacts.size(); x++) {
             Contact c = contacts.get(x);
-            if (contact.getEmail().equals(c.getEmail()))
+            if (contact.getEmail() != "")
+                if (contact.getEmail().equals(c.getEmail()))
+                    return x;
+            else if ((c.getName() + c.getSurname()).contains((contact.getName() + contact.getSurname())))
                 return x;
         }
         return -1;
@@ -55,11 +58,12 @@ public class ContactList implements Serializable {
     }
 
     public ArrayList<Contact> filterByFullName(String name, String surname) {
-        return filter(contact -> contact.getName().equals(name) && contact.getSurname().equals(surname));
+        return filter(contact -> (contact.getName() + contact.getSurname().toLowerCase())
+                .contains((name + surname).toLowerCase()));
     }
 
     public ArrayList<Contact> filterByNumber(String number) {
-        return filter(contact -> contact.getNumber().equals(number));
+        return filter(contact -> contact.getNumber().contains(number));
     }
 
     private void remove(int index) {
