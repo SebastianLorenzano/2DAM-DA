@@ -1,4 +1,5 @@
 package com.sl2425.da;
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -35,29 +36,39 @@ public class Main {
             wildcard = scanner.nextLine();
             preparedListByName.setString(1, name);
             preparedListByName.setString(2, wildcard);
-            ResultSet rs1 = preparedListByName.executeQuery();
-            rs1.next();
+            readResultSetOfEmployee(preparedListByName.executeQuery());
            // */
             // Second Function //
-            /*
+            ///*
             System.out.println("Looking by job");
             System.out.println("Job: ");
             job = scanner.next();
             preparedListByJob.setString(1, job);
-            ResultSet rs2 = preparedListByJob.executeQuery();
-            rs2.next();
-             */
+            readResultSetOfEmployee(preparedListByJob.executeQuery());
+            // */
 
             // Third Function //
-            /*
+            ///*
             System.out.println("Looking by department number");
             System.out.println("Department number: ");
             deptNumber = Integer.parseInt(scanner.next());
             preparedListByDeptno.setInt(1, deptNumber);
-            ResultSet rs3 = preparedListByDeptno.executeQuery();
-            rs3.next();
-             */
+            readResultSetOfEmployee(preparedListByDeptno.executeQuery());
+            // */
         }
+    }
 
+    static void readResultSetOfEmployee(ResultSet rs) throws SQLException
+    {
+        System.out.println("Empno" + "\t" + "Ename" + "\t" + "Job" + "\t" + "Deptno");
+        System.out.println("-----------------------------------------");
+        while (rs.next()) {
+            System.out.println(rs.getInt(1) + "\t " +
+                    rs.getString(2) + "\t " +
+                    rs.getString(3) + "\t" +
+                            rs.getInt(4));
+
+        }
+        rs.close();
     }
 }
