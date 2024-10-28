@@ -10,16 +10,16 @@ public class Main {
     public static void ConsultaBD1(String[] args)
             throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
-        String url = "jdbc:postgresql://localhost:5432/VTInstitute_SL_2425";
-        String user = "postgres";
-        String password = "postgres";
-        String SQLlistByDeptno = "SELECT * FROM public.employee_list_by_deptno(?)";
-        String SQLlistByJob = "SELECT * FROM public.employee_list_by_job(?)";
-        String SQLlistByName = "SELECT * FROM public.employee_list_by_name(?, ?)";
+        final String url = "jdbc:postgresql://localhost:5432/VTInstitute_SL_2425";
+        final String user = "postgres";
+        final String password = "postgres";
+        final String SQLlistByDeptno = "SELECT * FROM public.employee_list_by_deptno(?)";
+        final String SQLlistByJob = "SELECT * FROM public.employee_list_by_job(?)";
+        final String SQLlistByName = "SELECT * FROM public.employee_list_by_name(?, ?)";
         try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement preparedListByDeptno = con.prepareStatement(SQLlistByDeptno);
-             PreparedStatement preparedListByJob = con.prepareStatement(SQLlistByJob);
-             PreparedStatement preparedListByName = con.prepareStatement(SQLlistByName);
+             final PreparedStatement preparedListByDeptno = con.prepareStatement(SQLlistByDeptno);
+             final PreparedStatement preparedListByJob = con.prepareStatement(SQLlistByJob);
+             final PreparedStatement preparedListByName = con.prepareStatement(SQLlistByName);
              )
         {
             Scanner scanner = new Scanner(System.in);
