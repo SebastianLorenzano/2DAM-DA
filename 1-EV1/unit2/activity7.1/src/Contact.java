@@ -80,7 +80,12 @@ public class Contact implements Serializable
     public static boolean isValid(String name, String surname, String email,
                                   String number, String description)
     {
-        // check if params are valid
+        if (name == null || name.isEmpty() || surname == null || surname.isEmpty() ||
+                email == null || email.isEmpty() || number == null || number.isEmpty())
+            return false;
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";         // Regex to validate email
+        if (!email.matches(emailRegex))
+            return false;
         return true;
     }
 

@@ -24,7 +24,8 @@ public class ContactList implements Serializable {
     }
 
     public boolean add(Contact contact) {
-        if (contact != null && contact.isValid()) {
+        if (contact != null && contact.isValid() &&
+                filter(contact1 -> contact1.getEmail().equals(contact.getEmail())).isEmpty()) {
             contacts.add(contact.clone());
             return true;
         }
