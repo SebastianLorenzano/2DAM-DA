@@ -23,38 +23,62 @@ public class Main {
              )
         {
             Scanner scanner = new Scanner(System.in);
-            String name = "";
-            String wildcard = "";
-            String job = "";
-            int deptNumber;
-            // First Function //
-            //*
-            System.out.println("Looking by name");
-            System.out.println("Name: ");
-            name = scanner.nextLine();
-            System.out.println("Wildcard (a%, %a, %a%, or none): ");
-            wildcard = scanner.nextLine();
-            preparedListByName.setString(1, name);
-            preparedListByName.setString(2, wildcard);
-            readResultSetOfEmployee(preparedListByName.executeQuery());
-           // */
-            // Second Function //
-            ///*
-            System.out.println("Looking by job");
-            System.out.println("Job: ");
-            job = scanner.next();
-            preparedListByJob.setString(1, job);
-            readResultSetOfEmployee(preparedListByJob.executeQuery());
-            // */
-
-            // Third Function //
-            ///*
-            System.out.println("Looking by department number");
-            System.out.println("Department number: ");
-            deptNumber = Integer.parseInt(scanner.next());
-            preparedListByDeptno.setInt(1, deptNumber);
-            readResultSetOfEmployee(preparedListByDeptno.executeQuery());
-            // */
+            while (true)
+            {
+                System.out.println("Employee searcher");
+                System.out.println("1. Look by name");
+                System.out.println("2. Look by job");
+                System.out.println("3. Look by department number");
+                System.out.println("4. Exit");
+                System.out.println("Option: ");
+                int option = scanner.nextInt();
+                if (option == 1)
+                {
+                    // First Function //
+                    //*
+                    if (scanner.hasNextLine())
+                        scanner.nextLine();
+                    String name = "";
+                    String wildcard = "";
+                    System.out.println("Looking by name");
+                    System.out.println("Name: ");
+                    name = scanner.nextLine();
+                    System.out.println("Wildcard (a%, %a, %a%, or none): ");
+                    wildcard = scanner.nextLine();
+                    preparedListByName.setString(1, name);
+                    preparedListByName.setString(2, wildcard);
+                    readResultSetOfEmployee(preparedListByName.executeQuery());
+                    // */
+                }
+                else if (option == 2)
+                {
+                    // Second Function //
+                    ///*
+                    String job = "";
+                    System.out.println("Looking by job");
+                    System.out.println("Job: ");
+                    job = scanner.next();
+                    preparedListByJob.setString(1, job);
+                    readResultSetOfEmployee(preparedListByJob.executeQuery());
+                    // */
+                }
+                else if (option == 3)
+                {
+                    // Third Function //
+                    ///*
+                    int deptNumber;
+                    System.out.println("Looking by department number");
+                    System.out.println("Department number: ");
+                    deptNumber = Integer.parseInt(scanner.next());
+                    preparedListByDeptno.setInt(1, deptNumber);
+                    readResultSetOfEmployee(preparedListByDeptno.executeQuery());
+                    // */
+                }
+                else if (option == 4)
+                    break;
+                else
+                    System.out.println("Invalid option. Try again.");
+            }
         }
     }
 

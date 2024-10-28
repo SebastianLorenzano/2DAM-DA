@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b755109-54aa-41e9-b369-dd45955018ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContactList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContactList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise6.1.2/src/main/java/com/sl2425/da/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit3/exercise6.1.2/src/main/java/com/sl2425/da/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/VTInstitute_SL_2425.44aJAQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/VTInstitute_SL_2425.44aJAQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/VTInstitute_SL_2425.44aJAQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/.idea/dataSources/1c4d6a36-09b4-4a3f-81eb-fbf6fd24ed89/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/exercise7.4/src/main/java/com/sl2425/da/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit3/exercise7.4/src/main/java/com/sl2425/da/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/exercise7.4.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/pepe/src/Main.java" beforeDir="false" />
-    </list>
+    <list default="true" id="3b755109-54aa-41e9-b369-dd45955018ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +37,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/seblor3/Desktop/Programming/2DAM-DA/1-EV1/unit2/activity7.1",
+    "last_opened_file_path": "C:/Users/seblor3/Desktop/Programming/2DAM-DA/1-EV1/unit3/exercise8.1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,6 +82,7 @@
       <workItem from="1728978032726" duration="8980000" />
       <workItem from="1729172713231" duration="598000" />
       <workItem from="1729692897004" duration="3270000" />
+      <workItem from="1730128387256" duration="25000" />
     </task>
     <servers />
   </component>
