@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sl2425.da</groupId>
-    <artifactId>TestConnection</artifactId>
+    <artifactId>introduction</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -27,7 +27,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>7.0.0.Beta1</version>
         </dependency>
-
     </dependencies>
 
 </project>
