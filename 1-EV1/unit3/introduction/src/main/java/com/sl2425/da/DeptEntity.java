@@ -20,7 +20,7 @@ public class DeptEntity
     @Column(name = "loc")
     private String loc;
     @OneToMany(mappedBy = "Department")
-    private List<EmployeeEntity> Employees;
+    private List<EmployeeEntity> employees;
 
     public int getDeptno()
     {
@@ -69,11 +69,11 @@ public class DeptEntity
 
     public List<EmployeeEntity> getEmployees()
     {
-        return Employees;
+        return employees;
     }
 
     public void setEmployees(List<EmployeeEntity> employees)
     {
-        Employees = employees;
+        this.employees = employees;
     }
 }
