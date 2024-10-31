@@ -13,8 +13,7 @@ public class DBOps
 {
     private static Session openSession() throws Exception
     {
-        if ( sessionFactory == null )
-            sessionFactory = new Configuration().configure().buildSessionFactory();
+
         Session session = sessionFactory.openSession();
         if (session == null)
             throw new Exception("Error opening session!");
