@@ -35,8 +35,6 @@ public class Main
 
         var department = new DeptEntity() {{ setDname("HR"); setLoc("New York");}};
         int deptno = DBOps.insertDepartment(department);
-        updateEmployee()
-
 
     }
 
