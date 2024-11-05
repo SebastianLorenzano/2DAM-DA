@@ -1,4 +1,4 @@
-package com.sl2425.da.sellersapp;
+package com.sl2425.da.sellersapp.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ import java.io.IOException;
 public class LoginController
 {
     @FXML
-    private TextField usernameField;
+    private TextField cifField;
 
     @FXML
     private PasswordField passwordField;
@@ -22,7 +21,7 @@ public class LoginController
     @FXML
     private void onLoginButtonClick() {
         // Get the text from the username and password fields
-        String username = usernameField.getText();
+        String username = cifField.getText();
         String password = passwordField.getText();
 
         // Print the username and password to the console (or handle them as needed)
@@ -36,7 +35,7 @@ public class LoginController
     private void openMainWindow() {
         try {
             // Load the new FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/sl2425/da/sellersapp/main-view.fxml"));
             Parent root = fxmlLoader.load();
 
             // Create a new stage for the dashboard window
@@ -53,6 +52,6 @@ public class LoginController
 
     private void close()
     {   // Gets the current window, casts it and closes it
-        ((Stage)usernameField.getScene().getWindow()).close();
+        ((Stage) cifField.getScene().getWindow()).close();
     }
 }

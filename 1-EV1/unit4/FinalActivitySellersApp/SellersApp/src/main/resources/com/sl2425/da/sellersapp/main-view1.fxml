@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 
 <StackPane alignment="CENTER" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/17.0.12"
-           xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sl2425.da.sellersapp.MainView1Controller">
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sl2425.da.sellersapp.Controllers.MainView1Controller">
     <VBox spacing="10" style="-fx-background-color: #f0f0f0;" StackPane.alignment="CENTER">
 
         <!-- Title Label at the top -->
         <Label maxWidth="Infinity" prefHeight="35.0" style="-fx-font-size: 2em; -fx-font-weight: bold; -fx-alignment: center;; -fx-text-alignment: center; -fx-alignment: center;; -fx-alignment: center;" text="Seller Data" VBox.vgrow="NEVER">
          <padding>
-            <Insets top="5.0" />
+            <Insets top="5.0"/>
          </padding></Label>
 
         <!-- Main content layout -->

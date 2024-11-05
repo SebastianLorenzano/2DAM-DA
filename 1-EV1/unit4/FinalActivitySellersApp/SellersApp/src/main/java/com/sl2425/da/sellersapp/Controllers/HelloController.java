@@ -1,4 +1,4 @@
-package com.sl2425.da.sellersapp;
+package com.sl2425.da.sellersapp.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml" style="-fx-background-color: #f0f0f0;"
-      fx:controller="com.sl2425.da.sellersapp.LoginController" >
+      fx:controller="com.sl2425.da.sellersapp.Controllers.LoginController" >
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
   <Label text="Seller App" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
-  <Label fx:id="welcomeLabel" text="Welcome! Please log in below."/>
+  <Label text="Welcome! Please log in below."/>
 
   <Label text="Username:"/>
-  <TextField fx:id="usernameField" promptText="Enter your username"/>
+  <TextField fx:id="cifField" promptText="Enter your CIF"/>
 
   <Label text="Password:"/>
   <PasswordField fx:id="passwordField" promptText="Enter your password"/>

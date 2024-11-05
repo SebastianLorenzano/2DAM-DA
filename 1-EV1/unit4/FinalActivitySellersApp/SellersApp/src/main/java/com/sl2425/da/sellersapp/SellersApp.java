@@ -14,6 +14,7 @@ public class SellersApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(SellersApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 400);
         stage.setTitle("SellersApp — Login");
+        stage.setResizable(false);  // Desactiva la posibilidad de redimensionar la ventana
         stage.setScene(scene);
         stage.show();
     }

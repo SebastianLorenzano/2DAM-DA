@@ -1,10 +1,8 @@
-package com.sl2425.da.sellersapp;
+package com.sl2425.da.sellersapp.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
@@ -30,21 +28,21 @@ public class MainController {
     // Button action methods
     @FXML
     private void showView1() {
-        loadView("main-view1.fxml");
+        loadView("/com/sl2425/da/sellersapp/main-view1.fxml");
     }
 
     @FXML
     private void showView2() {
-        loadView("view2.fxml");
+        loadView("/com/sl2425/da/sellersapp/main-view2.fxml");
     }
 
     @FXML
     private void showView3() {
-        loadView("view3.fxml");
+        loadView("/com/sl2425/da/sellersapp/main-view3.fxml");
     }
 
     @FXML
     private void showView4() {
-        loadView("view4.fxml");
+        loadView("/com/sl2425/da/sellersapp/main-view4.fxml");
     }
 }
