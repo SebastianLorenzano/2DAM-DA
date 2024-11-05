@@ -7,8 +7,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.sl2425.da.sellersapp.LoginController">
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml" style="-fx-background-color: #f0f0f0;"
+      fx:controller="com.sl2425.da.sellersapp.LoginController" >
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>

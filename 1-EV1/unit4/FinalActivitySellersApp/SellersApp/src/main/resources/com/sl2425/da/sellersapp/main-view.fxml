@@ -13,7 +13,7 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.sl2425.da.sellersapp.MainController">
     <!-- Left Column with 4 Image Buttons -->
     <left>
-        <VBox spacing="20" alignment="CENTER" style="-fx-background-color: #f0f0f0;">
+        <VBox spacing="20" alignment="CENTER" style="-fx-background-color: #2f2f2f;">
             <padding>
                 <Insets top="20" bottom="20" left="10" right="10"/>
             </padding>
@@ -47,7 +47,7 @@
 
     <!-- Center Pane for Changing Views -->
     <center>
-        <StackPane fx:id="contentPane" alignment="CENTER" style="-fx-background-color: #ffffff;">
+        <StackPane fx:id="contentPane" alignment="CENTER" style="-fx-background-color: #f0f0f0;">
             <!-- Default view loaded at start -->
             <Label text="Select a view" style="-fx-font-size: 24px; -fx-text-fill: #333;"/>
         </StackPane>
