@@ -18,11 +18,11 @@ public class OrderDetailEntity
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
-    private com.sl2425.da.sellersapp.Controllers.OrderEntity order;
+    private com.sl2425.da.sellersapp.Model.Entities.OrderEntity order;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_product_id")
-    private com.sl2425.da.sellersapp.Controllers.SellerProductEntity sellerProduct;
+    private com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity sellerProduct;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
@@ -31,7 +31,7 @@ public class OrderDetailEntity
     private BigDecimal subtotalPrice;
 
     @OneToMany(mappedBy = "orderDetail")
-    private Set<com.sl2425.da.sellersapp.Controllers.ReviewEntity> reviews = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.ReviewEntity> reviews = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -43,22 +43,22 @@ public class OrderDetailEntity
         this.id = id;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.OrderEntity getOrder()
+    public com.sl2425.da.sellersapp.Model.Entities.OrderEntity getOrder()
     {
         return order;
     }
 
-    public void setOrder(com.sl2425.da.sellersapp.Controllers.OrderEntity order)
+    public void setOrder(com.sl2425.da.sellersapp.Model.Entities.OrderEntity order)
     {
         this.order = order;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.SellerProductEntity getSellerProduct()
+    public com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity getSellerProduct()
     {
         return sellerProduct;
     }
 
-    public void setSellerProduct(com.sl2425.da.sellersapp.Controllers.SellerProductEntity sellerProduct)
+    public void setSellerProduct(com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity sellerProduct)
     {
         this.sellerProduct = sellerProduct;
     }
@@ -83,12 +83,12 @@ public class OrderDetailEntity
         this.subtotalPrice = subtotalPrice;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.ReviewEntity> getReviews()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.ReviewEntity> getReviews()
     {
         return reviews;
     }
 
-    public void setReviews(Set<com.sl2425.da.sellersapp.Controllers.ReviewEntity> reviews)
+    public void setReviews(Set<com.sl2425.da.sellersapp.Model.Entities.ReviewEntity> reviews)
     {
         this.reviews = reviews;
     }

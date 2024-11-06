@@ -16,7 +16,7 @@ public class ReviewEntity
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_detail_id")
-    private com.sl2425.da.sellersapp.Controllers.OrderDetailEntity orderDetail;
+    private com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity orderDetail;
 
     @Column(name = "rating", nullable = false)
     private Integer rating;
@@ -38,12 +38,12 @@ public class ReviewEntity
         this.id = id;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.OrderDetailEntity getOrderDetail()
+    public com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity getOrderDetail()
     {
         return orderDetail;
     }
 
-    public void setOrderDetail(com.sl2425.da.sellersapp.Controllers.OrderDetailEntity orderDetail)
+    public void setOrderDetail(com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity orderDetail)
     {
         this.orderDetail = orderDetail;
     }

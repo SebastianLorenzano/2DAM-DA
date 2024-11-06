@@ -19,7 +19,7 @@ public class CategoryEntity
     private String categoryName;
 
     @OneToMany(mappedBy = "category")
-    private Set<com.sl2425.da.sellersapp.Controllers.ProductEntity> products = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.ProductEntity> products = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -41,12 +41,12 @@ public class CategoryEntity
         this.categoryName = categoryName;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.ProductEntity> getProducts()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.ProductEntity> getProducts()
     {
         return products;
     }
 
-    public void setProducts(Set<com.sl2425.da.sellersapp.Controllers.ProductEntity> products)
+    public void setProducts(Set<com.sl2425.da.sellersapp.Model.Entities.ProductEntity> products)
     {
         this.products = products;
     }

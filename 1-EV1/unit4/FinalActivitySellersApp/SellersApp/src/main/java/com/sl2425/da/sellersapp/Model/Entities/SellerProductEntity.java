@@ -19,11 +19,11 @@ public class SellerProductEntity
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id")
-    private com.sl2425.da.sellersapp.Controllers.SellerEntity seller;
+    private com.sl2425.da.sellersapp.Model.Entities.SellerEntity seller;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
-    private com.sl2425.da.sellersapp.Controllers.ProductEntity product;
+    private com.sl2425.da.sellersapp.Model.Entities.ProductEntity product;
 
     @Column(name = "price", nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
@@ -41,7 +41,7 @@ public class SellerProductEntity
     private Integer stock;
 
     @OneToMany(mappedBy = "sellerProduct")
-    private Set<com.sl2425.da.sellersapp.Controllers.OrderDetailEntity> orderDetails = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity> orderDetails = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -53,22 +53,22 @@ public class SellerProductEntity
         this.id = id;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.SellerEntity getSeller()
+    public com.sl2425.da.sellersapp.Model.Entities.SellerEntity getSeller()
     {
         return seller;
     }
 
-    public void setSeller(com.sl2425.da.sellersapp.Controllers.SellerEntity seller)
+    public void setSeller(com.sl2425.da.sellersapp.Model.Entities.SellerEntity seller)
     {
         this.seller = seller;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.ProductEntity getProduct()
+    public com.sl2425.da.sellersapp.Model.Entities.ProductEntity getProduct()
     {
         return product;
     }
 
-    public void setProduct(com.sl2425.da.sellersapp.Controllers.ProductEntity product)
+    public void setProduct(com.sl2425.da.sellersapp.Model.Entities.ProductEntity product)
     {
         this.product = product;
     }
@@ -123,12 +123,12 @@ public class SellerProductEntity
         this.stock = stock;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.OrderDetailEntity> getOrderDetails()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity> getOrderDetails()
     {
         return orderDetails;
     }
 
-    public void setOrderDetails(Set<com.sl2425.da.sellersapp.Controllers.OrderDetailEntity> orderDetails)
+    public void setOrderDetails(Set<com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity> orderDetails)
     {
         this.orderDetails = orderDetails;
     }

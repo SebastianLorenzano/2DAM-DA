@@ -24,13 +24,13 @@ public class ProductEntity
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private com.sl2425.da.sellersapp.Controllers.CategoryEntity category;
+    private com.sl2425.da.sellersapp.Model.Entities.CategoryEntity category;
 
     @Column(name = "active", nullable = false)
     private Boolean active = false;
 
     @OneToMany(mappedBy = "product")
-    private Set<com.sl2425.da.sellersapp.Controllers.SellerProductEntity> sellerProducts = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> sellerProducts = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -62,12 +62,12 @@ public class ProductEntity
         this.description = description;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.CategoryEntity getCategory()
+    public com.sl2425.da.sellersapp.Model.Entities.CategoryEntity getCategory()
     {
         return category;
     }
 
-    public void setCategory(com.sl2425.da.sellersapp.Controllers.CategoryEntity category)
+    public void setCategory(com.sl2425.da.sellersapp.Model.Entities.CategoryEntity category)
     {
         this.category = category;
     }
@@ -82,12 +82,12 @@ public class ProductEntity
         this.active = active;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.SellerProductEntity> getSellerProducts()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> getSellerProducts()
     {
         return sellerProducts;
     }
 
-    public void setSellerProducts(Set<com.sl2425.da.sellersapp.Controllers.SellerProductEntity> sellerProducts)
+    public void setSellerProducts(Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> sellerProducts)
     {
         this.sellerProducts = sellerProducts;
     }

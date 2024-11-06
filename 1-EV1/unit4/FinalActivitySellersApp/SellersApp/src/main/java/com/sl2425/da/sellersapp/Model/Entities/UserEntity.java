@@ -32,7 +32,7 @@ public class UserEntity
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private Set<com.sl2425.da.sellersapp.Controllers.OrderEntity> orders = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.OrderEntity> orders = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -94,12 +94,12 @@ public class UserEntity
         this.password = password;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.OrderEntity> getOrders()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.OrderEntity> getOrders()
     {
         return orders;
     }
 
-    public void setOrders(Set<com.sl2425.da.sellersapp.Controllers.OrderEntity> orders)
+    public void setOrders(Set<com.sl2425.da.sellersapp.Model.Entities.OrderEntity> orders)
     {
         this.orders = orders;
     }

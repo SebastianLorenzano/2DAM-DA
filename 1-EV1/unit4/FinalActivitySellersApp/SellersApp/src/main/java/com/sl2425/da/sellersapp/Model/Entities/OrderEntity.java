@@ -18,13 +18,13 @@ public class OrderEntity
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private com.sl2425.da.sellersapp.Controllers.UserEntity user;
+    private com.sl2425.da.sellersapp.Model.Entities.UserEntity user;
 
     @Column(name = "order_date")
     private LocalDate orderDate;
 
     @OneToMany(mappedBy = "order")
-    private Set<com.sl2425.da.sellersapp.Controllers.OrderDetailEntity> orderDetails = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity> orderDetails = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -36,12 +36,12 @@ public class OrderEntity
         this.id = id;
     }
 
-    public com.sl2425.da.sellersapp.Controllers.UserEntity getUser()
+    public com.sl2425.da.sellersapp.Model.Entities.UserEntity getUser()
     {
         return user;
     }
 
-    public void setUser(com.sl2425.da.sellersapp.Controllers.UserEntity user)
+    public void setUser(com.sl2425.da.sellersapp.Model.Entities.UserEntity user)
     {
         this.user = user;
     }
@@ -56,12 +56,12 @@ public class OrderEntity
         this.orderDate = orderDate;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.OrderDetailEntity> getOrderDetails()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity> getOrderDetails()
     {
         return orderDetails;
     }
 
-    public void setOrderDetails(Set<com.sl2425.da.sellersapp.Controllers.OrderDetailEntity> orderDetails)
+    public void setOrderDetails(Set<com.sl2425.da.sellersapp.Model.Entities.OrderDetailEntity> orderDetails)
     {
         this.orderDetails = orderDetails;
     }

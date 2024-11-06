@@ -37,7 +37,7 @@ public class SellerEntity
     private String password;
 
     @OneToMany(mappedBy = "seller")
-    private Set<com.sl2425.da.sellersapp.Controllers.SellerProductEntity> sellerProducts = new LinkedHashSet<>();
+    private Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> sellerProducts = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -119,12 +119,12 @@ public class SellerEntity
         this.password = password;
     }
 
-    public Set<com.sl2425.da.sellersapp.Controllers.SellerProductEntity> getSellerProducts()
+    public Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> getSellerProducts()
     {
         return sellerProducts;
     }
 
-    public void setSellerProducts(Set<com.sl2425.da.sellersapp.Controllers.SellerProductEntity> sellerProducts)
+    public void setSellerProducts(Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> sellerProducts)
     {
         this.sellerProducts = sellerProducts;
     }
