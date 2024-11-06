@@ -6,8 +6,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import com.sl2425.da.sellersapp.Model.*;
 
 public class SellersApp extends Application {
+
     @Override
     public void start(Stage stage) throws IOException
     {
