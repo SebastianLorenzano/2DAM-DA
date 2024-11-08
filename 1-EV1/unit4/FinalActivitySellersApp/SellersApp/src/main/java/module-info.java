@@ -3,7 +3,7 @@ module com.sl2425.da.sellersapp {
     requires javafx.fxml;
     requires jakarta.persistence;
     requires java.naming;
-
+    requires org.hibernate.orm.core;
 
 
     opens com.sl2425.da.sellersapp to javafx.fxml;

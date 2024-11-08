@@ -7,8 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import com.sl2425.da.sellersapp.Model.Utils;
+import com.sl2425.da.sellersapp.Model.DatabaseOps;
 
 public class LoginController
 {
@@ -20,9 +21,8 @@ public class LoginController
 
     @FXML
     private void onLoginButtonClick() {
-        // Get the text from the username and password fields
         String username = cifField.getText();
-        String password = passwordField.getText();
+        String password = Utils.encryptToMD5(passwordField.getText());
 
         // Print the username and password to the console (or handle them as needed)
         System.out.println("Username: " + username);
