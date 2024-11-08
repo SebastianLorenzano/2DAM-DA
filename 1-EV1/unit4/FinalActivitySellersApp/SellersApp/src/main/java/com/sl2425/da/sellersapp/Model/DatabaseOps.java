@@ -15,11 +15,11 @@ public class DatabaseOps
         SessionFactory temp = null;
         try
         {
-            temp = new Configuration().configure().buildSessionFactory();
+            temp = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            logger.severe("Failed to create SessionFactory: " + e.getMessage());
         }
         sessionFactory = temp;
     }
@@ -29,28 +29,31 @@ public class DatabaseOps
 
         Session session = sessionFactory.openSession();
         if (session == null)
-            throw new Exception("Error opening session!");
+            logger.severe("SessionFactory is null. Please check your Hibernate configuration file (hibernate.cfg.xml) and ensure it is correctly placed in the classpath.");
         return session;
     }
 
 
-    public SellerEntity checkLogin(String cif, String password) {
+    public static SellerEntity SelectSellerWithCifAndPassword(String cif, String password)
+    {
         SellerEntity seller = null;
-
+        if (cif == null || cif.isEmpty() || password == null || password.isEmpty())
+            return null;
         try (Session session = sessionFactory.openSession())
         {
-            String sqlString = "FROM SellerEntity WHERE cif = :cif AND password = :password";
-
-            Query<SellerEntity> query = session.createQuery(sqlString, SellerEntity.class);
+            System.out.println("Checking login...");
+            Query<SellerEntity> query = session.createQuery(
+                    "from SellerEntity where cif = :cif and password = :password", SellerEntity.class);
             query.setParameter("cif", cif);
             query.setParameter("password", password);
-
             seller = query.uniqueResult();
-        } catch (Exception e) {
+            System.out.println("Seller: " + seller.toString());
+        }
+        catch (Exception e)
+        {
             logger.severe("Error during login check: " + e.getMessage());
             e.printStackTrace();
         }
-
         return seller;
     }
 }

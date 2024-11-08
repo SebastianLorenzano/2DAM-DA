@@ -1,5 +1,6 @@
 package com.sl2425.da.sellersapp.Controllers;
 
+import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,13 +24,20 @@ public class LoginController
     private void onLoginButtonClick() {
         String username = cifField.getText();
         String password = Utils.encryptToMD5(passwordField.getText());
-
-        // Print the username and password to the console (or handle them as needed)
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
+        if (checkLogin(username, password))
         openMainWindow();
+    }
 
-        // Add further logic to handle login validation, etc.
+    private boolean checkLogin(String cif, String password)
+    {
+        SellerEntity seller = DatabaseOps.SelectSellerWithCifAndPassword(cif, password);
+        if (seller == null)
+        {
+            System.out.println("Login failed");
+            return false;
+        }
+        Utils.currentSeller = seller;
+        return true;
     }
 
     private void openMainWindow() {
@@ -54,4 +62,7 @@ public class LoginController
     {   // Gets the current window, casts it and closes it
         ((Stage) cifField.getScene().getWindow()).close();
     }
+
+
+
 }

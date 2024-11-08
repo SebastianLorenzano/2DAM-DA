@@ -1,0 +1,15 @@
+[08-11-2024 19:02] SEVERE: Error during login check: org.hibernate.query.sqm.UnknownEntityException: Could not resolve root entity 'SellerEntity'
+[08-11-2024 19:06] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:07] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:08] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:11] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:11] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:11] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:23] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[08-11-2024 19:25] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[08-11-2024 19:26] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.SellersApp.sessionFactory" is null
+[08-11-2024 19:32] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[08-11-2024 19:38] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[08-11-2024 19:38] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[08-11-2024 19:39] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[08-11-2024 19:39] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null

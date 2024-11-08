@@ -1,6 +1,7 @@
 package com.sl2425.da.sellersapp.Model.Entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -18,14 +19,14 @@ public class ProductEntity
     @Column(name = "product_name", nullable = false, length = 100)
     private String productName;
 
-    @Lob
-    @Column(name = "description")
+    @Column(name = "description", length = Integer.MAX_VALUE)
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private com.sl2425.da.sellersapp.Model.Entities.CategoryEntity category;
+    private CategoryEntity category;
 
+    @ColumnDefault("true")
     @Column(name = "active", nullable = false)
     private Boolean active = false;
 
@@ -62,12 +63,12 @@ public class ProductEntity
         this.description = description;
     }
 
-    public com.sl2425.da.sellersapp.Model.Entities.CategoryEntity getCategory()
+    public CategoryEntity getCategory()
     {
         return category;
     }
 
-    public void setCategory(com.sl2425.da.sellersapp.Model.Entities.CategoryEntity category)
+    public void setCategory(CategoryEntity category)
     {
         this.category = category;
     }
