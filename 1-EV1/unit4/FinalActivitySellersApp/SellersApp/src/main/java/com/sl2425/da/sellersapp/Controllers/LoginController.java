@@ -23,7 +23,8 @@ public class LoginController
     @FXML
     private void onLoginButtonClick() {
         String username = cifField.getText();
-        String password = Utils.encryptToMD5(passwordField.getText());
+        String password = Utils.encryptToMD5(passwordField.getText()).toUpperCase();
+        System.out.println("Username: " + username + " Password: " + password);
         if (checkLogin(username, password))
         openMainWindow();
     }

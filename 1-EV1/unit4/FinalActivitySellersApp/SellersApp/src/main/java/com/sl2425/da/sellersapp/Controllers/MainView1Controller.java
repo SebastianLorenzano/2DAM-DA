@@ -1,5 +1,8 @@
 package com.sl2425.da.sellersapp.Controllers;
 
+import com.sl2425.da.sellersapp.Model.DatabaseOps;
+import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.Model.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -8,50 +11,88 @@ import javafx.scene.control.TextField;
 public class MainView1Controller {
 
     @FXML
-    private TextField inputField1; // CIF
+    private TextField cifField;
 
     @FXML
-    private TextField inputField2; // Name
+    private TextField nameField;
 
     @FXML
-    private TextField inputField3; // Business Name
+    private TextField businessNameField;
 
     @FXML
-    private TextField inputField4; // Phone
+    private TextField phoneField;
 
     @FXML
-    private TextField inputField5; // Email
+    private TextField emailField;
 
     @FXML
-    private PasswordField inputField6; // Password
+    private PasswordField passwordField;
 
     @FXML
-    private Button confirmButton; // Confirm Button
+    private PasswordField confirmPassField;
+
+    @FXML
+    private Button confirmButton;
+
+    private SellerEntity seller = null;
 
     @FXML
     private void initialize() {
         // Initialization logic, if needed
         confirmButton.setOnAction(event -> handleConfirmAction());
+        seller = Utils.currentSeller;
+        if (seller == null)
+            System.out.println("Seller is null");
+        else
+        {
+            cifField.setText(seller.getCif());
+            nameField.setText(seller.getName());
+            businessNameField.setText(seller.getBusinessName());
+            phoneField.setText(seller.getPhone());
+            emailField.setText(seller.getEmail());
+            passwordField.setText("********");
+        }
     }
 
     private void handleConfirmAction() {
-        // Example logic for handling confirm button click
-        String cif = inputField1.getText();
-        String name = inputField2.getText();
-        String businessName = inputField3.getText();
-        String phone = inputField4.getText();
-        String email = inputField5.getText();
-        String password = inputField6.getText();
+        SellerEntity updatedSeller = new SellerEntity()
+        { {
+                setId(seller.getId());
+                setCif(cifField.getText());
+                setName(nameField.getText());
+                setBusinessName(businessNameField.getText());
+                setPhone(phoneField.getText());
+                setEmail(emailField.getText());
+                setPassword(seller.getPassword());
+                setPlainPassword(seller.getPlainPassword());
+                ; }
+        };
+        if (isSellerValid(updatedSeller))
+        {
+            boolean result = DatabaseOps.updateSeller(updatedSeller);
+            if (result)
+            {
+                Utils.currentSeller = updatedSeller;
+                System.out.println("Seller updated successfully.");
+            }
+            else
+                System.out.println("Error updating seller.");
+        }
 
-        // For demonstration purposes, printing the values to the console
-        System.out.println("CIF: " + cif);
-        System.out.println("Name: " + name);
-        System.out.println("Business Name: " + businessName);
-        System.out.println("Phone: " + phone);
-        System.out.println("Email: " + email);
-        System.out.println("Password: " + password);
 
-        // Add additional logic here for handling the input (e.g., validation, storing data, etc.)
+
+    }
+
+    public boolean isSellerValid(SellerEntity seller)
+    {
+        return seller != null && seller.getCif() != null && !seller.getCif().isEmpty() &&
+                seller.getName() != null && !seller.getName().isEmpty() &&
+                seller.getBusinessName() != null && !seller.getBusinessName().isEmpty() &&
+                seller.getPhone() != null && !seller.getPhone().isEmpty() &&
+                seller.getPassword() != null && !seller.getPassword().isEmpty();
     }
 }
+
+
+
 

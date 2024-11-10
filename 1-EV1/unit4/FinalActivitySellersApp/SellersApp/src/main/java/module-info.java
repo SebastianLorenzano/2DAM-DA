@@ -1,13 +1,18 @@
 module com.sl2425.da.sellersapp {
     requires javafx.controls;
     requires javafx.fxml;
-    requires jakarta.persistence;
-    requires java.naming;
     requires org.hibernate.orm.core;
+    requires java.naming;
+    requires jakarta.persistence;
+    requires jdk.jshell;
 
+    // Open the entities package to Hibernate for reflection access
+    opens com.sl2425.da.sellersapp.Model.Entities to org.hibernate.orm.core;
 
-    opens com.sl2425.da.sellersapp to javafx.fxml;
+    // Export the main package for use by other modules
     exports com.sl2425.da.sellersapp;
-    exports com.sl2425.da.sellersapp.Controllers;
+
+    exports com.sl2425.da.sellersapp.Model.Entities;
+
     opens com.sl2425.da.sellersapp.Controllers to javafx.fxml;
 }

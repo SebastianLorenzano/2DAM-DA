@@ -3,17 +3,17 @@
     "-//Hibernate/Hibernate Configuration DTD//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="connection.url">jdbc:postgresql://localhost:5432/onlinemarketsl_2425</property>
-    <property name="connection.driver_class">org.postgresql.Driver</property>
-    <property name="connection.username">postgres</property>
-    <property name="connection.password">postgres</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>
-    <!-- DB schema will be updated if needed -->
-    <mapping class="com.sl2425.da.sellersapp.Model.Entities.SellerEntity"/>
-    <mapping class="com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity"/>
-    <mapping class="com.sl2425.da.sellersapp.Model.Entities.ProductEntity"/>
-    <mapping class="com.sl2425.da.sellersapp.Model.Entities.CategoryEntity"/>
+    <session-factory>
+      <property name="connection.url">jdbc:postgresql://localhost:5432/onlinemarket</property>
+      <property name="connection.driver_class">org.postgresql.Driver</property>
+      <property name="connection.username">postgres</property>
+      <property name="connection.password">postgres</property>
+      <property name="hibernate.hbm2ddl.auto">update</property>
+      <!-- DB schema will be updated if needed -->
+      <mapping class="com.sl2425.da.sellersapp.Model.Entities.SellerEntity"/>
+      <mapping class="com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity"/>
+      <mapping class="com.sl2425.da.sellersapp.Model.Entities.ProductEntity"/>
+      <mapping class="com.sl2425.da.sellersapp.Model.Entities.CategoryEntity"/>
 
-  </session-factory>
+    </session-factory>
 </hibernate-configuration>

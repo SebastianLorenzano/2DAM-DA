@@ -13,3 +13,21 @@
 [08-11-2024 19:38] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
 [08-11-2024 19:39] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
 [08-11-2024 19:39] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:30] SEVERE: Failed to create SessionFactory: Unable to perform unmarshalling at line number 0 and column 0 in RESOURCE hibernate.cfg.xml. Message: null
+[10-11-2024 17:56] SEVERE: Failed to create SessionFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Error calling Driver.connect() [FATAL: database "onlinemarketsl_2425" does not exist]
+[10-11-2024 17:56] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:57] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:57] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:57] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:58] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[10-11-2024 17:58] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:59] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 17:59] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[10-11-2024 18:00] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 18:02] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[10-11-2024 18:02] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 18:37] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
+[10-11-2024 18:37] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+[10-11-2024 18:43] SEVERE: Error during login check: Cannot invoke "Object.toString()" because "seller" is null
+[10-11-2024 18:44] SEVERE: Error during login check: Cannot invoke "Object.toString()" because "seller" is null
+[10-11-2024 19:23] SEVERE: Error during seller update: not-null property references a null or transient value: com.sl2425.da.sellersapp.Model.Entities.SellerEntity.plainPassword
