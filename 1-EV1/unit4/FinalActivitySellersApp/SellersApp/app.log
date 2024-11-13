@@ -1,33 +1,19 @@
-[08-11-2024 19:02] SEVERE: Error during login check: org.hibernate.query.sqm.UnknownEntityException: Could not resolve root entity 'SellerEntity'
-[08-11-2024 19:06] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:07] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:08] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:11] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:11] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:11] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:23] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[08-11-2024 19:25] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[08-11-2024 19:26] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.SellersApp.sessionFactory" is null
-[08-11-2024 19:32] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[08-11-2024 19:38] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[08-11-2024 19:38] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[08-11-2024 19:39] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[08-11-2024 19:39] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:30] SEVERE: Failed to create SessionFactory: Unable to perform unmarshalling at line number 0 and column 0 in RESOURCE hibernate.cfg.xml. Message: null
-[10-11-2024 17:56] SEVERE: Failed to create SessionFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Error calling Driver.connect() [FATAL: database "onlinemarketsl_2425" does not exist]
-[10-11-2024 17:56] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:57] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:57] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:57] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:58] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[10-11-2024 17:58] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:59] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 17:59] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[10-11-2024 18:00] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 18:02] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[10-11-2024 18:02] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 18:37] SEVERE: Failed to create SessionFactory: Could not instantiate persister org.hibernate.persister.entity.SingleTableEntityPersister
-[10-11-2024 18:37] SEVERE: Error during login check: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
-[10-11-2024 18:43] SEVERE: Error during login check: Cannot invoke "Object.toString()" because "seller" is null
-[10-11-2024 18:44] SEVERE: Error during login check: Cannot invoke "Object.toString()" because "seller" is null
-[10-11-2024 19:23] SEVERE: Error during seller update: not-null property references a null or transient value: com.sl2425.da.sellersapp.Model.Entities.SellerEntity.plainPassword
+[11-11-2024 01:07] WARNING: Error updating seller: There were no changes to update.
+[11-11-2024 01:07] WARNING: Error updating seller: There were no changes to update.
+[11-11-2024 01:07] WARNING: Error updating seller: Email is not valid.
+[11-11-2024 01:07] WARNING: Error updating seller: Email is not valid.
+[11-11-2024 01:07] WARNING: Error updating seller: Email is not valid.
+[11-11-2024 01:07] WARNING: Error updating seller: Email is not valid.
+[11-11-2024 01:08] WARNING: Error updating seller: Business name is not valid.
+[11-11-2024 01:08] WARNING: Error updating seller: Business name is not valid.
+[11-11-2024 01:08] WARNING: Error updating seller: Business name is not valid.
+[11-11-2024 01:08] WARNING: Error updating seller: Name is not valid.
+[11-11-2024 01:21] WARNING: Error updating seller: There were no changes to update.
+[11-11-2024 01:21] WARNING: Error updating seller: Business name is not valid.
+[11-11-2024 01:22] WARNING: Error updating seller: Business name is not valid.
+[11-11-2024 01:23] WARNING: Error updating seller: Name is not valid.
+[11-11-2024 01:24] WARNING: Error updating seller: Name is not valid.
+[11-11-2024 01:24] WARNING: Error updating seller: Name is not valid.
+[11-11-2024 01:24] WARNING: Error updating seller: Name is not valid.
+[11-11-2024 01:25] WARNING: Error updating seller: There were no changes to update.
+[11-11-2024 01:25] WARNING: Error updating seller: Business name is not valid.

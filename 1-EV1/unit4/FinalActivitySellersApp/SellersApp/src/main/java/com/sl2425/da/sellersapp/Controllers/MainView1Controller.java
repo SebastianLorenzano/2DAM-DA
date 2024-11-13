@@ -2,6 +2,7 @@ package com.sl2425.da.sellersapp.Controllers;
 
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.Model.LogProperties;
 import com.sl2425.da.sellersapp.Model.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,11 +35,10 @@ public class MainView1Controller {
     @FXML
     private Button confirmButton;
 
-    private SellerEntity seller = null;
+    private static SellerEntity seller = null;
 
     @FXML
     private void initialize() {
-        // Initialization logic, if needed
         confirmButton.setOnAction(event -> handleConfirmAction());
         seller = Utils.currentSeller;
         if (seller == null)
@@ -51,22 +51,23 @@ public class MainView1Controller {
             phoneField.setText(seller.getPhone());
             emailField.setText(seller.getEmail());
             passwordField.setText("********");
+            confirmPassField.setText("********");
         }
     }
 
-    private void handleConfirmAction() {
-        SellerEntity updatedSeller = new SellerEntity()
-        { {
-                setId(seller.getId());
-                setCif(cifField.getText());
-                setName(nameField.getText());
-                setBusinessName(businessNameField.getText());
-                setPhone(phoneField.getText());
-                setEmail(emailField.getText());
-                setPassword(seller.getPassword());
-                setPlainPassword(seller.getPlainPassword());
-                ; }
-        };
+    private void handleConfirmAction()
+    {
+        SellerEntity updatedSeller = getSellerFromFields();
+        if (!passwordField.getText().equals("********"))
+        {
+            String newPassword = passwordField.getText();
+            if (!newPassword.equals(confirmPassField.getText()))
+            {
+                Utils.showError("Error updating seller: Passwords do not match.");
+                return;
+            }
+            updatedSeller.setPassword(Utils.encryptToMD5(newPassword).toUpperCase());
+        }
         if (isSellerValid(updatedSeller))
         {
             boolean result = DatabaseOps.updateSeller(updatedSeller);
@@ -74,22 +75,98 @@ public class MainView1Controller {
             {
                 Utils.currentSeller = updatedSeller;
                 System.out.println("Seller updated successfully.");
+                Utils.showConfirmation("Changes were made successfully!");
             }
             else
+            {
+                Utils.showError("Error updating seller.");
                 System.out.println("Error updating seller.");
+            }
         }
-
-
-
     }
 
-    public boolean isSellerValid(SellerEntity seller)
+    private static boolean isSellerEqualToCurrent(SellerEntity newSeller)
     {
-        return seller != null && seller.getCif() != null && !seller.getCif().isEmpty() &&
-                seller.getName() != null && !seller.getName().isEmpty() &&
-                seller.getBusinessName() != null && !seller.getBusinessName().isEmpty() &&
-                seller.getPhone() != null && !seller.getPhone().isEmpty() &&
-                seller.getPassword() != null && !seller.getPassword().isEmpty();
+        return newSeller.getCif().equals(seller.getCif()) &&
+                newSeller.getName().equals(seller.getName()) &&
+                newSeller.getBusinessName().equals(seller.getBusinessName()) &&
+                newSeller.getPhone().equals(seller.getPhone()) &&
+                newSeller.getEmail().equals(seller.getEmail()) &&
+                newSeller.getPassword().equals(seller.getPassword());
+    }
+
+    private static boolean isSellerValid(SellerEntity newSeller)
+    {
+        if (newSeller == null)
+        {
+            LogProperties.logger.severe("Error updating seller: Seller is null.");
+            Utils.showError("Error updating seller: Seller is null.");
+            return false;
+        }
+
+        if (isSellerEqualToCurrent(newSeller))
+        {
+            LogProperties.logger.warning("Error updating seller: There were no changes to update.");
+            Utils.showError("There were no changes to update.");
+            return false;
+        }
+
+        if (newSeller.getName() == null || newSeller.getName().isEmpty() ||
+                !newSeller.getBusinessName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9]+(?: [A-Za-zÀ-ÖØ-öø-ÿ0-9]+){0,149}$"))
+        {
+            LogProperties.logger.warning("Error updating seller: Name is not valid.");
+            Utils.showError("Error updating seller: Name is not valid.");
+            return false;
+        }
+
+        if (!newSeller.getBusinessName().isEmpty() &&
+                (!newSeller.getBusinessName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9 ]{1,150}$") ||
+                        newSeller.getBusinessName().length() > 150))
+        {
+            LogProperties.logger.warning("Error updating seller: Business name is not valid.");
+            Utils.showError("Error updating seller: Business name is not valid.");
+            return false;
+        }
+
+        if (!newSeller.getPhone().isEmpty() &&
+                !newSeller.getPhone().matches("^\\d{1,9}(-\\d{1,9})*$"))
+        {
+            LogProperties.logger.warning("Error updating seller: Phone is not valid.");
+            Utils.showError("Error updating seller: Phone is not valid.");
+            return false;
+        }
+        if (!newSeller.getEmail().isEmpty() &&
+                !newSeller.getEmail().matches("^[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") &&
+                newSeller.getEmail().length() <= 254)
+        {
+            LogProperties.logger.warning("Error updating seller: Email is not valid.");
+            Utils.showError("Error updating seller: Email is not valid.");
+            return false;
+        }
+        if (!newSeller.getPassword().isEmpty() &&
+                !newSeller.getPassword().matches("^[A-Fa-f0-9]{32}$"))
+        {
+            LogProperties.logger.warning("Error updating seller: Password is not valid.");
+            Utils.showError("Error updating seller: Password is not valid.");
+            return false;
+        }
+        return true;
+    }
+
+    private SellerEntity getSellerFromFields()
+    {
+        return new SellerEntity()
+        { {
+            setId(seller.getId());
+            setCif(cifField.getText());
+            setName(nameField.getText());
+            setBusinessName(businessNameField.getText());
+            setPhone(phoneField.getText());
+            setEmail(emailField.getText());
+            setPassword(seller.getPassword());
+            setPlainPassword(seller.getPlainPassword());}
+        };
+
     }
 }
 

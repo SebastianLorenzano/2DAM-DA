@@ -3,6 +3,8 @@ package com.sl2425.da.sellersapp.Controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
@@ -11,13 +13,19 @@ public class MainController {
     @FXML
     private StackPane contentPane;
 
-    // Method to load a specific view into the content pane
+    @FXML
+    private ImageView imageButton1;
+
+    @FXML
+    private void initialize() {
+        Image image = new Image(getClass().getResource("/com/sl2425/da/sellersapp/images/profile.png").toExternalForm());
+        imageButton1.setImage(image);
+    }
+
+
     private void loadView(String fxmlFile) {
         try {
-            // Load the FXML for the selected view
             Parent view = FXMLLoader.load(getClass().getResource(fxmlFile));
-
-            // Clear existing content and add the new view
             contentPane.getChildren().clear();
             contentPane.getChildren().add(view);
         } catch (IOException e) {
