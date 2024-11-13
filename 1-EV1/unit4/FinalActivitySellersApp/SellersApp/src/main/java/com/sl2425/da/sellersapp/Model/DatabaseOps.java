@@ -7,18 +7,21 @@ import org.hibernate.query.Query;
 import static com.sl2425.da.sellersapp.Model.LogProperties.logger;
 import com.sl2425.da.sellersapp.Model.Entities.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseOps
 {
 
     public final static SessionFactory sessionFactory;
+
     static
     {
         SessionFactory temp = null;
         try
         {
             temp = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             logger.severe("Failed to create SessionFactory: " + e.getMessage());
         }
@@ -48,8 +51,7 @@ public class DatabaseOps
             query.setParameter("cif", cif);
             query.setParameter("password", password);
             seller = query.uniqueResult();
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             logger.severe("Error during login check: " + e.getMessage());
             e.printStackTrace();
@@ -57,18 +59,22 @@ public class DatabaseOps
         return seller;
     }
 
-    public static boolean updateSeller(SellerEntity updatedSeller) {
-        if (sessionFactory == null) {
+    public static boolean updateSeller(SellerEntity updatedSeller)
+    {
+        if (sessionFactory == null)
+        {
             logger.severe("SessionFactory is not initialized. Cannot proceed with updating seller.");
             return false;
         }
 
         Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = sessionFactory.openSession())
+        {
             transaction = session.beginTransaction();
 
             SellerEntity seller = session.get(SellerEntity.class, updatedSeller.getId());
-            if (seller != null) {
+            if (seller != null)
+            {
                 seller.setName(updatedSeller.getName());
                 seller.setBusinessName(updatedSeller.getBusinessName());
                 seller.setPhone(updatedSeller.getPhone());
@@ -78,12 +84,15 @@ public class DatabaseOps
                 transaction.commit();
                 System.out.println("Seller updated successfully.");
                 return true;
-            } else {
+            } else
+            {
                 System.out.println("Seller with ID " + updatedSeller.getId() + " not found.");
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             System.out.println("Error during seller update: " + e.getMessage());
-            if (transaction != null && transaction.isActive()) {
+            if (transaction != null && transaction.isActive())
+            {
                 transaction.rollback();
             }
             logger.severe("Error during seller update: " + e.getMessage());
@@ -91,5 +100,46 @@ public class DatabaseOps
         }
         return false;
     }
+
+    public static List<SellerProductEntity> SelectSellerProducts(SellerEntity seller) // CHECK
+    {
+        List<SellerProductEntity> result = null;
+        if (seller == null)
+            return result;
+        try (Session session = sessionFactory.openSession())
+        {
+            Query<SellerProductEntity> query = session.createQuery(
+                    "from SellerProductEntity where seller =: seller", SellerProductEntity.class);
+            query.setParameter("seller", seller);
+            result = query.getResultList();
+            return result;
+        } catch (Exception e)
+        {
+            logger.severe("Error during product selection: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static List<ProductEntity> SelectAvailableProducts(SellerEntity seller) // CHECK
+    {
+        List<ProductEntity> result = null;
+        if (seller == null)
+            return result;
+        try (Session session = sessionFactory.openSession())
+        {
+            Query<ProductEntity> query = session.createQuery(
+                    "from ProductEntity where id not in (select product from SellerProductEntity where seller = :seller)", ProductEntity.class);
+            query.setParameter("seller", seller);
+            result = query.getResultList();
+            return result;
+        } catch (Exception e)
+        {
+            logger.severe("Error during product selection: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
+
 

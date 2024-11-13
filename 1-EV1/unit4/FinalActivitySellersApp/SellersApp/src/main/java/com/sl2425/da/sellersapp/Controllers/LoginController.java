@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
+import com.sl2425.da.sellersapp.Model.LogProperties;
 
 public class LoginController
 {
@@ -21,20 +22,26 @@ public class LoginController
     private PasswordField passwordField;
 
     @FXML
-    private void onLoginButtonClick() {
+    private synchronized void onLoginButtonClick() {
         String username = cifField.getText();
         String password = Utils.encryptToMD5(passwordField.getText()).toUpperCase();
-        System.out.println("Username: " + username + " Password: " + password);
         if (checkLogin(username, password))
         openMainWindow();
     }
 
     private boolean checkLogin(String cif, String password)
     {
+        if (cif.isEmpty() || password.isEmpty())
+        {
+            LogProperties.logger.warning("Fields are empty");
+            Utils.showError("Fields are empty");
+            return false;
+        }
         SellerEntity seller = DatabaseOps.SelectSellerWithCifAndPassword(cif, password);
         if (seller == null)
         {
-            System.out.println("Login failed");
+            LogProperties.logger.warning("Login failed: Invalid credentials");
+            Utils.showError("Login failed: Invalid credentials");
             return false;
         }
         Utils.currentSeller = seller;

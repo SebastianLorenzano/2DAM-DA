@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.util.Objects;
+
 public class MainView1Controller {
 
     @FXML
@@ -87,12 +89,13 @@ public class MainView1Controller {
 
     private static boolean isSellerEqualToCurrent(SellerEntity newSeller)
     {
-        return newSeller.getCif().equals(seller.getCif()) &&
-                newSeller.getName().equals(seller.getName()) &&
-                newSeller.getBusinessName().equals(seller.getBusinessName()) &&
-                newSeller.getPhone().equals(seller.getPhone()) &&
-                newSeller.getEmail().equals(seller.getEmail()) &&
-                newSeller.getPassword().equals(seller.getPassword());
+        return newSeller != null &&
+                Objects.equals(newSeller.getCif(), seller.getCif()) &&
+                Objects.equals(newSeller.getName(), seller.getName()) &&
+                Objects.equals(newSeller.getBusinessName(), seller.getBusinessName()) &&
+                Objects.equals(newSeller.getPhone(), seller.getPhone()) &&
+                Objects.equals(newSeller.getEmail(), seller.getEmail()) &&
+                Objects.equals(newSeller.getPassword(), seller.getPassword());
     }
 
     private static boolean isSellerValid(SellerEntity newSeller)
@@ -106,13 +109,13 @@ public class MainView1Controller {
 
         if (isSellerEqualToCurrent(newSeller))
         {
-            LogProperties.logger.warning("Error updating seller: There were no changes to update.");
+            LogProperties.logger.severe("Error updating seller: There were no changes to update.");
             Utils.showError("There were no changes to update.");
             return false;
         }
 
         if (newSeller.getName() == null || newSeller.getName().isEmpty() ||
-                !newSeller.getBusinessName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9]+(?: [A-Za-zÀ-ÖØ-öø-ÿ0-9]+){0,149}$"))
+                !newSeller.getName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9]+(?: [A-Za-zÀ-ÖØ-öø-ÿ0-9]+){0,149}$"))
         {
             LogProperties.logger.warning("Error updating seller: Name is not valid.");
             Utils.showError("Error updating seller: Name is not valid.");
@@ -120,7 +123,7 @@ public class MainView1Controller {
         }
 
         if (!newSeller.getBusinessName().isEmpty() &&
-                (!newSeller.getBusinessName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9 ]{1,150}$") ||
+                (!newSeller.getBusinessName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9 .,*&@#$%^()!?'-]{1,150}$") ||
                         newSeller.getBusinessName().length() > 150))
         {
             LogProperties.logger.warning("Error updating seller: Business name is not valid.");
@@ -129,7 +132,7 @@ public class MainView1Controller {
         }
 
         if (!newSeller.getPhone().isEmpty() &&
-                !newSeller.getPhone().matches("^\\d{1,9}(-\\d{1,9})*$"))
+                !newSeller.getPhone().matches("^\\d{3,9}(-\\d{1,9})*$"))
         {
             LogProperties.logger.warning("Error updating seller: Phone is not valid.");
             Utils.showError("Error updating seller: Phone is not valid.");
@@ -166,7 +169,6 @@ public class MainView1Controller {
             setPassword(seller.getPassword());
             setPlainPassword(seller.getPlainPassword());}
         };
-
     }
 }
 
