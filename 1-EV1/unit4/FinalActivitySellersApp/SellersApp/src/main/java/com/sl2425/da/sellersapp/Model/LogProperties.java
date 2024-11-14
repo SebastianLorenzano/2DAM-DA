@@ -17,7 +17,7 @@ public class LogProperties
             fileHandler.setFormatter(new CustomFormatter());
             logger.addHandler(fileHandler);
             logger.setLevel(java.util.logging.Level.ALL);
-            logger.setUseParentHandlers(false); //False to disable console output
+            logger.setUseParentHandlers(true); //False to disable console output
         }
         catch (IOException e)
         {

@@ -4,7 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.sl2425.da.sellersapp.Controllers.MainView2Controller">
 
     <!-- Title Label -->
     <Label text="Add to store" style="-fx-font-size: 2.5em; -fx-font-weight: bold; -fx-text-fill: #333333;" />
@@ -19,11 +20,11 @@
 
         <!-- Category Label and ComboBox -->
         <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 1.5em;" />
-        <ComboBox fx:id="categoryComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <ComboBox fx:id="categoryBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
         <!-- Product Label and ComboBox -->
         <Label text="Product:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 1.5em;" />
-        <ComboBox fx:id="productComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <ComboBox fx:id="productBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
         <!-- Stock Label, Slider, and Units Label -->
         <Label text="Stock:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 1.5em;" />

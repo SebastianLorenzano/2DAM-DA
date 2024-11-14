@@ -40,6 +40,19 @@ public class SellerProductEntity
     @Column(name = "stock", nullable = false)
     private Integer stock;
 
+    public SellerProductEntity()
+    {
+    }
+
+    public SellerProductEntity(com.sl2425.da.sellersapp.Model.Entities.SellerEntity seller,
+                               ProductEntity product, BigDecimal price, Integer stock)
+    {
+        this.seller = seller;
+        this.product = product;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public Integer getId()
     {
         return id;

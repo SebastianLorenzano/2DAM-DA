@@ -7,6 +7,7 @@ import org.hibernate.query.Query;
 import static com.sl2425.da.sellersapp.Model.LogProperties.logger;
 import com.sl2425.da.sellersapp.Model.Entities.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +102,21 @@ public class DatabaseOps
         return false;
     }
 
-    public static List<SellerProductEntity> SelectSellerProducts(SellerEntity seller) // CHECK
+    public static List<CategoryEntity> SelectCategories() // CHECK
+    {
+        List<CategoryEntity> result = null;
+        try (Session session = sessionFactory.openSession()) {
+            Query<CategoryEntity> query = session.createQuery("from CategoryEntity", CategoryEntity.class);
+            result = query.getResultList();
+        } catch (Exception e) {
+            logger.severe("Error during category selection: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /*
+    public static List<SellerProductEntity> SelectSellerProducts(SellerEntity seller, CategoryEntity category) // CHECK
     {
         List<SellerProductEntity> result = null;
         if (seller == null)
@@ -109,7 +124,7 @@ public class DatabaseOps
         try (Session session = sessionFactory.openSession())
         {
             Query<SellerProductEntity> query = session.createQuery(
-                    "from SellerProductEntity where seller =: seller", SellerProductEntity.class);
+                    "from SellerProductEntity where seller =: seller and category =: category", SellerProductEntity.class);
             query.setParameter("seller", seller);
             result = query.getResultList();
             return result;
@@ -120,17 +135,21 @@ public class DatabaseOps
         }
         return result;
     }
+    */
 
-    public static List<ProductEntity> SelectAvailableProducts(SellerEntity seller) // CHECK
+    public static List<ProductEntity> SelectAvailableProducts(SellerEntity seller, CategoryEntity category) // CHECK
     {
         List<ProductEntity> result = null;
-        if (seller == null)
+        if (seller == null || category == null)
             return result;
         try (Session session = sessionFactory.openSession())
         {
             Query<ProductEntity> query = session.createQuery(
-                    "from ProductEntity where id not in (select product from SellerProductEntity where seller = :seller)", ProductEntity.class);
+                    "FROM ProductEntity p WHERE (p.category = :category) AND " +
+                            "p.id NOT IN (SELECT sp.product.id FROM SellerProductEntity sp WHERE sp.seller = :seller)",
+                    ProductEntity.class);
             query.setParameter("seller", seller);
+            query.setParameter("category", category);
             result = query.getResultList();
             return result;
         } catch (Exception e)
@@ -139,6 +158,28 @@ public class DatabaseOps
             e.printStackTrace();
         }
         return result;
+    }
+
+    public static boolean InsertSellerProduct(SellerEntity seller, ProductEntity product, BigDecimal price, int stock)
+    {
+        if (seller == null || product == null || price.compareTo(BigDecimal.ZERO) <= 0)
+            return false;
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession())
+        {
+            transaction = session.beginTransaction();
+            SellerProductEntity sellerProduct = new SellerProductEntity(seller, product, price, stock);
+            session.save(sellerProduct);
+            transaction.commit();
+            return true;
+        } catch (Exception e)
+        {
+            if (transaction != null && transaction.isActive())
+                transaction.rollback();
+            logger.severe("Error during product insertion: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
     }
 }
 
