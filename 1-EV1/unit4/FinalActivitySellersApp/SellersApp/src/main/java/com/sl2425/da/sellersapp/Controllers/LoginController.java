@@ -60,8 +60,9 @@ public class LoginController
             mainStage.setScene(new Scene(root, 800, 600));
             mainStage.show();
             close();                // closes the login window
-
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }

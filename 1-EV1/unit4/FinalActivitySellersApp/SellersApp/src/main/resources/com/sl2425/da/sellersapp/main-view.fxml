@@ -14,30 +14,30 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.sl2425.da.sellersapp.Controllers.MainController">
     <!-- Left Column with 4 Image Buttons -->
     <left>
-        <VBox spacing="20" alignment="CENTER" style="-fx-background-color: #2f2f2f;">
+        <VBox spacing="20" alignment="CENTER" style="-fx-background-color: #b0e537;">
             <padding>
                 <Insets top="20" bottom="20" left="10" right="10"/>
             </padding>
 
-            <Button onAction="#showView1">
+            <Button onAction="#showView1" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fx:id="imageButton1" fitHeight="100" fitWidth="100"/>
                 </graphic>
             </Button>
 
-            <Button onAction="#showView2">
+            <Button onAction="#showView2" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fx:id="imageButton2" fitHeight="100" fitWidth="100" />
                 </graphic>
             </Button>
 
-            <Button>
+            <Button style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fx:id="imageButton3" fitHeight="100" fitWidth="100" />
                 </graphic>
             </Button>
 
-            <Button>
+            <Button onAction="#logout" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fx:id="imageButton4" fitHeight="100" fitWidth="100" />
                 </graphic>
