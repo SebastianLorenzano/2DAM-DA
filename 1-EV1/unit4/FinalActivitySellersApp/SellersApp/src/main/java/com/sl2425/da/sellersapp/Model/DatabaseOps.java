@@ -144,15 +144,14 @@ public class DatabaseOps
             return result;
         try (Session session = sessionFactory.openSession())
         {
-            Query<ProductEntity> query = session.createQuery(
-                    "FROM ProductEntity p WHERE (p.category = :category) AND " +
-                            "p.id NOT IN (SELECT sp.product.id FROM SellerProductEntity sp WHERE sp.seller = :seller)",
-                    ProductEntity.class);
-            query.setParameter("seller", seller);
-            query.setParameter("category", category);
+            Query<ProductEntity> query = session.createNativeQuery(
+                            "SELECT * FROM select_available_products(:sellerId, :categoryId)",
+                            ProductEntity.class)
+                    .setParameter("sellerId", seller.getId())
+                    .setParameter("categoryId", category.getId());
             result = query.getResultList();
-            return result;
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             logger.severe("Error during product selection: " + e.getMessage());
             e.printStackTrace();

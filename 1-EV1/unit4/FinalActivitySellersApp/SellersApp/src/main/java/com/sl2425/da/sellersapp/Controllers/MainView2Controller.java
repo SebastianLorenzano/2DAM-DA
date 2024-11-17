@@ -22,7 +22,7 @@ public class MainView2Controller {
     private ComboBox<ProductEntity> productBox;
 
     @FXML
-    private Slider stockSlider;
+    private Spinner<Integer> stockSpinner;
 
     @FXML
     private TextField priceTextField;
@@ -43,9 +43,7 @@ public class MainView2Controller {
         }
         initializeCategoriesBox();
         initializeProductsBox();
-
-        // Set default values or behavior if needed
-        stockSlider.setValue(0);
+        stockSpinner.setEditable(true);
 
         // Set event handler for add button
         categoryBox.setOnAction(event -> handleCategoriesBoxAction());
@@ -110,7 +108,7 @@ public class MainView2Controller {
     private void handleAddAction() {
         CategoryEntity category = categoryBox.getValue();
         ProductEntity product = productBox.getValue();
-        int stock = (int)stockSlider.getValue();
+        int stock = stockSpinner.getValue();
         String priceString = priceTextField.getText();
 
         if (category == null || product == null || priceString.isEmpty())
@@ -124,8 +122,8 @@ public class MainView2Controller {
             BigDecimal price = new BigDecimal(priceString);
             if (DatabaseOps.InsertSellerProduct(seller, product, price, stock))
             {
-                Utils.showConfirmation("Your product added successfully: " + product + " in category " + category +
-                        " with stock " + stock + " and price " + price);
+                Utils.showConfirmation("Your product added successfully: " + product.getProductName() + " in category "
+                        + category.getCategoryName() + " with stock " + stock + " and price " + price);
                 handleCategoriesBoxAction();
             }
             else
