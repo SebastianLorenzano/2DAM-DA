@@ -43,12 +43,38 @@ public class MainView2Controller {
         }
         initializeCategoriesBox();
         initializeProductsBox();
-        stockSpinner.setEditable(true);
+        initilizeStockSpinner();
 
         // Set event handler for add button
         categoryBox.setOnAction(event -> handleCategoriesBoxAction());
         addButton.setOnAction(event -> handleAddAction());
     }
+
+    private void initilizeStockSpinner() {
+        // Set up the value factory with limits
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 0);
+        stockSpinner.setValueFactory(valueFactory);
+
+        // Add a ChangeListener to the editor to prevent out-of-range values
+        TextField spinnerEditor = stockSpinner.getEditor();
+        spinnerEditor.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                int value = Integer.parseInt(newValue);
+                if (value < valueFactory.getMin()) {
+                    spinnerEditor.setText(String.valueOf(valueFactory.getMin()));
+                } else if (value > valueFactory.getMax()) {
+                    spinnerEditor.setText(String.valueOf(valueFactory.getMax()));
+                }
+            } catch (NumberFormatException e) {
+                // If parsing fails (e.g., the user types a non-numeric character), revert to the previous value
+                spinnerEditor.setText(oldValue);
+            }
+        });
+
+        stockSpinner.setEditable(true);
+    }
+
 
     private void initializeCategoriesBox()
     {
@@ -110,6 +136,12 @@ public class MainView2Controller {
         ProductEntity product = productBox.getValue();
         int stock = stockSpinner.getValue();
         String priceString = priceTextField.getText();
+
+        if (priceString.length() > 10)
+        {
+            Utils.showError("Price is too big. Please enter a valid price.");
+            return;
+        }
 
         if (category == null || product == null || priceString.isEmpty())
         {

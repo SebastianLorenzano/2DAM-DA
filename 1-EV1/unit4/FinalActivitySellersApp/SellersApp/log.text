@@ -1,2 +1,6 @@
 [13-11-2024 20:07] WARNING: Fields are empty
 [13-11-2024 20:07] WARNING: Login failed: Invalid credentials
+[18-11-2024 16:45] SEVERE: Error during product selection: Converting `org.hibernate.exception.SQLGrammarException` to JPA `PersistenceException` : JDBC exception executing SQL [SELECT * FROM select_available_products(?, ?)]
+[18-11-2024 16:45] SEVERE: Error during product selection: Converting `org.hibernate.exception.SQLGrammarException` to JPA `PersistenceException` : JDBC exception executing SQL [SELECT * FROM select_available_products(?, ?)]
+[18-11-2024 16:46] WARNING: Login failed: Invalid credentials
+[18-11-2024 16:52] SEVERE: Error during product insertion: Converting `org.hibernate.exception.DataException` to JPA `PersistenceException` : could not execute statement
