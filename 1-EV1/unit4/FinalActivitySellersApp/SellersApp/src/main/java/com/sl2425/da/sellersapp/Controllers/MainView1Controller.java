@@ -114,7 +114,7 @@ public class MainView1Controller {
             return false;
         }
 
-        if (newSeller.getName() == null || newSeller.getName().isEmpty() ||
+        if (newSeller.getName() == null || newSeller.getName().trim().isEmpty() ||
                 !newSeller.getName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9]+(?: [A-Za-zÀ-ÖØ-öø-ÿ0-9]+){0,149}$"))
         {
             LogProperties.logger.warning("Error updating seller: Name is not valid.");
@@ -122,7 +122,7 @@ public class MainView1Controller {
             return false;
         }
 
-        if (!newSeller.getBusinessName().isEmpty() &&
+        if (!newSeller.getBusinessName().trim().isEmpty() &&
                 (!newSeller.getBusinessName().matches("^[A-Za-zÀ-ÖØ-öø-ÿ0-9 .,*&@#$%^()!?'-]{1,150}$") ||
                         newSeller.getBusinessName().length() > 150))
         {
@@ -131,14 +131,14 @@ public class MainView1Controller {
             return false;
         }
 
-        if (!newSeller.getPhone().isEmpty() &&
+        if (!newSeller.getPhone().trim().isEmpty() &&
                 !newSeller.getPhone().matches("^\\d{3,9}(-\\d{1,9})*$"))
         {
             LogProperties.logger.warning("Error updating seller: Phone is not valid.");
             Utils.showError("Error updating seller: Phone is not valid.");
             return false;
         }
-        if (!newSeller.getEmail().isEmpty() &&
+        if (!newSeller.getEmail().trim().isEmpty() &&
                 !newSeller.getEmail().matches("^[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$") &&
                 newSeller.getEmail().length() <= 254)
         {
@@ -146,7 +146,7 @@ public class MainView1Controller {
             Utils.showError("Error updating seller: Email is not valid.");
             return false;
         }
-        if (!newSeller.getPassword().isEmpty() &&
+        if (!newSeller.getPassword().trim().isEmpty() &&
                 !newSeller.getPassword().matches("^[A-Fa-f0-9]{32}$"))
         {
             LogProperties.logger.warning("Error updating seller: Password is not valid.");

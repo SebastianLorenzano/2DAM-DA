@@ -31,7 +31,7 @@
                 </graphic>
             </Button>
 
-            <Button style="-fx-background-color: transparent;">
+            <Button onAction="#showView3" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fx:id="imageButton3" fitHeight="100" fitWidth="100" />
                 </graphic>

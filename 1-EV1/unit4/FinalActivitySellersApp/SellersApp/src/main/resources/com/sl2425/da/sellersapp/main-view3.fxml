@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" prefWidth="600" prefHeight="600"
+      fx:controller="com.sl2425.da.sellersapp.Controllers.MainView3Controller" style="-fx-padding: 20; -fx-background-color: #f4f4f4;">
+
+    <!-- Title Label -->
+    <VBox alignment="CENTER" spacing="30" style="-fx-padding: 20 20 40 20; -fx-background-color: #e0e0e0; -fx-border-color: #b0b0b0; -fx-border-width: 1;">
+        <Label text="Add to store" style="-fx-font-size: 2.5em; -fx-font-weight: bold; -fx-text-fill: #333333;" />
+    </VBox>
+
+    <!-- Form Grid -->
+    <GridPane hgap="15" vgap="20" style="-fx-padding: 100 20 20 20;" alignment="CENTER">
+        <!-- Column Constraints -->
+        <columnConstraints>
+            <ColumnConstraints minWidth="120" halignment="RIGHT" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="250" />
+        </columnConstraints>
+
+        <!-- Product Label and ComboBox -->
+        <Label text="Product:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 1.8em;" />
+        <ComboBox fx:id="productBox" prefWidth="350" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <!-- From Label and Date Picker -->
+        <Label text="From:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 1.8em;" />
+        <DatePicker fx:id="fromDatePicker" prefWidth="350" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <!-- To Label and Date Picker -->
+        <Label text="To:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 1.8em;" />
+        <DatePicker fx:id="toDatePicker" prefWidth="350" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <!-- Discount Label and TextField -->
+        <Label text="Discount:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-size: 1.5em;" />
+        <TextField fx:id="discountTextField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="350"/>
+    </GridPane>
+
+    <!-- Add Button -->
+    <!-- Add Button -->
+    <Button text="Add" fx:id="addButton" style="-fx-font-size: 1.8em; -fx-background-color: #4CAF50; -fx-text-fill: white;
+    -fx-padding: 10 20; -fx-border-radius: 5; -fx-background-radius: 5;" />
+</VBox>

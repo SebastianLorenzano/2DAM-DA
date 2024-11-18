@@ -43,38 +43,12 @@ public class MainView2Controller {
         }
         initializeCategoriesBox();
         initializeProductsBox();
-        initilizeStockSpinner();
+        initializeStockSpinner();
 
         // Set event handler for add button
         categoryBox.setOnAction(event -> handleCategoriesBoxAction());
         addButton.setOnAction(event -> handleAddAction());
     }
-
-    private void initilizeStockSpinner() {
-        // Set up the value factory with limits
-        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 0);
-        stockSpinner.setValueFactory(valueFactory);
-
-        // Add a ChangeListener to the editor to prevent out-of-range values
-        TextField spinnerEditor = stockSpinner.getEditor();
-        spinnerEditor.textProperty().addListener((observable, oldValue, newValue) -> {
-            try {
-                int value = Integer.parseInt(newValue);
-                if (value < valueFactory.getMin()) {
-                    spinnerEditor.setText(String.valueOf(valueFactory.getMin()));
-                } else if (value > valueFactory.getMax()) {
-                    spinnerEditor.setText(String.valueOf(valueFactory.getMax()));
-                }
-            } catch (NumberFormatException e) {
-                // If parsing fails (e.g., the user types a non-numeric character), revert to the previous value
-                spinnerEditor.setText(oldValue);
-            }
-        });
-
-        stockSpinner.setEditable(true);
-    }
-
 
     private void initializeCategoriesBox()
     {
@@ -106,6 +80,7 @@ public class MainView2Controller {
 
     private void initializeProductsBox()
     {
+        productBox.setPromptText("Select Product");
         productBox.setCellFactory(lv -> new ListCell<>() {
             @Override
             protected void updateItem(ProductEntity product, boolean empty) {
@@ -122,6 +97,32 @@ public class MainView2Controller {
         });
     }
 
+    private void initializeStockSpinner()
+    {
+        // Set up the value factory with limits
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 0);
+        stockSpinner.setValueFactory(valueFactory);
+
+        // Add a ChangeListener to the editor to prevent out-of-range values
+        TextField spinnerEditor = stockSpinner.getEditor();
+        spinnerEditor.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                int value = Integer.parseInt(newValue);
+                if (value < valueFactory.getMin()) {
+                    spinnerEditor.setText(String.valueOf(valueFactory.getMin()));
+                } else if (value > valueFactory.getMax()) {
+                    spinnerEditor.setText(String.valueOf(valueFactory.getMax()));
+                }
+            } catch (NumberFormatException e) {
+                // If parsing fails (e.g., the user types a non-numeric character), revert to the previous value
+                spinnerEditor.setText(oldValue);
+            }
+        });
+
+        stockSpinner.setEditable(true);
+    }
+
     private void handleCategoriesBoxAction()
     {
         CategoryEntity selectedCategory = categoryBox.getSelectionModel().getSelectedItem();
@@ -131,7 +132,8 @@ public class MainView2Controller {
             productBox.getItems().addAll(products);
     }
 
-    private void handleAddAction() {
+    private void handleAddAction()
+    {
         CategoryEntity category = categoryBox.getValue();
         ProductEntity product = productBox.getValue();
         int stock = stockSpinner.getValue();
@@ -165,9 +167,4 @@ public class MainView2Controller {
             Utils.showError("Invalid price. Please enter a valid number.");
         }
     }
-
-
-
-
-
 }

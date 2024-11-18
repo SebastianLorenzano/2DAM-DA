@@ -22,23 +22,23 @@
 
         <!-- Category Label and ComboBox -->
         <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-size: 1.8em;" />
-        <ComboBox fx:id="categoryBox" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <ComboBox fx:id="categoryBox" prefWidth="350" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
         <!-- Product Label and ComboBox -->
         <Label text="Product:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 1.8em;" />
-        <ComboBox fx:id="productBox" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="productBox" prefWidth="350" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
         <!-- Stock Label, Spinner, and Units Label -->
         <Label text="Stock:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-size: 1.8em;" />
         <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <Spinner fx:id="stockSpinner" min="0" max="1000" initialValue="0" prefWidth="250" />
+            <Spinner fx:id="stockSpinner" min="0" max="1000" initialValue="0" prefWidth="350" />
             <Label text="Units" style="-fx-font-size: 1.5em;" />
         </HBox>
 
         <!-- Price Label and TextField -->
         <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-size: 1.8em;" />
         <TextField fx:id="priceTextField" GridPane.columnIndex="1"
-                   GridPane.rowIndex="3" prefWidth="250" maxWidth="250"/>
+                   GridPane.rowIndex="3" prefWidth="350" maxWidth="350"/>
     </GridPane>
 
     <!-- Add Button -->
