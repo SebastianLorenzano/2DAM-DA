@@ -6,23 +6,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
 import com.sl2425.da.sellersapp.Model.*;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
-import static com.sl2425.da.sellersapp.Model.LogProperties.logger;
 
 public class SellersApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException
     {
+        DatabaseOps.init();         // Initialize Session Factory so it doesn't have a delay when the user logs in
         FXMLLoader fxmlLoader = new FXMLLoader(SellersApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 400);
         stage.setTitle("SellersApp — Login");
-        stage.setResizable(false);  // Desactiva la posibilidad de redimensionar la ventana
+        stage.setResizable(false);  // Makes sure the user cannot resize the window
         stage.setScene(scene);
         stage.show();
     }

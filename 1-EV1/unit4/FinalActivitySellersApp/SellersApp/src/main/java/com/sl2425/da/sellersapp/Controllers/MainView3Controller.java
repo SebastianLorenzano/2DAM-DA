@@ -1,20 +1,22 @@
 package com.sl2425.da.sellersapp.Controllers;
 
-import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
+import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
+import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
-import com.sl2425.da.sellersapp.Model.LogProperties;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class MainView3Controller
 {
 
     @FXML
-    private ComboBox<ProductEntity> productBox;
+    private ComboBox<SellerProductEntity> sellerProductBox;
 
     @FXML
     private DatePicker fromDatePicker;
@@ -28,11 +30,10 @@ public class MainView3Controller
     @FXML
     private Button addButton;
 
-    private static
-
     @FXML
     private void initialize() {
-        initializeProductsBox();
+        initializeSellerProductsBox();
+        initializeDatePickers();
 
         addButton.setOnAction(event -> handleAddAction());
     }
@@ -40,58 +41,165 @@ public class MainView3Controller
 
 
 
-    private void initializeProductsBox()
+    private void initializeSellerProductsBox()
     {
-        productBox.setPromptText("Select Product");
-        productBox.setCellFactory(lv -> new ListCell<>() {
+        List<SellerProductEntity> sellerProducts = DatabaseOps.SelectSellerProducts(Utils.currentSeller);
+        if (sellerProducts == null)
+        {
+            Utils.showError("Failed to load products. Please try again.");
+            return;
+        }
+        if (sellerProducts.isEmpty())
+        {
+            Utils.showConfirmation("You have no products to add offers to.");
+            return;
+        }
+        for (SellerProductEntity sellerProduct : sellerProducts)
+        {
+            if (!(sellerProduct.getOfferStartDate().isEqual(LocalDate.now()) ||         // if the offer is not active
+                    sellerProduct.getOfferStartDate().isAfter(LocalDate.now()) &&
+                            sellerProduct.getOfferEndDate().isBefore(LocalDate.now()) ||
+                    sellerProduct.getOfferEndDate().isEqual(LocalDate.now())))
+            {
+                sellerProductBox.getItems().add(sellerProduct);
+            }
+
+        }
+
+        sellerProductBox.setPromptText("Select your Product");
+        sellerProductBox.setCellFactory(lv -> new ListCell<>() {
             @Override
-            protected void updateItem(ProductEntity product, boolean empty) {
-                super.updateItem(product, empty);                       // Same as it does in categories right ontop
-                setText(empty ? null : product.getProductName());
+            protected void updateItem(SellerProductEntity sellerProduct, boolean empty) {
+                super.updateItem(sellerProduct, empty);                       // Same as it does in categories right ontop
+                setText(empty ? null : sellerProduct.getProduct().getProductName());
             }
         });
-        productBox.setButtonCell(new ListCell<>() {
+        sellerProductBox.setButtonCell(new ListCell<>() {
             @Override
-            protected void updateItem(ProductEntity product, boolean empty) {
-                super.updateItem(product, empty);
-                setText(empty ? null : product.getProductName());
+            protected void updateItem(SellerProductEntity sellerProduct, boolean empty) {
+                super.updateItem(sellerProduct, empty);
+                setText(empty ? null : sellerProduct.getProduct().getProductName());
             }
         });
     }
 
-    private void handleAddAction() {
-        ProductEntity product = productBox.getValue();
-        LocalDate fromDate = fromDatePicker.getValue();
-        LocalDate toDate = toDatePicker.getValue();
-        String discountString = discountTextField.getText();
+    private void initializeDatePickers()
+    {
+        fromDatePicker.setPromptText("From");
+        toDatePicker.setPromptText("To");
+        fromDatePicker.setValue(LocalDate.now());
+        toDatePicker.setValue(LocalDate.now().plusDays(1));
+    }
 
-        if (product == null || fromDate == null || toDate == null || discountString.isEmpty()) {
-            Utils.showError("Please fill in all fields before adding the offer.");
+    private void handleAddAction() {
+        SellerProductEntity sellerProduct = sellerProductBox.getValue();
+        sellerProduct.setOfferStartDate(fromDatePicker.getValue());
+        sellerProduct.setOfferEndDate(toDatePicker.getValue());
+        String discountString = discountTextField.getText();
+        int discount = 0;
+        try
+        {
+            discount = Integer.parseInt(discountString);
+        }
+        catch (NumberFormatException e)
+        {
+            Utils.showError("Invalid discount. Please enter a valid number.");
             return;
         }
 
+        if (isOfferValid(sellerProduct, fromDatePicker.getValue(), toDatePicker.getValue(), discount))
+        {
+            sellerProduct.setOfferStartDate(fromDatePicker.getValue());
+            sellerProduct.setOfferEndDate(toDatePicker.getValue());
+            double discountedPrice = sellerProduct.getPrice().doubleValue() * (1 - discount / 100.0);
+            sellerProduct.setOfferPrice(new BigDecimal(discountedPrice));
 
-        /*
-        try {
-            int discount = Integer.parseInt(discountString);
-            if (discount < 0 || discount > 100) {
-                Utils.showError("Invalid discount. Please enter a value between 0 and 100.");
-                return;
+            if (DatabaseOps.AddOffer(sellerProduct))
+            {
+                Utils.showConfirmation("Offer added successfully.");
             }
-
-            if (fromDate.isAfter(toDate)) {
-                Utils.showError("Invalid date range. 'From' date cannot be after 'To' date.");
-                return;
+            else
+            {
+                Utils.showError("Failed to add offer. Please try again.");
             }
-
-            if (DatabaseOps.InsertOffer(product, fromDate, toDate, discount)) {
-                Utils.showConfirmation("Offer added successfully for product: " + product.getProductName());
-            } else {
-                Utils.showError("Error adding offer. Please try again.");
-            }
-        } catch (NumberFormatException e) {
-            Utils.showError("Invalid discount. Please enter a valid number.");
         }
-        */
+
+
+    }
+
+    private boolean isOfferValid(SellerProductEntity sellerProduct, LocalDate fromDate, LocalDate toDate, int discount)
+    {
+        if (sellerProduct == null || fromDate == null || toDate == null)
+        {
+            Utils.showError("Please fill in all fields before adding the offer.");
+            return false;
+        }
+
+        if (ChronoUnit.DAYS.between(LocalDate.now(), fromDate) < 0)
+        {
+            Utils.showError("Invalid date. 'From' date must be today or later.");
+            return false;
+        }
+
+        if (discount < 0 || discount > 100)
+        {
+            Utils.showError("Invalid discount. Please enter a value between 0 and 100.");
+            return false;
+        }
+
+        long daysDistance = ChronoUnit.DAYS.between(fromDate, toDate);
+        if (daysDistance < 0)
+        {
+            Utils.showError("Invalid date range. 'From' date must be before 'to' date.");
+            return false;
+        }
+
+        if (daysDistance == 0)
+        {
+            Utils.showError("Invalid date range. 'From' date must be different 'to' date.");
+            return false;
+        }
+
+        if (daysDistance > 30)
+        {
+            Utils.showError("Invalid date range. Maximum offer duration is 30 days.");
+            return false;
+        }
+
+        if (daysDistance >  15 && discount > 10)
+        {
+            Utils.showError("Invalid discount. Maximum discount for offers longer than 15 days is 10%.");
+            return false;
+        }
+
+        if (daysDistance > 7 && discount > 15)
+        {
+            Utils.showError("Invalid discount. Maximum discount for offers longer than 7 days is 15%.");
+            return false;
+        }
+
+        if (daysDistance > 3 && discount > 20)
+        {
+            Utils.showError("Invalid discount. Maximum discount for offers longer than 3 days is 20%.");
+            return false;
+        }
+
+        if (daysDistance > 1 && discount > 30)
+        {
+            Utils.showError("Invalid discount. Maximum discount for offers longer than 1 day is 30%.");
+            return false;
+        }
+
+        if (daysDistance == 1 && discount > 50)
+        {
+            Utils.showError("Invalid discount. Maximum discount for offers lasting 1 day is 50%.");
+            return false;
+        }
+        // CHECK IF DATES COINCIDES WITH ANOTHER OFFER
+
+
+
+
+        return true;
     }
 }

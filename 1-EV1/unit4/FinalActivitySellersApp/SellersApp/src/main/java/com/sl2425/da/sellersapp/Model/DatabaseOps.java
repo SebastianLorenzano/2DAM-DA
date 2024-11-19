@@ -29,6 +29,23 @@ public class DatabaseOps
         sessionFactory = temp;
     }
 
+    public static void init()
+    {
+        if (sessionFactory == null)
+        {
+            logger.severe("SessionFactory is null. Cannot proceed with initialization.");
+            return;
+        }
+        try (Session session = sessionFactory.openSession())
+        {
+            logger.info("Database connection established.");
+        } catch (Exception e)
+        {
+            logger.severe("Error during database connection: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
     private static Session openSession() throws Exception
     {
 
@@ -115,8 +132,7 @@ public class DatabaseOps
         return result;
     }
 
-    /*
-    public static List<SellerProductEntity> SelectSellerProducts(SellerEntity seller, CategoryEntity category) // CHECK
+    public static List<SellerProductEntity> SelectSellerProducts(SellerEntity seller)
     {
         List<SellerProductEntity> result = null;
         if (seller == null)
@@ -124,10 +140,9 @@ public class DatabaseOps
         try (Session session = sessionFactory.openSession())
         {
             Query<SellerProductEntity> query = session.createQuery(
-                    "from SellerProductEntity where seller =: seller and category =: category", SellerProductEntity.class);
+                    "from SellerProductEntity where seller = :seller", SellerProductEntity.class);
             query.setParameter("seller", seller);
             result = query.getResultList();
-            return result;
         } catch (Exception e)
         {
             logger.severe("Error during product selection: " + e.getMessage());
@@ -135,7 +150,6 @@ public class DatabaseOps
         }
         return result;
     }
-    */
 
     public static List<ProductEntity> SelectAvailableProducts(SellerEntity seller, CategoryEntity category) // CHECK
     {

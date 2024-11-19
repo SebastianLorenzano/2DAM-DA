@@ -9,6 +9,7 @@ BEGIN
         SELECT p.*
         FROM products p
         WHERE p.category_id = categoryId
+          AND p.active = TRUE
           AND p.product_id NOT IN ( SELECT sp.product_id
                                       FROM seller_products sp
                                      WHERE sp.seller_id = sellerId
