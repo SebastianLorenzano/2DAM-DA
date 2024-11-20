@@ -194,6 +194,26 @@ public class DatabaseOps
         }
         return false;
     }
+
+    public static boolean AddOffer(SellerProductEntity sellerProduct)
+    {
+        if (sellerProduct == null)
+            return false;
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession())
+        {
+            transaction = session.beginTransaction();
+            transaction.commit();
+            return true;
+        } catch (Exception e)
+        {
+            if (transaction != null && transaction.isActive())
+                transaction.rollback();
+            logger.severe("Error during offer addition: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 
 

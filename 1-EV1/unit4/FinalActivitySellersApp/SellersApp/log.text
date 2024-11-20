@@ -6,3 +6,13 @@
 [18-11-2024 16:52] SEVERE: Error during product insertion: Converting `org.hibernate.exception.DataException` to JPA `PersistenceException` : could not execute statement
 [19-11-2024 19:15] INFO: Database connection established.
 [19-11-2024 19:17] INFO: Database connection established.
+[20-11-2024 19:31] INFO: Database connection established.
+[20-11-2024 20:31] INFO: Database connection established.
+[20-11-2024 20:33] INFO: Database connection established.
+[20-11-2024 20:37] INFO: Database connection established.
+[20-11-2024 20:38] INFO: Database connection established.
+[20-11-2024 20:39] INFO: Database connection established.
+[20-11-2024 20:40] INFO: Database connection established.
+[20-11-2024 20:42] INFO: Database connection established.
+[20-11-2024 20:46] INFO: Database connection established.
+[20-11-2024 20:48] INFO: Database connection established.

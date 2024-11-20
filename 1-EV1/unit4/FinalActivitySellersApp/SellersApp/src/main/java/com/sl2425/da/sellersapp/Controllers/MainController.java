@@ -81,8 +81,9 @@ public class MainController {
             Stage mainStage = new Stage();
             mainStage.setTitle("SellersApp — Main");
             mainStage.setScene(new Scene(root, 320, 400));
+            mainStage.setResizable(false);  // Makes sure the user cannot resize the window
             mainStage.show();
-            close();                // closes the main window
+            close();
         }
         catch (IOException e)
         {

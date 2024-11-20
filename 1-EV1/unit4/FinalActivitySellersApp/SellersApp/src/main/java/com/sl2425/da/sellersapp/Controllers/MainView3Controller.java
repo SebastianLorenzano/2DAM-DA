@@ -10,7 +10,9 @@ import javafx.scene.control.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainView3Controller
 {
@@ -30,6 +32,8 @@ public class MainView3Controller
     @FXML
     private Button addButton;
 
+    private List<SellerProductEntity> sellerProducts = new ArrayList<SellerProductEntity>();
+
     @FXML
     private void initialize() {
         initializeSellerProductsBox();
@@ -43,29 +47,7 @@ public class MainView3Controller
 
     private void initializeSellerProductsBox()
     {
-        List<SellerProductEntity> sellerProducts = DatabaseOps.SelectSellerProducts(Utils.currentSeller);
-        if (sellerProducts == null)
-        {
-            Utils.showError("Failed to load products. Please try again.");
-            return;
-        }
-        if (sellerProducts.isEmpty())
-        {
-            Utils.showConfirmation("You have no products to add offers to.");
-            return;
-        }
-        for (SellerProductEntity sellerProduct : sellerProducts)
-        {
-            if (!(sellerProduct.getOfferStartDate().isEqual(LocalDate.now()) ||         // if the offer is not active
-                    sellerProduct.getOfferStartDate().isAfter(LocalDate.now()) &&
-                            sellerProduct.getOfferEndDate().isBefore(LocalDate.now()) ||
-                    sellerProduct.getOfferEndDate().isEqual(LocalDate.now())))
-            {
-                sellerProductBox.getItems().add(sellerProduct);
-            }
-
-        }
-
+        refreshSellerProductsBox();
         sellerProductBox.setPromptText("Select your Product");
         sellerProductBox.setCellFactory(lv -> new ListCell<>() {
             @Override
@@ -91,6 +73,32 @@ public class MainView3Controller
         toDatePicker.setValue(LocalDate.now().plusDays(1));
     }
 
+    private void refreshSellerProductsBox()
+    {
+        sellerProductBox.getItems().clear();
+        List<SellerProductEntity> sellerProducts = DatabaseOps.SelectSellerProducts(Utils.currentSeller);
+        if (sellerProducts == null)
+        {
+            Utils.showError("Failed to load products. Please try again.");
+            return;
+        }
+        if (sellerProducts.isEmpty())
+        {
+            Utils.showConfirmation("You have no products to add offers to.");
+            return;
+        }
+        for (SellerProductEntity sellerProduct : sellerProducts)
+        {
+            if (!Utils.doesDatePeriodCollide(LocalDate.now(), LocalDate.now(),
+                    sellerProduct.getOfferStartDate(), sellerProduct.getOfferEndDate()))
+            {
+                sellerProductBox.getItems().add(sellerProduct);
+                this.sellerProducts.add(sellerProduct);
+            }
+
+        }
+    }
+
     private void handleAddAction() {
         SellerProductEntity sellerProduct = sellerProductBox.getValue();
         sellerProduct.setOfferStartDate(fromDatePicker.getValue());
@@ -113,18 +121,17 @@ public class MainView3Controller
             sellerProduct.setOfferEndDate(toDatePicker.getValue());
             double discountedPrice = sellerProduct.getPrice().doubleValue() * (1 - discount / 100.0);
             sellerProduct.setOfferPrice(new BigDecimal(discountedPrice));
-
-            if (DatabaseOps.AddOffer(sellerProduct))
-            {
-                Utils.showConfirmation("Offer added successfully.");
-            }
-            else
-            {
-                Utils.showError("Failed to add offer. Please try again.");
-            }
+            AddOffer(sellerProduct);
         }
+    }
 
 
+    private void AddOffer(SellerProductEntity sellerProduct)
+    {
+        if (DatabaseOps.AddOffer(sellerProduct))
+            Utils.showConfirmation("Offer added successfully.");
+        else
+            Utils.showError("Failed to add offer. Please try again.");
     }
 
     private boolean isOfferValid(SellerProductEntity sellerProduct, LocalDate fromDate, LocalDate toDate, int discount)
@@ -195,11 +202,16 @@ public class MainView3Controller
             Utils.showError("Invalid discount. Maximum discount for offers lasting 1 day is 50%.");
             return false;
         }
-        // CHECK IF DATES COINCIDES WITH ANOTHER OFFER
 
-
-
-
+        for (SellerProductEntity sProduct : sellerProductBox.getItems())
+        {
+            if (!Objects.equals(sProduct.getId(), sellerProduct.getId()) &&
+                    Utils.doesDatePeriodCollide(fromDate, toDate, sProduct.getOfferStartDate(), sProduct.getOfferEndDate()))
+            {
+                Utils.showError("Invalid date range. The offer coincides with another offer.");
+                return false;
+            }
+        }
         return true;
     }
 }
