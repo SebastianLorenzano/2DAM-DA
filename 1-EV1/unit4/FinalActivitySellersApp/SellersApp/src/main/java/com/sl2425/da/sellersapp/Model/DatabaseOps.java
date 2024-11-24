@@ -22,9 +22,10 @@ public class DatabaseOps
         try
         {
             temp = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
-            logger.severe("Failed to create SessionFactory: " + e.getMessage());
+            Utils.logException("Error during SessionFactory creation: ", e);
         }
         sessionFactory = temp;
     }
@@ -36,22 +37,22 @@ public class DatabaseOps
             logger.severe("SessionFactory is null. Cannot proceed with initialization.");
             return;
         }
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             logger.info("Database connection established.");
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
-            logger.severe("Error during database connection: " + e.getMessage());
-            e.printStackTrace();
+            Utils.logException("Error during database connection: ", e);
         }
     }
 
     private static Session openSession() throws Exception
     {
-
         Session session = sessionFactory.openSession();
         if (session == null)
-            logger.severe("SessionFactory is null. Please check your Hibernate configuration file (hibernate.cfg.xml) and ensure it is correctly placed in the classpath.");
+            throw new Exception("SessionFactory is null. Please check your Hibernate configuration file " +
+                    "(hibernate.cfg.xml) and ensure it is correctly placed in the classpath.");
         return session;
     }
 
@@ -61,17 +62,17 @@ public class DatabaseOps
         SellerEntity seller = null;
         if (cif == null || cif.isEmpty() || password == null || password.isEmpty())
             return null;
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             Query<SellerEntity> query = session.createQuery(
                     "from SellerEntity where cif = :cif and password = :password", SellerEntity.class);
             query.setParameter("cif", cif);
             query.setParameter("password", password);
             seller = query.uniqueResult();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
-            logger.severe("Error during login check: " + e.getMessage());
-            e.printStackTrace();
+            Utils.logException("Error during login check: ", e);
         }
         return seller;
     }
@@ -85,7 +86,7 @@ public class DatabaseOps
         }
 
         Transaction transaction = null;
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             transaction = session.beginTransaction();
 
@@ -109,21 +110,20 @@ public class DatabaseOps
         }
         catch (Exception e)
         {
-            logger.severe("Error during seller update: " + e.getMessage());
             if (transaction != null && transaction.isActive())
             {
                 transaction.rollback();
             }
-            logger.severe("Error during seller update: " + e.getMessage());
-            e.printStackTrace();
+            Utils.logException("Error during seller update: ", e);
         }
         return false;
     }
 
-    public static List<CategoryEntity> SelectCategories() // CHECK
+    public static List<CategoryEntity> SelectCategories()
     {
         List<CategoryEntity> result = null;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = openSession())
+        {
             Query<CategoryEntity> query = session.createQuery("from CategoryEntity", CategoryEntity.class);
             result = query.getResultList();
         }
@@ -140,7 +140,7 @@ public class DatabaseOps
         List<SellerProductEntity> result = null;
         if (seller == null)
             return result;
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             Query<SellerProductEntity> query = session.createQuery(
                     "from SellerProductEntity where seller = :seller", SellerProductEntity.class);
@@ -160,7 +160,7 @@ public class DatabaseOps
         List<ProductEntity> result = null;
         if (seller == null || category == null)
             return result;
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             Query<ProductEntity> query = session.createNativeQuery(
                             "SELECT * FROM select_available_products(:sellerId, :categoryId)",
@@ -182,7 +182,7 @@ public class DatabaseOps
         if (seller == null || product == null || price.compareTo(BigDecimal.ZERO) <= 0)
             return false;
         Transaction transaction = null;
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             transaction = session.beginTransaction();
             SellerProductEntity sellerProduct = new SellerProductEntity(seller, product, price, stock);
@@ -204,7 +204,7 @@ public class DatabaseOps
         if (updatedSellerProduct == null)
             return false;
         Transaction transaction = null;
-        try (Session session = sessionFactory.openSession())
+        try (Session session = openSession())
         {
             transaction = session.beginTransaction();
             SellerProductEntity sellerProduct = session.get(SellerProductEntity.class, updatedSellerProduct.getId());

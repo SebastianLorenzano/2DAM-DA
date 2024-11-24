@@ -1,6 +1,8 @@
 package com.sl2425.da.sellersapp.Model;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.logging.FileHandler;
 import java.util.logging.LogManager;
@@ -29,7 +31,7 @@ public class LogProperties {
             fileHandler.setLevel(Level.ALL);
             logger.addHandler(fileHandler);
 
-            //logger.setLevel(Level.ALL);
+            logger.setLevel(Level.ALL);
             // With this, you log a lot of the Hibernate's internal logs, which is not necessary
              // and just makes the log file bigger
 
@@ -53,6 +55,15 @@ public class LogProperties {
                     .append(record.getLevel()).append(": ")
                     .append(formatMessage(record))
                     .append("\n");
+
+            if (record.getThrown() != null)
+            {
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                record.getThrown().printStackTrace(pw);
+                builder.append(sw);
+            }
+
             return builder.toString();
         }
     }

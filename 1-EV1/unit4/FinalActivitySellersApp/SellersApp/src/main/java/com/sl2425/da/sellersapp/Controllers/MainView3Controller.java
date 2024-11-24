@@ -1,6 +1,5 @@
 package com.sl2425.da.sellersapp.Controllers;
 
-import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
@@ -12,7 +11,6 @@ import javafx.scene.input.KeyEvent;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -42,9 +40,6 @@ public class MainView3Controller
 
         addButton.setOnAction(event -> handleAddAction());
     }
-
-
-
 
     private void initializeSellerProductsBox()
     {
@@ -79,8 +74,6 @@ public class MainView3Controller
             // Destroys listeners to make sure user cannot write in the DatePicker
 
     }
-
-
 
     private void initializeFromDateDayCellFactory()
     {
@@ -126,7 +119,8 @@ public class MainView3Controller
         });
     }
 
-    private void initializeToDatePickers() {
+    private void initializeToDatePickers()
+    {
         fromDatePicker.valueProperty().addListener((observable, oldValue, newValue) ->
         {
             if (newValue != null) {
@@ -168,28 +162,67 @@ public class MainView3Controller
         });
     }
 
-
-    private void initializeDiscountSpinner() {
-        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 0);
+    private void initializeDiscountSpinner()
+    {
+        discountSpinner.setEditable(true);
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 0);
         discountSpinner.setValueFactory(valueFactory);
 
-        TextField spinnerEditor = discountSpinner.getEditor();
-        spinnerEditor.textProperty().addListener((observable, oldValue, newValue) -> {
-            try {
-                int value = Integer.parseInt(newValue);
-                if (value < valueFactory.getMin())
-                    spinnerEditor.setText(String.valueOf(valueFactory.getMin()));
-                else if (value > valueFactory.getMax())
-                    spinnerEditor.setText(String.valueOf(valueFactory.getMax()));
+        // Initializers
+        initializeSpinnerIsFocusedListener(valueFactory);
+        TextFormatter<Integer> formatter = initializeSpinnerChangeListener(valueFactory);
+        discountSpinner.getEditor().setTextFormatter(formatter);
+    }
+
+    private TextFormatter<Integer> initializeSpinnerChangeListener(SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory)
+    {
+        // TextFormatter to enforce numeric input within bounds
+        return new TextFormatter<>(
+                change ->
+                {
+                    String newText = change.getControlNewText();
+                    if (newText.isEmpty())
+                        return change; // Accept change to allow deletion
+
+                    if (newText.matches("\\d*"))
+                    {
+                        try
+                        {
+                            int value = Integer.parseInt(newText);
+                            if (value >= valueFactory.getMin() &&
+                                    value <= valueFactory.getMax())
+                                return change; // Valid change
+
+                        }
+                        catch (NumberFormatException ignored)
+                        {
+                        }
+                    }
+                    return null;
+                }
+        );
+    }
+
+    private void initializeSpinnerIsFocusedListener(SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory)
+    {
+        discountSpinner.focusedProperty().addListener((obs, wasFocused, isFocused) -> {
+            if (!isFocused)
+            {
+                String text = discountSpinner.getEditor().getText();
+                if (text.isEmpty())
+                    discountSpinner.getValueFactory().setValue(valueFactory.getMin());
+                else
+                    try
+                    {
+                        discountSpinner.getValueFactory().setValue(Integer.parseInt(text));
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        discountSpinner.getValueFactory().setValue(valueFactory.getMin());
+                    }
 
             }
-            catch (NumberFormatException e)
-            {
-                spinnerEditor.setText(oldValue);
-            }
         });
-        discountSpinner.setEditable(true);
     }
 
     private void refreshNewMaxDiscount(long daysBetween)
@@ -261,7 +294,6 @@ public class MainView3Controller
             AddOffer(sellerProduct);
         }
     }
-
 
     private void AddOffer(SellerProductEntity sellerProduct)
     {

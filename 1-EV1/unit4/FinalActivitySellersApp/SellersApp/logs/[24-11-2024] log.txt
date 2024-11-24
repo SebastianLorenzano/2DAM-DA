@@ -1,525 +1,1049 @@
-[24-11-2024 18:14] INFO: Application started
-[24-11-2024 18:14] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:14] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:14] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:14] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:14] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:14] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:14] INFO: Database connection established.
-[24-11-2024 18:15] INFO: Application started
-[24-11-2024 18:15] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:15] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:15] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:15] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:15] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:15] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:15] INFO: Database connection established.
-[24-11-2024 18:33] INFO: Application started
-[24-11-2024 18:33] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:33] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:33] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:33] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:33] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:33] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:33] INFO: Database connection established.
-[24-11-2024 18:36] INFO: Application started
-[24-11-2024 18:36] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:36] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:36] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:36] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:36] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:36] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:36] INFO: Database connection established.
-[24-11-2024 18:39] INFO: Application started
-[24-11-2024 18:39] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:39] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:39] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:39] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:39] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:39] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:39] INFO: Database connection established.
-[24-11-2024 18:40] INFO: Application started
-[24-11-2024 18:40] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:40] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:40] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:40] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:40] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:40] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:40] INFO: Database connection established.
-[24-11-2024 18:40] INFO: Application started
-[24-11-2024 18:40] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:40] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:40] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:40] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:40] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:40] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:40] INFO: Database connection established.
-[24-11-2024 18:41] INFO: Application started
-[24-11-2024 18:41] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:41] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:41] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:41] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:41] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:41] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:41] INFO: Database connection established.
-[24-11-2024 18:41] INFO: Application started
-[24-11-2024 18:41] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:41] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:41] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:41] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:41] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:41] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5ddd2ded] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:41] INFO: Database connection established.
-[24-11-2024 18:42] INFO: Application started
-[24-11-2024 18:42] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:42] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:42] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:42] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:42] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:42] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:42] INFO: Database connection established.
-[24-11-2024 18:43] INFO: Application started
-[24-11-2024 18:43] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:43] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:43] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:43] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:43] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:43] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:43] INFO: Database connection established.
-[24-11-2024 18:43] INFO: Application started
-[24-11-2024 18:43] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:43] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:43] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:43] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:43] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:43] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:43] INFO: Database connection established.
-[24-11-2024 18:44] INFO: Application started
-[24-11-2024 18:44] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:44] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:44] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:44] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:44] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:44] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:44] INFO: Database connection established.
-[24-11-2024 18:45] INFO: Application started
-[24-11-2024 18:45] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:45] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:45] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:45] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:45] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:45] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:45] INFO: Database connection established.
-[24-11-2024 18:45] INFO: Application started
-[24-11-2024 18:45] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:45] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:45] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:45] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:45] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:45] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:45] INFO: Database connection established.
-[24-11-2024 18:46] INFO: Application started
-[24-11-2024 18:46] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:46] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:46] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:46] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:46] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:46] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:46] INFO: Database connection established.
-[24-11-2024 18:48] INFO: Application started
-[24-11-2024 18:48] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:48] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:48] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:48] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:48] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:48] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:48] INFO: Database connection established.
-[24-11-2024 18:48] INFO: Application started
-[24-11-2024 18:48] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:48] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:48] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:48] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:48] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:48] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:48] INFO: Database connection established.
-[24-11-2024 18:49] INFO: Application started
-[24-11-2024 18:49] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:49] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:49] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:49] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:49] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:49] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:49] INFO: Database connection established.
-[24-11-2024 18:50] INFO: Application started
-[24-11-2024 18:50] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:50] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:50] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:50] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:50] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:50] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:50] INFO: Database connection established.
-[24-11-2024 18:51] INFO: Application started
-[24-11-2024 18:51] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:51] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:51] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:51] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:51] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:51] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:51] INFO: Database connection established.
-[24-11-2024 18:51] INFO: Application started
-[24-11-2024 18:51] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:51] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:51] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:51] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:51] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:51] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:51] INFO: Database connection established.
-[24-11-2024 18:53] INFO: Application started
-[24-11-2024 18:53] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:53] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:53] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:53] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:53] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:53] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:53] INFO: Database connection established.
-[24-11-2024 18:55] INFO: Application started
-[24-11-2024 18:55] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:55] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:55] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:55] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:55] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:55] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:55] INFO: Database connection established.
-[24-11-2024 18:55] INFO: Application started
-[24-11-2024 18:55] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:55] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:55] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:55] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:55] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:55] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:55] INFO: Database connection established.
-[24-11-2024 18:55] INFO: Application started
-[24-11-2024 18:55] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:55] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:55] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:55] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:55] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:55] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:55] INFO: Database connection established.
-[24-11-2024 18:57] INFO: Application started
-[24-11-2024 18:57] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:57] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:57] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:57] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:57] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:57] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b39853] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:57] INFO: Database connection established.
-[24-11-2024 18:58] INFO: Application started
-[24-11-2024 18:58] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:58] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:58] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:58] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:58] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:58] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:58] INFO: Database connection established.
-[24-11-2024 18:58] INFO: Application started
-[24-11-2024 18:58] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:58] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:58] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:58] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:58] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:58] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:58] INFO: Database connection established.
-[24-11-2024 18:59] INFO: Application started
-[24-11-2024 18:59] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 18:59] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 18:59] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 18:59] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 18:59] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 18:59] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 18:59] INFO: Database connection established.
-[24-11-2024 19:02] INFO: Application started
-[24-11-2024 19:02] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 19:02] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 19:02] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 19:02] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 19:02] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 19:02] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 19:02] INFO: Database connection established.
-[24-11-2024 19:03] INFO: Application started
-[24-11-2024 19:03] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 19:03] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 19:03] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 19:03] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 19:03] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 19:03] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 19:03] INFO: Database connection established.
-[24-11-2024 19:04] INFO: Application started
-[24-11-2024 19:04] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 19:04] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 19:04] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 19:04] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 19:04] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 19:04] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 19:04] INFO: Database connection established.
-[24-11-2024 19:04] INFO: Application started
-[24-11-2024 19:04] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 19:04] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 19:04] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 19:04] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 19:04] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 19:04] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 19:04] INFO: Database connection established.
-[24-11-2024 19:05] INFO: Application started
-[24-11-2024 19:05] INFO: HHH000412: Hibernate ORM core version [WORKING]
-[24-11-2024 19:05] INFO: HHH000026: Second-level cache disabled
-[24-11-2024 19:05] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
-[24-11-2024 19:05] INFO: HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/onlinemarket]
-	Database driver: org.postgresql.Driver
-	Database version: 17.0
-	Autocommit mode: false
-	Isolation level: undefined/unknown
-	Minimum pool size: 1
-	Maximum pool size: 20
-[24-11-2024 19:05] INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[24-11-2024 19:05] INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28cb29e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-[24-11-2024 19:05] INFO: Database connection established.
+[24-11-2024 22:33] INFO: Application started
+[24-11-2024 22:33] DEBUG: Logging Provider: org.jboss.logging.JDKLoggerProvider
+[24-11-2024 22:33] DEBUG: Adding Integrator [org.hibernate.boot.beanvalidation.BeanValidationIntegrator].
+[24-11-2024 22:33] DEBUG: Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [jdbc] -> [org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [jta] -> [org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [org.hibernate.transaction.JDBCTransactionFactory] -> [org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [org.hibernate.transaction.JTATransactionFactory] -> [org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [org.hibernate.transaction.CMTTransactionFactory] -> [org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy] : [cte] -> [org.hibernate.query.sqm.mutation.internal.cte.CteInsertStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy] : [global_temporary] -> [org.hibernate.query.sqm.mutation.internal.temptable.GlobalTemporaryTableInsertStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy] : [local_temporary] -> [org.hibernate.query.sqm.mutation.internal.temptable.LocalTemporaryTableInsertStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableInsertStrategy] : [persistent] -> [org.hibernate.query.sqm.mutation.internal.temptable.PersistentTableInsertStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy] : [cte] -> [org.hibernate.query.sqm.mutation.internal.cte.CteMutationStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy] : [global_temporary] -> [org.hibernate.query.sqm.mutation.internal.temptable.GlobalTemporaryTableMutationStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy] : [local_temporary] -> [org.hibernate.query.sqm.mutation.internal.temptable.LocalTemporaryTableMutationStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.query.sqm.mutation.spi.SqmMultiTableMutationStrategy] : [persistent] -> [org.hibernate.query.sqm.mutation.internal.temptable.PersistentTableMutationStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [default] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [jpa] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [legacy-jpa] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [legacy-hbm] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [component-path] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.id.enhanced.ImplicitDatabaseObjectNamingStrategy] : [standard] -> [org.hibernate.id.enhanced.StandardNamingStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.id.enhanced.ImplicitDatabaseObjectNamingStrategy] : [single] -> [org.hibernate.id.enhanced.SingleNamingStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.id.enhanced.ImplicitDatabaseObjectNamingStrategy] : [legacy] -> [org.hibernate.id.enhanced.LegacyNamingStrategy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.relational.ColumnOrderingStrategy] : [default] -> [org.hibernate.boot.model.relational.ColumnOrderingStrategyStandard]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.boot.model.relational.ColumnOrderingStrategy] : [legacy] -> [org.hibernate.boot.model.relational.ColumnOrderingStrategyLegacy]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.cache.spi.CacheKeysFactory] : [default] -> [org.hibernate.cache.internal.DefaultCacheKeysFactory]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.cache.spi.CacheKeysFactory] : [simple] -> [org.hibernate.cache.internal.SimpleCacheKeysFactory]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.type.format.FormatMapper] : [jackson] -> [org.hibernate.type.format.jackson.JacksonJsonFormatMapper]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.type.format.FormatMapper] : [jsonb] -> [org.hibernate.type.format.jakartajson.JsonBJsonFormatMapper]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.type.format.FormatMapper] : [jackson-xml] -> [org.hibernate.type.format.jackson.JacksonXmlFormatMapper]
+[24-11-2024 22:33] TRACE: Registering named strategy selector [org.hibernate.type.format.FormatMapper] : [jaxb] -> [org.hibernate.type.format.jaxb.JaxbXmlFormatMapper]
+[24-11-2024 22:33] INFO: HHH000412: Hibernate ORM core version [WORKING]
+[24-11-2024 22:33] DEBUG: HHH000206: 'hibernate.properties' not found
+[24-11-2024 22:33] TRACE: trying via [new URL("hibernate.cfg.xml")]
+[24-11-2024 22:33] TRACE: trying via [ClassLoader.getResourceAsStream("hibernate.cfg.xml")]
+[24-11-2024 22:33] TRACE: In resolveEntity(-//Hibernate/Hibernate Configuration DTD//EN, http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd, null, null)
+[24-11-2024 22:33] DEBUG: Checking public/system identifiers `-//Hibernate/Hibernate Configuration DTD//EN`/`http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd` as DTD references
+[24-11-2024 22:33] DEBUG: cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+[24-11-2024 22:33] FINE: Checking system property jakarta.xml.bind.JAXBContextFactory
+[24-11-2024 22:33] FINE:   not found
+[24-11-2024 22:33] FINE: ServiceProvider loading Facility used; returning object [org.glassfish.jaxb.runtime.v2.JAXBContextFactory]
+[24-11-2024 22:33] FINE: Using jakarta.xml.bind-api on the class path.
+[24-11-2024 22:33] FINE: Property org.glassfish.jaxb.XmlAccessorFactoryis not active.  Using JAXB's implementation
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.push
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] FINEST: State.pop
+[24-11-2024 22:33] DEBUG: Building session factory using internal StandardServiceRegistryBuilder
+[24-11-2024 22:33] DEBUG: Building session factory using provided StandardServiceRegistry
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.id.factory.IdentifierGeneratorFactory]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.config.spi.ConfigurationService]
+[24-11-2024 22:33] DEBUG: Ignoring CDI for resolving IdentifierGenerator instances as extended or delayed CDI support was enabled
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[24-11-2024 22:33] DEBUG: Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.cache.spi.RegionFactory]
+[24-11-2024 22:33] DEBUG: Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+[24-11-2024 22:33] INFO: HHH000026: Second-level cache disabled
+[24-11-2024 22:33] DEBUG: Adding type registration boolean -> org.hibernate.type.BasicTypeReference@32cb80ac
+[24-11-2024 22:33] DEBUG: Adding type registration boolean -> org.hibernate.type.BasicTypeReference@32cb80ac
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@32cb80ac
+[24-11-2024 22:33] DEBUG: Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@278733e
+[24-11-2024 22:33] DEBUG: Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@278733e
+[24-11-2024 22:33] DEBUG: Adding type registration true_false -> org.hibernate.type.BasicTypeReference@4790960d
+[24-11-2024 22:33] DEBUG: Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@4790960d
+[24-11-2024 22:33] DEBUG: Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@205f0b80
+[24-11-2024 22:33] DEBUG: Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@205f0b80
+[24-11-2024 22:33] DEBUG: Adding type registration byte -> org.hibernate.type.BasicTypeReference@4e7f31c7
+[24-11-2024 22:33] DEBUG: Adding type registration byte -> org.hibernate.type.BasicTypeReference@4e7f31c7
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@4e7f31c7
+[24-11-2024 22:33] DEBUG: Adding type registration binary -> org.hibernate.type.BasicTypeReference@fdf5ab5
+[24-11-2024 22:33] DEBUG: Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@fdf5ab5
+[24-11-2024 22:33] DEBUG: Adding type registration [B -> org.hibernate.type.BasicTypeReference@fdf5ab5
+[24-11-2024 22:33] DEBUG: Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@4c3c85bd
+[24-11-2024 22:33] DEBUG: Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@4c3c85bd
+[24-11-2024 22:33] DEBUG: Adding type registration image -> org.hibernate.type.BasicTypeReference@146794b1
+[24-11-2024 22:33] DEBUG: Adding type registration blob -> org.hibernate.type.BasicTypeReference@23217ef3
+[24-11-2024 22:33] DEBUG: Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@23217ef3
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@56de82d0
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@7ee7e4db
+[24-11-2024 22:33] DEBUG: Adding type registration short -> org.hibernate.type.BasicTypeReference@568d25aa
+[24-11-2024 22:33] DEBUG: Adding type registration short -> org.hibernate.type.BasicTypeReference@568d25aa
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@568d25aa
+[24-11-2024 22:33] DEBUG: Adding type registration integer -> org.hibernate.type.BasicTypeReference@7e731f6e
+[24-11-2024 22:33] DEBUG: Adding type registration int -> org.hibernate.type.BasicTypeReference@7e731f6e
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@7e731f6e
+[24-11-2024 22:33] DEBUG: Adding type registration long -> org.hibernate.type.BasicTypeReference@5c99da72
+[24-11-2024 22:33] DEBUG: Adding type registration long -> org.hibernate.type.BasicTypeReference@5c99da72
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@5c99da72
+[24-11-2024 22:33] DEBUG: Adding type registration float -> org.hibernate.type.BasicTypeReference@1d992c06
+[24-11-2024 22:33] DEBUG: Adding type registration float -> org.hibernate.type.BasicTypeReference@1d992c06
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@1d992c06
+[24-11-2024 22:33] DEBUG: Adding type registration double -> org.hibernate.type.BasicTypeReference@2206ea6a
+[24-11-2024 22:33] DEBUG: Adding type registration double -> org.hibernate.type.BasicTypeReference@2206ea6a
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@2206ea6a
+[24-11-2024 22:33] DEBUG: Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@4468192b
+[24-11-2024 22:33] DEBUG: Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@4468192b
+[24-11-2024 22:33] DEBUG: Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@56b0119e
+[24-11-2024 22:33] DEBUG: Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@56b0119e
+[24-11-2024 22:33] DEBUG: Adding type registration character -> org.hibernate.type.BasicTypeReference@21dee52
+[24-11-2024 22:33] DEBUG: Adding type registration char -> org.hibernate.type.BasicTypeReference@21dee52
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@21dee52
+[24-11-2024 22:33] DEBUG: Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@17dd11c1
+[24-11-2024 22:33] DEBUG: Adding type registration string -> org.hibernate.type.BasicTypeReference@1378f350
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@1378f350
+[24-11-2024 22:33] DEBUG: Adding type registration nstring -> org.hibernate.type.BasicTypeReference@45122c40
+[24-11-2024 22:33] DEBUG: Adding type registration characters -> org.hibernate.type.BasicTypeReference@281035ce
+[24-11-2024 22:33] DEBUG: Adding type registration char[] -> org.hibernate.type.BasicTypeReference@281035ce
+[24-11-2024 22:33] DEBUG: Adding type registration [C -> org.hibernate.type.BasicTypeReference@281035ce
+[24-11-2024 22:33] DEBUG: Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@57bc7a14
+[24-11-2024 22:33] DEBUG: Adding type registration text -> org.hibernate.type.BasicTypeReference@38af1c0
+[24-11-2024 22:33] DEBUG: Adding type registration ntext -> org.hibernate.type.BasicTypeReference@572eaddd
+[24-11-2024 22:33] DEBUG: Adding type registration clob -> org.hibernate.type.BasicTypeReference@7e394cb3
+[24-11-2024 22:33] DEBUG: Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@7e394cb3
+[24-11-2024 22:33] DEBUG: Adding type registration nclob -> org.hibernate.type.BasicTypeReference@4a61f5ba
+[24-11-2024 22:33] DEBUG: Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@4a61f5ba
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@1e3109c7
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@3cd30f99
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@83b9064
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@4db278fc
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@5b5b3fbc
+[24-11-2024 22:33] DEBUG: Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@7fd04c89
+[24-11-2024 22:33] DEBUG: Adding type registration Duration -> org.hibernate.type.BasicTypeReference@2bbc5ba7
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@2bbc5ba7
+[24-11-2024 22:33] DEBUG: Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@7517b3b4
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@7517b3b4
+[24-11-2024 22:33] DEBUG: Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@77b3d475
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@77b3d475
+[24-11-2024 22:33] DEBUG: Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@a7a7a0e
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@a7a7a0e
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@43d26985
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@43d26985
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@b10f858
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@62699533
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@3b9a397a
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@3b9a397a
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@6bd4e1cd
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@678a16d7
+[24-11-2024 22:33] DEBUG: Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@4964d718
+[24-11-2024 22:33] DEBUG: Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@23df66a7
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@23df66a7
+[24-11-2024 22:33] DEBUG: Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@6f492198
+[24-11-2024 22:33] DEBUG: Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@5842ae08
+[24-11-2024 22:33] DEBUG: Adding type registration date -> org.hibernate.type.BasicTypeReference@37f17e0f
+[24-11-2024 22:33] DEBUG: Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@37f17e0f
+[24-11-2024 22:33] DEBUG: Adding type registration time -> org.hibernate.type.BasicTypeReference@6f43dc08
+[24-11-2024 22:33] DEBUG: Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@6f43dc08
+[24-11-2024 22:33] DEBUG: Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@49a06599
+[24-11-2024 22:33] DEBUG: Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@49a06599
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@49a06599
+[24-11-2024 22:33] DEBUG: Adding type registration calendar -> org.hibernate.type.BasicTypeReference@45fb04b
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@45fb04b
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@45fb04b
+[24-11-2024 22:33] DEBUG: Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@3862a7c9
+[24-11-2024 22:33] DEBUG: Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@49308f51
+[24-11-2024 22:33] DEBUG: Adding type registration instant -> org.hibernate.type.BasicTypeReference@3f6a743
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@3f6a743
+[24-11-2024 22:33] DEBUG: Adding type registration uuid -> org.hibernate.type.BasicTypeReference@7a52929e
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@7a52929e
+[24-11-2024 22:33] DEBUG: Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@7a52929e
+[24-11-2024 22:33] DEBUG: Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@57a32ef2
+[24-11-2024 22:33] DEBUG: Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@1a247950
+[24-11-2024 22:33] DEBUG: Adding type registration class -> org.hibernate.type.BasicTypeReference@2c5e09e8
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@2c5e09e8
+[24-11-2024 22:33] DEBUG: Adding type registration currency -> org.hibernate.type.BasicTypeReference@4276b89f
+[24-11-2024 22:33] DEBUG: Adding type registration Currency -> org.hibernate.type.BasicTypeReference@4276b89f
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@4276b89f
+[24-11-2024 22:33] DEBUG: Adding type registration locale -> org.hibernate.type.BasicTypeReference@c6cda9d
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@c6cda9d
+[24-11-2024 22:33] DEBUG: Adding type registration serializable -> org.hibernate.type.BasicTypeReference@35bbdcb9
+[24-11-2024 22:33] DEBUG: Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@35bbdcb9
+[24-11-2024 22:33] DEBUG: Adding type registration timezone -> org.hibernate.type.BasicTypeReference@69f692af
+[24-11-2024 22:33] DEBUG: Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@69f692af
+[24-11-2024 22:33] DEBUG: Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@1eb37d4e
+[24-11-2024 22:33] DEBUG: Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@1eb37d4e
+[24-11-2024 22:33] DEBUG: Adding type registration url -> org.hibernate.type.BasicTypeReference@74e1f437
+[24-11-2024 22:33] DEBUG: Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@74e1f437
+[24-11-2024 22:33] DEBUG: Adding type registration vector -> org.hibernate.type.BasicTypeReference@1fd4a006
+[24-11-2024 22:33] DEBUG: Adding type registration float_vector -> org.hibernate.type.BasicTypeReference@42ea3ab9
+[24-11-2024 22:33] DEBUG: Adding type registration double_vector -> org.hibernate.type.BasicTypeReference@473676a7
+[24-11-2024 22:33] DEBUG: Adding type registration byte_vector -> org.hibernate.type.BasicTypeReference@3c8d723a
+[24-11-2024 22:33] DEBUG: Adding type registration row_version -> org.hibernate.type.BasicTypeReference@663213d
+[24-11-2024 22:33] DEBUG: Adding type registration object -> org.hibernate.type.JavaObjectType@76efd26
+[24-11-2024 22:33] DEBUG: Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@76efd26
+[24-11-2024 22:33] DEBUG: Adding type registration null -> org.hibernate.type.NullType@1187b116
+[24-11-2024 22:33] DEBUG: Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@4bee3bed
+[24-11-2024 22:33] DEBUG: Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@793a4037
+[24-11-2024 22:33] DEBUG: Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@7081c715
+[24-11-2024 22:33] DEBUG: Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@5ca2d712
+[24-11-2024 22:33] DEBUG: Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@66a9ae38
+[24-11-2024 22:33] DEBUG: Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@4d397122
+[24-11-2024 22:33] DEBUG: Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@337eaeff
+[24-11-2024 22:33] DEBUG: Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@79aee5c5
+[24-11-2024 22:33] TRACE: SqmFunctionRegistry created
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.boot.cfgxml.spi.CfgXmlAccessService]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.dialect.spi.DialectFactory]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.dialect.spi.DialectResolver]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.connections.spi.ConnectionProvider]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider]
+[24-11-2024 22:33] WARN: HHH10001002: Using built-in connection pool (not intended for production use)
+[24-11-2024 22:33] DEBUG: Initializing Connection pool with 1 Connections
+[24-11-2024 22:33] FINE: Loading driver configuration via classloader jdk.internal.loader.ClassLoaders$AppClassLoader@6267c3bb
+[24-11-2024 22:33] FINE: Connecting with URL: jdbc:postgresql://localhost:5432/onlinemarket
+[24-11-2024 22:33] FINE: PostgreSQL JDBC Driver 42.7.4
+[24-11-2024 22:33] FINE:   setDefaultFetchSize = 0
+[24-11-2024 22:33] FINE:   setPrepareThreshold = 5
+[24-11-2024 22:33] FINE: Trying to establish a protocol version 3 connection to localhost:5432
+[24-11-2024 22:33] FINE: Connection error: 
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:40)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:507)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:380)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:558)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:107)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:87)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:434)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:305)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:949)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:999)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Model.DatabaseOps.<clinit>(DatabaseOps.java:24)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.SellersApp.start(SellersApp.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 43 more
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.spi.JdbcServices]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider]
+[24-11-2024 22:33] TRACE: Initializing service [role=org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder]
+[24-11-2024 22:33] WARN: HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:255)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:133)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:507)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:380)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:558)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:107)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:87)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:434)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:305)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:949)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:999)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Model.DatabaseOps.<clinit>(DatabaseOps.java:24)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.SellersApp.start(SellersApp.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[24-11-2024 22:33] DEBUG: Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+[24-11-2024 22:33] SEVERE: Error during SessionFactory creation:  Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Error calling Driver.connect() [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.]
+org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Error calling Driver.connect() [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:949)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:999)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Model.DatabaseOps.<clinit>(DatabaseOps.java:24)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.SellersApp.start(SellersApp.java:16)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: org.hibernate.exception.JDBCConnectionException: Error calling Driver.connect() [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.]
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator$1.convert(BasicConnectionCreator.java:118)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:144)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:507)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:380)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:558)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:107)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:87)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:68)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:434)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:305)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 22 more
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at org.hibernate.orm.core@6.6.1.Final/org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:40)
+	... 38 more
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 43 more
+
+[24-11-2024 22:33] SEVERE: SessionFactory is null. Cannot proceed with initialization.
+[24-11-2024 22:33] FINER: [1,0],*,<33>
+[24-11-2024 22:33] FINER: [1,1],{,<28>
+[24-11-2024 22:33] FINER: [1,2],-fx-font-size,<11>
+[24-11-2024 22:33] FINER: [1,15],:,<31>
+[24-11-2024 22:33] FINER: [1,17],24px,<21>
+[24-11-2024 22:33] FINER: [1,21],;,<30>
+[24-11-2024 22:33] FINER: [1,23],-fx-font-weight,<11>
+[24-11-2024 22:33] FINER: [1,38],:,<31>
+[24-11-2024 22:33] FINER: [1,40],bold,<11>
+[24-11-2024 22:33] FINER: [1,44],;,<30>
+[24-11-2024 22:33] FINER: [1,45],},<29>
+[24-11-2024 22:33] FINER: [-1,-1],EOF,<-1>
+[24-11-2024 22:33] FINER: VBox@38e58019[styleClass=root] resized to 0.0 x 0.0
+[24-11-2024 22:33] FINER: VBox@38e58019[styleClass=root] resized to 320.0 x 0.0
+[24-11-2024 22:33] FINER: VBox@38e58019[styleClass=root] resized to 320.0 x 400.0
+[24-11-2024 22:33] FINER: [1,0],*,<33>
+[24-11-2024 22:33] FINER: [1,1],{,<28>
+[24-11-2024 22:33] FINER: [1,2],-fx-background-color,<11>
+[24-11-2024 22:33] FINER: [1,22],:,<31>
+[24-11-2024 22:33] FINER: [1,24],#f0f0f0,<37>
+[24-11-2024 22:33] FINER: [1,31],;,<30>
+[24-11-2024 22:33] FINER: [1,32],},<29>
+[24-11-2024 22:33] FINER: [-1,-1],EOF,<-1>
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: VBox@38e58019[styleClass=root], name: background, value: null], value =javafx.scene.layout.Background@d17bd682, originOfCalculatedValue=INLINE
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@26ebe892[styleClass=label]'Seller App', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font, call applyStyle: ObjectProperty [bean: Label@26ebe892[styleClass=label]'Seller App', name: font, value: Font[name=System Regular, family=System, style=Regular, size=12.0]], value =Font[name=System Bold, family=System, style=Bold, size=24.0], originOfCalculatedValue=INLINE
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.LabelSkin@63d08b20] on ObjectProperty [bean: Label@26ebe892[styleClass=label]'Seller App', name: skin, value: javafx.scene.control.skin.LabelSkin@63d08b20]
+[24-11-2024 22:33] FINER: -fx-font, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold, family=System, style=Bold, size=24.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontMirror, value: Font[name=System Regular, family=System, style=Regular, size=12.0]], value =Font[name=System Bold, family=System, style=Bold, size=24.0], originOfCalculatedValue=INLINE
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold, family=System, style=Bold, size=24.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Bold, family=System, style=Bold, size=24.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@57831dbd[styleClass=label]'Welcome! Please log in below.', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.LabelSkin@4b4b2f0b] on ObjectProperty [bean: Label@57831dbd[styleClass=label]'Welcome! Please log in below.', name: skin, value: javafx.scene.control.skin.LabelSkin@4b4b2f0b]
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@63a4745d[styleClass=label]'Username:', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.LabelSkin@5643b6ac] on ObjectProperty [bean: Label@63a4745d[styleClass=label]'Username:', name: skin, value: javafx.scene.control.skin.LabelSkin@5643b6ac]
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=7.0, bottom=4.0, left=7.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: background, value: null], value =javafx.scene.layout.Background@a0b7c209, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-cursor, call applyStyle: ObjectProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: cursor, value: null], value =TEXT, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Pane@175c08f5[styleClass=root popup] resized to 0.0 x 0.0
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.TextFieldSkin@608ba1b4] on ObjectProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: skin, value: javafx.scene.control.skin.TextFieldSkin@608ba1b4]
+[24-11-2024 22:33] FINER: -fx-highlight-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: highlightFill, value: 0x1e90ffff], value =0xccccccff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: highlightTextFill, value: 0xffffffff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-prompt-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: promptTextFill, value: 0x808080ff], value =0xb2b2b2ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="Enter your CIF", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0xb2b2b2ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="Enter your CIF", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0xb2b2b2ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@4ab56d9d[styleClass=label]'Password:', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.LabelSkin@5e0efb30] on ObjectProperty [bean: Label@4ab56d9d[styleClass=label]'Password:', name: skin, value: javafx.scene.control.skin.LabelSkin@5e0efb30]
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=7.0, bottom=4.0, left=7.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: background, value: null], value =javafx.scene.layout.Background@a0b7c209, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-cursor, call applyStyle: ObjectProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: cursor, value: null], value =TEXT, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Pane@40fe1d86[styleClass=root popup] resized to 0.0 x 0.0
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.TextFieldSkin@180f2661] on ObjectProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: skin, value: javafx.scene.control.skin.TextFieldSkin@180f2661]
+[24-11-2024 22:33] FINER: -fx-highlight-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: highlightFill, value: 0x1e90ffff], value =0xccccccff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: highlightTextFill, value: 0xffffffff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-prompt-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: promptTextFill, value: 0x808080ff], value =0xb2b2b2ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="Enter your password", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0xb2b2b2ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="Enter your password", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0xb2b2b2ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-content-display, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-alignment, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: background, value: null], value =javafx.scene.layout.Background@129f8558, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.ButtonSkin@49e78cb0] on ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: skin, value: javafx.scene.control.skin.ButtonSkin@49e78cb0]
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: VBox@38e58019[styleClass=root] resized to 320.0 x 400.0
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Text[text="Seller App", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold, family=System, style=Bold, size=24.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Text[text="Welcome! Please log in below.", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Text[text="Username:", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Text[text="Password:", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Text[text="Login", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (8.0,4.0)
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: focused, value: true] focused=true
+[24-11-2024 22:33] FINE: Changed focus from null to TextField[id=cifField, styleClass=text-input text-field]
+[24-11-2024 22:33] FINER: -fx-highlight-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: highlightFill, value: 0xccccccff], value =0x0096c9ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: highlightTextFill, value: 0x333333ff], value =0xffffffff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: background, value: javafx.scene.layout.Background@a0b7c209], value =javafx.scene.layout.Background@34a0fb14, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-prompt-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: promptTextFill, value: 0xb2b2b2ff], value =0x00000000, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Text[text="Seller App", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Bold, family=System, style=Bold, size=24.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Text[text="Welcome! Please log in below.", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Text[text="Username:", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Text[text="Password:", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Text[text="Login", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (8.0,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: focused, value: false] focused=false
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: focused, value: true] focused=true
+[24-11-2024 22:33] FINE: Changed focus from TextField[id=cifField, styleClass=text-input text-field] to PasswordField[id=passwordField, styleClass=text-input text-field password-field]
+[24-11-2024 22:33] FINER: -fx-highlight-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: highlightFill, value: 0x0096c9ff], value =0xccccccff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: highlightTextFill, value: 0xffffffff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: TextField[id=cifField, styleClass=text-input text-field], name: background, value: javafx.scene.layout.Background@34a0fb14], value =javafx.scene.layout.Background@a0b7c209, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-prompt-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@608ba1b4, name: promptTextFill, value: 0x00000000], value =0xb2b2b2ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: highlightFill, value: 0xccccccff], value =0x0096c9ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: highlightTextFill, value: 0x333333ff], value =0xffffffff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: background, value: javafx.scene.layout.Background@a0b7c209], value =javafx.scene.layout.Background@34a0fb14, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-prompt-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: promptTextFill, value: 0xb2b2b2ff], value =0x00000000, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@6371231d resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@6371231d moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: focused, value: false] focused=false
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: focused, value: true] focused=true
+[24-11-2024 22:33] FINE: Changed focus from PasswordField[id=passwordField, styleClass=text-input text-field password-field] to Button@7d642d3c[styleClass=button]'Login'
+[24-11-2024 22:33] FINER: -fx-highlight-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: highlightFill, value: 0x0096c9ff], value =0xccccccff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-highlight-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: highlightTextFill, value: 0xffffffff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: PasswordField[id=passwordField, styleClass=text-input text-field password-field], name: background, value: javafx.scene.layout.Background@34a0fb14], value =javafx.scene.layout.Background@a0b7c209, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-prompt-text-fill, call applyStyle: ObjectProperty [bean: javafx.scene.control.skin.TextFieldSkin@180f2661, name: promptTextFill, value: 0x00000000], value =0xb2b2b2ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: background, value: javafx.scene.layout.Background@129f8558], value =javafx.scene.layout.Background@f4f4f655, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Pane@49419d5e resized to 265.6 x 17.6
+[24-11-2024 22:33] FINER: Pane@49419d5e moved to (7.2,4.0)
+[24-11-2024 22:33] FINER: Text[text="Login", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (8.0,4.0)
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: background, value: javafx.scene.layout.Background@f4f4f655], value =javafx.scene.layout.Background@8f7e7394, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] SEVERE: Error during login check:  Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "com.sl2425.da.sellersapp.Model.DatabaseOps.sessionFactory" is null
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Model.DatabaseOps.openSession(DatabaseOps.java:52)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Model.DatabaseOps.SelectSellerWithCifAndPassword(DatabaseOps.java:65)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Controllers.LoginController.checkLogin(LoginController.java:40)
+	at com.sl2425.da.sellersapp/com.sl2425.da.sellersapp.Controllers.LoginController.onLoginButtonClick(LoginController.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854)
+	at javafx.fxml/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8792)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.keyReleased(ButtonBehavior.java:163)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$KeyHandler.process(Scene.java:4105)
+	at javafx.graphics/javafx.scene.Scene.processKeyEvent(Scene.java:2156)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.keyEvent(Scene.java:2630)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:218)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$KeyEventNotification.run(GlassViewEventHandler.java:150)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleKeyEvent$1(GlassViewEventHandler.java:250)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:423)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleKeyEvent(GlassViewEventHandler.java:249)
+	at javafx.graphics/com.sun.glass.ui.View.handleKeyEvent(View.java:542)
+	at javafx.graphics/com.sun.glass.ui.View.notifyKey(View.java:966)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+[24-11-2024 22:33] WARNING: Login failed: Invalid credentials
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane] resized to 0.0 x 0.0
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane] resized to 360.0 x -0.0
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: focused, value: false] focused=false
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=0.0, right=0.0, bottom=0.0, left=0.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: background, value: null], value =javafx.scene.layout.Background@20c95282, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-graphic, call applyStyle: StringProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: imageUrl, value: null], value =jar:file:///C:/Users/Sebastian/.m2/repository/org/openjfx/javafx-controls/17.0.12/javafx-controls-17.0.12-win.jar!/com/sun/javafx/scene/control/skin/modena/dialog-error.png, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT, name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=10.0, right=10.0, bottom=10.0, left=10.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT, name: background, value: null], value =javafx.scene.layout.Background@2b9738b0, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@4e39989b[styleClass=label]'Something went wrong', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font, call applyStyle: ObjectProperty [bean: Label@4e39989b[styleClass=label]'Something went wrong', name: font, value: Font[name=System Regular, family=System, style=Regular, size=12.0]], value =Font[name=System Regular, family=System, style=Regular, size=14.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.LabelSkin@33ab68c9] on ObjectProperty [bean: Label@4e39989b[styleClass=label]'Something went wrong', name: skin, value: javafx.scene.control.skin.LabelSkin@33ab68c9]
+[24-11-2024 22:33] FINER: -fx-font, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=14.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontMirror, value: Font[name=System Regular, family=System, style=Regular, size=12.0]], value =Font[name=System Regular, family=System, style=Regular, size=14.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=14.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=14.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: StackPane@23e3fbae[styleClass=graphic-container], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=0.0, right=0.0, bottom=0.0, left=10.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=16.0, right=10.0, bottom=0.0, left=10.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-alignment, call applyStyle: ObjectProperty [bean: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials', name: alignment, value: CENTER_LEFT], value =TOP_LEFT, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.LabelSkin@3a3b6485] on ObjectProperty [bean: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials', name: skin, value: javafx.scene.control.skin.LabelSkin@3a3b6485]
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: focused, value: true] focused=true
+[24-11-2024 22:33] FINE: Changed focus from null to Button@3973d0d1[styleClass=button]'Aceptar'
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.ButtonBarSkin@494c945a] on ObjectProperty [bean: ButtonBar@535ded21[styleClass=button-bar], name: skin, value: javafx.scene.control.skin.ButtonBarSkin@494c945a]
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: ButtonBarSkin$1@4a07b4dc[styleClass=container], name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=10.0, right=10.0, bottom=10.0, left=10.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-padding, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: padding, value: Insets [top=0.0, right=0.0, bottom=0.0, left=0.0]], value =Insets [top=4.0, right=8.0, bottom=4.0, left=8.0], originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-content-display, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: contentDisplay, value: LEFT], value =LEFT, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-text-fill, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: textFill, value: 0x000000ff], value =0x333333ff, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-alignment, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: alignment, value: CENTER_LEFT], value =CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: null], value =javafx.scene.layout.Background@9823f6eb, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Stored skin[javafx.scene.control.skin.ButtonSkin@76274951] on ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: skin, value: javafx.scene.control.skin.ButtonSkin@76274951]
+[24-11-2024 22:33] FINER: -fx-font-smoothing-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=GRAY, fill=0x333333ff], name: fontSmoothingType, value: GRAY], value =LCD, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: -fx-bounds-type, call applyStyle: ObjectProperty [bean: Text[text="", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff], name: boundsType, value: LOGICAL], value =LOGICAL_VERTICAL_CENTER, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT resized to 360.0 x 68.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' resized to 360.0 x 33.60000000000002
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' moved to (0.0,68.8)
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] moved to (0.0,102.40000000000002)
+[24-11-2024 22:33] FINER: Label@4e39989b[styleClass=label]'Something went wrong' resized to 280.8 x 48.0
+[24-11-2024 22:33] FINER: Label@4e39989b[styleClass=label]'Something went wrong' moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: StackPane@23e3fbae[styleClass=graphic-container] resized to 58.4 x 48.0
+[24-11-2024 22:33] FINER: StackPane@23e3fbae[styleClass=graphic-container] moved to (291.2,10.4)
+[24-11-2024 22:33] FINER: Text[text="Something went wrong", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, wrappingWidth=144.375, font=Font[name=System Regular, family=System, style=Regular, size=14.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,14.4)
+[24-11-2024 22:33] FINER: ImageView@656548de[styleClass=image-view] moved to (10.4,0.0)
+[24-11-2024 22:33] FINER: Text[text="Login failed: Invalid credentials", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, wrappingWidth=162.837890625, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (10.4,16.0)
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Region@2ee47252 resized to 253.6 x 25.6
+[24-11-2024 22:33] FINER: Region@2ee47252 moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' resized to 75.2 x 25.6
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' moved to (274.4,10.4)
+[24-11-2024 22:33] FINER: Text[text="Aceptar", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (16.8,4.0)
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8000030517578
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT resized to 360.0 x 68.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' resized to 360.0 x 33.60000000000002
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' moved to (0.0,68.8)
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] moved to (0.0,102.40000000000002)
+[24-11-2024 22:33] FINER: Label@4e39989b[styleClass=label]'Something went wrong' resized to 280.8 x 48.0
+[24-11-2024 22:33] FINER: Label@4e39989b[styleClass=label]'Something went wrong' moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: StackPane@23e3fbae[styleClass=graphic-container] resized to 58.4 x 48.0
+[24-11-2024 22:33] FINER: StackPane@23e3fbae[styleClass=graphic-container] moved to (291.2,10.4)
+[24-11-2024 22:33] FINER: Text[text="Something went wrong", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, wrappingWidth=144.375, font=Font[name=System Regular, family=System, style=Regular, size=14.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (0.0,14.4)
+[24-11-2024 22:33] FINER: ImageView@656548de[styleClass=image-view] moved to (10.4,0.0)
+[24-11-2024 22:33] FINER: Text[text="Login failed: Invalid credentials", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, wrappingWidth=162.837890625, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (10.4,16.0)
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Region@2ee47252 resized to 253.6 x 25.6
+[24-11-2024 22:33] FINER: Region@2ee47252 moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' resized to 75.2 x 25.6
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' moved to (274.4,10.4)
+[24-11-2024 22:33] FINER: Text[text="Aceptar", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (16.8,4.0)
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: background, value: javafx.scene.layout.Background@8f7e7394], value =javafx.scene.layout.Background@129f8558, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:33] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:33] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:33] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:33] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:33] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:33] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:33] FINER: Text[text="Login", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (8.0,4.0)
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: focused, value: false] focused=false
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: javafx.scene.layout.Background@9823f6eb], value =javafx.scene.layout.Background@6877f709, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT resized to 360.0 x 68.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' resized to 360.0 x 33.60000000000002
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' moved to (0.0,68.8)
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] moved to (0.0,102.40000000000002)
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Region@2ee47252 resized to 253.6 x 25.6
+[24-11-2024 22:33] FINER: Region@2ee47252 moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' resized to 75.2 x 25.6
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' moved to (274.4,10.4)
+[24-11-2024 22:33] FINER: Text[text="Aceptar", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (16.8,4.0)
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: focused, value: true] focused=true
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: javafx.scene.layout.Background@6877f709], value =javafx.scene.layout.Background@9823f6eb, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT resized to 360.0 x 68.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' resized to 360.0 x 33.60000000000002
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' moved to (0.0,68.8)
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] moved to (0.0,102.40000000000002)
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Region@2ee47252 resized to 253.6 x 25.6
+[24-11-2024 22:33] FINER: Region@2ee47252 moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' resized to 75.2 x 25.6
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' moved to (274.4,10.4)
+[24-11-2024 22:33] FINER: Text[text="Aceptar", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (16.8,4.0)
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: focused, value: false] focused=false
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: javafx.scene.layout.Background@9823f6eb], value =javafx.scene.layout.Background@6877f709, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT resized to 360.0 x 68.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' resized to 360.0 x 33.60000000000002
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' moved to (0.0,68.8)
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] moved to (0.0,102.40000000000002)
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Region@2ee47252 resized to 253.6 x 25.6
+[24-11-2024 22:33] FINER: Region@2ee47252 moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' resized to 75.2 x 25.6
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' moved to (274.4,10.4)
+[24-11-2024 22:33] FINER: Text[text="Aceptar", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (16.8,4.0)
+[24-11-2024 22:33] FINER: BooleanProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT, name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: StackPane@23e3fbae[styleClass=graphic-container], name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: StackPane@23e3fbae[styleClass=graphic-container], name: hover, value: false] hover=false
+[24-11-2024 22:33] FINER: BooleanProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: hover, value: false] hover=false
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT, name: hover, value: false] hover=false
+[24-11-2024 22:33] FINE: ReadOnlyBooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: focused, value: true] focused=true
+[24-11-2024 22:33] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: javafx.scene.layout.Background@6877f709], value =javafx.scene.layout.Background@9823f6eb, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:33] FINER: DialogPane@57fea5ba[styleClass=root dialog-pane alert error] resized to 360.0 x 148.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT resized to 360.0 x 68.8
+[24-11-2024 22:33] FINER: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' resized to 360.0 x 33.60000000000002
+[24-11-2024 22:33] FINER: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials' moved to (0.0,68.8)
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBar@535ded21[styleClass=button-bar] moved to (0.0,102.40000000000002)
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] resized to 360.0 x 46.4
+[24-11-2024 22:33] FINER: ButtonBarSkin$1@4a07b4dc[styleClass=container] moved to (0.0,0.0)
+[24-11-2024 22:33] FINER: Region@2ee47252 resized to 253.6 x 25.6
+[24-11-2024 22:33] FINER: Region@2ee47252 moved to (10.4,10.4)
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' resized to 75.2 x 25.6
+[24-11-2024 22:33] FINER: Button@3973d0d1[styleClass=button]'Aceptar' moved to (274.4,10.4)
+[24-11-2024 22:33] FINER: Text[text="Aceptar", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (16.8,4.0)
+[24-11-2024 22:33] FINER: BooleanProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT, name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Label@4e39989b[styleClass=label]'Something went wrong', name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Label@4e39989b[styleClass=label]'Something went wrong', name: hover, value: false] hover=false
+[24-11-2024 22:33] FINER: BooleanProperty [bean: StackPane@23e3fbae[styleClass=graphic-container], name: hover, value: true] hover=true
+[24-11-2024 22:33] FINER: BooleanProperty [bean: StackPane@23e3fbae[styleClass=graphic-container], name: hover, value: false] hover=false
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Grid hgap=0.0, vgap=0.0, alignment=TOP_LEFT, name: hover, value: false] hover=false
+[24-11-2024 22:33] FINER: BooleanProperty [bean: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials', name: hover, value: true] hover=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: Label@89163fb[styleClass=label content]'Login failed: Invalid credentials', name: hover, value: false] hover=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBar@535ded21[styleClass=button-bar], name: hover, value: true] hover=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBarSkin$1@4a07b4dc[styleClass=container], name: hover, value: true] hover=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: hover, value: true] hover=true
+[24-11-2024 22:34] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: javafx.scene.layout.Background@9823f6eb], value =javafx.scene.layout.Background@865fe190, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:34] FINER: BooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: pressed, value: true] pressed=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBarSkin$1@4a07b4dc[styleClass=container], name: pressed, value: true] pressed=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBar@535ded21[styleClass=button-bar], name: pressed, value: true] pressed=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: pressed, value: true] pressed=true
+[24-11-2024 22:34] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: background, value: javafx.scene.layout.Background@865fe190], value =javafx.scene.layout.Background@34dab028, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:34] FINER: BooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: pressed, value: false] pressed=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBarSkin$1@4a07b4dc[styleClass=container], name: pressed, value: false] pressed=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBar@535ded21[styleClass=button-bar], name: pressed, value: false] pressed=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: pressed, value: false] pressed=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: DialogPane@57fea5ba[styleClass=root dialog-pane alert error], name: hover, value: false] hover=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBar@535ded21[styleClass=button-bar], name: hover, value: false] hover=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: ButtonBarSkin$1@4a07b4dc[styleClass=container], name: hover, value: false] hover=false
+[24-11-2024 22:34] FINER: BooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: hover, value: false] hover=false
+[24-11-2024 22:34] FINE: ReadOnlyBooleanProperty [bean: Button@3973d0d1[styleClass=button]'Aceptar', name: focused, value: false] focused=false
+[24-11-2024 22:34] FINER: Region@65784e8c[styleClass=root] resized to 360.0 x 148.8
+[24-11-2024 22:34] FINE: ReadOnlyBooleanProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: focused, value: true] focused=true
+[24-11-2024 22:34] FINER: -fx-region-background, call applyStyle: ObjectProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: background, value: javafx.scene.layout.Background@129f8558], value =javafx.scene.layout.Background@f4f4f655, originOfCalculatedValue=USER_AGENT
+[24-11-2024 22:34] FINER: Label@26ebe892[styleClass=label]'Seller App' resized to 116.0 x 35.2
+[24-11-2024 22:34] FINER: Label@26ebe892[styleClass=label]'Seller App' moved to (102.4,72.0)
+[24-11-2024 22:34] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' resized to 160.8 x 17.6
+[24-11-2024 22:34] FINER: Label@57831dbd[styleClass=label]'Welcome! Please log in below.' moved to (80.0,122.4)
+[24-11-2024 22:34] FINER: Label@63a4745d[styleClass=label]'Username:' resized to 56.0 x 17.6
+[24-11-2024 22:34] FINER: Label@63a4745d[styleClass=label]'Username:' moved to (132.0,155.2)
+[24-11-2024 22:34] FINER: TextField[id=cifField, styleClass=text-input text-field] resized to 280.0 x 25.6
+[24-11-2024 22:34] FINER: TextField[id=cifField, styleClass=text-input text-field] moved to (20.0,188.0)
+[24-11-2024 22:34] FINER: Label@4ab56d9d[styleClass=label]'Password:' resized to 52.8 x 17.6
+[24-11-2024 22:34] FINER: Label@4ab56d9d[styleClass=label]'Password:' moved to (133.6,228.8)
+[24-11-2024 22:34] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] resized to 280.0 x 25.6
+[24-11-2024 22:34] FINER: PasswordField[id=passwordField, styleClass=text-input text-field password-field] moved to (20.0,261.6)
+[24-11-2024 22:34] FINER: Button@7d642d3c[styleClass=button]'Login' resized to 45.6 x 25.6
+[24-11-2024 22:34] FINER: Button@7d642d3c[styleClass=button]'Login' moved to (137.6,302.4)
+[24-11-2024 22:34] FINER: Text[text="Login", x=0.0, y=0.0, alignment=LEFT, origin=BASELINE, boundsType=LOGICAL_VERTICAL_CENTER, font=Font[name=System Regular, family=System, style=Regular, size=12.0], fontSmoothingType=LCD, fill=0x333333ff] moved to (8.0,4.0)
+[24-11-2024 22:34] FINER: BooleanProperty [bean: VBox@38e58019[styleClass=root], name: hover, value: true] hover=true
+[24-11-2024 22:34] FINER: BooleanProperty [bean: VBox@38e58019[styleClass=root], name: hover, value: false] hover=false
+[24-11-2024 22:34] FINE: ReadOnlyBooleanProperty [bean: Button@7d642d3c[styleClass=button]'Login', name: focused, value: false] focused=false

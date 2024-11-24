@@ -3,6 +3,8 @@ package com.sl2425.da.sellersapp.Model;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import javafx.scene.control.Alert;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
@@ -44,6 +46,13 @@ public class Utils
         alert.setHeaderText("Something went wrong");
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public static void logException(String errorMessage,Exception e)
+    {
+        StringWriter sw = new StringWriter();
+        e.printStackTrace(new PrintWriter(sw));
+        LogProperties.logger.severe(errorMessage + " " + e.getMessage() +  "\n" + sw.toString());
     }
 
     public static boolean doesDatePeriodCollide(LocalDate startDate1, LocalDate endDate1, LocalDate startDate2, LocalDate endDate2)
