@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -70,25 +73,38 @@ public class MainController {
     }
 
     @FXML
-    private void logout() {
-        Utils.currentSeller = null;
-        try {
-            // Load the new FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/sl2425/da/sellersapp/login-view.fxml"));
-            Parent root = fxmlLoader.load();
+    private void logout()
+    {
+        Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationDialog.setTitle("Logout Confirmation");
+        confirmationDialog.setHeaderText("Are you sure you want to logout?");
 
-            // Create a new stage for the logout window
-            Stage mainStage = new Stage();
-            mainStage.setTitle("SellersApp — Main");
-            mainStage.setScene(new Scene(root, 320, 400));
-            mainStage.setResizable(false);  // Makes sure the user cannot resize the window
-            mainStage.show();
-            close();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        ButtonType okButton = new ButtonType("Yes");
+        ButtonType cancelButton = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+        confirmationDialog.getButtonTypes().setAll(cancelButton, okButton);
+
+        confirmationDialog.showAndWait().ifPresent(response -> {
+            if (response == okButton)
+            {
+                Utils.currentSeller = null;
+                try
+                {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/sl2425/da/sellersapp/login-view.fxml"));
+                    Parent root = fxmlLoader.load();
+
+                    Stage mainStage = new Stage();
+                    mainStage.setTitle("SellersApp — Login");
+                    mainStage.setScene(new Scene(root, 320, 400));
+                    mainStage.setResizable(false);
+                    mainStage.show();
+                    close();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void close()

@@ -63,7 +63,6 @@ public class DatabaseOps
             return null;
         try (Session session = sessionFactory.openSession())
         {
-            System.out.println("Checking login...");
             Query<SellerEntity> query = session.createQuery(
                     "from SellerEntity where cif = :cif and password = :password", SellerEntity.class);
             query.setParameter("cif", cif);
@@ -100,15 +99,17 @@ public class DatabaseOps
                 seller.setPlainPassword(updatedSeller.getPlainPassword());
                 seller.setPassword(updatedSeller.getPassword());
                 transaction.commit();
-                System.out.println("Seller updated successfully.");
+                logger.info("Seller with ID " + updatedSeller.getId() + " updated successfully.");
                 return true;
-            } else
-            {
-                System.out.println("Seller with ID " + updatedSeller.getId() + " not found.");
             }
-        } catch (Exception e)
+            else
+            {
+                logger.info("Seller with ID " + updatedSeller.getId() + " not found.");
+            }
+        }
+        catch (Exception e)
         {
-            System.out.println("Error during seller update: " + e.getMessage());
+            logger.severe("Error during seller update: " + e.getMessage());
             if (transaction != null && transaction.isActive())
             {
                 transaction.rollback();
@@ -125,7 +126,9 @@ public class DatabaseOps
         try (Session session = sessionFactory.openSession()) {
             Query<CategoryEntity> query = session.createQuery("from CategoryEntity", CategoryEntity.class);
             result = query.getResultList();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             logger.severe("Error during category selection: " + e.getMessage());
             e.printStackTrace();
         }
@@ -143,7 +146,8 @@ public class DatabaseOps
                     "from SellerProductEntity where seller = :seller", SellerProductEntity.class);
             query.setParameter("seller", seller);
             result = query.getResultList();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             logger.severe("Error during product selection: " + e.getMessage());
             e.printStackTrace();
@@ -195,14 +199,19 @@ public class DatabaseOps
         return false;
     }
 
-    public static boolean AddOffer(SellerProductEntity sellerProduct)
+    public static boolean AddOffer(SellerProductEntity updatedSellerProduct)
     {
-        if (sellerProduct == null)
+        if (updatedSellerProduct == null)
             return false;
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession())
         {
             transaction = session.beginTransaction();
+            SellerProductEntity sellerProduct = session.get(SellerProductEntity.class, updatedSellerProduct.getId());
+            sellerProduct.setOfferPrice(updatedSellerProduct.getOfferPrice());
+            sellerProduct.setOfferStartDate(updatedSellerProduct.getOfferStartDate());
+            sellerProduct.setOfferEndDate(updatedSellerProduct.getOfferEndDate());
+            session.save(sellerProduct);
             transaction.commit();
             return true;
         } catch (Exception e)

@@ -57,7 +57,7 @@ public class LoginController
             // Create a new stage for the dashboard window
             Stage mainStage = new Stage();
             mainStage.setTitle("SellersApp — Main");
-            mainStage.setScene(new Scene(root, 800, 600));
+            mainStage.setScene(new Scene(root, 800, 700));
             mainStage.setResizable(false);  // Makes sure the user cannot resize the window
             mainStage.show();
             close();                // closes the login window

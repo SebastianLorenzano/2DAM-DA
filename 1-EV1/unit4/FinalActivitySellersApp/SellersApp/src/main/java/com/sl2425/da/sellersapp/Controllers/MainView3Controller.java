@@ -4,8 +4,10 @@ import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -27,17 +29,16 @@ public class MainView3Controller
     private DatePicker toDatePicker;
 
     @FXML
-    private TextField discountTextField;
+    private Spinner<Integer> discountSpinner;
 
     @FXML
     private Button addButton;
-
-    private List<SellerProductEntity> sellerProducts = new ArrayList<SellerProductEntity>();
 
     @FXML
     private void initialize() {
         initializeSellerProductsBox();
         initializeDatePickers();
+        initializeDiscountSpinner();
 
         addButton.setOnAction(event -> handleAddAction());
     }
@@ -67,10 +68,156 @@ public class MainView3Controller
 
     private void initializeDatePickers()
     {
+        initializeFromDateDayCellFactory();
+        initializeToDatePickers();
         fromDatePicker.setPromptText("From");
         toDatePicker.setPromptText("To");
         fromDatePicker.setValue(LocalDate.now());
         toDatePicker.setValue(LocalDate.now().plusDays(1));
+        fromDatePicker.getEditor().addEventFilter(KeyEvent.ANY, Event::consume);
+        toDatePicker.getEditor().addEventFilter(KeyEvent.ANY, Event::consume);
+            // Destroys listeners to make sure user cannot write in the DatePicker
+
+    }
+
+
+
+    private void initializeFromDateDayCellFactory()
+    {
+        fromDatePicker.setDayCellFactory(datePicker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setDisable(false);
+                    setStyle("");
+                    return;
+                }
+
+                List<SellerProductEntity> sellerProducts = sellerProductBox.getItems();
+                if (sellerProducts == null || sellerProducts.isEmpty()) {
+                    // If no seller products, there's no need to disable anything
+                    setDisable(false);
+                    setStyle("");
+                    return;
+                }
+
+                boolean isCollision = sellerProducts.stream().anyMatch(sellerProduct -> {
+                    LocalDate startDate = sellerProduct.getOfferStartDate();
+                    LocalDate endDate = sellerProduct.getOfferEndDate();
+
+                    if (startDate == null || endDate == null)
+                        return false;
+                    return Utils.doesDatePeriodCollide(item, item, startDate, endDate);
+                });
+
+                if (isCollision)
+                {
+                    setDisable(true);   // Disables and pints red to tell user that the date is not available
+                    setStyle("-fx-background-color: #ffcccc;");
+                }
+                else
+                {
+                    setDisable(false);
+                    setStyle("");
+                }
+            }
+        });
+    }
+
+    private void initializeToDatePickers() {
+        fromDatePicker.valueProperty().addListener((observable, oldValue, newValue) ->
+        {
+            if (newValue != null) {
+                LocalDate maxDate = newValue.plusDays(30);
+                toDatePicker.setValue(newValue.plusDays(1));
+
+                toDatePicker.setDayCellFactory(picker -> new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setDisable(false);
+                            setStyle("");
+                            return;
+                        }
+
+                        // Disables and colours those dates that are either before or 30 days after fromToDate
+                        if (item.isBefore(newValue) || item.isAfter(maxDate)) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffcccc;");
+                        }
+
+                        // Enables the rest
+                        else {
+                            setDisable(false);
+                            setStyle("");
+                        }
+                    }
+                });
+            }
+        });
+
+        // Add a listener to `toDatePicker` to adjust discount limits based on date range
+        toDatePicker.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null && fromDatePicker.getValue() != null) {
+                long daysBetween = ChronoUnit.DAYS.between(fromDatePicker.getValue(), newValue);
+                refreshNewMaxDiscount(daysBetween);
+            }
+        });
+    }
+
+
+    private void initializeDiscountSpinner() {
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 0);
+        discountSpinner.setValueFactory(valueFactory);
+
+        TextField spinnerEditor = discountSpinner.getEditor();
+        spinnerEditor.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                int value = Integer.parseInt(newValue);
+                if (value < valueFactory.getMin())
+                    spinnerEditor.setText(String.valueOf(valueFactory.getMin()));
+                else if (value > valueFactory.getMax())
+                    spinnerEditor.setText(String.valueOf(valueFactory.getMax()));
+
+            }
+            catch (NumberFormatException e)
+            {
+                spinnerEditor.setText(oldValue);
+            }
+        });
+        discountSpinner.setEditable(true);
+    }
+
+    private void refreshNewMaxDiscount(long daysBetween)
+    {
+        int maxDiscount;
+
+        if (daysBetween > 15)
+            maxDiscount = 10;
+        else if (daysBetween > 7)
+            maxDiscount = 15;
+        else if (daysBetween > 3)
+            maxDiscount = 20;
+        else if (daysBetween > 1)
+            maxDiscount = 30;
+        else if (daysBetween == 1)
+            maxDiscount = 50;
+        else
+            maxDiscount = 0; // Default case, which should not happen, but ensures safety
+
+
+        // Update the spinner value factory with the new max discount
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
+                (SpinnerValueFactory.IntegerSpinnerValueFactory) discountSpinner.getValueFactory();
+        valueFactory.setMax(maxDiscount);
+
+
+        if (discountSpinner.getValue() > maxDiscount)
+            discountSpinner.getValueFactory().setValue(maxDiscount);
     }
 
     private void refreshSellerProductsBox()
@@ -91,30 +238,20 @@ public class MainView3Controller
         {
             if (!Utils.doesDatePeriodCollide(LocalDate.now(), LocalDate.now(),
                     sellerProduct.getOfferStartDate(), sellerProduct.getOfferEndDate()))
-            {
                 sellerProductBox.getItems().add(sellerProduct);
-                this.sellerProducts.add(sellerProduct);
-            }
-
         }
     }
 
     private void handleAddAction() {
         SellerProductEntity sellerProduct = sellerProductBox.getValue();
-        sellerProduct.setOfferStartDate(fromDatePicker.getValue());
-        sellerProduct.setOfferEndDate(toDatePicker.getValue());
-        String discountString = discountTextField.getText();
-        int discount = 0;
-        try
+        if (sellerProduct == null)
         {
-            discount = Integer.parseInt(discountString);
-        }
-        catch (NumberFormatException e)
-        {
-            Utils.showError("Invalid discount. Please enter a valid number.");
+            Utils.showError("Invalid product. Please select a product.");
             return;
         }
-
+        sellerProduct.setOfferStartDate(fromDatePicker.getValue());
+        sellerProduct.setOfferEndDate(toDatePicker.getValue());
+        int discount = discountSpinner.getValue();
         if (isOfferValid(sellerProduct, fromDatePicker.getValue(), toDatePicker.getValue(), discount))
         {
             sellerProduct.setOfferStartDate(fromDatePicker.getValue());

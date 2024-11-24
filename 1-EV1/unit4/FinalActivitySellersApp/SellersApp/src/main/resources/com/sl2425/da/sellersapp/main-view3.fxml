@@ -34,10 +34,14 @@
 
         <!-- Discount Label and TextField -->
         <Label text="Discount:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-size: 1.5em;" />
-        <TextField fx:id="discountTextField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="350"/>
+        <Spinner fx:id="discountSpinner" min="0" max="50" initialValue="0" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="350"/>
     </GridPane>
 
     <!-- Add Button -->
     <Button text="Add" fx:id="addButton" style="-fx-font-size: 1.8em; -fx-background-color: #4CAF50; -fx-text-fill: white;
-    -fx-padding: 10 20; -fx-border-radius: 5; -fx-background-radius: 5;" />
+    -fx-padding: 10 40; -fx-border-radius: 5; -fx-background-radius: 5;">
+        <VBox.margin>
+            <Insets top="6"/>
+        </VBox.margin>
+    </Button>
 </VBox>

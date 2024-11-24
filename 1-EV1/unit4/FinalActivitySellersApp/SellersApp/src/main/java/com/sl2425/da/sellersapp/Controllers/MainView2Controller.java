@@ -99,23 +99,23 @@ public class MainView2Controller {
 
     private void initializeStockSpinner()
     {
-        // Set up the value factory with limits
         SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 0);
         stockSpinner.setValueFactory(valueFactory);
 
-        // Add a ChangeListener to the editor to prevent out-of-range values
         TextField spinnerEditor = stockSpinner.getEditor();
         spinnerEditor.textProperty().addListener((observable, oldValue, newValue) -> {
-            try {
+            try
+            {
                 int value = Integer.parseInt(newValue);
-                if (value < valueFactory.getMin()) {
+                if (value < valueFactory.getMin())
+
                     spinnerEditor.setText(String.valueOf(valueFactory.getMin()));
-                } else if (value > valueFactory.getMax()) {
+                else if (value > valueFactory.getMax())
                     spinnerEditor.setText(String.valueOf(valueFactory.getMax()));
-                }
-            } catch (NumberFormatException e) {
-                // If parsing fails (e.g., the user types a non-numeric character), revert to the previous value
+            }
+            catch (NumberFormatException e)
+            {
                 spinnerEditor.setText(oldValue);
             }
         });

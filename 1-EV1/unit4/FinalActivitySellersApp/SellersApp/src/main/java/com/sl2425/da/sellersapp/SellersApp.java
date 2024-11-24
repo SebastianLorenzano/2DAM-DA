@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import com.sl2425.da.sellersapp.Model.*;
 
@@ -13,6 +12,7 @@ public class SellersApp extends Application {
     @Override
     public void start(Stage stage) throws IOException
     {
+        LogProperties.logger.info("Application started");
         DatabaseOps.init();         // Initialize Session Factory so it doesn't have a delay when the user logs in
         FXMLLoader fxmlLoader = new FXMLLoader(SellersApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 400);
