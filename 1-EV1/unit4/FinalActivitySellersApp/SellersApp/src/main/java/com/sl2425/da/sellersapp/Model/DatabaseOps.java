@@ -163,7 +163,7 @@ public class DatabaseOps
         try (Session session = openSession())
         {
             Query<ProductEntity> query = session.createNativeQuery(
-                            "SELECT * FROM select_available_products(:sellerId, :categoryId)",
+                            "SELECT * FROM select_available_products_sl2425(:sellerId, :categoryId)",
                             ProductEntity.class)
                     .setParameter("sellerId", seller.getId())
                     .setParameter("categoryId", category.getId());

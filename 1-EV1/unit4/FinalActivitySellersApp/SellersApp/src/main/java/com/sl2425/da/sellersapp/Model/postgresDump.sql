@@ -1,6 +1,6 @@
 
 
-CREATE OR REPLACE FUNCTION select_available_products(
+CREATE OR REPLACE FUNCTION select_available_products_sl2425(
     sellerId INT,
     categoryId INT
 ) RETURNS SETOF products AS $$
