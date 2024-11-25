@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b755109-54aa-41e9-b369-dd45955018ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../unit3/introduction/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit3/introduction/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/introduction/src/main/java/com/sl2425/da/DeptEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit3/introduction/src/main/java/com/sl2425/da/DeptEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit3/introduction/src/main/java/com/sl2425/da/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit3/introduction/src/main/java/com/sl2425/da/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContactListParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContactListParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +36,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ContactListHandler$Main.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.NewContactListSAXHandler.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/seblor3/Desktop/Programming/2DAM-DA/1-EV1/unit2/activity7.1",
+    "last_opened_file_path": "C:/Programming/dam/DATA_ACCESS_SL_2425/1-EV1/unit2/activity7.1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,7 +54,19 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Programming\dam\DATA_ACCESS_SL_2425\1-EV1\unit2\activity7.1\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.NewContactListSAXHandler">
+    <configuration name="ContactListHandler$Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ContactListHandler$Main" />
+      <module name="activity7.1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="activity7.1" />
@@ -58,8 +74,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NewContactListSAXHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NewContactListSAXHandler" />
+      <module name="activity7.1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NewContactListSAXHandler" />
+        <item itemvalue="Application.ContactListHandler$Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -67,8 +92,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -89,25 +114,12 @@
       <workItem from="1730128387256" duration="25000" />
       <workItem from="1730129641669" duration="693000" />
       <workItem from="1730226215656" duration="2209000" />
+      <workItem from="1732554255345" duration="1969000" />
+      <workItem from="1732569677083" duration="2751000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/ContactListParser.java</url>
-          <line>4</line>
-          <properties class="ContactListParser" method="Serialize">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

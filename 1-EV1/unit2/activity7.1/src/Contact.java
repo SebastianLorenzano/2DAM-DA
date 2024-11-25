@@ -8,6 +8,11 @@ public class Contact implements Serializable
     private String number;
     private String description;
 
+    public Contact()
+    {
+        this("", "", "", "", "");
+    }
+
     public Contact(String name, String surname, String email,
                    String number, String description)
     {

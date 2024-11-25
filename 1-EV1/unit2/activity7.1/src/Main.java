@@ -1,8 +1,16 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        //app();
+        main1();
+
+    }
+
+
+    public static void app() {
         Scanner scanner = new Scanner(System.in);
         ContactList contactList = new ContactList();
         boolean exit = false;
@@ -121,4 +129,22 @@ public class Main {
 
         scanner.close();
     }
+
+
+    public static void main1() {
+        ArrayList<NewContact> contactList = new ArrayList<>();
+        //NewContactListSAXHandler.loadFromXML("contacts.xml", contactList);
+        for (NewContact contact : contactList) {
+            System.out.println("Name: " + contact.getName());
+            System.out.println("Surname: " + contact.getSurname());
+            System.out.println("Emails: " + contact.getEmails());
+            System.out.println("Numbers: " + contact.getNumbers());
+            System.out.println("Description: " + contact.getDescription());
+            System.out.println("--------------------------");
+        }
+//NewContactListSAXHandler.saveToXML("new_contacts.xml", contactList);
+
+    }
 }
+
+

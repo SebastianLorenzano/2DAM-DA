@@ -24,7 +24,6 @@ public class ContactListParser
         try (FileInputStream fileIn = new FileInputStream(filePath);
              ObjectInputStream inStream = new ObjectInputStream(fileIn)) {
 
-            // Step 3: Read the object from the file
             return (ContactList)inStream.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
@@ -32,7 +31,5 @@ public class ContactListParser
             System.err.println("Unable to found a Contact List. Creating one");
             return new ContactList();
         }
-
-
     }
 }

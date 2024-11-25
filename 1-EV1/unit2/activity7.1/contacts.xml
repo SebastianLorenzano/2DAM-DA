@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contactList>
+    <contact>
+        <name>Sebastián</name>
+        <surname>null</surname>
+        <phone>444334433</phone>
+        <email>s@gmail.com</email>
+        <description>null</description>
+    </contact>
+    <contact>
+        <name>Nerea</name>
+        <surname>null</surname>
+        <phone>444334433</phone>
+        <email>nermasram@alu.edu.gva.es</email>
+        <description>null</description>
+    </contact>
+    <contact>
+        <name>Ángel Francisco</name>
+        <surname>Camacho Rico</surname>
+        <phone>622859171</phone>
+        <email>angelcamachorico@gmail.com</email>
+        <description>Una descripción de prueba</description>
+    </contact>
+</contactList>
