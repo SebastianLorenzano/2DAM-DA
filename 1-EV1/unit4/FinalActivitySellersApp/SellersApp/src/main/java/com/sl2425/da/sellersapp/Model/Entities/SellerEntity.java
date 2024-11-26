@@ -2,12 +2,13 @@ package com.sl2425.da.sellersapp.Model.Entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "sellers")
-public class SellerEntity
+public class SellerEntity implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sellers_id_gen")

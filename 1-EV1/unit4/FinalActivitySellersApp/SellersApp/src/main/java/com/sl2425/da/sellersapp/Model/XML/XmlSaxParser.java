@@ -37,7 +37,7 @@ public class XmlSaxParser {
 
 
     public static void main(String[] args) {
-        String filePath = "seller2.xml";
+        String filePath = "seller.xml";
 
         // Parse the XML to create a SellerEntity
         SellerEntity seller = parseSellerEntityFromXml(filePath);
@@ -51,7 +51,18 @@ public class XmlSaxParser {
             System.out.println("Email: " + seller.getEmail());
             System.out.println("Password: " + seller.getPassword());
         }
-        XMLDomSaver.saveSellerEntityToXml(seller, "seller2.xml");
+        XMLSaver.saveSellerEntityToXml(seller, "seller.xml");
+        ObjectParser.Serialize(seller, "seller.obj");
+        SellerEntity seller1 = ObjectParser.Deserialize("seller.obj");
+        if (seller1 != null) {
+            System.out.println("Loaded Seller:");
+            System.out.println("CIF: " + seller1.getCif());
+            System.out.println("Name: " + seller1.getName());
+            System.out.println("Business Name: " + seller1.getBusinessName());
+            System.out.println("Phone: " + seller1.getPhone());
+            System.out.println("Email: " + seller1.getEmail());
+            System.out.println("Password: " + seller1.getPassword());
+        }
     }
 }
 

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b755109-54aa-41e9-b369-dd45955018ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/logs/[26-11-2024] log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/logs/[26-11-2024] log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/seller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/seller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/seller2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/SellerEntityHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/SellerEntityHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/SellerSAXSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XMLDomSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XMLSaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XmlSaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../unit4/FinalActivitySellersApp/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XmlSaxParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +119,7 @@
       <workItem from="1730226215656" duration="2209000" />
       <workItem from="1732554255345" duration="1969000" />
       <workItem from="1732569677083" duration="2751000" />
-      <workItem from="1732635858307" duration="1432000" />
+      <workItem from="1732635858307" duration="2691000" />
     </task>
     <servers />
   </component>
