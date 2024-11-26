@@ -5,6 +5,8 @@ module com.sl2425.da.sellersapp {
     requires java.naming;
     requires jakarta.persistence;
     requires jdk.jshell;
+    requires jakarta.xml.bind;
+    requires java.desktop;
 
     // Open the entities package to Hibernate for reflection access
     opens com.sl2425.da.sellersapp.Model.Entities to org.hibernate.orm.core;

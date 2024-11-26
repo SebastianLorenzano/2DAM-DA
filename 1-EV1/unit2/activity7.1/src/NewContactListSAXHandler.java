@@ -141,6 +141,9 @@ public class NewContactListSAXHandler extends DefaultHandler {
         }
     }
 
+
+
+
     public static void main(String[] args) {
         // Usage Example
         ArrayList<NewContact> contactList = new ArrayList<>();
