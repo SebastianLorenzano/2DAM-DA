@@ -20,10 +20,7 @@ public class RememberObj implements Serializable
 
     public void setRemember(String remember)
     {
-        if (remember.equals("true"))
-            this.remember = "true";
-        else
-            this.remember = "false";
+        this.remember = remember;
     }
 
     public String getCif()

@@ -77,6 +77,7 @@ public class MainView3Controller
 
     private void initializeFromDateDayCellFactory()
     {
+
         fromDatePicker.setDayCellFactory(datePicker -> new DateCell() {
             @Override
             public void updateItem(LocalDate item, boolean empty) {
@@ -95,7 +96,7 @@ public class MainView3Controller
                     setStyle("");
                     return;
                 }
-
+                /*
                 boolean isCollision = sellerProducts.stream().anyMatch(sellerProduct -> {
                     LocalDate startDate = sellerProduct.getOfferStartDate();
                     LocalDate endDate = sellerProduct.getOfferEndDate();
@@ -115,6 +116,7 @@ public class MainView3Controller
                     setDisable(false);
                     setStyle("");
                 }
+                */
             }
         });
     }
@@ -126,7 +128,6 @@ public class MainView3Controller
             if (newValue != null) {
                 LocalDate maxDate = newValue.plusDays(30);
                 toDatePicker.setValue(newValue.plusDays(1));
-
                 toDatePicker.setDayCellFactory(picker -> new DateCell() {
                     @Override
                     public void updateItem(LocalDate item, boolean empty) {
@@ -228,14 +229,24 @@ public class MainView3Controller
     private void refreshNewMaxDiscount(long daysBetween)
     {
         int maxDiscount;
-
+        boolean isPro = Utils.currentSeller.getPro();
         if (daysBetween > 15)
-            maxDiscount = 10;
+        {
+            if (isPro)
+                maxDiscount = 20;
+            else
+                maxDiscount = 10;
+        }
         else if (daysBetween > 7)
             maxDiscount = 15;
         else if (daysBetween > 3)
-            maxDiscount = 20;
-        else if (daysBetween > 1)
+        {
+            if (isPro)
+                maxDiscount = 30;
+            else
+                maxDiscount = 20;
+        }
+        else if (daysBetween > 1 && !isPro)
             maxDiscount = 30;
         else if (daysBetween == 1)
             maxDiscount = 50;
@@ -341,11 +352,19 @@ public class MainView3Controller
             Utils.showError("Invalid date range. Maximum offer duration is 30 days.");
             return false;
         }
-
-        if (daysDistance >  15 && discount > 10)
+        boolean isPro = Utils.currentSeller.getPro();
+        if (daysDistance > 15)
         {
-            Utils.showError("Invalid discount. Maximum discount for offers longer than 15 days is 10%.");
-            return false;
+            if (isPro && discount > 20)
+            {
+                Utils.showError("Invalid discount. Maximum discount for offers longer than 15 days is 20%.");
+                return false;
+            }
+            else if (!isPro && discount > 10)
+            {
+                Utils.showError("Invalid discount. Maximum discount for offers longer than 15 days is 10%.");
+                return false;
+            }
         }
 
         if (daysDistance > 7 && discount > 15)
@@ -354,31 +373,56 @@ public class MainView3Controller
             return false;
         }
 
-        if (daysDistance > 3 && discount > 20)
+        if (daysDistance > 3)
         {
-            Utils.showError("Invalid discount. Maximum discount for offers longer than 3 days is 20%.");
-            return false;
+            if (isPro && discount > 30)
+            {
+                Utils.showError("Invalid discount. Maximum discount for offers longer than 3 days is 30%.");
+                return false;
+            }
+            else if (!isPro &&  discount > 20)
+            {
+                Utils.showError("Invalid discount. Maximum discount for offers longer than 3 days is 20%.");
+                return false;
+            }
         }
 
-        if (daysDistance > 1 && discount > 30)
+        if (daysDistance > 1)
         {
-            Utils.showError("Invalid discount. Maximum discount for offers longer than 1 day is 30%.");
-            return false;
+            if (isPro && discount > 50)
+            {
+                Utils.showError("Invalid discount. Maximum discount for offers longer than 1 day is 50%.");
+                return false;
+            }
+            else if (!isPro && discount > 30)
+            {
+                Utils.showError("Invalid discount. Maximum discount for offers longer than 1 day is 30%.");
+                return false;
+            }
         }
+
+
 
         if (daysDistance == 1 && discount > 50)
         {
             Utils.showError("Invalid discount. Maximum discount for offers lasting 1 day is 50%.");
             return false;
         }
-
+        int maxCollisions = 0;
+        if (isPro)
+            maxCollisions = 3;
+        int i = 0;
         for (SellerProductEntity sProduct : sellerProductBox.getItems())
         {
             if (!Objects.equals(sProduct.getId(), sellerProduct.getId()) &&
                     Utils.doesDatePeriodCollide(fromDate, toDate, sProduct.getOfferStartDate(), sProduct.getOfferEndDate()))
             {
-                Utils.showError("Invalid date range. The offer coincides with another offer.");
-                return false;
+                i++;
+                if (i > maxCollisions)
+                {
+                    Utils.showError("Invalid date range. The offer coincides with another offer.");
+                    return false;
+                }
             }
         }
         return true;

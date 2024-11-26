@@ -99,6 +99,7 @@ public class LoginController
 
     private void close()
     {   // Gets the current window, casts it and closes it
+        System.out.println(rememberObj.getCif() + rememberObj.getRemember());
         RememberXML.SerializeXML(rememberObj, Utils.REMEMBER_CHECKBOX_PATH);
         ((Stage) cifField.getScene().getWindow()).close();
     }
