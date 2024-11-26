@@ -6,7 +6,7 @@ import java.io.*;
 
 public class ObjectParser
 {
-
+// Este parser es un ejemplo que hice en preparacion al examen, IGNORAR
     public static void Serialize(SellerEntity seller, String path)
     {
         if (path == null || seller == null)

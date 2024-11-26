@@ -1,10 +1,13 @@
 package com.sl2425.da.sellersapp.Controllers;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.Model.RememberObj;
+import com.sl2425.da.sellersapp.Model.XML.RememberXML;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -22,7 +25,33 @@ public class LoginController
     private PasswordField passwordField;
 
     @FXML
-    private synchronized void onLoginButtonClick() {
+    private CheckBox rememberCheckbox;
+
+    private RememberObj rememberObj = new RememberObj();
+
+    @FXML
+    private void initialize()
+    {
+        rememberObj = RememberXML.DeserializeXML(Utils.REMEMBER_CHECKBOX_PATH);
+        if (rememberObj != null && rememberObj.getRemember().equals("true") && rememberObj.getCif() != null)
+        {
+            cifField.setText(rememberObj.getCif());
+            rememberCheckbox.setSelected(true);
+            rememberObj.setRemember("true");
+        }
+        else
+        {
+            rememberCheckbox.setSelected(false);
+            rememberObj.setRemember("false");
+        }
+
+
+
+    }
+
+    @FXML
+    private synchronized void onLoginButtonClick()
+    {
         String username = cifField.getText();
         String password = Utils.encryptToMD5(passwordField.getText()).toUpperCase();
         if (checkLogin(username, password))
@@ -70,6 +99,7 @@ public class LoginController
 
     private void close()
     {   // Gets the current window, casts it and closes it
+        RememberXML.SerializeXML(rememberObj, Utils.REMEMBER_CHECKBOX_PATH);
         ((Stage) cifField.getScene().getWindow()).close();
     }
 

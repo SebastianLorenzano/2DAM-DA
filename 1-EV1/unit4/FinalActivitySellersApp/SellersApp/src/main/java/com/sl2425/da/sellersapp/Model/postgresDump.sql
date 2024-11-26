@@ -16,3 +16,12 @@ BEGIN
         );
 END;
 $$ LANGUAGE plpgsql;
+
+
+ALTER TABLE IF EXISTS public.sellers
+    ADD COLUMN url character varying(255) COLLATE pg_catalog."default";
+
+ALTER TABLE IF EXISTS public.sellers
+    ADD COLUMN pro boolean NOT NULL DEFAULT false;
+
+SELECT * FROM sellers

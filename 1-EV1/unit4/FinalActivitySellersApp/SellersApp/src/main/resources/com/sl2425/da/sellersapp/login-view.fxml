@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
-
-<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml" style="-fx-background-color: #f0f0f0;"
-      fx:controller="com.sl2425.da.sellersapp.Controllers.LoginController" >
+<VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #f0f0f0;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.sl2425.da.sellersapp.Controllers.LoginController">
   <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
 
-  <Label text="Seller App" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+  <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Seller App" />
 
-  <Label text="Welcome! Please log in below."/>
+  <Label text="Welcome! Please log in below." />
 
-  <Label text="Username:"/>
-  <TextField fx:id="cifField" promptText="Enter your CIF"/>
+  <Label text="Username:" />
+  <TextField fx:id="cifField" promptText="Enter your CIF" />
 
-  <Label text="Password:"/>
-  <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+  <Label text="Password:" />
+  <PasswordField fx:id="passwordField" promptText="Enter your password" />
+   <CheckBox fx:id="rememberCheckbox" mnemonicParsing="false" text="CheckBox" />
 
-  <Button text="Login" onAction="#onLoginButtonClick"/>
+  <Button onAction="#onLoginButtonClick" text="Login" />
 </VBox>

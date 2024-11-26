@@ -13,6 +13,7 @@ import java.time.LocalDate;
 public class Utils
 {
     public static SellerEntity currentSeller;
+    public static final String REMEMBER_CHECKBOX_PATH = "remember.xml";
 
     public static String encryptToMD5(String password)
     {
