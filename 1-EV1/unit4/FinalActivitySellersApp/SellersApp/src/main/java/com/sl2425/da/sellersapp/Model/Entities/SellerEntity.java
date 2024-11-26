@@ -1,6 +1,7 @@
 package com.sl2425.da.sellersapp.Model.Entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -39,6 +40,33 @@ public class SellerEntity implements Serializable
 
     @OneToMany(mappedBy = "seller")
     private Set<SellerProductEntity> sellerProducts = new LinkedHashSet<>();
+
+    @Column(name = "url")
+    private String url;
+
+    @ColumnDefault("false")
+    @Column(name = "pro", nullable = false)
+    private Boolean pro = false;
+
+    public Boolean getPro()
+    {
+        return pro;
+    }
+
+    public void setPro(Boolean pro)
+    {
+        this.pro = pro;
+    }
+
+    public String getUrl()
+    {
+        return url;
+    }
+
+    public void setUrl(String url)
+    {
+        this.url = url;
+    }
 
     public Integer getId()
     {

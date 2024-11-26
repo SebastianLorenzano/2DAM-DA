@@ -99,6 +99,7 @@ public class DatabaseOps
                 seller.setEmail(updatedSeller.getEmail());
                 seller.setPlainPassword(updatedSeller.getPlainPassword());
                 seller.setPassword(updatedSeller.getPassword());
+                seller.setUrl(updatedSeller.getUrl());
                 transaction.commit();
                 logger.info("Seller with ID " + updatedSeller.getId() + " updated successfully.");
                 return true;

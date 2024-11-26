@@ -24,4 +24,8 @@ ALTER TABLE IF EXISTS public.sellers
 ALTER TABLE IF EXISTS public.sellers
     ADD COLUMN pro boolean NOT NULL DEFAULT false;
 
+UPDATE sellers
+SET pro = true
+WHERE seller_id = 1
+
 SELECT * FROM sellers

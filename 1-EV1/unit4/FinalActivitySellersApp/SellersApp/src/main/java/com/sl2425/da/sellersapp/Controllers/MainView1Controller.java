@@ -29,6 +29,9 @@ public class MainView1Controller {
     private TextField emailField;
 
     @FXML
+    private TextField urlField;
+
+    @FXML
     private PasswordField passwordField;
 
     @FXML
@@ -54,6 +57,10 @@ public class MainView1Controller {
             emailField.setText(seller.getEmail());
             passwordField.setText("********");
             confirmPassField.setText("********");
+            urlField.setText(seller.getUrl());
+            if (seller.getPro())
+                urlField.setEditable(true);
+
         }
     }
 
@@ -76,8 +83,10 @@ public class MainView1Controller {
             if (result)
             {
                 Utils.currentSeller = updatedSeller;
+                seller = updatedSeller;
                 System.out.println("Seller updated successfully.");
                 Utils.showConfirmation("Changes were made successfully!");
+
             }
             else
             {
@@ -89,13 +98,16 @@ public class MainView1Controller {
 
     private static boolean isSellerEqualToCurrent(SellerEntity newSeller)
     {
+        System.out.println(newSeller.getPro());
+        System.out.println(newSeller.getUrl());
         return newSeller != null &&
                 Objects.equals(newSeller.getCif(), seller.getCif()) &&
                 Objects.equals(newSeller.getName(), seller.getName()) &&
                 Objects.equals(newSeller.getBusinessName(), seller.getBusinessName()) &&
                 Objects.equals(newSeller.getPhone(), seller.getPhone()) &&
                 Objects.equals(newSeller.getEmail(), seller.getEmail()) &&
-                Objects.equals(newSeller.getPassword(), seller.getPassword());
+                Objects.equals(newSeller.getPassword(), seller.getPassword()) &&
+                (!newSeller.getPro() || Objects.equals(newSeller.getUrl(), seller.getUrl()));
     }
 
     private static boolean isSellerValid(SellerEntity newSeller)
@@ -153,6 +165,15 @@ public class MainView1Controller {
             Utils.showError("Error updating seller: Password is not valid.");
             return false;
         }
+
+        if (newSeller.getPro() && !newSeller.getUrl().trim().isEmpty() &&
+                !newSeller.getUrl().matches("^https?:\\/\\/(www\\.)?[\\w-]+(\\.[\\w-]+)+(\\.[a-z]{2,6})(\\/[\\w-]*)*\\/?$"))
+        {
+            LogProperties.logger.warning("Error updating seller: URL is not valid.");
+            Utils.showError("Error updating seller: URL is not valid.");
+            return false;
+        }
+
         return true;
     }
 
@@ -167,10 +188,13 @@ public class MainView1Controller {
             setPhone(phoneField.getText());
             setEmail(emailField.getText());
             setPassword(seller.getPassword());
-            setPlainPassword(seller.getPlainPassword());}
-        };
+            setPlainPassword(seller.getPlainPassword());
+            setPro(seller.getPro());
+            setUrl(urlField.getText());
+        }};
+    };
     }
-}
+
 
 
 

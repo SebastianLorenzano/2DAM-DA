@@ -34,11 +34,14 @@
             <Label style="-fx-font-size: 1.5em;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <TextField fx:id="emailField" promptText="Enter Email" style="-fx-font-size: 1.5em; -fx-background-radius: 5; -fx-border-color: #ccc;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-            <Label style="-fx-font-size: 1.5em;" text="Password: *" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <PasswordField fx:id="passwordField" promptText="Enter Password" style="-fx-font-size: 1.5em; -fx-background-radius: 5; -fx-border-color: #ccc;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label style="-fx-font-size: 1.5em;" text="URL:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="urlField" promptText="Enter Url" editable="false" style="-fx-font-size: 1.5em; -fx-background-radius: 5; -fx-border-color: #ccc;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-            <Label style="-fx-font-size: 1.5em;" text="Confirm Password: *" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <PasswordField fx:id="confirmPassField" promptText="Enter Password" style="-fx-font-size: 1.5em; -fx-background-radius: 5; -fx-border-color: #ccc;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label style="-fx-font-size: 1.5em;" text="Password: *" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <PasswordField fx:id="passwordField" promptText="Enter Password" style="-fx-font-size: 1.5em; -fx-background-radius: 5; -fx-border-color: #ccc;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+            <Label style="-fx-font-size: 1.5em;" text="Confirm Password: *" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <PasswordField fx:id="confirmPassField" promptText="Enter Password" style="-fx-font-size: 1.5em; -fx-background-radius: 5; -fx-border-color: #ccc;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
         </GridPane>
 
