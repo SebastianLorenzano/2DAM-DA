@@ -60,7 +60,7 @@ public class Utils
     {
         if (startDate1 == null || endDate1 == null || startDate2 == null || endDate2 == null)
             return false;
-        return (startDate1.isBefore(startDate2) && endDate1.isAfter(startDate2) ||   // If the period starts before the other period and ends after the other period
+        return ((startDate1.isBefore(startDate2) && endDate1.isAfter(startDate2)) ||   // If the period starts before the other period and ends after the other period
                 (startDate2.isBefore(startDate1) && endDate2.isAfter(startDate1)) ||  // If the other period starts before this period and ends after this period
                 startDate1.isEqual(startDate2));                                   // If the periods start at the same time
     }
