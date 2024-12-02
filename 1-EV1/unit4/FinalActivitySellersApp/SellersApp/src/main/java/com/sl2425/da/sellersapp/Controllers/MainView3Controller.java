@@ -248,10 +248,8 @@ public class MainView3Controller
         }
         else if (daysBetween > 1 && !isPro)
             maxDiscount = 30;
-        else if (daysBetween == 1)
-            maxDiscount = 50;
         else
-            maxDiscount = 0; // Default case, which should not happen, but ensures safety
+            maxDiscount = 50;
 
 
         // Update the spinner value factory with the new max discount
