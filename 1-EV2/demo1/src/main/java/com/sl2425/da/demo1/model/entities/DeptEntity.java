@@ -1,4 +1,4 @@
-package com.sl2425.da.springboot_introduction.Model.Entity;
+package com.sl2425.da.demo1.model.entities;
 
 import jakarta.persistence.*;
 
@@ -18,9 +18,6 @@ public class DeptEntity
 
     @Column(name = "loc", length = 13)
     private String loc;
-
-    @OneToMany(mappedBy = "deptno")
-    private Set<com.sl2425.da.springboot_introduction.Model.Entity.EmployeeEntity> employees = new LinkedHashSet<>();
 
     public Integer getId()
     {
@@ -52,14 +49,18 @@ public class DeptEntity
         this.loc = loc;
     }
 
-    public Set<com.sl2425.da.springboot_introduction.Model.Entity.EmployeeEntity> getEmployees()
+    @OneToMany(mappedBy = "deptno")
+
+    private Set<EmployeeEntity> employees = new LinkedHashSet<>();
+    public Set<EmployeeEntity> getEmployees()
     {
         return employees;
     }
 
-    public void setEmployees(Set<com.sl2425.da.springboot_introduction.Model.Entity.EmployeeEntity> employees)
+    public void setEmployees(Set<EmployeeEntity> employees)
     {
         this.employees = employees;
     }
+
 
 }

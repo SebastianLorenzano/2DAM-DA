@@ -1,5 +1,7 @@
-package com.sl2425.da.springboot_introduction.Model.Entity;
+package com.sl2425.da.demo1.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,9 +18,19 @@ public class EmployeeEntity
     @Column(name = "job", length = 9)
     private String job;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "deptno")
-    private com.sl2425.da.springboot_introduction.Model.Entity.DeptEntity deptno;
+    @JsonIgnoreProperties("employees")
+    private DeptEntity deptno;
+    public DeptEntity getDeptno()
+    {
+        return deptno;
+    }
+
+    public void setDeptno(DeptEntity deptno)
+    {
+        this.deptno = deptno;
+    }
 
     public Integer getId()
     {
@@ -50,14 +62,7 @@ public class EmployeeEntity
         this.job = job;
     }
 
-    public com.sl2425.da.springboot_introduction.Model.Entity.DeptEntity getDeptno()
-    {
-        return deptno;
-    }
 
-    public void setDeptno(com.sl2425.da.springboot_introduction.Model.Entity.DeptEntity deptno)
-    {
-        this.deptno = deptno;
-    }
+
 
 }
