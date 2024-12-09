@@ -61,8 +61,4 @@ public class EmployeeEntity
     {
         this.job = job;
     }
-
-
-
-
 }
