@@ -15,7 +15,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/api-rest-/employees")
+@RequestMapping("/employees")
 public class EmployeeController {
 
     @Autowired
@@ -38,8 +38,20 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public EmployeeEntity saveEmployee(@Validated @RequestBody EmployeeEntity Employeexml) {
-        return employeeEntityDAO.save(Employeexml);
+    public ResponseEntity<EmployeeEntity> saveEmployee(@Validated @RequestBody EmployeeEntity Employee) {
+        Optional<EmployeeEntity> employee = employeeEntityDAO.findById(Employee.getId());
+        if (employee.isPresent())
+            return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok(employeeEntityDAO.save(Employee));
+    }
+
+    @PutMapping
+    public ResponseEntity<?> updateEmployee(@Validated @RequestBody EmployeeEntity Employee) {
+        Optional<EmployeeEntity> employee = employeeEntityDAO.findById(Employee.getId());
+        if (!employee.isPresent())
+            return ResponseEntity.badRequest().build();
+        employeeEntityDAO.save(Employee);
+        return ResponseEntity.ok().body("Updated");
     }
 
     @DeleteMapping("/{id}")

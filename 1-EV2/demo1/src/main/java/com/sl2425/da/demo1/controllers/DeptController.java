@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/api-rest-/departments")
+@RequestMapping("/departments")
 public class DeptController {
 
     @Autowired
@@ -35,9 +35,24 @@ public class DeptController {
     }
 
     @PostMapping
-    public DeptEntity saveDepartment(@Validated @RequestBody DeptEntity Department) {
-        return deptEntityDAO.save(Department);
+    public ResponseEntity<?> saveDepartment(@Validated @RequestBody DeptEntity Department)
+    {
+        Optional<DeptEntity> dept = deptEntityDAO.findById(Department.getId());
+        if (dept.isPresent())
+            return ResponseEntity.badRequest().build();
+        return ResponseEntity.ok(deptEntityDAO.save(Department));
     }
+
+    @PutMapping
+    public ResponseEntity<?> updateDepartment(@Validated @RequestBody DeptEntity Department)
+    {
+        Optional<DeptEntity> dept = deptEntityDAO.findById(Department.getId());
+        if (!dept.isPresent())
+            return ResponseEntity.badRequest().build();
+        deptEntityDAO.save(Department);
+        return ResponseEntity.ok().body("Updated");
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteDepartment(@PathVariable(value = "id") int id) {
