@@ -2,6 +2,7 @@ package com.sl2425.da.demo1.controllers;
 
 
 import com.sl2425.da.demo1.model.dao.IDeptEntityDAO;
+import com.sl2425.da.demo1.model.dto.EmployeeDTO;
 import com.sl2425.da.demo1.model.dao.IEmployeeEntityDAO;
 import com.sl2425.da.demo1.model.entities.EmployeeEntity;
 import com.sl2425.da.demo1.model.entities.DeptEntity;
@@ -55,12 +56,39 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteEmployee(@PathVariable(value = "id") int id) {
+    public ResponseEntity<?> deleteEmployee(@PathVariable(value = "id") int id)
+    {
         Optional<EmployeeEntity> Employeexml = employeeEntityDAO.findById(id);
-        if(Employeexml.isPresent()) {
+        if(Employeexml.isPresent())
+        {
             employeeEntityDAO.deleteById(id);
             return ResponseEntity.ok().body("Deleted");
-        } else {
+        }
+        else
+        {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+    @GetMapping("dto/{id}")
+    public ResponseEntity<EmployeeDTO> searchEmployeeDTOById(@PathVariable(value = "id") int id)
+    {
+        Optional<EmployeeEntity> employee = employeeEntityDAO.findById(id);
+
+        if (employee.isPresent())
+        {
+            EmployeeDTO employeeDTO = new EmployeeDTO();
+            employeeDTO.setEmpno(employee.get().getId());
+            employeeDTO.setEname(employee.get().getEname());
+            employeeDTO.setJob(employee.get().getJob());
+            employeeDTO.setDepno(employee.get().getDeptno().getId());
+            employeeDTO.setDname(employee.get().getDeptno().getDname());
+            employeeDTO.setDloc(employee.get().getDeptno().getLoc());
+            return ResponseEntity.ok().body(employeeDTO);
+        }
+        else
+        {
             return ResponseEntity.notFound().build();
         }
     }

@@ -2,6 +2,7 @@ package com.sl2425.da.demo1.controllers;
 
 import com.sl2425.da.demo1.model.dao.IDeptEntityDAO;
 import com.sl2425.da.demo1.model.entities.DeptEntity;
+import com.sl2425.da.demo1.model.entities.EmployeeEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -64,4 +65,6 @@ public class DeptController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 }
