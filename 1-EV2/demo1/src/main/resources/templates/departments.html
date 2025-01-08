@@ -5,6 +5,19 @@
     <title>departments</title>
 </head>
 <body>
-
+    <h1>Departamentos</h1>
+    <table>
+        <tr>
+            <th>Numero de Departamento</th>
+            <th>Nombre</th>
+            <th>Ubicación</th>
+        </tr>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.id}"></td>
+            <td th:text="${department.dname}"></td>
+            <td th:text="${department.loc}"></td>
+        </tr>
+    </table>
+    <a href="/">Volver</a>
 </body>
 </html>

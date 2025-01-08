@@ -1,5 +1,7 @@
 package com.sl2425.da.sellersapp.Model.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -39,6 +41,7 @@ public class SellerEntity implements Serializable
     private String password;
 
     @OneToMany(mappedBy = "seller")
+    @JsonIgnore
     private Set<SellerProductEntity> sellerProducts = new LinkedHashSet<>();
 
     @Column(name = "url")

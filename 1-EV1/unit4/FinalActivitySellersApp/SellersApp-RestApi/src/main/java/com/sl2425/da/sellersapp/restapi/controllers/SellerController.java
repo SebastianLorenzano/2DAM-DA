@@ -4,11 +4,15 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.swing.text.html.Option;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("sellers")
@@ -18,11 +22,23 @@ public class SellerController
     private ISellerEntityDAO sellerDAO;
 
     @GetMapping
-    public SellerEntity getSellerByCifAndPassword(
+    public ResponseEntity<?> getSellerByCifAndPassword(
             @RequestParam("cif") String cif,
             @RequestParam("password") String password)
     {
+        SellerEntity result = sellerDAO.findByCifAndPassword(cif, password);
+        if (result == null)
+            throw new EntityNotFoundException("Seller not found");
+        return ResponseEntity.ok().body(result);
+    }
 
+    @PutMapping
+    public ResponseEntity<?> updateSeller(@Validated @RequestBody SellerEntity value) {
+        Optional<SellerEntity> seller = sellerDAO.findById(value.getId());
+        if (!seller.isPresent())
+            return ResponseEntity.badRequest().build();
+        sellerDAO.save(value);
+        return ResponseEntity.ok().body("Updated");
     }
 
 }
