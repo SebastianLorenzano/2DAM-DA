@@ -7,6 +7,7 @@ module com.sl2425.da.sellersapp {
     requires jdk.jshell;
     requires jakarta.xml.bind;
     requires java.desktop;
+    requires com.fasterxml.jackson.annotation;
 
     // Open the entities package to Hibernate for reflection access
     opens com.sl2425.da.sellersapp.Model.Entities to org.hibernate.orm.core;

@@ -1,5 +1,7 @@
 package com.sl2425.da.sellersapp.Model.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -31,6 +33,7 @@ public class ProductEntity
     private Boolean active = false;
 
     @OneToMany(mappedBy = "product")
+    @JsonIgnore         // I don't want to get SellerProducts from here, but instead retrieve them only when I need them
     private Set<com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity> sellerProducts = new LinkedHashSet<>();
 
     public Integer getId()

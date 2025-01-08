@@ -1,5 +1,6 @@
 package com.sl2425.da.sellersapp.Model.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
@@ -19,6 +20,7 @@ public class CategoryEntity
     private String categoryName;
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnoreProperties("category")
     private Set<com.sl2425.da.sellersapp.Model.Entities.ProductEntity> products = new LinkedHashSet<>();
 
     public Integer getId()
