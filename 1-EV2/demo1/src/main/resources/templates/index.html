@@ -1,10 +1,23 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MI API-REST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI API REST</title>
+    <link rel="stylesheet" href="/indexStyles.css">
 </head>
 <body>
-    <h1>MI API-REST</h1>
-    <a href="http://localhost:8080/employee-app/web/departments">Ver Departamentos</a>
+<div class="container">
+    <h1>MI API REST</h1>
+    <p>Seleccione una opción</p>
+    <div class="buttons">
+        <button onclick=location.href="http://localhost:8080/employee-app/web/departments">Ver Empleados</button>
+        <!--
+        <button onclick="location.href='/ver-departamentos'">Ver Departamentos</button>
+        <button onclick="location.href='/alta-empleados'">Alta Empleados</button>
+        <button onclick="location.href='/alta-departamentos'">Alta Departamentos</button>
+        -->
+    </div>
+</div>
 </body>
 </html>

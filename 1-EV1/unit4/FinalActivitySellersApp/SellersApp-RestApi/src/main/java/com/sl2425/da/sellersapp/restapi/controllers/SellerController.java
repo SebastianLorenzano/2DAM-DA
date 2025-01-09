@@ -24,7 +24,7 @@ public class SellerController
     @GetMapping
     public ResponseEntity<?> getSellerByCifAndPassword(
             @RequestParam("cif") String cif,
-            @RequestParam("password") String password)
+            @RequestBody String password)
     {
         SellerEntity result = sellerDAO.findByCifAndPassword(cif, password);
         if (result == null)

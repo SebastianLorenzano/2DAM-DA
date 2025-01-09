@@ -1,7 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.controllers;
 
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
-import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +20,10 @@ public class ProductController
 
     @GetMapping
     public List<ProductEntity> selectAvailableProducts(
-            @RequestParam("cif") int cif,
+            @RequestParam("sellerId") int sellerId,
             @RequestParam("categoryId") int categoryId)
     {
-        return (List<ProductEntity>)productDAO.SelectAvailableProducts(cif, categoryId);
+        return (List<ProductEntity>)productDAO.SelectAvailableProducts(sellerId, categoryId);
     }
 
 

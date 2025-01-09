@@ -24,8 +24,9 @@ public class ProductEntity
     @Column(name = "description", length = Integer.MAX_VALUE)
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
+    @JsonIgnoreProperties("products")
     private CategoryEntity category;
 
     @ColumnDefault("true")

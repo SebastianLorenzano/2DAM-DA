@@ -6,6 +6,11 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ISellerEntityDAO extends CrudRepository<SellerEntity, Integer>
 {
+    SellerEntity findByCifAndPassword(String cif, String password);
+
+    /*
     @Query("SELECT s FROM SellerEntity s WHERE s.cif = ?1 AND s.password = ?2")
     SellerEntity findByCifAndPassword(String cif, String password);
+
+     */
 }
