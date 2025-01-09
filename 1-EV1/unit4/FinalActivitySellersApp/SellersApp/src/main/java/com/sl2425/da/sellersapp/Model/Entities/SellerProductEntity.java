@@ -2,6 +2,7 @@ package com.sl2425.da.sellersapp.Model.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -45,6 +46,18 @@ public class SellerProductEntity
 
     public SellerProductEntity()
     {
+    }
+
+    public SellerProductEntity(SellerProductDTO sellerProductDTO, SellerEntity seller)
+    {
+        this.id = sellerProductDTO.getId();
+        this.seller = seller;
+        this.product = sellerProductDTO.getProduct();
+        this.price = sellerProductDTO.getPrice();
+        this.offerPrice = sellerProductDTO.getOfferPrice();
+        this.offerStartDate = sellerProductDTO.getOfferStartDate();
+        this.offerEndDate = sellerProductDTO.getOfferEndDate();
+        this.stock = sellerProductDTO.getStock();
     }
 
     public SellerProductEntity(com.sl2425.da.sellersapp.Model.Entities.SellerEntity seller,
