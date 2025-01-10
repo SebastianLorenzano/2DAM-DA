@@ -28,7 +28,7 @@ public class SellerController
     {
         SellerEntity result = sellerDAO.findByCifAndPassword(cif, password);
         if (result == null)
-            throw new EntityNotFoundException("Seller not found");
+            return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(result);
     }
 

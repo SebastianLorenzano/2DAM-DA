@@ -6,6 +6,7 @@ import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
+import com.sl2425.da.sellersapp.restapi.services.SellerProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,33 +19,20 @@ import java.util.List;
 public class SellerProductController
 {
     @Autowired
-    private ISellerProductEntityDAO sellerProductDAO;
-    private ISellerEntityDAO sellerDAO;
-    private IProductEntityDAO productDAO;
+    private SellerProductServices sellerProductServices;
+
 
     @GetMapping
-    public List<SellerProductEntity> findAllSellerProductsBySeller(
+    public ResponseEntity<List<SellerProductEntity>> findAllSellerProductsBySeller(
             @RequestBody SellerEntity seller)
     {
-        return sellerProductDAO.findAllBySeller(seller);
+        return ResponseEntity.ok().body(sellerProductServices.findAllSellerProductsBySeller(seller));
     }
 
     @PostMapping
     public ResponseEntity<SellerProductEntity> saveSellerProduct(@RequestBody SellerProductDTO s)
     {
-        if (s == null || s.getProduct() == null)
-            throw new IllegalArgumentException("Invalid sellerProduct");
-        SellerEntity seller = sellerDAO.findByCifAndPassword(
-                s.getSellerDTO().getCif(), s.getSellerDTO().getPassword());
-        if (seller == null)
-            throw new IllegalArgumentException("Seller not found");
-        if (productDAO.findById(s.getProduct().getId()).isEmpty())
-            throw new IllegalArgumentException("Product not found");
-        if (s.getPrice().compareTo(BigDecimal.ZERO) <= 0)
-            throw new IllegalArgumentException("Invalid price");
-        SellerProductEntity sellerProduct = new SellerProductEntity(s, seller);
-
-        return ResponseEntity.ok().body(sellerProductDAO.save(sellerProduct));
+        return sellerProductServices.saveSellerProduct(s);
     }
 
 
