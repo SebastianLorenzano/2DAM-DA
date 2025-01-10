@@ -13,7 +13,7 @@ public class SellersApp extends Application {
     public void start(Stage stage) throws IOException
     {
         LogProperties.logger.info("Application started");
-        DatabaseOps.init();         // Initialize Session Factory so it doesn't have a delay when the user logs in
+        DatabaseManager databaseOps = new DatabaseOps();
         FXMLLoader fxmlLoader = new FXMLLoader(SellersApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 400);
         stage.setTitle("SellersApp — Login");

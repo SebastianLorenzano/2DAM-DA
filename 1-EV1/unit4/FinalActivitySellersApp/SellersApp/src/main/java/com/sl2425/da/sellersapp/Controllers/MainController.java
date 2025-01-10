@@ -1,5 +1,6 @@
 package com.sl2425.da.sellersapp.Controllers;
 
+import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.SellersApp;
 import javafx.fxml.FXML;
@@ -16,7 +17,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainController {
+public class MainController extends GenericAppController
+{
 
     @FXML
     private StackPane contentPane;

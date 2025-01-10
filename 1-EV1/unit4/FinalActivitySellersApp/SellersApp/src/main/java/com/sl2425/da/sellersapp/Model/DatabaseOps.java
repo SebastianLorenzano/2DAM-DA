@@ -11,12 +11,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseOps
+public class DatabaseOps extends DatabaseManager
 {
 
-    public final static SessionFactory sessionFactory;
+    public DatabaseOps()
+    {
+        init();   // Initialize Session Factory so it doesn't have a delay when the user logs in
+    }
 
-    static
+    public final  SessionFactory sessionFactory;
     {
         SessionFactory temp = null;
         try
@@ -30,7 +33,7 @@ public class DatabaseOps
         sessionFactory = temp;
     }
 
-    public static void init()
+    public void init()
     {
         if (sessionFactory == null)
         {
@@ -47,7 +50,7 @@ public class DatabaseOps
         }
     }
 
-    private static Session openSession() throws Exception
+    private Session openSession() throws Exception
     {
         Session session = sessionFactory.openSession();
         if (session == null)
@@ -57,7 +60,7 @@ public class DatabaseOps
     }
 
 
-    public static SellerEntity SelectSellerWithCifAndPassword(String cif, String password)
+    public SellerEntity SelectSellerWithCifAndPassword(String cif, String password)
     {
         SellerEntity seller = null;
         if (cif == null || cif.isEmpty() || password == null || password.isEmpty())
@@ -77,7 +80,7 @@ public class DatabaseOps
         return seller;
     }
 
-    public static boolean updateSeller(SellerEntity updatedSeller)
+    public boolean updateSeller(SellerEntity updatedSeller)
     {
         if (sessionFactory == null)
         {
@@ -120,7 +123,7 @@ public class DatabaseOps
         return false;
     }
 
-    public static List<CategoryEntity> SelectCategories()
+    public List<CategoryEntity> SelectCategories()
     {
         List<CategoryEntity> result = null;
         try (Session session = openSession())
@@ -136,7 +139,7 @@ public class DatabaseOps
         return result;
     }
 
-    public static List<SellerProductEntity> SelectSellerProducts(SellerEntity seller)
+    public List<SellerProductEntity> SelectSellerProducts(SellerEntity seller)
     {
         List<SellerProductEntity> result = null;
         if (seller == null)
@@ -156,7 +159,7 @@ public class DatabaseOps
         return result;
     }
 
-    public static List<ProductEntity> SelectAvailableProducts(SellerEntity seller, CategoryEntity category) // CHECK
+    public List<ProductEntity> SelectAvailableProducts(SellerEntity seller, CategoryEntity category) // CHECK
     {
         List<ProductEntity> result = null;
         if (seller == null || category == null)
@@ -178,7 +181,7 @@ public class DatabaseOps
         return result;
     }
 
-    public static boolean InsertSellerProduct(SellerEntity seller, ProductEntity product, BigDecimal price, int stock)
+    public boolean InsertSellerProduct(SellerEntity seller, ProductEntity product, BigDecimal price, int stock)
     {
         if (seller == null || product == null || price.compareTo(BigDecimal.ZERO) <= 0)
             return false;
@@ -200,7 +203,7 @@ public class DatabaseOps
         return false;
     }
 
-    public static boolean AddOffer(SellerProductEntity updatedSellerProduct)
+    public boolean AddOffer(SellerProductEntity updatedSellerProduct)
     {
         if (updatedSellerProduct == null)
             return false;

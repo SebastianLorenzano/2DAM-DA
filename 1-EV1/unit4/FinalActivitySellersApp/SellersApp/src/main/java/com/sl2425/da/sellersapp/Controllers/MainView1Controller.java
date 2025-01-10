@@ -2,6 +2,7 @@ package com.sl2425.da.sellersapp.Controllers;
 
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.LogProperties;
 import com.sl2425.da.sellersapp.Model.Utils;
 import javafx.fxml.FXML;
@@ -11,7 +12,8 @@ import javafx.scene.control.TextField;
 
 import java.util.Objects;
 
-public class MainView1Controller {
+public class MainView1Controller extends GenericAppController
+{
 
     @FXML
     private TextField cifField;
@@ -79,7 +81,7 @@ public class MainView1Controller {
         }
         if (isSellerValid(updatedSeller))
         {
-            boolean result = DatabaseOps.updateSeller(updatedSeller);
+            boolean result = database.updateSeller(updatedSeller);
             if (result)
             {
                 Utils.currentSeller = updatedSeller;

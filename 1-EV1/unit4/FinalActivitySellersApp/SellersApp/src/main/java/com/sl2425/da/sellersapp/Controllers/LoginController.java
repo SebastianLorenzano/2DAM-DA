@@ -1,7 +1,7 @@
 package com.sl2425.da.sellersapp.Controllers;
 
+import com.sl2425.da.sellersapp.Model.*;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.Model.RememberObj;
 import com.sl2425.da.sellersapp.Model.XML.RememberXML;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,11 +12,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
-import com.sl2425.da.sellersapp.Model.Utils;
-import com.sl2425.da.sellersapp.Model.DatabaseOps;
-import com.sl2425.da.sellersapp.Model.LogProperties;
 
-public class LoginController
+public class LoginController extends GenericAppController
 {
     @FXML
     private TextField cifField;
@@ -66,7 +63,7 @@ public class LoginController
             Utils.showError("Fields are empty");
             return false;
         }
-        SellerEntity seller = DatabaseOps.SelectSellerWithCifAndPassword(cif, password);
+        SellerEntity seller = database.SelectSellerWithCifAndPassword(cif, password);
         if (seller == null)
         {
             LogProperties.logger.warning("Login failed: Invalid credentials");

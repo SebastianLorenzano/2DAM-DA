@@ -3,6 +3,7 @@ package com.sl2425.da.sellersapp.Controllers;
 import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
+import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import com.sl2425.da.sellersapp.Model.LogProperties;
@@ -13,7 +14,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainView2Controller {
+public class MainView2Controller extends GenericAppController
+{
 
     @FXML
     private ComboBox<CategoryEntity> categoryBox;
@@ -52,7 +54,7 @@ public class MainView2Controller {
 
     private void initializeCategoriesBox()
     {
-        List<CategoryEntity> categories = DatabaseOps.SelectCategories();
+        List<CategoryEntity> categories = database.SelectCategories();
         if (categories == null)
         {
             LogProperties.logger.severe("Categories are null");
@@ -126,7 +128,7 @@ public class MainView2Controller {
     private void handleCategoriesBoxAction()
     {
         CategoryEntity selectedCategory = categoryBox.getSelectionModel().getSelectedItem();
-        List<ProductEntity> products = DatabaseOps.SelectAvailableProducts(seller, selectedCategory);
+        List<ProductEntity> products = database.SelectAvailableProducts(seller, selectedCategory);
         productBox.getItems().clear();
         if (products != null)
             productBox.getItems().addAll(products);
@@ -154,7 +156,7 @@ public class MainView2Controller {
         try
         {
             BigDecimal price = new BigDecimal(priceString);
-            if (DatabaseOps.InsertSellerProduct(seller, product, price, stock))
+            if (database.InsertSellerProduct(seller, product, price, stock))
             {
                 Utils.showConfirmation("Your product added successfully: " + product.getProductName() + " in category "
                         + category.getCategoryName() + " with stock " + stock + " and price " + price);

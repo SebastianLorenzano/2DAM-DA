@@ -1,6 +1,7 @@
 package com.sl2425.da.sellersapp.Controllers;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
+import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.Utils;
 import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import javafx.event.Event;
@@ -14,7 +15,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Objects;
 
-public class MainView3Controller
+public class MainView3Controller extends GenericAppController
 {
 
     @FXML
@@ -265,7 +266,7 @@ public class MainView3Controller
     private void refreshSellerProductsBox()
     {
         sellerProductBox.getItems().clear();
-        List<SellerProductEntity> sellerProducts = DatabaseOps.SelectSellerProducts(Utils.currentSeller);
+        List<SellerProductEntity> sellerProducts = database.SelectSellerProducts(Utils.currentSeller);
         if (sellerProducts == null)
         {
             Utils.showError("Failed to load products. Please try again.");
@@ -306,7 +307,7 @@ public class MainView3Controller
 
     private void AddOffer(SellerProductEntity sellerProduct)
     {
-        if (DatabaseOps.AddOffer(sellerProduct))
+        if (database.AddOffer(sellerProduct))
             Utils.showConfirmation("Offer added successfully.");
         else
             Utils.showError("Failed to add offer. Please try again.");

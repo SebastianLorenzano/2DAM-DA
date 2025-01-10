@@ -7,6 +7,7 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -29,7 +30,7 @@ public class SellerProductController
     }
 
     @PostMapping
-    public SellerProductEntity saveSellerProduct(@RequestBody SellerProductDTO s)
+    public ResponseEntity<SellerProductEntity> saveSellerProduct(@RequestBody SellerProductDTO s)
     {
         if (s == null || s.getProduct() == null)
             throw new IllegalArgumentException("Invalid sellerProduct");
@@ -43,8 +44,7 @@ public class SellerProductController
             throw new IllegalArgumentException("Invalid price");
         SellerProductEntity sellerProduct = new SellerProductEntity(s, seller);
 
-
-        return sellerProductDAO.save(sellerProduct);
+        return ResponseEntity.ok().body(sellerProductDAO.save(sellerProduct));
     }
 
 

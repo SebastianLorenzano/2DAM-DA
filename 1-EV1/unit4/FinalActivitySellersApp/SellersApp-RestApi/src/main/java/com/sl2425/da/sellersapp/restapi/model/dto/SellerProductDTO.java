@@ -1,6 +1,8 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
+import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -80,4 +82,18 @@ public class SellerProductDTO
         this.stock = stock;
     }
 
+
+    public SellerProductEntity toEntity(SellerEntity seller)
+    {
+        var result =  new SellerProductEntity();
+        result.setId(this.id);
+        result.setSeller(seller);
+        result.setProduct(this.product);
+        result.setPrice(this.price);
+        result.setOfferPrice(this.offerPrice);
+        result.setOfferStartDate(this.offerStartDate);
+        result.setOfferEndDate(this.offerEndDate);
+        result.setStock(this.stock);
+        return result;
+    }
 }

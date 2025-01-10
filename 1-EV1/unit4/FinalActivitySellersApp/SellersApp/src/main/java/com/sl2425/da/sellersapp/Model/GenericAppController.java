@@ -6,9 +6,19 @@ import java.util.logging.Logger;
 
 public class GenericAppController
 {
-    protected DatabaseManager database;
-    protected SellerEntity currentSeller;
-    protected Logger logger;
+    protected static DatabaseManager database;
+    protected static SellerEntity currentSeller;
+
+    public GenericAppController()
+    {
+    }
+
+    public GenericAppController(DatabaseManager database, SellerEntity currentSeller)
+    {
+        GenericAppController.database = database;
+        GenericAppController.currentSeller = currentSeller;
+    }
+
 
 
 }
