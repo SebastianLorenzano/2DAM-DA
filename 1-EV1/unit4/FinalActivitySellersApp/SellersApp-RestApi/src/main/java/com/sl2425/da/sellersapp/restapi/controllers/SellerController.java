@@ -26,8 +26,8 @@ public class SellerController
             @RequestParam("cif") String cif,
             @RequestBody String password)
     {
-        Optional<SellerEntity> seller = sellerDAO.findByCifAndPassword(cif, password);
-        if (!seller.isPresent())
+        SellerEntity seller = sellerDAO.findByCifAndPassword(cif, password);
+        if (seller == null)
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(seller.get());
     }
