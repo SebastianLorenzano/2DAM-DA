@@ -2,7 +2,6 @@ package com.sl2425.da.sellersapp.Controllers;
 
 import com.sl2425.da.sellersapp.Model.*;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.Model.XML.RememberXML;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +10,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.io.IOException;
+import java.io.*;
 
 public class LoginController extends GenericAppController
 {
@@ -24,26 +23,35 @@ public class LoginController extends GenericAppController
     @FXML
     private CheckBox rememberCheckbox;
 
-    private RememberObj rememberObj = new RememberObj();
-
     @FXML
     private void initialize()
     {
-        rememberObj = RememberXML.DeserializeXML(Utils.REMEMBER_CHECKBOX_PATH);
-        if (rememberObj != null && rememberObj.getRemember().equals("true") && rememberObj.getCif() != null)
+        initializeRememberCheckbox();
+    }
+
+    private void initializeRememberCheckbox()
+    {
+        String lastUser = getLastUserLogged();
+        if (lastUser == null || lastUser.isEmpty())
+            return;
+        cifField.setText(lastUser);
+        rememberCheckbox.setSelected(true);
+    }
+
+    private String getLastUserLogged()
+    {
+        File file = new File(Utils.REMEMBER_CHECKBOX_PATH);
+        if (!file.exists())
+            return "";
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file)))
         {
-            cifField.setText(rememberObj.getCif());
-            rememberCheckbox.setSelected(true);
-            rememberObj.setRemember("true");
+            return bufferedReader.readLine();
         }
-        else
+        catch (IOException e)
         {
-            rememberCheckbox.setSelected(false);
-            rememberObj.setRemember("false");
+            LogProperties.logger.severe("Error reading last user file");
+            return "";
         }
-
-
-
     }
 
     @FXML
@@ -76,6 +84,11 @@ public class LoginController extends GenericAppController
 
     private void openMainWindow() {
         try {
+            if (rememberCheckbox.isSelected())
+                saveOnRememberFile(Utils.currentSeller.getCif());
+            else
+                saveOnRememberFile("");
+
             // Load the new FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/sl2425/da/sellersapp/main-view.fxml"));
             Parent root = fxmlLoader.load();
@@ -94,10 +107,24 @@ public class LoginController extends GenericAppController
         }
     }
 
+    public static boolean saveOnRememberFile(String cif)
+    {
+        File file = new File(Utils.REMEMBER_CHECKBOX_PATH);
+        try(PrintWriter printWriter = new PrintWriter(file))
+        {
+            file.createNewFile();
+            printWriter.write(cif);
+            return true;
+        }
+        catch (IOException e)
+        {
+            LogProperties.logger.severe("Error saving last user on a file: " + e.getMessage());
+            return false;
+        }
+    }
+
     private void close()
     {   // Gets the current window, casts it and closes it
-        System.out.println(rememberObj.getCif() + rememberObj.getRemember());
-        RememberXML.SerializeXML(rememberObj, Utils.REMEMBER_CHECKBOX_PATH);
         ((Stage) cifField.getScene().getWindow()).close();
     }
 

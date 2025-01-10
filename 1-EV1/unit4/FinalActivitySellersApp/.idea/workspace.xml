@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/CategoryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/CategoryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/remember.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/remember.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/GenericAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/GenericAppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/RememberObj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/ObjectParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/RememberObjHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/RememberXML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/SellerEntityHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XMLSaver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XmlSaxParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/SellersApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/SellersApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +46,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.SellersApp.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.SellersAppRestApiApplication.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
@@ -100,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736521770358</updated>
-      <workItem from="1736521771391" duration="1889000" />
+      <workItem from="1736521771391" duration="4356000" />
     </task>
     <servers />
   </component>

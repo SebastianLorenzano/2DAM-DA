@@ -13,7 +13,8 @@ public class SellersApp extends Application {
     public void start(Stage stage) throws IOException
     {
         LogProperties.logger.info("Application started");
-        DatabaseManager databaseOps = new DatabaseOps();
+        GenericAppController.initialize(new DatabaseOps());
+
         FXMLLoader fxmlLoader = new FXMLLoader(SellersApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 400);
         stage.setTitle("SellersApp — Login");

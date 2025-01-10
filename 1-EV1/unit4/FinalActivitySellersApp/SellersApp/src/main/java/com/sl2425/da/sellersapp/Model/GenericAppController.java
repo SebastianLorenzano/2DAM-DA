@@ -9,14 +9,9 @@ public class GenericAppController
     protected static DatabaseManager database;
     protected static SellerEntity currentSeller;
 
-    public GenericAppController()
-    {
-    }
-
-    public GenericAppController(DatabaseManager database, SellerEntity currentSeller)
+    public static void initialize(DatabaseManager database)
     {
         GenericAppController.database = database;
-        GenericAppController.currentSeller = currentSeller;
     }
 
 
