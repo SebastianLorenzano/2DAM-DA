@@ -1,4 +1,4 @@
-package com.sl2425.da.sellersapp.Model;
+package com.sl2425.da.sellersapp.Model.Database;
 
 import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;

@@ -1,4 +1,5 @@
-package com.sl2425.da.sellersapp.Model;
+package com.sl2425.da.sellersapp.Model.Database;
+import com.sl2425.da.sellersapp.Model.Utils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -8,13 +9,12 @@ import static com.sl2425.da.sellersapp.Model.LogProperties.logger;
 import com.sl2425.da.sellersapp.Model.Entities.*;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseOps extends DatabaseManager
+public class HibernateDBManager extends DatabaseManager
 {
 
-    public DatabaseOps()
+    public HibernateDBManager()
     {
         init();   // Initialize Session Factory so it doesn't have a delay when the user logs in
     }

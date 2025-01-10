@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/remember.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/remember.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/logs/[24-11-2024] log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/logs/[24-11-2024] log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/MainView1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/MainView1Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/MainView2Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/MainView2Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/MainView3Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Controllers/MainView3Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/Database/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/DatabaseOps.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/Database/HibernateDBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/GenericAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/GenericAppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/RememberObj.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/ObjectParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/RememberObjHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/RememberXML.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/SellerEntityHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XMLSaver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/XML/XmlSaxParser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/SellersApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/SellersApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/resources/com/sl2425/da/sellersapp/main-view1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/resources/com/sl2425/da/sellersapp/main-view1.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +48,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.SellersAppRestApiApplication.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
@@ -109,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736521770358</updated>
-      <workItem from="1736521771391" duration="4356000" />
+      <workItem from="1736521771391" duration="5120000" />
     </task>
     <servers />
   </component>

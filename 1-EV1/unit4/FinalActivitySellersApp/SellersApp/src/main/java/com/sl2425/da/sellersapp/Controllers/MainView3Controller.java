@@ -3,7 +3,6 @@ package com.sl2425.da.sellersapp.Controllers;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.Utils;
-import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

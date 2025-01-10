@@ -1,6 +1,5 @@
 package com.sl2425.da.sellersapp.Controllers;
 
-import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.LogProperties;
@@ -60,9 +59,6 @@ public class MainView1Controller extends GenericAppController
             passwordField.setText("********");
             confirmPassField.setText("********");
             urlField.setText(seller.getUrl());
-            if (seller.getPro())
-                urlField.setEditable(true);
-
         }
     }
 

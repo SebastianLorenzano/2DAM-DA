@@ -1,5 +1,6 @@
 package com.sl2425.da.sellersapp;
 
+import com.sl2425.da.sellersapp.Model.Database.HibernateDBManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,7 +14,7 @@ public class SellersApp extends Application {
     public void start(Stage stage) throws IOException
     {
         LogProperties.logger.info("Application started");
-        GenericAppController.initialize(new DatabaseOps());
+        GenericAppController.initialize(new HibernateDBManager());
 
         FXMLLoader fxmlLoader = new FXMLLoader(SellersApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 400);

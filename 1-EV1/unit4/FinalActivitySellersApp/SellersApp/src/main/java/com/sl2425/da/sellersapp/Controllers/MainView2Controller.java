@@ -5,7 +5,6 @@ import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.GenericAppController;
 import com.sl2425.da.sellersapp.Model.Utils;
-import com.sl2425.da.sellersapp.Model.DatabaseOps;
 import com.sl2425.da.sellersapp.Model.LogProperties;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
