@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/postgresDump.sql" dialect="PostgreSQL" />
-  </component>
-</project>
