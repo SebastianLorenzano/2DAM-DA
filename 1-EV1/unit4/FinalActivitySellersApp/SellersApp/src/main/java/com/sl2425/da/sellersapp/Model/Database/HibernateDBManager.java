@@ -167,9 +167,9 @@ public class HibernateDBManager extends DatabaseManager
         try (Session session = openSession())
         {
             Query<ProductEntity> query = session.createNativeQuery(
-                            "SELECT * FROM select_available_products_sl2425(:sellerId, :categoryId)",
+                            "SELECT * FROM select_available_products_sl2425(:cif1, :categoryId)",
                             ProductEntity.class)
-                    .setParameter("sellerId", seller.getId())
+                    .setParameter("cif1", seller.getCif())
                     .setParameter("categoryId", category.getId());
             result = query.getResultList();
         }

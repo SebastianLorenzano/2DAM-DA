@@ -11,6 +11,8 @@ import java.util.List;
 public class RestApiDBManager extends DatabaseManager
 {
 
+
+
     public SellerEntity SelectSellerWithCifAndPassword(String cif, String password)
     {
         return null;

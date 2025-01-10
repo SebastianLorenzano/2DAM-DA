@@ -22,19 +22,19 @@ public class SellerController
     private ISellerEntityDAO sellerDAO;
 
     @GetMapping
-    public ResponseEntity<?> getSellerByCifAndPassword(
+    public ResponseEntity<SellerEntity> getSellerByCifAndPassword(
             @RequestParam("cif") String cif,
             @RequestBody String password)
     {
-        SellerEntity result = sellerDAO.findByCifAndPassword(cif, password);
-        if (result == null)
+        Optional<SellerEntity> seller = sellerDAO.findByCifAndPassword(cif, password);
+        if (!seller.isPresent())
             return ResponseEntity.notFound().build();
-        return ResponseEntity.ok().body(result);
+        return ResponseEntity.ok().body(seller.get());
     }
 
     @PutMapping
     public ResponseEntity<?> updateSeller(@Validated @RequestBody SellerEntity value) {
-        Optional<SellerEntity> seller = sellerDAO.findById(value.getId());
+        Optional<SellerEntity> seller = sellerDAO.findByCif(value.getCif());
         if (!seller.isPresent())
             return ResponseEntity.badRequest().build();
         sellerDAO.save(value);

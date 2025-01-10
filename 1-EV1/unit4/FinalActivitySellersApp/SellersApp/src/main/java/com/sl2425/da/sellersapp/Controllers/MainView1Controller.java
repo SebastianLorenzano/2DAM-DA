@@ -48,7 +48,7 @@ public class MainView1Controller extends GenericAppController
         confirmButton.setOnAction(event -> handleConfirmAction());
         seller = Utils.currentSeller;
         if (seller == null)
-            System.out.println("Seller is null");
+            LogProperties.logger.severe("Seller is null");
         else
         {
             cifField.setText(seller.getCif());
@@ -82,22 +82,20 @@ public class MainView1Controller extends GenericAppController
             {
                 Utils.currentSeller = updatedSeller;
                 seller = updatedSeller;
-                System.out.println("Seller updated successfully.");
+                LogProperties.logger.info("Seller updated successfully.");
                 Utils.showConfirmation("Changes were made successfully!");
 
             }
             else
             {
                 Utils.showError("Error updating seller.");
-                System.out.println("Error updating seller.");
+                LogProperties.logger.severe("Error updating seller.");
             }
         }
     }
 
     private static boolean isSellerEqualToCurrent(SellerEntity newSeller)
     {
-        System.out.println(newSeller.getPro());
-        System.out.println(newSeller.getUrl());
         return newSeller != null &&
                 Objects.equals(newSeller.getCif(), seller.getCif()) &&
                 Objects.equals(newSeller.getName(), seller.getName()) &&
@@ -164,9 +162,8 @@ public class MainView1Controller extends GenericAppController
             return false;
         }
 
-        if (newSeller.getPro() && !newSeller.getUrl().trim().isEmpty() &&
-                !newSeller.getUrl().matches("^https?:\\/\\/(www\\.)?[\\w-]+(\\.[\\w-]+)+(\\.[a-z]{2,6})(\\/[\\w-]*)*\\/?$"))
-        {
+        if (newSeller.getPro() && newSeller.getUrl() != null && !newSeller.getUrl().trim().isEmpty() &&
+                !newSeller.getUrl().matches("^https?:\\/\\/(?:www\\.)?[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(?:\\/[^\\s]*)?$")) {
             LogProperties.logger.warning("Error updating seller: URL is not valid.");
             Utils.showError("Error updating seller: URL is not valid.");
             return false;

@@ -32,7 +32,7 @@ public class SellerProductController
     @PostMapping
     public ResponseEntity<SellerProductEntity> saveSellerProduct(@RequestBody SellerProductDTO s)
     {
-        return sellerProductServices.saveSellerProduct(s);
+        return ResponseEntity.ok().body(sellerProductServices.saveSellerProduct(s));
     }
 
 

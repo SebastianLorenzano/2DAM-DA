@@ -29,7 +29,7 @@ public class SellerProductServices
         return sellerProductDAO.findAllBySeller(seller);
     }
     // Validate para que tenga que respetar las comprobaciones de la entidad como @NotNull
-    public ResponseEntity<SellerProductEntity> saveSellerProduct(SellerProductDTO s)
+    public SellerProductEntity saveSellerProduct(SellerProductDTO s)
     {
         if (s == null || s.getProduct() == null)
             throw new IllegalArgumentException("Invalid sellerProduct");
@@ -41,7 +41,23 @@ public class SellerProductServices
             throw new IllegalArgumentException("Product not found");
         if (s.getPrice().compareTo(BigDecimal.ZERO) <= 0)
             throw new IllegalArgumentException("Invalid price");
+        validateSellerProductDTO(s);
         SellerProductEntity sellerProduct =  s.toEntity(seller);
-        return ResponseEntity.ok().body(sellerProductDAO.save(sellerProduct));
+        return sellerProductDAO.save(sellerProduct);
+    }
+
+    private void validateSellerProductDTO(SellerProductDTO s)
+    {
+        if (s == null)
+            throw new IllegalArgumentException("Invalid sellerProduct");
+        if (s.getProduct() == null)
+            throw new IllegalArgumentException("Invalid product");
+        if (s.getPrice().compareTo(BigDecimal.ZERO) <= 0)
+            throw new IllegalArgumentException("Invalid price");
+        if (s.getOfferPrice() != null && s.getOfferPrice().compareTo(s.getPrice()) > 0)
+            throw new IllegalArgumentException("Invalid offer price");
+        if (s.getOfferStartDate().isAfter(s.getOfferEndDate()) ||
+            s.getOfferStartDate().isEqual(s.getOfferEndDate()))
+            throw new IllegalArgumentException("Invalid offer dates");
     }
 }
