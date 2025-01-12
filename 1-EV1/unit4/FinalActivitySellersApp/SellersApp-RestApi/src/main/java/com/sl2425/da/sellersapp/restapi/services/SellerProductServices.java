@@ -36,7 +36,7 @@ public class SellerProductServices
         SellerEntity seller = getSellerFromDTO(s);
         SellerProductEntity sellerProduct =  s.toEntity(seller);
 
-        Boolean exists = sellerProductDAO.findById(sellerProduct.getId()).isPresent();
+        Boolean exists = sellerProductDAO.existsBySellerAndProduct(seller, sellerProduct.getProduct());
         if (RequestType == Utils.HttpRequests.POST && exists)
             throw new IllegalArgumentException("Resource already exists");
         else if (RequestType == Utils.HttpRequests.PUT && !exists)
