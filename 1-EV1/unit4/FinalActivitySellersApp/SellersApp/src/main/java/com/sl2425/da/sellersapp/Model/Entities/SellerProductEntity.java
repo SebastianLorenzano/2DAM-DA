@@ -20,7 +20,7 @@ public class SellerProductEntity
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "seller_id")
-    @JsonIgnore
+    @JsonIgnoreProperties({"id", "name", "plainPassword", "password", "pro"})
     private com.sl2425.da.sellersapp.Model.Entities.SellerEntity seller;
 
     @ManyToOne(fetch = FetchType.EAGER)

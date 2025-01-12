@@ -2,6 +2,7 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
+import com.sl2425.da.sellersapp.restapi.model.Utils;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
@@ -32,7 +33,13 @@ public class SellerProductController
     @PostMapping
     public ResponseEntity<SellerProductEntity> saveSellerProduct(@RequestBody SellerProductDTO s)
     {
-        return ResponseEntity.ok().body(sellerProductServices.saveSellerProduct(s));
+        return ResponseEntity.ok().body(sellerProductServices.saveSellerProduct(s, Utils.HttpRequests.POST));
+    }
+
+    @PutMapping
+    public ResponseEntity<?> updateSellerProduct(@RequestBody SellerProductDTO s)
+    {
+        return ResponseEntity.ok().body(sellerProductServices.saveSellerProduct(s, Utils.HttpRequests.PUT));
     }
 
 

@@ -29,13 +29,13 @@ public class SellerController
         SellerEntity seller = sellerDAO.findByCifAndPassword(cif, password);
         if (seller == null)
             return ResponseEntity.notFound().build();
-        return ResponseEntity.ok().body(seller.get());
+        return ResponseEntity.ok().body(seller);
     }
 
     @PutMapping
     public ResponseEntity<?> updateSeller(@Validated @RequestBody SellerEntity value) {
-        Optional<SellerEntity> seller = sellerDAO.findByCif(value.getCif());
-        if (!seller.isPresent())
+        SellerEntity seller = sellerDAO.findByCif(value.getCif());
+        if (seller == null)
             return ResponseEntity.badRequest().build();
         sellerDAO.save(value);
         return ResponseEntity.ok().body("Updated");

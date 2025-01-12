@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface IProductEntityDAO extends CrudRepository<ProductEntity, Integer>
 {
-    @Query(value = "SELECT * FROM select_available_products_sl2425(:cif, :categoryId)", nativeQuery = true)
+    @Query(value = "SELECT * FROM select_available_products_sl2425_2(:cif, :categoryId)", nativeQuery = true)
     List<ProductEntity> SelectAvailableProducts(String cif, int categoryId);
 }

@@ -1,5 +1,4 @@
-
-CREATE OR REPLACE FUNCTION select_available_products_sl2425(
+CREATE OR REPLACE FUNCTION select_available_products_sl2425_2(
     cif VARCHAR,
     categoryId INT
 ) RETURNS SETOF products AS $$
