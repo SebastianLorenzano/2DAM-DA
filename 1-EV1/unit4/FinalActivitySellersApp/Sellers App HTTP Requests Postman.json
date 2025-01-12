@@ -1,0 +1,243 @@
+{
+  "info": {
+    "name": "Sellers App",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "GET Categories",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/categories",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "categories"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "GET Remaining Products",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/products",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "products"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cif\":\"admin\",\n  \"categoryId\":2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "GET Seller",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/sellers",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "sellers"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cif\": \"admin\",\n  \"password\": \"21232F297A57A5A743894A0E4A801FC3\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "GET SellerProduct",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/sellerProducts",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "sellerProducts"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"cif\": \"admin\",\n  \"name\": \"TechStore\",\n  \"businessName\": \"TechStore Ltd.\",\n  \"phone\": \"12345678\",\n  \"email\": \"test@test.com\",\n  \"plainPassword\": \"admin\",\n  \"password\": \"21232F297A57A5A743894A0E4A801FC3\",\n  \"url\": \"\",\n  \"pro\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "PUT Seller",
+      "event": [],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/sellers",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "sellers"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":1,\"cif\":\"admin\",\"name\":\"TechStore\",\"businessName\":\"TechStore Ltd.\",\"phone\":\"12345678\",\"email\":\"test@test.com\",\"plainPassword\":\"admin\",\"password\":\"21232F297A57A5A743894A0E4A801FC3\",\"url\":\"\",\"pro\":true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "PUT SellerProduct",
+      "event": [],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/sellerProducts",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "sellerProducts"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "  {\n    \"id\": 8,\n    \"sellerDTO\": {\n      \"cif\": \"admin\",\n      \"password\": \"21232F297A57A5A743894A0E4A801FC3\"\n    },\n    \"product\": {\n      \"id\": 4,\n      \"productName\": \"Jeans\",\n      \"description\": \"Stylish jeans for everyday wear\",\n      \"category\": {\n        \"id\": 2,\n        \"categoryName\": \"Clothing\"\n      },\n      \"active\": true\n    },\n    \n    \n    \"price\": 299.99,\n    \"offerPrice\": 284.99,\n    \"offerStartDate\": \"2024-11-24\",\n    \"offerEndDate\": \"2024-11-30\",\n    \"stock\": 2\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "POST SellerProduct",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/sellers-app/sellerProducts",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "sellers-app",
+            "sellerProducts"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "  {\n    \"id\": 8,\n    \"sellerDTO\": {\n      \"cif\": \"admin\",\n      \"password\": \"21232F297A57A5A743894A0E4A801FC3\"\n    },\n    \"product\": {\n      \"id\": 4,\n      \"productName\": \"Jeans\",\n      \"description\": \"Stylish jeans for everyday wear\",\n      \"category\": {\n        \"id\": 2,\n        \"categoryName\": \"Clothing\"\n      },\n      \"active\": true\n    },\n    \n    \n    \"price\": 299.99,\n    \"offerPrice\": 284.99,\n    \"offerStartDate\": \"2024-11-24\",\n    \"offerEndDate\": \"2024-11-30\",\n    \"stock\": 2\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": []
+}

@@ -1,0 +1,191 @@
+{
+  "name": "Sellers App",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "GET Categories",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/categories",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "GET Remaining Products",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/products",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"cif\":\"admin\",\n  \"categoryId\":2\n}",
+          "text": "1",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "GET Seller",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/sellers",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"cif\": \"admin\",\n  \"password\": \"21232F297A57A5A743894A0E4A801FC3\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "GET SellerProduct",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/sellerProducts",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"id\": 1,\n  \"cif\": \"admin\",\n  \"name\": \"TechStore\",\n  \"businessName\": \"TechStore Ltd.\",\n  \"phone\": \"12345678\",\n  \"email\": \"test@test.com\",\n  \"plainPassword\": \"admin\",\n  \"password\": \"21232F297A57A5A743894A0E4A801FC3\",\n  \"url\": \"\",\n  \"pro\": true\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "PUT Seller",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/sellers",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\"id\":1,\"cif\":\"admin\",\"name\":\"TechStore\",\"businessName\":\"TechStore Ltd.\",\"phone\":\"12345678\",\"email\":\"test@test.com\",\"plainPassword\":\"admin\",\"password\":\"21232F297A57A5A743894A0E4A801FC3\",\"url\":\"\",\"pro\":true}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "PUT SellerProduct",
+      "seq": 7,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/sellerProducts",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "  {\n    \"id\": 8,\n    \"sellerDTO\": {\n      \"cif\": \"admin\",\n      \"password\": \"21232F297A57A5A743894A0E4A801FC3\"\n    },\n    \"product\": {\n      \"id\": 4,\n      \"productName\": \"Jeans\",\n      \"description\": \"Stylish jeans for everyday wear\",\n      \"category\": {\n        \"id\": 2,\n        \"categoryName\": \"Clothing\"\n      },\n      \"active\": true\n    },\n    \n    \n    \"price\": 299.99,\n    \"offerPrice\": 284.99,\n    \"offerStartDate\": \"2024-11-24\",\n    \"offerEndDate\": \"2024-11-30\",\n    \"stock\": 2\n  }",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "POST SellerProduct",
+      "seq": 8,
+      "request": {
+        "url": "http://localhost:8080/sellers-app/sellerProducts",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "  {\n    \"id\": 8,\n    \"sellerDTO\": {\n      \"cif\": \"admin\",\n      \"password\": \"21232F297A57A5A743894A0E4A801FC3\"\n    },\n    \"product\": {\n      \"id\": 4,\n      \"productName\": \"Jeans\",\n      \"description\": \"Stylish jeans for everyday wear\",\n      \"category\": {\n        \"id\": 2,\n        \"categoryName\": \"Clothing\"\n      },\n      \"active\": true\n    },\n    \n    \n    \"price\": 299.99,\n    \"offerPrice\": 284.99,\n    \"offerStartDate\": \"2024-11-24\",\n    \"offerEndDate\": \"2024-11-30\",\n    \"stock\": 2\n  }",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Sellers App",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

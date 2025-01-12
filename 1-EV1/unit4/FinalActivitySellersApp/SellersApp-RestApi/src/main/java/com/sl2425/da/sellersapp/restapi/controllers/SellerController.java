@@ -4,6 +4,7 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerDTO;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,11 +23,9 @@ public class SellerController
     private ISellerEntityDAO sellerDAO;
 
     @GetMapping
-    public ResponseEntity<SellerEntity> getSellerByCifAndPassword(
-            @RequestParam("cif") String cif,
-            @RequestBody String password)
+    public ResponseEntity<SellerEntity> getSellerByCifAndPassword(@Validated @RequestBody SellerDTO s)
     {
-        SellerEntity seller = sellerDAO.findByCifAndPassword(cif, password);
+        SellerEntity seller = sellerDAO.findByCifAndPassword(s.getCif(), s.getPassword());
         if (seller == null)
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(seller);
