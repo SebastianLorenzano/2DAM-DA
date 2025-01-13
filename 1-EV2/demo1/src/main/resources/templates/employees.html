@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+    <h1>Empleados</h1>
+    <table>
+        <tr>
+            <th>Numero</th>
+            <th>Nombre</th>
+            <th>Trabajo</th>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.ename}"></td>
+            <td th:text="${employee.job}"></td>
+            <td th:text="${employee.deptno.id}"></td>
+        </tr>
+    </table>
+    <a href="http://localhost:8080/employee-app/web">Volver</a>
+</body>
+</html>

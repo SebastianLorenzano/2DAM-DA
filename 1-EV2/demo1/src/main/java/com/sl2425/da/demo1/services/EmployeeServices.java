@@ -5,10 +5,12 @@ import com.sl2425.da.demo1.model.dto.EmployeeDTO;
 import com.sl2425.da.demo1.model.entities.EmployeeEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Optional;
 
+@Service
 public class EmployeeServices
 {
     @Autowired
