@@ -20,8 +20,8 @@
             <input type="text" id="job" name="job" required="required" />
         </div>
         <div class="form-group">
-            <label for="deptno.id">Selecciona un departamento:</label>
-            <select id="deptno.id" name="deptno.id" th:field="*{deptno.id}">
+            <label for="deptno">Departamento:</label>
+            <select id="deptno" name="deptno" th:field="*{deptno}">
                 <option th:each="department : ${departments}" th:value="${department.id}" th:text="${department.dname}"></option>
             </select>
         </div>

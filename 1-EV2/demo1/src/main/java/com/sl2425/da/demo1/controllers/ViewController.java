@@ -50,10 +50,12 @@ public class ViewController
     }
 
     @PostMapping("/web/departments-save")
-    public String saveDepartment(DeptEntity department)
+    public String saveDepartment(DeptEntity department, Model model)
     {
         if (!deptDAO.existsById(department.getId()))
             deptDAO.save(department);
+
+        model.addAttribute("department", department);
         return "departments-save";
     }
 
@@ -66,11 +68,17 @@ public class ViewController
     }
 
     @PostMapping("/web/employees-save")
-    public String saveEmployee(EmployeeEntity employeeEntity)
+    public String saveEmployee(EmployeeEntity employeeEntity, Model model)
     {
         if (!employeeDAO.existsById(employeeEntity.getId()) &&
             deptDAO.existsById(employeeEntity.getDeptno().getId()))
             employeeDAO.save(employeeEntity);
+        else
+        {
+            model.addAttribute("employee", employeeEntity);
+            model.addAttribute("departments", deptDAO.findAll());
+            model.addAttribute("error", "Employee could not be saved. Check the input.");
+        }
         return "employees-save";
     }
 }
