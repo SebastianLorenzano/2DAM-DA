@@ -61,6 +61,7 @@ public class ViewController
     public String showEmployeesSave(Model model)
     {
         model.addAttribute("employee", new EmployeeEntity());
+        model.addAttribute("departments", deptDAO.findAll());
         return "employees-save";
     }
 
