@@ -1,23 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Departments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .table-container {
+            overflow-x: auto;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-radius: 0.5rem;
+            background-color: white;
+        }
+
+        .department-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .department-table th {
+            background-color: #f8fafc;
+            padding: 1rem;
+            font-weight: 600;
+            color: #475569;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .department-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .department-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #2563eb;
+            color: white;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .back-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .back-icon {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+    </style>
 </head>
-<body>
-    <h1>Departamentos</h1>
-    <table>
-        <tr>
-            <th>Numero de Departamento</th>
-            <th>Nombre</th>
-            <th>Ubicación</th>
-        </tr>
-        <tr th:each="department : ${departments}">
-            <td th:text="${department.id}"></td>
-            <td th:text="${department.dname}"></td>
-            <td th:text="${department.loc}"></td>
-        </tr>
-    </table>
-    <a href="http://localhost:8080/employee-app/web">Volver</a>
+<body class="min-h-screen bg-gray-50 p-4 md:p-8">
+<div class="max-w-7xl mx-auto">
+    <div class="mb-8 flex items-center justify-between">
+        <h1 class="text-3xl font-bold text-gray-900">Departamentos</h1>
+        <a th:href="@{/web/}" class="back-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Volver
+        </a>
+    </div>
+
+    <div class="table-container">
+        <table class="department-table">
+            <thead>
+            <tr>
+                <th>Numero de Departamento</th>
+                <th>Nombre</th>
+                <th>Ubicación</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="department : ${departments}">
+                <td th:text="${department.id}"></td>
+                <td th:text="${department.dname}"></td>
+                <td th:text="${department.loc}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

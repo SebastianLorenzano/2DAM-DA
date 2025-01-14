@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -20,13 +21,13 @@ public class ViewController
     @Autowired
     private IEmployeeEntityDAO employeeDAO;
 
-    @GetMapping("/web")
+    @GetMapping({"/web/", "/web/index", "/web/index.html"})
     public String index()
     {
         return "index";
     }
 
-    @GetMapping("/web/departments")
+    @GetMapping({"/web/departments", "/web/departments.html"})
     public String showDepartments(Model model)
     {
         List<DeptEntity> departments = (List<DeptEntity>) deptDAO.findAll();
