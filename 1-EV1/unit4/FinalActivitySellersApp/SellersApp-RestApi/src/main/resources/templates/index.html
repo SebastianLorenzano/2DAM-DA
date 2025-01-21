@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI API REST</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles */
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e5e7eb;
+        }
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen w-full bg-[#5084bb] flex items-center justify-center p-4">
+<div class="card w-full max-w-lg">
+    <div class="p-6">
+        <h1 class="text-2xl font-bold text-center mb-2">MI API REST</h1>
+        <p class="text-center text-gray-600 mb-6">Seleccione una opción</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <a th:href="@{/web/sellers-save}" class="btn btn-primary">
+            <i data-lucide="eye" class="icon"></i>
+                Seller Info
+            </a>
+            <a th:href="@{/web/products-save}" class="btn btn-primary">
+                <i data-lucide="eye" class="icon"></i>
+                Add Product
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a th:href="@{/web/sellerProducts-save}" class="btn btn-secondary">
+                <i data-lucide="plus" class="icon"></i>
+                Add Offer
+            </a>
+            <a th:href="@{/web/login}" class="btn btn-secondary">
+                <i data-lucide="plus" class="icon"></i>
+                Log Out
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Initialize Lucide Icons -->
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

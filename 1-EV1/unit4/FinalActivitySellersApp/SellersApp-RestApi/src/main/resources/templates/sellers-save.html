@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sellers App - Seller Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3><strong>Your Data</strong></h3>
+        </div>
+        <div class="card-body">
+            <form action="#" th:action="@{/web/sellers-save}" th:object="${seller}" method="post" class="space-y-6">
+                <div class="form-group">
+                    <label for="cif">CIF: *</label>
+                    <input type="text" name="cif" id="cif" class="form-control" th:value="${seller.cif}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name: *</label>
+                    <input type="text" id="name" name="name" class="form-control" th:value="${seller.name}" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" id="businessName" name="businessName" class="form-control" th:value="${seller.businessName}">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" class="form-control" th:value="${seller.phone}">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" th:value="${seller.email}">
+                </div>
+                <div class="form-group">
+                    <label for="url">URL:</label>
+                    <input type="url" id="url" name="url" class="form-control" th:value="${seller.url}">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: *</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password: *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
