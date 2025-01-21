@@ -161,4 +161,14 @@ public class SellerEntity implements Serializable
         this.sellerProducts = sellerProducts;
     }
 
+    public String getURL()
+    {
+        return url;
+    }
+
+    public void setURL(String url)
+    {
+        this.url = url;
+    }
+
 }

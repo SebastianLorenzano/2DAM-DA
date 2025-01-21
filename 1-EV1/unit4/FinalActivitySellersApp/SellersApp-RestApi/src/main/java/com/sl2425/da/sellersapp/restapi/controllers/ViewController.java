@@ -5,11 +5,14 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerDTO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class ViewController
@@ -33,20 +36,36 @@ public class ViewController
     @GetMapping({"/web/sellers-save", "/web/sellers-save.html"})
     public String showSeller(Model model)
     {
-        SellerEntity seller = (SellerEntity) sellerDAO.findByCif("admin"); // TODO: Change this to the actual cif
-        model.addAttribute("seller", seller);
+        SellerUpdateDTO sellerDTO = new SellerUpdateDTO((SellerEntity)sellerDAO.findByCif("admin")); // TODO: Change this to the actual cif
+        model.addAttribute("sellerDTO", sellerDTO);
         return "sellers-save";
     }
 
-    @PostMapping({"/web/sellers-save", "/web/sellers-save.html"})
-    public String saveDepartment(SellerEntity seller, Model model)
+    @PutMapping({"/web/sellers-save", "/web/sellers-save.html"})
+    public String saveSeller(SellerUpdateDTO sellerDTO, Model model)
     {
-        SellerEntity seller1 = sellerDAO.findByCif(seller.getCif());
-        if (seller1 != null)  // TODO: Move it to server and check that the changes are valid
-            seller.setId(seller1.getId());
-        System.out.println(seller.getCif());
-        sellerDAO.save(seller);
-        model.addAttribute("seller", seller);
+        SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
+        if (existingSeller != null)  // TODO: Move it to server and check that the changes are valid
+        {
+            SellerEntity updatedSeller = sellerDTO.toSellerEntity();
+            updatedSeller.setId(existingSeller.getId());
+            if (!sellerDTO.wasPasswordChanged())
+                updatedSeller.setPassword(existingSeller.getPassword());
+            else if (!sellerDTO.isPasswordConfirmed())
+            {
+                model.addAttribute("error", "Passwords do not match");
+                model.addAttribute("sellerDTO", sellerDTO);
+                return "sellers-save";
+            }
+            else
+            updatedSeller.setPlainPassword(existingSeller.getPlainPassword()); // Remove on production
+            sellerDAO.save(updatedSeller);
+            model.addAttribute("success", "Seller updated successfully!");
+        }
+        else {
+            model.addAttribute("error", "Seller not found");
+        }
+        model.addAttribute("sellerDTO", sellerDTO);
         return "sellers-save";
     }
 
