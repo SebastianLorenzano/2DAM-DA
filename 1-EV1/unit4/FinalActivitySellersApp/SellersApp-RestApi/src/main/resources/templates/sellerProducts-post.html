@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller Products</title>
+    <script>
+        function filterProducts() {
+            // Get selected category ID
+            let selectedCategoryId = document.getElementById('category').value;
+
+            // Get all product options
+            let productOptions = document.getElementById('product').options;
+            productOptions.selectedIndex = 0;
+
+            for (let i = 0; i < productOptions.length; i++) {
+                var option = productOptions[i];
+
+                // Show or hide based on data-category attribute
+                if (option.getAttribute('data-category') === selectedCategoryId || selectedCategoryId === "") {
+                    option.style.display = "block";
+                } else {
+                    option.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>Seller Products Management</h1>
+
+<!-- Category Selection -->
+<h2>Select Category</h2>
+<select id="category" name="categoryId" onchange="filterProducts()">
+    <option value="">-- Select Category --</option>
+    <option th:each="category : ${categories}"
+            th:value="${category.id}"
+            th:text="${category.categoryName}">
+    </option>
+</select>
+
+<!-- Product Selection -->
+<h2>Select Product</h2>
+<select id="product" name="productId">
+    <option value="">-- Select Product --</option>
+    <option th:each="product : ${products}"
+            th:value="${product.id}"
+            th:text="${product.productName}"
+            th:attr="data-category=${product.category.id}">
+    </option>
+</select>
+
+</body>
+</html>

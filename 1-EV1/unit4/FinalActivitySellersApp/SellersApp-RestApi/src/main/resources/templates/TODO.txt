@@ -1,0 +1,13 @@
+TODO List:
+
+
+0. Make all menus work (Make it work perfectly later, but make sure it doesn't break now)
+1. Add Spring Security to the project
+2. Restrict access to the REST API to only authenticated users
+3. Complete ViewControllers with the seller they get from Security
+2. Make sure the menus cannot be broken by the user doing weird things
+3. Add all logic in a middle layer so both Hibernate and REST API can use it
+    (Class in original project that can be used by both)
+
+
+?. Make all menus unbreakable by the user
