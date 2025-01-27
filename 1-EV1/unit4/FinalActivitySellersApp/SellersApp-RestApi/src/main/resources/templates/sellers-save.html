@@ -57,17 +57,17 @@
     <div class="text-right">
         <a th:href="@{/web/}" class="btn btn-secondary btn-sm">Return</a>
     </div>
-    <form th:action="@{/web/sellers-save}" th:object="${sellerDTO}" method="post">
+    <form th:action="@{/web/sellers-save}" th:object="${sellerUpdateDTO}" method="post">
         <input type="hidden" name="_method" value="PUT"/>
 
         <div class="form-group">
             <label th:for="cif">CIF: *</label>
-            <input type="text"  class="form-control" th:field="*{cif}" readonly/>
+            <input type="text" class="form-control" th:field="*{cif}" readonly/>
         </div>
 
         <div class="form-group">
             <label th:for="name">Name: *</label>
-            <input type="text"  class="form-control" th:field="*{name}" required/>
+            <input type="text" class="form-control" th:field="*{name}" required/>
         </div>
 
         <div class="form-group">

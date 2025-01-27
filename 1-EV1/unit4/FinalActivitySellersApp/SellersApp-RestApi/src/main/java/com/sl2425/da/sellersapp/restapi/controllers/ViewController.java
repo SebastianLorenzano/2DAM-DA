@@ -3,12 +3,16 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerDTO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
+import com.sl2425.da.sellersapp.restapi.services.SellerProductServices;
+import com.sl2425.da.sellersapp.restapi.services.SellersServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,13 +27,17 @@ public class ViewController
 {
 
     @Autowired
+    private ISellerEntityDAO sellerDAO;
+    @Autowired
     private ICategoryEntityDAO categoryDAO;
     @Autowired
     private IProductEntityDAO productDAO;
     @Autowired
-    private ISellerEntityDAO sellerDAO;
-    @Autowired
     private ISellerProductEntityDAO sellerProductDAO;
+    @Autowired
+    private SellersServices sellersServices;
+    @Autowired
+    private SellerProductServices sellerProductServices;
 
     @GetMapping({"/web/", "/web/index", "/web/index.html"})
     public String index()
@@ -40,65 +48,35 @@ public class ViewController
     @GetMapping({"/web/sellers-save", "/web/sellers-save.html"})
     public String showSeller(Model model)
     {
-        SellerUpdateDTO sellerDTO = new SellerUpdateDTO((SellerEntity)sellerDAO.findByCif("admin")); // TODO: Change this to the actual cif
-        model.addAttribute("sellerDTO", sellerDTO);
+        SellerUpdateDTO sellerUpdateDTO = new SellerUpdateDTO((SellerEntity)sellerDAO.findByCif("admin")); // TODO: Change this to the actual cif
+        model.addAttribute("sellerUpdateDTO", sellerUpdateDTO);
         return "sellers-save";
     }
 
+
     @PutMapping({"/web/sellers-save", "/web/sellers-save.html"})
-    public String saveSeller(SellerUpdateDTO sellerDTO, Model model)
+    public String saveSeller(SellerUpdateDTO sellerUpdateDTO, Model model)
     {
-        SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
-        if (existingSeller == null)  // TODO: Move it to server and check that the changes are valid
+        SellerCodeStatus status = sellersServices.saveSeller(sellerUpdateDTO);
+        if (status == SellerCodeStatus.SELLER_NOT_FOUND)
             model.addAttribute("error", "Seller not found");
-        else {
-        SellerEntity updatedSeller = sellerDTO.toSellerEntity();
-            updatedSeller.setId(existingSeller.getId());
-            if (!sellerDTO.wasPasswordChanged())
-                updatedSeller.setPassword(existingSeller.getPassword());
-            else if (!sellerDTO.isPasswordConfirmed())
-            {
-                model.addAttribute("error", "Passwords do not match");
-                model.addAttribute("sellerDTO", sellerDTO);
-                return "sellers-save";
-            }
-            else
-                updatedSeller.setPlainPassword(existingSeller.getPlainPassword()); // Remove on production
-            sellerDAO.save(updatedSeller);
+        if (status == SellerCodeStatus.PASSWORDS_DO_NOT_MATCH)
+            model.addAttribute("error", "Passwords do not Match");
+        if (status == SellerCodeStatus.SUCCESS)
             model.addAttribute("success", "Seller updated successfully!");
-        }
-        model.addAttribute("sellerDTO", sellerDTO);
+        model.addAttribute("sellerUpdateDTO", sellerUpdateDTO);
         return "sellers-save";
     }
 
     @GetMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})
     public String showSellerProductsPost(Model model)
     {
-        SellerEntity seller = sellerDAO.findByCif("admin"); // TODO: Change this to the actual cif
-        SellerDTO sellerDTO = new SellerDTO(seller.getCif(), seller.getPassword());
-        List<CategoryEntity> categories = (List<CategoryEntity>) categoryDAO.findAll();
-        List<ProductEntity> products = (List<ProductEntity>) productDAO.findAll();
-
-        model.addAttribute("sellerDTO", sellerDTO);
-        model.addAttribute("categories", categories);
-        model.addAttribute("products", products);
-        return "sellerProducts-post";
+        return sellerProductServices.showSellerProductsPost(model);
     }
 
     @PostMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})
     public String postSellerProduct(SellerUpdateDTO sellerDTO, Model model)
     {
-        SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
-        if (existingSeller == null)  // TODO: Move it to server and check that the changes are valid
-            model.addAttribute("error", "Seller not found");
-        else {
-
-
-            model.addAttribute("success", "Seller Product updated successfully!");
-        }
-
-        model.addAttribute("sellerDTO", sellerDTO);
-        return "sellerProducts-post";
+        return sellerProductServices.postSellerProduct(sellerDTO, model);
     }
-
 }

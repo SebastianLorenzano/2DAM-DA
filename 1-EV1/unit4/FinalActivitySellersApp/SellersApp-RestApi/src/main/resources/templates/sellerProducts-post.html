@@ -31,7 +31,7 @@
 
 <!-- Category Selection -->
 <h2>Select Category</h2>
-<select id="category" name="categoryId" onchange="filterProducts()">
+<select id="category" name="category" onchange="filterProducts()">
     <option value="">-- Select Category --</option>
     <option th:each="category : ${categories}"
             th:value="${category.id}"
@@ -41,7 +41,7 @@
 
 <!-- Product Selection -->
 <h2>Select Product</h2>
-<select id="product" name="productId">
+<select id="product" name="product">
     <option value="">-- Select Product --</option>
     <option th:each="product : ${products}"
             th:value="${product.id}"

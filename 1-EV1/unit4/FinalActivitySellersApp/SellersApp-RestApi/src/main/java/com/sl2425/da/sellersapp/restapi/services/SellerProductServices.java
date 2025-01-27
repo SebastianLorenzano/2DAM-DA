@@ -1,14 +1,20 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
+import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
+import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
+import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 
 import java.math.BigDecimal;
@@ -23,6 +29,8 @@ public class SellerProductServices
     private ISellerEntityDAO sellerDAO;
     @Autowired
     private IProductEntityDAO productDAO;
+    @Autowired
+    private ICategoryEntityDAO categoryDAO;
 
 
 
@@ -42,6 +50,34 @@ public class SellerProductServices
         else if (RequestType == Utils.HttpRequests.PUT && !exists)
             throw new IllegalArgumentException("Resource doesn't exist");
         return sellerProductDAO.save(sellerProduct);
+    }
+
+    public String showSellerProductsPost(Model model)
+    {
+        SellerEntity seller = sellerDAO.findByCif("admin"); // TODO: Change this to the actual cif
+        SellerDTO sellerDTO = new SellerDTO(seller.getCif(), seller.getPassword());
+        List<CategoryEntity> categories = (List<CategoryEntity>) categoryDAO.findAll();
+        List<ProductEntity> products = (List<ProductEntity>) productDAO.findAll();
+
+        model.addAttribute("sellerDTO", sellerDTO);
+        model.addAttribute("categories", categories);
+        model.addAttribute("products", products);
+        return "sellerProducts-post";
+    }
+
+    public String postSellerProduct(SellerUpdateDTO sellerDTO, Model model)
+    {
+        SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
+        if (existingSeller == null)  // TODO: Move it to server and check that the changes are valid
+            model.addAttribute("error", "Seller not found");
+        else {
+
+
+            model.addAttribute("success", "Seller Product updated successfully!");
+        }
+
+        model.addAttribute("sellerDTO", sellerDTO);
+        return "sellerProducts-post";
     }
 
 
