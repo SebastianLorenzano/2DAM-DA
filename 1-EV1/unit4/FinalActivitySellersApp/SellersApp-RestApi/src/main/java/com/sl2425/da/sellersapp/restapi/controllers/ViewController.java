@@ -3,6 +3,7 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
@@ -44,6 +45,36 @@ public class ViewController
     {
         return "index";
     }
+
+    @GetMapping({"/web/login", "/web/login.html"})
+    public String showLogin(Model model)
+    {
+        model.addAttribute("sellerDTO", new SellerDTO());
+        return "login";
+    }
+
+    /*
+    @PostMapping({"/web/login", "/web/login.html"})
+    public String PostLogin(SellerDTO sellerDTO, Model model)
+    {
+
+
+
+        LoginCodeStatus status = sellersServices.getSellerByCifAndPassword(sellerDTO);
+        if (status == LoginCodeStatus.CIF_NOT_FOUND)
+            model.addAttribute("error", "CIF was not found.");
+        if (status == LoginCodeStatus.INCORRECT_PASSWORD)
+            model.addAttribute("error", "Password is incorrect.");
+        if (status == LoginCodeStatus.SUCCESS)
+            model.addAttribute("success", "You successfully logged in!");
+        model.addAttribute("sellerDTO", sellerDTO);
+        return "login";
+
+
+
+    }
+    */
+
 
     @GetMapping({"/web/sellers-save", "/web/sellers-save.html"})
     public String showSeller(Model model)
