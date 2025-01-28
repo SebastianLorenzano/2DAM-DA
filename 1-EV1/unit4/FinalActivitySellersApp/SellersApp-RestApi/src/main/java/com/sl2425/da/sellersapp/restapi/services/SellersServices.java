@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Service
 public class SellersServices
 {
@@ -30,11 +33,12 @@ public class SellersServices
         return Pair.of(seller, LoginCodeStatus.SUCCESS);
     }
 
-    public SellerCodeStatus saveSeller(SellerUpdateDTO sellerDTO)
+    public Set<SellerCodeStatus> saveSeller(SellerUpdateDTO sellerDTO)
     {
+        Set<SellerCodeStatus> errors = new HashSet<>();
         SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
         if (existingSeller == null)
-            return SellerCodeStatus.SELLER_NOT_FOUND;
+            errors.add(SellerCodeStatus.SELLER_NOT_FOUND);
 
         SellerEntity updatedSeller = sellerDTO.toSellerEntity();
         updatedSeller.setId(existingSeller.getId());
@@ -42,10 +46,14 @@ public class SellersServices
         if (!sellerDTO.wasPasswordChanged())
             updatedSeller.setPassword(existingSeller.getPassword());
         else if (!sellerDTO.isPasswordConfirmed())
-            return SellerCodeStatus.PASSWORDS_DO_NOT_MATCH;
+            errors.add(SellerCodeStatus.PASSWORDS_DO_NOT_MATCH);
 
         updatedSeller.setPlainPassword(existingSeller.getPlainPassword()); // Remove on production
-        sellerDAO.save(updatedSeller);
-        return SellerCodeStatus.SUCCESS;
+        if (errors.isEmpty())
+        {
+            sellerDAO.save(updatedSeller);
+            errors.add(SellerCodeStatus.SUCCESS);
+        }
+        return errors;
     }
 }

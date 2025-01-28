@@ -75,10 +75,25 @@
                 <i data-lucide="plus" class="icon"></i>
                 Add Offer
             </a>
-            <a th:href="@{/web/login}" class="btn btn-secondary">
-                <i data-lucide="plus" class="icon"></i>
-                Log Out
-            </a>
+            <div>
+                <!-- Show logout button if the user is authenticated -->
+                <div th:if="${#authentication.authenticated and !#authorization.expression('isAnonymous()')}">                    <p>Welcome, <span th:text="${#authentication.name}"></span>!</p>
+                    <form th:action="@{/web/logout}" method="post">
+                        <button type="submit" class="btn btn-secondary">
+                            <i data-lucide="plus" class="icon"></i>
+                            Log Out
+                        </button>
+                    </form>
+                </div>
+                <!-- Show login button if the user is not authenticated -->
+                <form th:if="${#authorization.expression('isAnonymous()')}"
+                      th:action="@{/web/login}" method="get">
+                    <button type="submit" class="btn btn-primary">
+                        Log In
+                    </button>
+                </form>
+            </div>
+
         </div>
     </div>
 </div>

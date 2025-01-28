@@ -4,7 +4,6 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -15,23 +14,21 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/web/").permitAll()
+                        .requestMatchers("/", "/home", "/css/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .loginPage("/web/login")  // Custom login page
+                        .loginPage("/web/login")
                         .defaultSuccessUrl("/", true)
                         .permitAll()
-                );
-                /*
+                )
                 .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login?logout")
-                        .permitAll()
-                        */
-
-                
-
+                    .logoutUrl("/web/logout") // URL to handle the logout
+                    .logoutSuccessUrl("/web/login?logout") // Redirect after logout
+                    .invalidateHttpSession(true) // Invalidate the session
+                    .clearAuthentication(true) // Clear authentication
+                    .permitAll()
+                );
         return http.build();
     }
 

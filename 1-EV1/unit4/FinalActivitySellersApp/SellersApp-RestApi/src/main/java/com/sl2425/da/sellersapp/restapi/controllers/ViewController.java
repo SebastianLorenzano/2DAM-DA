@@ -15,6 +15,8 @@ import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import com.sl2425.da.sellersapp.restapi.services.SellerProductServices;
 import com.sl2425.da.sellersapp.restapi.services.SellersServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ViewController
@@ -53,33 +56,10 @@ public class ViewController
         return "login";
     }
 
-    /*
-    @PostMapping({"/web/login", "/web/login.html"})
-    public String PostLogin(SellerDTO sellerDTO, Model model)
+    @GetMapping({"/web/sellers-save", "/web/sellers-save.html"} )
+    public String showSeller(@AuthenticationPrincipal UserDetails user, Model model)
     {
-
-
-
-        LoginCodeStatus status = sellersServices.getSellerByCifAndPassword(sellerDTO);
-        if (status == LoginCodeStatus.CIF_NOT_FOUND)
-            model.addAttribute("error", "CIF was not found.");
-        if (status == LoginCodeStatus.INCORRECT_PASSWORD)
-            model.addAttribute("error", "Password is incorrect.");
-        if (status == LoginCodeStatus.SUCCESS)
-            model.addAttribute("success", "You successfully logged in!");
-        model.addAttribute("sellerDTO", sellerDTO);
-        return "login";
-
-
-
-    }
-    */
-
-
-    @GetMapping({"/web/sellers-save", "/web/sellers-save.html"})
-    public String showSeller(Model model)
-    {
-        SellerUpdateDTO sellerUpdateDTO = new SellerUpdateDTO((SellerEntity)sellerDAO.findByCif("admin")); // TODO: Change this to the actual cif
+        SellerUpdateDTO sellerUpdateDTO = new SellerUpdateDTO((SellerEntity)sellerDAO.findByCif(user.getUsername()));
         model.addAttribute("sellerUpdateDTO", sellerUpdateDTO);
         return "sellers-save";
     }
@@ -88,13 +68,16 @@ public class ViewController
     @PutMapping({"/web/sellers-save", "/web/sellers-save.html"})
     public String saveSeller(SellerUpdateDTO sellerUpdateDTO, Model model)
     {
-        SellerCodeStatus status = sellersServices.saveSeller(sellerUpdateDTO);
-        if (status == SellerCodeStatus.SELLER_NOT_FOUND)
-            model.addAttribute("error", "Seller not found");
-        if (status == SellerCodeStatus.PASSWORDS_DO_NOT_MATCH)
-            model.addAttribute("error", "Passwords do not Match");
-        if (status == SellerCodeStatus.SUCCESS)
-            model.addAttribute("success", "Seller updated successfully!");
+        Set<SellerCodeStatus> setStatus = sellersServices.saveSeller(sellerUpdateDTO);
+        for (SellerCodeStatus status : setStatus)
+        {
+            if (status == SellerCodeStatus.SELLER_NOT_FOUND)
+                model.addAttribute("error", "Seller not found");
+            else if (status == SellerCodeStatus.PASSWORDS_DO_NOT_MATCH)
+                model.addAttribute("error", "Passwords do not match");
+            else if (status == SellerCodeStatus.SUCCESS)
+                model.addAttribute("success", "Seller updated successfully!");
+        }
         model.addAttribute("sellerUpdateDTO", sellerUpdateDTO);
         return "sellers-save";
     }
