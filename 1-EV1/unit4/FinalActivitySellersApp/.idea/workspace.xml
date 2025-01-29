@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39c6fa50-61d5-4737-9e6e-03c2c2213bba.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39c6fa50-61d5-4737-9e6e-03c2c2213bba/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39c6fa50-61d5-4737-9e6e-03c2c2213bba/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39c6fa50-61d5-4737-9e6e-03c2c2213bba/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a9eb9c3-0fb5-4c94-b48d-af41acdac907.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a9eb9c3-0fb5-4c94-b48d-af41acdac907/storage_v2/_src_/database/onlinemarket.TwB8cA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a9eb9c3-0fb5-4c94-b48d-af41acdac907/storage_v2/_src_/database/onlinemarket.TwB8cA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a9eb9c3-0fb5-4c94-b48d-af41acdac907/storage_v2/_src_/database/onlinemarket.TwB8cA/schema/public.abK9xQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/769997f3-53f0-472b-bf43-bef8ff158939.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/769997f3-53f0-472b-bf43-bef8ff158939/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/769997f3-53f0-472b-bf43-bef8ff158939/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/769997f3-53f0-472b-bf43-bef8ff158939/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/codeStatus/SellerCodeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/codeStatus/SellerCodeStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerLoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerUpdateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellersServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellersServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/sellers-save.html" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/sellers-save.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +111,7 @@
       <workItem from="1737471919531" duration="2983000" />
       <workItem from="1737482801526" duration="6074000" />
       <workItem from="1737570784654" duration="4395000" />
-      <workItem from="1738160762536" duration="8170000" />
+      <workItem from="1738160762536" duration="9289000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,7 @@ import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -19,6 +20,8 @@ public class SellersServices
 
     @Autowired
     private ISellerEntityDAO sellerDAO;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
     public Pair<SellerEntity, LoginCodeStatus> getSellerByCifAndPassword(SellerLoginDTO sellerLoginDTO)
@@ -26,7 +29,7 @@ public class SellersServices
         SellerEntity seller = sellerDAO.findByCif(sellerLoginDTO.getCif());
         if (seller == null)
             return Pair.of(null, LoginCodeStatus.CIF_NOT_FOUND);
-        if (!seller.getPassword().equals(sellerLoginDTO.getPassword()))
+        if (!passwordEncoder.matches(sellerLoginDTO.getPassword(), seller.getPassword()))
             return Pair.of(null, LoginCodeStatus.INCORRECT_PASSWORD);
         return Pair.of(seller, LoginCodeStatus.SUCCESS);
     }
