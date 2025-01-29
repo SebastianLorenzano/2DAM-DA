@@ -4,12 +4,14 @@ import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 
 public class SellerUpdateDTO
 {
+    private Integer id;
     private String cif;
     private String name;
     private String businessName;
     private String phone;
     private String email;
     private String url;
+    private String oldPassword;
     private String newPassword;
     private String confirmNewPassword;
 
@@ -19,12 +21,14 @@ public class SellerUpdateDTO
 
     public SellerUpdateDTO(SellerEntity sellerEntity)
     {
+        this.id = sellerEntity.getId();
         this.cif = sellerEntity.getCif();
         this.name = sellerEntity.getName();
         this.businessName = sellerEntity.getBusinessName();
         this.phone = sellerEntity.getPhone();
         this.email = sellerEntity.getEmail();
         this.url = sellerEntity.getURL();
+        this.oldPassword = sellerEntity.getPassword();
     }
 
     public static SellerUpdateDTO fromSellerEntity(SellerEntity sellerEntity)
@@ -35,12 +39,14 @@ public class SellerUpdateDTO
     public SellerEntity toSellerEntity()
     {
         SellerEntity sellerEntity = new SellerEntity();
+        sellerEntity.setId(id);
         sellerEntity.setCif(cif);
         sellerEntity.setName(name);
         sellerEntity.setBusinessName(businessName);
         sellerEntity.setPhone(phone);
         sellerEntity.setEmail(email);
         sellerEntity.setURL(url);
+        sellerEntity.setPassword(oldPassword);
         if (wasPasswordChanged() && isPasswordConfirmed())
             sellerEntity.setPassword(newPassword);
         return sellerEntity;
@@ -55,6 +61,27 @@ public class SellerUpdateDTO
     public boolean isPasswordConfirmed()
     {
         return newPassword.equals(confirmNewPassword);
+    }
+
+
+    public Integer getId()
+    {
+        return id;
+    }
+
+    public void setId(Integer id)
+    {
+        this.id = id;
+    }
+
+    public String getOldPassword()
+    {
+        return oldPassword;
+    }
+
+    public void setOldPassword(String oldPassword)
+    {
+        this.oldPassword = oldPassword;
     }
 
     public String getCif()

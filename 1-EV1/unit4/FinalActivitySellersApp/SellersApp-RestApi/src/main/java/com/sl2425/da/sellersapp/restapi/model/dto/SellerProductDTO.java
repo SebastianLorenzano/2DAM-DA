@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class SellerProductDTO
 {
     private Integer id;
-    private SellerDTO sellerDTO;
+    private SellerLoginDTO sellerDTO;
     private ProductEntity product;
     private BigDecimal price;
     private BigDecimal offerPrice;
@@ -26,12 +26,12 @@ public class SellerProductDTO
         this.id = id;
     }
 
-    public SellerDTO getSellerDTO() {
+    public SellerLoginDTO getSellerDTO() {
         return sellerDTO;
     }
 
-    public void setSellerDTO(SellerDTO sellerDTO) {
-        this.sellerDTO = sellerDTO;
+    public void setSellerDTO(SellerLoginDTO sellerLoginDTO) {
+        this.sellerDTO = sellerLoginDTO;
     }
 
     public ProductEntity getProduct() {

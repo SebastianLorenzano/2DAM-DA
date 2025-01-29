@@ -2,18 +2,20 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerDTO;
-import jakarta.persistence.EntityNotFoundException;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
+import com.sl2425.da.sellersapp.restapi.services.SellersServices;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("sellers")
@@ -21,23 +23,27 @@ public class SellerController
 {
     @Autowired
     private ISellerEntityDAO sellerDAO;
+    @Autowired
+    private SellersServices sellersServices;
 
     @GetMapping
-    public ResponseEntity<SellerEntity> getSellerByCifAndPassword(@Validated @RequestBody SellerDTO s)
+    public ResponseEntity<?> getSellerByCifAndPassword(@RequestBody SellerLoginDTO s)
     {
-        SellerEntity seller = sellerDAO.findByCifAndPassword(s.getCif(), s.getPassword());
-        if (seller == null)
-            return ResponseEntity.notFound().build();
-        return ResponseEntity.ok().body(seller);
+        Pair<SellerEntity, LoginCodeStatus> result = sellersServices.getSellerByCifAndPassword(s);
+        if (result.getRight() == LoginCodeStatus.SUCCESS)
+            return ResponseEntity.ok().body(result.getLeft());
+        return ResponseEntity.badRequest().body(result.getRight());
     }
 
     @PutMapping
-    public ResponseEntity<?> updateSeller(@Validated @RequestBody SellerEntity value) {
-        SellerEntity seller = sellerDAO.findByCif(value.getCif());
-        if (seller == null)
-            return ResponseEntity.badRequest().build();
-        sellerDAO.save(value);
-        return ResponseEntity.ok().body("Updated");
+    public ResponseEntity<?> updateSeller(@RequestBody SellerUpdateDTO sellerUpdateDTO)
+    {
+        Set<SellerCodeStatus> statuses = sellersServices.updateSeller(sellerUpdateDTO);
+        if (statuses.contains(SellerCodeStatus.SUCCESS))
+            return ResponseEntity.ok().build();
+        Map<String, Object> errorResponse = new HashMap<>();
+        errorResponse.put("message", "Seller update failed.");
+        errorResponse.put("errors", statuses);
+        return ResponseEntity.badRequest().body(errorResponse);
     }
-
 }

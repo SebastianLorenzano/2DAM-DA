@@ -1,15 +1,15 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
-public class SellerDTO
+public class SellerLoginDTO
 {
     private String cif;
     private String password;
 
-    public SellerDTO()
+    public SellerLoginDTO()
     {
     }
 
-    public SellerDTO(String cif, String password)
+    public SellerLoginDTO(String cif, String password)
     {
         this.cif = cif;
         this.password = password;

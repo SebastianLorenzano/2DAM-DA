@@ -9,7 +9,7 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerDTO;
+import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,11 +55,11 @@ public class SellerProductServices
     public String showSellerProductsPost(Model model)
     {
         SellerEntity seller = sellerDAO.findByCif("admin"); // TODO: Change this to the actual cif
-        SellerDTO sellerDTO = new SellerDTO(seller.getCif(), seller.getPassword());
+        SellerLoginDTO sellerLoginDTO = new SellerLoginDTO(seller.getCif(), seller.getPassword());
         List<CategoryEntity> categories = (List<CategoryEntity>) categoryDAO.findAll();
         List<ProductEntity> products = (List<ProductEntity>) productDAO.findAll();
 
-        model.addAttribute("sellerDTO", sellerDTO);
+        model.addAttribute("sellerDTO", sellerLoginDTO);
         model.addAttribute("categories", categories);
         model.addAttribute("products", products);
         return "sellerProducts-post";
