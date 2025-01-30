@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -29,8 +30,8 @@ public class SellerController
     @GetMapping
     public ResponseEntity<?> getSellerByCifAndPassword(@RequestBody SellerLoginDTO s)
     {
-        Pair<SellerEntity, LoginCodeStatus> result = sellersServices.getSellerByCifAndPassword(s);
-        if (result.getRight() == LoginCodeStatus.SUCCESS)
+        Pair<Optional<SellerEntity>, LoginCodeStatus> result = sellersServices.getSellerByCifAndPassword(s);
+        if (result.getLeft().isPresent())
             return ResponseEntity.ok().body(result.getLeft());
         return ResponseEntity.badRequest().body(result.getRight());
     }

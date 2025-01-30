@@ -1,10 +1,15 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import jakarta.validation.constraints.*;
+
 
 public class SellerUpdateDTO
 {
+
+    @NotNull
     private Integer id;
+
     private String cif;
     private String name;
     private String businessName;
@@ -22,13 +27,13 @@ public class SellerUpdateDTO
     public SellerUpdateDTO(SellerEntity sellerEntity)
     {
         this.id = sellerEntity.getId();
+        this.oldPassword = sellerEntity.getPassword();
         this.cif = sellerEntity.getCif();
         this.name = sellerEntity.getName();
         this.businessName = sellerEntity.getBusinessName();
         this.phone = sellerEntity.getPhone();
         this.email = sellerEntity.getEmail();
         this.url = sellerEntity.getURL();
-        this.oldPassword = sellerEntity.getPassword();
     }
 
     public static SellerUpdateDTO fromSellerEntity(SellerEntity sellerEntity)

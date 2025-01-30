@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -57,18 +58,16 @@ public class ViewController
     @GetMapping({"/web/sellers-save", "/web/sellers-save.html"} )
     public String showSeller(@AuthenticationPrincipal UserDetails user, Model model)
     {
-        Pair<SellerEntity, LoginCodeStatus> pair = sellersServices.getSellerByCifAndPassword(
-                new SellerLoginDTO(user.getUsername(), user.getPassword()));
-        if (pair.getRight() != LoginCodeStatus.SUCCESS)
+        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellersServices.getSellerByCif(user.getUsername());
+        if (pair.getLeft().isEmpty())
         {
             model.addAttribute("error", "Seller not found");
             return "index";
         }
-        SellerUpdateDTO sellerUpdateDTO = new SellerUpdateDTO(pair.getLeft());
-        model.addAttribute("sellerUpdateDTO", sellerUpdateDTO);
+        SellerUpdateDTO sellerUpdateDTO = new SellerUpdateDTO(pair.getLeft().get());
+        model.addAttribute("SellerUpdateDTO", sellerUpdateDTO);
         return "sellers-save";
     }
-
 
     @PutMapping({"/web/sellers-save", "/web/sellers-save.html"})
     public String saveSeller(@ModelAttribute("SellerUpdateDTO") SellerUpdateDTO sellerUpdateDTO, Model model)

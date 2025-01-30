@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -24,14 +25,22 @@ public class SellersServices
     private PasswordEncoder passwordEncoder;
 
 
-    public Pair<SellerEntity, LoginCodeStatus> getSellerByCifAndPassword(SellerLoginDTO sellerLoginDTO)
+    public Pair<Optional<SellerEntity>, LoginCodeStatus> getSellerByCif(String cif)
+    {
+        SellerEntity seller = sellerDAO.findByCif(cif);
+        if (seller == null)
+            return Pair.of(Optional.empty(), LoginCodeStatus.CIF_NOT_FOUND);
+        return Pair.of(Optional.of(seller), LoginCodeStatus.SUCCESS);
+    }
+
+    public Pair<Optional<SellerEntity>, LoginCodeStatus> getSellerByCifAndPassword(SellerLoginDTO sellerLoginDTO)
     {
         SellerEntity seller = sellerDAO.findByCif(sellerLoginDTO.getCif());
         if (seller == null)
-            return Pair.of(null, LoginCodeStatus.CIF_NOT_FOUND);
+            return Pair.of(Optional.empty(), LoginCodeStatus.CIF_NOT_FOUND);
         if (!passwordEncoder.matches(sellerLoginDTO.getPassword(), seller.getPassword()))
-            return Pair.of(null, LoginCodeStatus.INCORRECT_PASSWORD);
-        return Pair.of(seller, LoginCodeStatus.SUCCESS);
+            return Pair.of(Optional.empty(), LoginCodeStatus.INCORRECT_PASSWORD);
+        return Pair.of(Optional.of(seller), LoginCodeStatus.SUCCESS);
     }
 
     public Set<SellerCodeStatus> updateSeller(SellerUpdateDTO sellerDTO)
