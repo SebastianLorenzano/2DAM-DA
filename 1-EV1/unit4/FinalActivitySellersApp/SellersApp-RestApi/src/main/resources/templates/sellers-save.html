@@ -44,9 +44,11 @@
 <div class="container">
     <h2 class="form-title">Your Data</h2>
 
-    <!-- Display error message -->
-    <div th:if="${error}" class="alert alert-danger" role="alert">
-        <span th:text="${error}"></span>
+    <!-- Display validation error messages -->
+    <div th:if="${errors}" class="alert alert-danger" role="alert">
+        <ul>
+            <li th:each="error : ${errors}" th:text="${error}"></li>
+        </ul>
     </div>
     <!-- Display success message -->
     <div th:if="${success}" class="alert alert-success" role="alert">
