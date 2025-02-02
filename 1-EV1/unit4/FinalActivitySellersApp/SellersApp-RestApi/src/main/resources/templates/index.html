@@ -3,65 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI API REST</title>
-    <!-- Include Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Include Lucide Icons -->
+    <title>SellersApp - Home</title>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Custom styles */
-        .card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    <style th:inline="css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #bc772c 0%, #0e74a5 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+        }
+
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            color: #0e74a5;
+            font-size: 28px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            font-weight: 500;
-            transition: all 0.2s;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
             width: 100%;
         }
 
         .btn-primary {
-            background-color: #2563eb;
+            background: linear-gradient(to right, #bc772c, #0e74a5);
             color: white;
         }
 
         .btn-primary:hover {
-            background-color: #1d4ed8;
+            background: linear-gradient(to right, #d68a33, #1185bd);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(14, 116, 165, 0.3);
         }
 
         .btn-secondary {
-            background-color: #f3f4f6;
-            color: #1f2937;
+            background: #f8f9fa;
+            color: #0e74a5;
+            border: 2px solid #e3f2fd;
         }
 
         .btn-secondary:hover {
-            background-color: #e5e7eb;
+            background: #e3f2fd;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(14, 116, 165, 0.1);
         }
 
         .icon {
             width: 1rem;
             height: 1rem;
             margin-right: 0.5rem;
+            stroke: currentColor;
+        }
+
+        .welcome-text {
+            color: #0e74a5;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 500;
         }
     </style>
 </head>
-<body class="min-h-screen w-full bg-[#5084bb] flex items-center justify-center p-4">
-<div class="card w-full max-w-lg">
-    <div class="p-6">
-        <h1 class="text-2xl font-bold text-center mb-2">MI API REST</h1>
-        <p class="text-center text-gray-600 mb-6">Seleccione una opción</p>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>SellersApp - Home</h1>
+        <p>Seleccione una opción</p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="grid">
             <a th:href="@{/web/sellers-save}" class="btn btn-primary">
-            <i data-lucide="eye" class="icon"></i>
+                <i data-lucide="eye" class="icon"></i>
                 Seller Info
             </a>
             <a th:href="@{/web/sellerProducts-post}" class="btn btn-primary">
@@ -70,17 +134,18 @@
             </a>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid">
             <a th:href="@{/web/sellerProducts-post}" class="btn btn-secondary">
                 <i data-lucide="plus" class="icon"></i>
                 Add Offer
             </a>
             <div>
                 <!-- Show logout button if the user is authenticated -->
-                <div th:if="${#authentication.authenticated and !#authorization.expression('isAnonymous()')}">                    <p>Welcome, <span th:text="${#authentication.name}"></span>!</p>
+                <div th:if="${#authentication.authenticated and !#authorization.expression('isAnonymous()')}">
+                    <p class="welcome-text">Welcome, <span th:text="${#authentication.name}"></span>!</p>
                     <form th:action="@{/web/logout}" method="post">
                         <button type="submit" class="btn btn-secondary">
-                            <i data-lucide="plus" class="icon"></i>
+                            <i data-lucide="log-out" class="icon"></i>
                             Log Out
                         </button>
                     </form>
@@ -89,11 +154,11 @@
                 <form th:if="${#authorization.expression('isAnonymous()')}"
                       th:action="@{/web/login}" method="get">
                     <button type="submit" class="btn btn-primary">
+                        <i data-lucide="log-in" class="icon"></i>
                         Log In
                     </button>
                 </form>
             </div>
-
         </div>
     </div>
 </div>

@@ -2,10 +2,6 @@ TODO List:
 
 
 0. Make all menus work (Make it work perfectly later, but make sure it doesn't break now)
-0,5. Make it so seller-save doesn't make a save() if there wasnt any changes and it shows as an error to the user
-1. Add Spring Security to the project
-2. Restrict access to the REST API to only authenticated users
-3. Complete ViewControllers with the seller they get from Security
 2. Make sure the menus cannot be broken by the user doing weird things
 
 

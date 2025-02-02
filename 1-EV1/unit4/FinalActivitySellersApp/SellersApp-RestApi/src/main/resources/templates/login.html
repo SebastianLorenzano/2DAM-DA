@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+  <title>SellersApp- Login</title>
   <style th:inline="css">
     * {
       margin: 0;
@@ -12,29 +12,24 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #bc772c 0%, #0e74a5 100%);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: #333;
     }
 
     .container {
       display: flex;
-      background-color: white;
-      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      width: 800px;
-      max-width: 100%;
-    }
-
-    .image-container {
-      flex: 1;
-      background-image: url('../static/images/login.jpg');
-      background-size: cover;
-      background-position: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      max-width: 90%;
+      backdrop-filter: blur(10px);
     }
 
     .form-container {
@@ -43,93 +38,123 @@
     }
 
     h2 {
-      margin-bottom: 20px;
-      color: #333;
+      margin-bottom: 30px;
+      color: #0e74a5;
+      font-size: 28px;
+      text-align: center;
+      font-weight: 600;
     }
 
     form {
       display: flex;
       flex-direction: column;
+      gap: 20px;
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     label {
       display: block;
-      margin-bottom: 5px;
-      color: #555;
+      margin-bottom: 8px;
+      color: #0e74a5;
+      font-weight: 500;
+      font-size: 14px;
     }
 
     input {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      padding: 12px 16px;
+      border: 2px solid #e3f2fd;
+      border-radius: 8px;
       font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0e74a5;
+      box-shadow: 0 0 0 3px rgba(14, 116, 165, 0.2);
     }
 
     button {
-      background-color: #1877f2;
+      background: linear-gradient(to right, #bc772c, #0e74a5);
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 4px;
+      padding: 14px 40px;
+      border-radius: 8px;
       font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
+      margin: 10px auto 0;
+      display: block;
+      width: 200px;
     }
 
     button:hover {
-      background-color: #166fe5;
+      background: linear-gradient(to right, #d68a33, #1185bd);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(14, 116, 165, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
     }
 
     .error-message {
-      color: #c62828;
-      margin-top: 10px;
+      color: #d32f2f;
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #ffebee;
+      border-radius: 6px;
+      font-size: 14px;
+      text-align: center;
     }
 
     .success-message {
-      color: #2e7d32;
-      margin-top: 10px;
+      color: #28a745;
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #D1F0D9FF;
+      border-radius: 6px;
+      font-size: 14px;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
+      body {
+        padding: 20px;
       }
 
-      .image-container {
-        display: none;
+      .container {
+        width: 100%;
       }
 
       .form-container {
-        width: 100%;
+        padding: 30px 20px;
       }
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <div class="image-container" th:style="|background-image: url('@{/images/login.jpg}');|"></div>
   <div class="form-container">
-    <h2>Login</h2>
+    <h2>Welcome Back</h2>
     <form th:action="@{/web/login}" method="post">
       <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username" />
       </div>
 
       <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password" />
       </div>
 
       <div class="form-group">
-        <button type="submit">Login</button>
+        <button type="submit">Sign In</button>
       </div>
 
       <div th:if="${param.error}" class="error-message">
@@ -137,7 +162,7 @@
       </div>
 
       <div th:if="${param.logout}" class="success-message">
-        <p>You have been logged out.</p>
+        <p>You have been logged out successfully.</p>
       </div>
     </form>
   </div>

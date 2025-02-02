@@ -2,7 +2,6 @@ package com.sl2425.da.sellersapp.restapi.model.dto;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import jakarta.validation.constraints.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Objects;
@@ -13,26 +12,29 @@ public class SellerUpdateDTO
     private Integer id;
 
     @NotBlank(message = "CIF cannot be blank")
-    @Size(min = 9, max = 9, message = "CIF must be 9 characters long")
+    @Size(max = 9, message = "CIF must be 9 characters long")
     private String cif;
 
     @NotBlank(message = "Name cannot be blank")
-    @Size(max = 150, message = "Name must be at most 150 characters long")
-    @Pattern(regexp ="^[A-Za-zÀ-ÖØ-öø-ÿ0-9 .,*&@#$%^()!?'-]{1,150}$", message = "Name can only contain letters, numbers, and special characters")
+    @Size(max = 100, message = "Name must be at most 100 characters long")
+    @Pattern(regexp ="^[A-Za-zÀ-ÖØ-öø-ÿ0-9 .,*&@#$%^()!?'-]{1,100}$", message = "Name can only contain letters, numbers, and special characters")
     private String name;
 
-    @Size(max = 150, message = "Business name must be at most 150 characters long")
-    @Pattern(regexp ="^[A-Za-zÀ-ÖØ-öø-ÿ0-9 .,*&@#$%^()!?'-]{1,150}$", message = "Business name can only contain letters, numbers, and special characters")
+    @Size(max = 100, message = "Business name must be at most 150 characters long")
+    @Pattern(regexp ="^$|^[A-Za-zÀ-ÖØ-öø-ÿ0-9 .,*&@#$%^()!?'-]{1,100}$", message = "Business name can only contain letters, numbers, and special characters")
     private String businessName;
 
-    @Pattern(regexp ="^(\\+\\d{1,4}[ -]?)?(\\(?\\d{1,4}\\)?[ -]?)?\\d{3,4}([ -]?\\d{2,4})*$", message = "Phone number is invalid")
+    @Pattern(
+            regexp = "^$|^[+\\-\\d\\s]{1,15}$",
+            message = "Phone number is invalid")
+    @Size(max = 15, message = "Phone number must be up to 15 characters")
     private String phone;
 
     @Email(message = "Invalid email format")
     @Size(max = 254, message = "Email must be at most 254 characters long")
     private String email;
 
-    @Pattern(regexp = "^(https?:\\/\\/)" +                       // Protocol (http/https)
+    @Pattern(regexp = "^$|^(https?:\\/\\/)" +                    // Protocol (http/https)
             "((([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,})|" +              // Domain (e.g., example.com)
             "((\\d{1,3}\\.){3}\\d{1,3}))" +                      // OR IP (e.g., 192.168.1.1)
             "(\\:\\d+)?(\\/[^\\s]*)?" +                          // Optional port and path
@@ -40,16 +42,13 @@ public class SellerUpdateDTO
             "(\\#[\\w-]*)?$", message = "URL is invalid")        // Optional fragment
     private String url;
 
-    @Size(min = 8, message = "New password must be at least 8 characters long")
-    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$", message = "Password must contain at least one uppercase letter, one lowercase letter, and one number")
     private String oldPassword;
 
-    @Size(min = 8, message = "New password must be at least 8 characters long")
-    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$", message = "Password must contain at least one uppercase letter, one lowercase letter, and one number")
+    @Pattern(
+            regexp = "^$|^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$",
+            message = "Password must be at least 8 characters long, containing one uppercase letter, one lowercase letter, and one number"
+    )
     private String newPassword;
-
-    @Size(min = 8, message = "New password must be at least 8 characters long")
-    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$", message = "Password must contain at least one uppercase letter, one lowercase letter, and one number")
     private String confirmNewPassword;
 
     public SellerUpdateDTO()
@@ -66,7 +65,7 @@ public class SellerUpdateDTO
         this.url = sellerEntity.getURL();
     }
 
-    public SellerEntity toSellerEntity(SellerEntity oldSeller)
+    public SellerEntity toSellerEntity(SellerEntity oldSeller, PasswordEncoder passwordEncoder)
     {
         SellerEntity sellerEntity = new SellerEntity();
         sellerEntity.setId(oldSeller.getId());
@@ -79,9 +78,7 @@ public class SellerUpdateDTO
         sellerEntity.setPassword(oldSeller.getPassword());
         sellerEntity.setPlainPassword(oldSeller.getPlainPassword()); // Remove on production
         if (userIsChangingPasswordCorrectly())
-        {
-            sellerEntity.setPassword(newPassword);
-        }
+            sellerEntity.setPassword(passwordEncoder.encode(newPassword));
 
         sellerEntity.setPro(oldSeller.getPro());
         return sellerEntity;
@@ -89,7 +86,7 @@ public class SellerUpdateDTO
 
     public boolean userIsChangingPasswordCorrectly()
     {
-        return wasPasswordChanged() && isNewPasswordCorrect();
+        return wasPasswordChanged() && doesNewPasswordsMatch();
     }
 
     public boolean wasPasswordChanged()
@@ -98,14 +95,9 @@ public class SellerUpdateDTO
                 (confirmNewPassword != null && !confirmNewPassword.isEmpty()));
     }
 
-    public boolean isNewPasswordCorrect()
+    public boolean doesNewPasswordsMatch()
     {
         return Objects.equals(newPassword, confirmNewPassword);
-    }
-
-    public boolean isNewPasswordDifferent()
-    {
-        return !Objects.equals(newPassword, oldPassword);
     }
 
 

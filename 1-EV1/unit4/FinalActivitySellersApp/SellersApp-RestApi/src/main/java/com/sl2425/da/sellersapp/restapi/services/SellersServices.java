@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 
@@ -23,6 +24,8 @@ public class SellersServices
     private ISellerEntityDAO sellerDAO;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private SellerValidations sellerValidations;
 
 
     public Pair<Optional<SellerEntity>, LoginCodeStatus> getSellerByCif(String cif)
@@ -52,13 +55,23 @@ public class SellersServices
             statuses.add(SellerCodeStatus.SELLER_NOT_FOUND);
             return statuses;
         }
-        SellerEntity updatedSeller = sellerDTO.toSellerEntity(existingSeller);
-        statuses = SellerValidations.validateSeller(existingSeller, updatedSeller);
-        if (statuses.contains(SellerCodeStatus.SUCCESS))
+        if (!sellerDTO.doesNewPasswordsMatch())
+        {
+            statuses.add(SellerCodeStatus.PASSWORDS_DO_NOT_MATCH);
+            return statuses;
+        }
+        SellerEntity updatedSeller = sellerDTO.toSellerEntity(existingSeller, passwordEncoder);
+        statuses = sellerValidations.validateSeller(existingSeller, updatedSeller);
+        if (statuses.isEmpty())
         {
             encodePasswordIfChanged(updatedSeller, sellerDTO);
             sellerDAO.save(updatedSeller);
             statuses.add(SellerCodeStatus.SUCCESS);
+        }
+        else
+        {
+            for (SellerCodeStatus status : statuses)
+                System.out.println("Status: " + status);
         }
         return statuses;
     }
@@ -68,4 +81,6 @@ public class SellersServices
         if (sellerDTO.getNewPassword() != null && !sellerDTO.getNewPassword().isEmpty())
             seller.setPassword(passwordEncoder.encode(sellerDTO.getNewPassword()));
     }
+
+
 }

@@ -77,32 +77,26 @@ public class ViewController
     public String saveSeller(@Valid @ModelAttribute("SellerUpdateDTO") SellerUpdateDTO sellerUpdateDTO,
                              BindingResult bindingResult, Model model)
     {
-        // Handle validation errors
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors())
+        {
             List<String> validationErrors = bindingResult.getAllErrors().stream()
                     .map(error -> error.getDefaultMessage())
                     .collect(Collectors.toList());
-
             model.addAttribute("errors", validationErrors);
+            model.addAttribute("SellerUpdateDTO", sellerUpdateDTO);
             return "sellers-save";
         }
-
-        // Check password confirmation
-        if (!sellerUpdateDTO.isNewPasswordCorrect()) {
-            model.addAttribute("errors", List.of("Passwords do not match"));
-            return "sellers-save";
-        }
-
-        // Update seller and handle status codes
         Set<SellerCodeStatus> updateStatus = sellersServices.updateSeller(sellerUpdateDTO);
-        for (SellerCodeStatus status : updateStatus) {
-            switch (status) {
+        for (SellerCodeStatus status : updateStatus)
+        {
+            switch (status)
+            {
                 case SELLER_NOT_FOUND -> model.addAttribute("errors", List.of("Seller not found"));
-                case PASSWORDS_DO_NOT_MATCH -> model.addAttribute("errors", List.of("Passwords do not match"));
+                case SELLER_UNCHANGED -> model.addAttribute("errors", List.of("There were no changes to update"));
+                case PASSWORDS_DO_NOT_MATCH -> model.addAttribute("errors", List.of("Passwords do not match."));
                 case SUCCESS -> model.addAttribute("success", "Seller updated successfully!");
             }
         }
-
         model.addAttribute("SellerUpdateDTO", sellerUpdateDTO);
         return "sellers-save";
     }
