@@ -1,5 +1,7 @@
 package com.sl2425.da.sellersapp.restapi.controllers;
 
+import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
+import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
@@ -102,9 +104,16 @@ public class ViewController
     }
 
     @GetMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})
-    public String showSellerProductsPost(Model model)
+    public String showSellerProductsPost(@AuthenticationPrincipal UserDetails user, Model model)
     {
-        return sellerProductServices.showSellerProductsPost(model);
+        List<CategoryEntity> categories = (List<CategoryEntity>) categoryDAO.findAll();
+        List<ProductEntity> remainingProducts = (List<ProductEntity>)
+                productDAO.selectAvailableProducts(user.getUsername(), 0);
+
+
+        model.addAttribute("categories", categories);
+        model.addAttribute("products", remainingProducts);
+        return "sellerProducts-post";
     }
 
     @PostMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})

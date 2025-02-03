@@ -2,10 +2,10 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
-import com.sl2425.da.sellersapp.restapi.model.dto.CifAndCategoryDTO;
+import com.sl2425.da.sellersapp.restapi.model.dto.ProductDTO;
+import com.sl2425.da.sellersapp.restapi.services.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,14 +15,12 @@ import java.util.List;
 public class ProductController
 {
     @Autowired
-    private IProductEntityDAO productDAO;
+    private ProductServices productServices;
 
     @GetMapping
-    public ResponseEntity<List<ProductEntity>> selectAvailableProducts(
-            @RequestBody CifAndCategoryDTO dto)
+    public ResponseEntity<List<ProductEntity>> selectAvailableProducts(@RequestBody ProductDTO dto)
     {
-        return ResponseEntity.ok().body(productDAO.SelectAvailableProducts(dto.getCif(), dto.getCategoryId()));
+        return ResponseEntity.ok().body(productServices.selectProducts(
+                dto.getCif(), dto.getCategoryId(), dto.getRemainingProducts()));
     }
-
-
 }

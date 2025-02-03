@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/SellerProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dao/IProductEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dao/IProductEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/CifAndCategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerLoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/TODO.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,7 @@
       <list>
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -118,6 +123,7 @@
       <workItem from="1738160762536" duration="9289000" />
       <workItem from="1738501732946" duration="19498000" />
       <workItem from="1738597377558" duration="302000" />
+      <workItem from="1738604167902" duration="2012000" />
     </task>
     <servers />
   </component>

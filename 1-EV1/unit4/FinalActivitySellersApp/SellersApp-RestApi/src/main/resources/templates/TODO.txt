@@ -9,7 +9,8 @@ TODO List:
 ?. Add all logic in a middle layer so both Hibernate and REST API can use it
     (Class in original project that can be used by both)
 
-
+?. Fix REST API so /products doesn't return remaining products only. It should be
+          remaining
 
 ?. Make all controllers from base REST API use services
 

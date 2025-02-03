@@ -46,8 +46,7 @@ public class SellerUpdateDTO
 
     @Pattern(
             regexp = "^$|^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$",
-            message = "Password must be at least 8 characters long, containing one uppercase letter, one lowercase letter, and one number"
-    )
+            message = "Password must be at least 8 characters long, containing one uppercase letter, one lowercase letter, and one number")
     private String newPassword;
     private String confirmNewPassword;
 

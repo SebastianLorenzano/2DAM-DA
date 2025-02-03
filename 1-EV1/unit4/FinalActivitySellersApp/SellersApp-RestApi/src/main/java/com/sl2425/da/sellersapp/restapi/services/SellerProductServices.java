@@ -5,6 +5,7 @@ import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerProductCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
@@ -12,13 +13,17 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class SellerProductServices
@@ -44,6 +49,7 @@ public class SellerProductServices
         SellerEntity seller = getSellerFromDTO(s);
         SellerProductEntity sellerProduct =  s.toEntity(seller);
 
+
         Boolean exists = sellerProductDAO.existsBySellerAndProduct(seller, sellerProduct.getProduct());
         if (RequestType == Utils.HttpRequests.POST && exists)
             throw new IllegalArgumentException("Resource already exists");
@@ -52,18 +58,6 @@ public class SellerProductServices
         return sellerProductDAO.save(sellerProduct);
     }
 
-    public String showSellerProductsPost(Model model)
-    {
-        SellerEntity seller = sellerDAO.findByCif("admin"); // TODO: Change this to the actual cif
-        SellerLoginDTO sellerLoginDTO = new SellerLoginDTO(seller.getCif(), seller.getPassword());
-        List<CategoryEntity> categories = (List<CategoryEntity>) categoryDAO.findAll();
-        List<ProductEntity> products = (List<ProductEntity>) productDAO.findAll();
-
-        model.addAttribute("sellerDTO", sellerLoginDTO);
-        model.addAttribute("categories", categories);
-        model.addAttribute("products", products);
-        return "sellerProducts-post";
-    }
 
     public String postSellerProduct(SellerUpdateDTO sellerDTO, Model model)
     {
@@ -103,5 +97,25 @@ public class SellerProductServices
         return seller;
     }
 
-
+    private Pair<SellerProductEntity, Set<SellerProductCodeStatus>> fromDTO(SellerProductDTO dto, SellerEntity sellerEntity)
+    {
+        var result =  new SellerProductEntity();
+        ProductEntity product = productDAO.findById(dto.getProductId());
+        Set<SellerProductCodeStatus> statutes = new HashSet<>();
+        if (product == null)
+        {
+            statutes.add(SellerProductCodeStatus.PRODUCT_NOT_FOUND);
+            return Pair.of(null, statutes);
+        }
+        result.setId(dto.getId());
+        result.setSeller(sellerEntity);
+        result.setProduct(product);
+        result.setPrice(dto.getPrice());
+        result.setOfferPrice(dto.getOfferPrice());
+        result.setOfferStartDate(dto.getOfferStartDate());
+        result.setOfferEndDate(dto.getOfferEndDate());
+        result.setStock(dto.getStock());
+        statutes.add(SellerProductCodeStatus.SUCCESS);
+        return Pair.of(result, statutes);
+    }
 }

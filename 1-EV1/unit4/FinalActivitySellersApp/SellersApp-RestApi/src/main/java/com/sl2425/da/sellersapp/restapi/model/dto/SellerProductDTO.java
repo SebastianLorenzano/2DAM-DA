@@ -3,6 +3,7 @@ package com.sl2425.da.sellersapp.restapi.model.dto;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
+import com.sun.istack.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,8 +11,11 @@ import java.time.LocalDate;
 public class SellerProductDTO
 {
     private Integer id;
+
+    @NotNull
     private SellerLoginDTO sellerDTO;
-    private ProductEntity product;
+
+    private int productId;
     private BigDecimal price;
     private BigDecimal offerPrice;
     private LocalDate offerStartDate;
@@ -34,12 +38,12 @@ public class SellerProductDTO
         this.sellerDTO = sellerLoginDTO;
     }
 
-    public ProductEntity getProduct() {
-        return product;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct(ProductEntity product) {
-        this.product = product;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public BigDecimal getPrice() {

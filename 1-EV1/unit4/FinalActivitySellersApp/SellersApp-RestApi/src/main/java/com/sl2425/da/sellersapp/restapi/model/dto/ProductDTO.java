@@ -1,9 +1,10 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
-public class CifAndCategoryDTO
+public class ProductDTO
 {
     private String cif;
     private Integer categoryId;
+    private boolean remainingProducts;
 
     public String getCif()
     {
@@ -23,5 +24,13 @@ public class CifAndCategoryDTO
     public void setCategoryId(Integer categoryId)
     {
         this.categoryId = categoryId;
+    }
+
+    public boolean getRemainingProducts() {
+        return remainingProducts;
+    }
+
+    public void setRemainingProducts(boolean remainingProducts) {
+        this.remainingProducts = remainingProducts;
     }
 }
