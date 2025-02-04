@@ -75,9 +75,6 @@ public class SellerValidations
         return true; // All checks passed
     }
 
-
-
-
     private boolean isSellerNull(SellerEntity seller)
     {
         return seller == null;

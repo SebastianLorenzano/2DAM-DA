@@ -7,7 +7,7 @@ import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
-import com.sl2425.da.sellersapp.restapi.services.SellersServices;
+import com.sl2425.da.sellersapp.restapi.services.SellerServices;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,12 +25,12 @@ public class SellerController
     @Autowired
     private ISellerEntityDAO sellerDAO;
     @Autowired
-    private SellersServices sellersServices;
+    private SellerServices sellerServices;
 
     @GetMapping
     public ResponseEntity<?> getSellerByCifAndPassword(@RequestBody SellerLoginDTO s)
     {
-        Pair<Optional<SellerEntity>, LoginCodeStatus> result = sellersServices.getSellerByCifAndPassword(s);
+        Pair<Optional<SellerEntity>, LoginCodeStatus> result = sellerServices.getSellerByCifAndPassword(s);
         if (result.getLeft().isPresent())
             return ResponseEntity.ok().body(result.getLeft());
         return ResponseEntity.badRequest().body(result.getRight());
@@ -39,7 +39,7 @@ public class SellerController
     @PutMapping
     public ResponseEntity<?> updateSeller(@RequestBody SellerUpdateDTO sellerUpdateDTO)
     {
-        Set<SellerCodeStatus> statuses = sellersServices.updateSeller(sellerUpdateDTO);
+        Set<SellerCodeStatus> statuses = sellerServices.updateSeller(sellerUpdateDTO);
         if (statuses.contains(SellerCodeStatus.SUCCESS))
             return ResponseEntity.ok().build();
         Map<String, Object> errorResponse = new HashMap<>();

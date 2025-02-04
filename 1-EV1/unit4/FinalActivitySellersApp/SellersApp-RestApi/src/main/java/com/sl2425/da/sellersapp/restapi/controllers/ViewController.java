@@ -12,7 +12,7 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import com.sl2425.da.sellersapp.restapi.services.SellerProductServices;
-import com.sl2425.da.sellersapp.restapi.services.SellersServices;
+import com.sl2425.da.sellersapp.restapi.services.SellerServices;
 import jakarta.validation.Valid;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class ViewController
     @Autowired
     private ISellerProductEntityDAO sellerProductDAO;
     @Autowired
-    private SellersServices sellersServices;
+    private SellerServices sellerServices;
     @Autowired
     private SellerProductServices sellerProductServices;
 
@@ -64,7 +64,7 @@ public class ViewController
     @GetMapping({"/web/sellers-save", "/web/sellers-save.html"} )
     public String showSeller(@AuthenticationPrincipal UserDetails user, Model model)
     {
-        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellersServices.getSellerByCif(user.getUsername());
+        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCif(user.getUsername());
         if (pair.getLeft().isEmpty())
         {
             model.addAttribute("error", "Seller not found");
@@ -88,7 +88,7 @@ public class ViewController
             model.addAttribute("SellerUpdateDTO", sellerUpdateDTO);
             return "sellers-save";
         }
-        Set<SellerCodeStatus> updateStatus = sellersServices.updateSeller(sellerUpdateDTO);
+        Set<SellerCodeStatus> updateStatus = sellerServices.updateSeller(sellerUpdateDTO);
         for (SellerCodeStatus status : updateStatus)
         {
             switch (status)

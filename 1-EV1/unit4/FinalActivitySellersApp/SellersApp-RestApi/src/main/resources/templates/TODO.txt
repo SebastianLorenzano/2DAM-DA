@@ -15,3 +15,5 @@ TODO List:
 ?. Make all controllers from base REST API use services
 
 ?. Make all menus unbreakable by the user
+?. Make database manage all logic that has to process big amounts of data
+?. Seller must only have 2 endpoints: A get with a cif and an update with a cif

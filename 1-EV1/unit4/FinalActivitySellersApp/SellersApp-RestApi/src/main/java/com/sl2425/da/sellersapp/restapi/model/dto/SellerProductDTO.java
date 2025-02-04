@@ -4,6 +4,7 @@ import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sun.istack.NotNull;
+import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,15 +12,27 @@ import java.time.LocalDate;
 public class SellerProductDTO
 {
     private Integer id;
-
     @NotNull
+    @NotBlank (message = "Seller is required")
     private SellerLoginDTO sellerDTO;
 
+    @Positive(message = "Product ID must be a positive number")
     private int productId;
+
+    @NotNull
+    @DecimalMin(value = "0.0", inclusive = true, message = "Price must be greater or equal than 0")
     private BigDecimal price;
+
+    @DecimalMin(value = "0.0", inclusive = true, message = "Offer price cannot be negative")
     private BigDecimal offerPrice;
+
+    @FutureOrPresent(message = "Offer start date must be today or in the future")
     private LocalDate offerStartDate;
+
+    @FutureOrPresent(message = "Offer end date must be today or in the future")
     private LocalDate offerEndDate;
+
+    @PositiveOrZero(message = "Stock must be equal or greater than 0")
     private Integer stock;
 
     public Integer getId() {
@@ -86,7 +99,7 @@ public class SellerProductDTO
         this.stock = stock;
     }
 
-
+    /*
     public SellerProductEntity toEntity(SellerEntity seller)
     {
         var result =  new SellerProductEntity();
@@ -100,4 +113,5 @@ public class SellerProductDTO
         result.setStock(this.stock);
         return result;
     }
+    */
 }

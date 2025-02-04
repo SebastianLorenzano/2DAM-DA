@@ -5,6 +5,7 @@ import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerProductCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
@@ -36,6 +37,8 @@ public class SellerProductServices
     private IProductEntityDAO productDAO;
     @Autowired
     private ICategoryEntityDAO categoryDAO;
+    @Autowired
+    private SellerServices sellerServices;
 
 
 
@@ -44,18 +47,32 @@ public class SellerProductServices
         return sellerProductDAO.findAllBySeller(seller);
     }
     // Validate para que tenga que respetar las comprobaciones de la entidad como @NotNull
-    public SellerProductEntity saveSellerProduct(SellerProductDTO s, Utils.HttpRequests RequestType)
+    public Set<SellerProductCodeStatus> saveSellerProduct(SellerProductDTO sellerProductDTO, Utils.HttpRequests RequestType)
     {
-        SellerEntity seller = getSellerFromDTO(s);
-        SellerProductEntity sellerProduct =  s.toEntity(seller);
+        Set <SellerProductCodeStatus> statutes = new HashSet<>();
+        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCifAndPassword(sellerProductDTO.getSellerDTO());
+        if (pair.getLeft().isEmpty())
+        {
+            statutes.add(SellerProductCodeStatus.SELLER_NOT_FOUND);
+            return statutes;
+        }
+        SellerEntity seller = pair.getLeft().get();
+        Pair<SellerProductEntity, Set<SellerProductCodeStatus>> sellerProductPair =  fromDTO(sellerProductDTO, seller);
+        if (!sellerProductPair.getRight().isEmpty())
+            return sellerProductPair.getRight();
 
-
+        SellerProductEntity sellerProduct = sellerProductPair.getLeft();
         Boolean exists = sellerProductDAO.existsBySellerAndProduct(seller, sellerProduct.getProduct());
         if (RequestType == Utils.HttpRequests.POST && exists)
-            throw new IllegalArgumentException("Resource already exists");
+            statutes.add(SellerProductCodeStatus.SELLER_PRODUCT_ALREADY_EXISTS);
         else if (RequestType == Utils.HttpRequests.PUT && !exists)
-            throw new IllegalArgumentException("Resource doesn't exist");
-        return sellerProductDAO.save(sellerProduct);
+            statutes.add(SellerProductCodeStatus.SELLER_PRODUCT_NOT_FOUND);
+        if (statutes.isEmpty())
+        {
+            sellerProductDAO.save(sellerProduct);
+            statutes.add(SellerProductCodeStatus.SUCCESS);
+        }
+        return statutes;
     }
 
 
@@ -77,11 +94,13 @@ public class SellerProductServices
 
 
 
-    private SellerEntity getSellerFromDTO(SellerProductDTO s)
+    /*
+    private SellerEntity fromDTO(SellerProductDTO s, SellerEntity seller)
     {
         if (s == null)
             throw new IllegalArgumentException("Invalid sellerProduct");
-        if (s.getProduct() == null || !productDAO.findById(s.getProduct().getId()).isPresent())
+        ProductEntity product = productDAO.findById(s.getProductId());
+        if (product == null)
             throw new IllegalArgumentException("Invalid product");
         if (s.getPrice().compareTo(BigDecimal.ZERO) <= 0)
             throw new IllegalArgumentException("Invalid price");
@@ -96,6 +115,8 @@ public class SellerProductServices
             throw new IllegalArgumentException("Seller not found");
         return seller;
     }
+
+     */
 
     private Pair<SellerProductEntity, Set<SellerProductCodeStatus>> fromDTO(SellerProductDTO dto, SellerEntity sellerEntity)
     {
@@ -115,7 +136,6 @@ public class SellerProductServices
         result.setOfferStartDate(dto.getOfferStartDate());
         result.setOfferEndDate(dto.getOfferEndDate());
         result.setStock(dto.getStock());
-        statutes.add(SellerProductCodeStatus.SUCCESS);
         return Pair.of(result, statutes);
     }
 }
