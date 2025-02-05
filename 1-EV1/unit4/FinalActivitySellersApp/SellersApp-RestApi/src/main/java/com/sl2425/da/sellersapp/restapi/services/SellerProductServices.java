@@ -39,15 +39,16 @@ public class SellerProductServices
     private ICategoryEntityDAO categoryDAO;
     @Autowired
     private SellerServices sellerServices;
-
+    @Autowired
+    private SellerProductValidations sellerProductValidations;
 
 
     public List<SellerProductEntity> findAllSellerProductsBySeller(SellerEntity seller)
     {
         return sellerProductDAO.findAllBySeller(seller);
     }
-    // Validate para que tenga que respetar las comprobaciones de la entidad como @NotNull
-    public Set<SellerProductCodeStatus> saveSellerProduct(SellerProductDTO sellerProductDTO, Utils.HttpRequests RequestType)
+
+    public Set<SellerProductCodeStatus> saveSellerProduct(SellerProductDTO sellerProductDTO, Utils.HttpRequests requestType)
     {
         Set <SellerProductCodeStatus> statutes = new HashSet<>();
         Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCifAndPassword(sellerProductDTO.getSellerDTO());
@@ -60,36 +61,39 @@ public class SellerProductServices
         Pair<SellerProductEntity, Set<SellerProductCodeStatus>> sellerProductPair =  fromDTO(sellerProductDTO, seller);
         if (!sellerProductPair.getRight().isEmpty())
             return sellerProductPair.getRight();
-
         SellerProductEntity sellerProduct = sellerProductPair.getLeft();
-        Boolean exists = sellerProductDAO.existsBySellerAndProduct(seller, sellerProduct.getProduct());
-        if (RequestType == Utils.HttpRequests.POST && exists)
-            statutes.add(SellerProductCodeStatus.SELLER_PRODUCT_ALREADY_EXISTS);
-        else if (RequestType == Utils.HttpRequests.PUT && !exists)
-            statutes.add(SellerProductCodeStatus.SELLER_PRODUCT_NOT_FOUND);
-        if (statutes.isEmpty())
-        {
-            sellerProductDAO.save(sellerProduct);
-            statutes.add(SellerProductCodeStatus.SUCCESS);
-        }
+
+        if (requestType == Utils.HttpRequests.POST)
+            statutes = createSellerProduct(sellerProduct);
+        else  if (requestType == Utils.HttpRequests.PUT)
+            statutes = updateSellerProduct(sellerProduct);
+        else
+            statutes.add(SellerProductCodeStatus.INVALID_REQUEST_TYPE);
         return statutes;
     }
 
-
-    public String postSellerProduct(SellerUpdateDTO sellerDTO, Model model)
+    private Set<SellerProductCodeStatus> createSellerProduct(SellerProductEntity sellerProduct)
     {
-        SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
-        if (existingSeller == null)  // TODO: Move it to server and check that the changes are valid
-            model.addAttribute("error", "Seller not found");
-        else {
-
-
-            model.addAttribute("success", "Seller Product updated successfully!");
+        Set<SellerProductCodeStatus> result = sellerProductValidations.validateCreate(sellerProduct);
+        if (result.isEmpty())
+        {
+            sellerProductDAO.save(sellerProduct);
+            result.add(SellerProductCodeStatus.SUCCESS);
         }
-
-        model.addAttribute("sellerDTO", sellerDTO);
-        return "sellerProducts-post";
+        return result;
     }
+
+    private Set<SellerProductCodeStatus> updateSellerProduct(SellerProductEntity sellerProduct)
+    {
+        Set<SellerProductCodeStatus> result = sellerProductValidations.validateUpdate(sellerProduct);
+        {
+            sellerProductDAO.save(sellerProduct);
+            result.add(SellerProductCodeStatus.SUCCESS);
+        }
+        return result;
+    }
+
+
 
 
 

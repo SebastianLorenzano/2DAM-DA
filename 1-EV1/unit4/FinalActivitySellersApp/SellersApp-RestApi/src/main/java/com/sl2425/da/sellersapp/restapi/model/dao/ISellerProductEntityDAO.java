@@ -14,6 +14,8 @@ public interface ISellerProductEntityDAO extends CrudRepository<SellerProductEnt
 
     Boolean existsBySellerAndProduct(SellerEntity seller, ProductEntity product);
 
+    List<SellerProductEntity> findAllBySellerId(int sellerId);
+
 
     //             Query<SellerProductEntity> query = session.createQuery(
     //                    "from SellerProductEntity where seller = :seller", SellerProductEntity.class);

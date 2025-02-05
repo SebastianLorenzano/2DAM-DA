@@ -119,6 +119,16 @@ public class ViewController
     @PostMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})
     public String postSellerProduct(SellerUpdateDTO sellerDTO, Model model)
     {
-        return sellerProductServices.postSellerProduct(sellerDTO, model);
+        SellerEntity existingSeller = sellerDAO.findByCif(sellerDTO.getCif());
+        if (existingSeller == null)  // TODO: Move it to server and check that the changes are valid
+            model.addAttribute("error", "Seller not found");
+        else {
+
+
+            model.addAttribute("success", "Seller Product updated successfully!");
+        }
+
+        model.addAttribute("sellerDTO", sellerDTO);
+        return "sellerProducts-post";
     }
 }

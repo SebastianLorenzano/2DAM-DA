@@ -21,9 +21,11 @@ public class SellerProductDTO
 
     @NotNull
     @DecimalMin(value = "0.0", inclusive = true, message = "Price must be greater or equal than 0")
+    @Max(value = 999999999, message = "Price must be less than 1.000.000.000")
     private BigDecimal price;
 
     @DecimalMin(value = "0.0", inclusive = true, message = "Offer price cannot be negative")
+    @Max(value = 999999999, message = "Price must be less than 1.000.000.000")
     private BigDecimal offerPrice;
 
     @FutureOrPresent(message = "Offer start date must be today or in the future")
@@ -33,6 +35,7 @@ public class SellerProductDTO
     private LocalDate offerEndDate;
 
     @PositiveOrZero(message = "Stock must be equal or greater than 0")
+    @Max(value = 1000000000, message = "Stock must be less than 1.000.000.000")
     private Integer stock;
 
     public Integer getId() {
