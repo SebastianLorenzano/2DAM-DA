@@ -32,14 +32,22 @@ public class SellerProductValidations
         if (sellerProductExists(sellerProduct))
             result.add(SellerProductCodeStatus.SELLER_PRODUCT_ALREADY_EXISTS);
 
-        if (!dayPeriodAvailable(sellerProduct))
-            result.add(SellerProductCodeStatus.DATE_PERIOD_COLLISION);
+        if (!isPriceValid(sellerProduct))
+            result.add(SellerProductCodeStatus.PRICE_NOT_VALID);
 
-        if ()
-        return result; // TODO: Implement this method
+        if (!isStockValid(sellerProduct))
+            result.add(SellerProductCodeStatus.STOCK_NOT_VALID);
+
+        if (!dayPeriodNull(sellerProduct))
+            result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_NULL);
+
+        if (!offerPriceNull(sellerProduct))
+            result.add(SellerProductCodeStatus.OFFER_PRICE_NOT_NULL);
+        return result;
     }
 
-    public Set<SellerProductCodeStatus> validateUpdate(SellerProductEntity sellerProduct)
+
+    /*public Set<SellerProductCodeStatus> validateUpdate(SellerProductEntity sellerProduct)
     {
         Set<SellerProductCodeStatus> result = new HashSet<>();
         if (sellerProductNull(sellerProduct))
@@ -50,9 +58,9 @@ public class SellerProductValidations
         if (!sellerProductExists(sellerProduct))
             result.add(SellerProductCodeStatus.SELLER_PRODUCT_NOT_FOUND);
 
-        if (!dayPeriodAvailable(sellerProduct))
-            result.add(SellerProductCodeStatus.DATE_PERIOD_COLLISION);
+
     }
+     */
 
 
 
@@ -64,9 +72,8 @@ public class SellerProductValidations
 
     private boolean sellerProductExists(SellerProductEntity sellerProduct)
     {
-        return sellerProductDAO.existsById(sellerProduct.getId());
+        return sellerProductDAO.existsBySellerAndProduct(sellerProduct.getSeller(), sellerProduct.getProduct());
     }
-
 
     private boolean isStockValid(SellerProductEntity sellerProduct)
     {
@@ -83,10 +90,30 @@ public class SellerProductValidations
         return integerPart <= 8 && fractionPart <= 2 && price.compareTo(BigDecimal.ZERO) > 0;
     }
 
-
-    private boolean dayPeriodValid(SellerProductEntity sellerProduct)
+    /*
+    private boolean offerPriceValid(SellerProductEntity sellerProduct)
     {
-        return (sellerProduct.getOfferStartDate() == null) == (sellerProduct.getOfferEndDate() == null);
+        if (sellerProduct.getOfferPrice() == null || sellerProduct.getOfferPrice().compareTo(BigDecimal.ZERO) < 0)
+            return false;
+    }
+
+     */
+
+    private boolean offerPriceNull(SellerProductEntity sellerProduct)
+    {
+        return sellerProduct.getOfferPrice() == null;
+    }
+
+
+    private boolean dayPeriodNull(SellerProductEntity sellerProduct)
+    {
+        return (sellerProduct.getOfferStartDate() == null) && (sellerProduct.getOfferEndDate() == null);
+    }
+
+    private boolean dayPeriodPresentOrFuture(SellerProductEntity sellerProduct)
+    {
+        return ( sellerProduct.getOfferStartDate().isEqual(LocalDate.now()) || sellerProduct.getOfferStartDate().isAfter(LocalDate.now()) )
+                && sellerProduct.getOfferEndDate().isAfter(LocalDate.now());
     }
 
     private boolean dayPeriodAvailable(SellerProductEntity sellerProduct)

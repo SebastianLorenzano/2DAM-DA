@@ -1,7 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.controllers;
 
 import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
-import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.services.CategoryServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,7 @@ public class CategoryController
     @GetMapping
     public ResponseEntity<List<CategoryEntity>> findAllCategories()
     {
-        return categoryServices.findAllCategories();
+        return ResponseEntity.ok().body(categoryServices.getAllCategories());
     }
 
 }

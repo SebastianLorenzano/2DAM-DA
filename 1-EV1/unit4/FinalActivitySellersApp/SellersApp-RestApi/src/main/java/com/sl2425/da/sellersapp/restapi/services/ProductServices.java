@@ -13,12 +13,13 @@ public class ProductServices
     @Autowired
     private IProductEntityDAO productDAO;
 
-    public List<ProductEntity> selectProducts(String cif, Integer categoryId, boolean remainingProducts)
+    public List<ProductEntity> getProducts(String cif, Integer categoryId, boolean remainingProducts)
     {
         if (cif == null || categoryId == null)
             return null;
         return (remainingProducts)
                 ? productDAO.selectAvailableProducts(cif, categoryId)
-                : productDAO.selectProducts(cif, categoryId);
+                : productDAO.selectAvailableProducts(cif, categoryId);
+                //: productDAO.findByCategoryId(cif, categoryId);
     }
 }

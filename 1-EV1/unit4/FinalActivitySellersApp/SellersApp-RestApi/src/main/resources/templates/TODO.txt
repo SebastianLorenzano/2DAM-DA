@@ -2,8 +2,9 @@ TODO List:
 
 
 0. Make all menus work (Make it work perfectly later, but make sure it doesn't break now)
+1. Make it so the Product SQL request takes a remaining parameter
 2. Make sure the menus cannot be broken by the user doing weird things
-
+3. Remove hidden password from seller-save.html
 
 
 ?. Add all logic in a middle layer so both Hibernate and REST API can use it

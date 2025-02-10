@@ -1,8 +1,5 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
-import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sun.istack.NotNull;
 import jakarta.validation.constraints.*;
 
@@ -12,11 +9,13 @@ import java.time.LocalDate;
 public class SellerProductDTO
 {
     private Integer id;
-    @NotNull
-    @NotBlank (message = "Seller is required")
-    private SellerLoginDTO sellerDTO;
+    @NotBlank(message = "CIF cannot be blank")
+
+    @Size(max = 9, message = "CIF must be 9 characters long")
+    private String cif;
 
     @Positive(message = "Product ID must be a positive number")
+    @NotNull
     private int productId;
 
     @NotNull
@@ -46,12 +45,12 @@ public class SellerProductDTO
         this.id = id;
     }
 
-    public SellerLoginDTO getSellerDTO() {
-        return sellerDTO;
+    public String getCif() {
+        return cif;
     }
 
-    public void setSellerDTO(SellerLoginDTO sellerLoginDTO) {
-        this.sellerDTO = sellerLoginDTO;
+    public void setCif(String cif) {
+        this.cif = cif;
     }
 
     public int getProductId() {

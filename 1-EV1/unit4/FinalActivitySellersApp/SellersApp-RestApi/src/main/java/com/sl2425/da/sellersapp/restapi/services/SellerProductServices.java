@@ -1,6 +1,5 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
@@ -11,16 +10,13 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ICategoryEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -51,7 +47,7 @@ public class SellerProductServices
     public Set<SellerProductCodeStatus> saveSellerProduct(SellerProductDTO sellerProductDTO, Utils.HttpRequests requestType)
     {
         Set <SellerProductCodeStatus> statutes = new HashSet<>();
-        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCifAndPassword(sellerProductDTO.getSellerDTO());
+        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCif(sellerProductDTO.getCif());
         if (pair.getLeft().isEmpty())
         {
             statutes.add(SellerProductCodeStatus.SELLER_NOT_FOUND);
@@ -59,10 +55,11 @@ public class SellerProductServices
         }
         SellerEntity seller = pair.getLeft().get();
         Pair<SellerProductEntity, Set<SellerProductCodeStatus>> sellerProductPair =  fromDTO(sellerProductDTO, seller);
-        if (!sellerProductPair.getRight().isEmpty())
+        statutes = sellerProductPair.getRight();
+        if (!statutes.isEmpty())
             return sellerProductPair.getRight();
-        SellerProductEntity sellerProduct = sellerProductPair.getLeft();
 
+        SellerProductEntity sellerProduct = sellerProductPair.getLeft();
         if (requestType == Utils.HttpRequests.POST)
             statutes = createSellerProduct(sellerProduct);
         else  if (requestType == Utils.HttpRequests.PUT)
@@ -85,13 +82,17 @@ public class SellerProductServices
 
     private Set<SellerProductCodeStatus> updateSellerProduct(SellerProductEntity sellerProduct)
     {
+        throw new NotImplementedException();
+        /*
         Set<SellerProductCodeStatus> result = sellerProductValidations.validateUpdate(sellerProduct);
         {
             sellerProductDAO.save(sellerProduct);
             result.add(SellerProductCodeStatus.SUCCESS);
         }
         return result;
+         */
     }
+
 
 
 
@@ -125,16 +126,16 @@ public class SellerProductServices
     private Pair<SellerProductEntity, Set<SellerProductCodeStatus>> fromDTO(SellerProductDTO dto, SellerEntity sellerEntity)
     {
         var result =  new SellerProductEntity();
-        ProductEntity product = productDAO.findById(dto.getProductId());
+        Optional<ProductEntity> product = productDAO.findById(dto.getProductId());
         Set<SellerProductCodeStatus> statutes = new HashSet<>();
-        if (product == null)
+        if (product.isEmpty())
         {
             statutes.add(SellerProductCodeStatus.PRODUCT_NOT_FOUND);
             return Pair.of(null, statutes);
         }
         result.setId(dto.getId());
         result.setSeller(sellerEntity);
-        result.setProduct(product);
+        result.setProduct(product.get());
         result.setPrice(dto.getPrice());
         result.setOfferPrice(dto.getOfferPrice());
         result.setOfferStartDate(dto.getOfferStartDate());

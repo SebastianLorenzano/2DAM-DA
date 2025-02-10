@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="" />
+    <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/codeStatus/SellerProductCodeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/codeStatus/SellerProductCodeStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dao/IProductEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dao/IProductEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model/dto/SellerProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/CategoryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/CategoryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/ProductServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/ProductServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductValidations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/TODO.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/sellerProducts-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/sellerProducts-post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/postgresDump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/postgresDump.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,11 +62,11 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.SellersAppRestApiApplication.executor": "Debug",
+    "Spring Boot.SellersAppRestApiApplication.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/seblor3/Desktop/Programming/2DAM-DA/1-EV1/unit4/FinalActivitySellersApp",
+    "last_opened_file_path": "C:/Programming/dam/DATA_ACCESS_SL_2425/1-EV1/unit4/FinalActivitySellersApp/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/model",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +77,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Programming\dam\DATA_ACCESS_SL_2425\1-EV1\unit4\FinalActivitySellersApp\SellersApp-RestApi\src\main\java\com\sl2425\da\sellersapp\restapi\model" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.SellersAppRestApiApplication">
     <configuration name="SellersApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sl2425.da.sellersapp.SellersApp" />
@@ -116,6 +139,10 @@
       <workItem from="1738692461219" duration="5830000" />
       <workItem from="1738780556488" duration="4037000" />
       <workItem from="1739099795990" duration="1964000" />
+      <workItem from="1739118718136" duration="4064000" />
+      <workItem from="1739139563732" duration="135000" />
+      <workItem from="1739139705881" duration="216000" />
+      <workItem from="1739139927942" duration="9820000" />
     </task>
     <servers />
   </component>
