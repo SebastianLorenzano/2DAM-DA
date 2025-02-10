@@ -23,9 +23,9 @@ public class SellerProductDTO
     @Max(value = 999999999, message = "Price must be less than 1.000.000.000")
     private BigDecimal price;
 
-    @DecimalMin(value = "0.0", inclusive = true, message = "Offer price cannot be negative")
-    @Max(value = 999999999, message = "Price must be less than 1.000.000.000")
-    private BigDecimal offerPrice;
+    @Min(value = 1, message = "Discount percentage must be greater than 0")
+    @Max(value = 50, message = "Price must be less than 1.000.000.000")
+    private int discount;
 
     @FutureOrPresent(message = "Offer start date must be today or in the future")
     private LocalDate offerStartDate;
@@ -69,12 +69,13 @@ public class SellerProductDTO
         this.price = price;
     }
 
-    public BigDecimal getOfferPrice() {
-        return offerPrice;
+    public int getDiscount()
+    {
+        return discount;
     }
 
-    public void setOfferPrice(BigDecimal offerPrice) {
-        this.offerPrice = offerPrice;
+    public void setDiscount(int discount) {
+        this.discount = discount;
     }
 
     public LocalDate getOfferStartDate() {

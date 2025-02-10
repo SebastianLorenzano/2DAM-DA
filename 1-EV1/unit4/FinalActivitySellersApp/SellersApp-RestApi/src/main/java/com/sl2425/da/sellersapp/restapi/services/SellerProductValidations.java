@@ -1,6 +1,5 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerProductCodeStatus;
@@ -20,6 +19,8 @@ public class SellerProductValidations
 
     @Autowired
     private ISellerProductEntityDAO sellerProductDAO;
+    @Autowired
+    private SellerProductUtils spUtils;
 
     public Set<SellerProductCodeStatus> validateCreate(SellerProductEntity sellerProduct)
     {
@@ -41,13 +42,11 @@ public class SellerProductValidations
         if (!dayPeriodNull(sellerProduct))
             result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_NULL);
 
-        if (!offerPriceNull(sellerProduct))
-            result.add(SellerProductCodeStatus.OFFER_PRICE_NOT_NULL);
+
         return result;
     }
 
-
-    /*public Set<SellerProductCodeStatus> validateUpdate(SellerProductEntity sellerProduct)
+    public Set<SellerProductCodeStatus> validateUpdate(SellerProductEntity sellerProduct)
     {
         Set<SellerProductCodeStatus> result = new HashSet<>();
         if (sellerProductNull(sellerProduct))
@@ -56,13 +55,53 @@ public class SellerProductValidations
             return result;
         }
         if (!sellerProductExists(sellerProduct))
+        {
             result.add(SellerProductCodeStatus.SELLER_PRODUCT_NOT_FOUND);
+            return result;
+        }
+        if (!isPriceValid(sellerProduct))
+            result.add(SellerProductCodeStatus.PRICE_NOT_VALID);
 
+        if (!isStockValid(sellerProduct))
+            result.add(SellerProductCodeStatus.STOCK_NOT_VALID);
+
+        if (dayPeriodNull(sellerProduct))
+            result.add(SellerProductCodeStatus.DATE_PERIOD_NULL);
+
+        if (offerPriceNull(sellerProduct))
+            result.add(SellerProductCodeStatus.OFFER_PRICE_NULL);
+
+        if (!isOfferPriceValid(sellerProduct))
+            result.add(SellerProductCodeStatus.OFFER_PRICE_NOT_VALID);
+
+        if (!isOfferPriceWithinRange(sellerProduct))
+            result.add(SellerProductCodeStatus.OFFER_PRICE_TOO_HIGH);
+
+        if (!dayPeriodPresentOrFuture(sellerProduct))
+            result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_PRESENT_OR_FUTURE);
+
+        if (!daysBetweenIsWithinRange(sellerProduct))
+            result.add(SellerProductCodeStatus.DATE_PERIOD_TOO_LONG);
+
+        if (!dayPeriodAvailable(sellerProduct))
+            result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_AVAILABLE);
+
+        return result; //NOT COMPLETED
 
     }
-     */
+
+    private boolean isOfferPriceWithinRange(SellerProductEntity sellerProduct)
+    {
+        BigDecimal maxOfferPrice = spUtils.getOfferPrice(sellerProduct.getPrice(), getMaxDiscount(sellerProduct));
+        return sellerProduct.getOfferPrice().compareTo(maxOfferPrice) <= 0;
+    }
 
 
+    private boolean daysBetweenIsWithinRange(SellerProductEntity sellerProduct)
+    {
+        long daysBetween = spUtils.daysBetween(sellerProduct.getOfferStartDate(), sellerProduct.getOfferEndDate());
+        return daysBetween <= Utils.OFFER_MAX_DAYS_BETWEEN;
+    }
 
     private boolean sellerProductNull(SellerProductEntity sellerProduct)
     {
@@ -90,20 +129,51 @@ public class SellerProductValidations
         return integerPart <= 8 && fractionPart <= 2 && price.compareTo(BigDecimal.ZERO) > 0;
     }
 
-    /*
-    private boolean offerPriceValid(SellerProductEntity sellerProduct)
-    {
-        if (sellerProduct.getOfferPrice() == null || sellerProduct.getOfferPrice().compareTo(BigDecimal.ZERO) < 0)
-            return false;
-    }
-
-     */
-
     private boolean offerPriceNull(SellerProductEntity sellerProduct)
     {
         return sellerProduct.getOfferPrice() == null;
     }
 
+    private boolean isOfferPriceValid(SellerProductEntity sellerProduct)
+    {
+        BigDecimal price = sellerProduct.getOfferPrice();
+        if (price == null)
+            return false;
+        int integerPart = price.precision() - price.scale();
+        int fractionPart = price.scale();
+        return integerPart <= 8 && fractionPart <= 2 && price.compareTo(BigDecimal.ZERO) > 0;
+    }
+
+    private int getMaxDiscount(SellerProductEntity sellerProduct)
+    {
+        long da = spUtils.daysBetween(sellerProduct.getOfferStartDate(), sellerProduct.getOfferEndDate());
+
+        return (sellerProduct.getSeller().getPro())
+                ? getMaxDiscountPro(da)
+                : getMaxDiscountNormal(da);
+    }
+
+    private int getMaxDiscountNormal(long daysBetween)
+    {
+        if (daysBetween > 15)
+            return 10;
+        if (daysBetween > 7)
+            return 15;
+        if (daysBetween > 3)
+            return 20;
+        if (daysBetween > 1)
+            return 30;
+        return 50;
+    }
+
+    private int getMaxDiscountPro(long daysBetween)
+    {
+        if (daysBetween > 7)
+            return 20;
+        if (daysBetween > 3)
+            return 30;
+        return 50;
+    }
 
     private boolean dayPeriodNull(SellerProductEntity sellerProduct)
     {
@@ -122,10 +192,10 @@ public class SellerProductValidations
             return false;
         List<SellerProductEntity> sellerProducts = sellerProductDAO.findAllBySellerId(sellerProduct.getId());
         int collisions = 0;
-        int maxCollisions = getMaxCollisions(sellerProduct.getSeller());
+        int maxCollisions = spUtils.getMaxCollisions(sellerProduct.getSeller());
         for (SellerProductEntity s : sellerProducts)
         {
-            if (datePeriodCollide(s.getOfferStartDate(), s.getOfferEndDate(),
+            if (spUtils.datePeriodCollide(s.getOfferStartDate(), s.getOfferEndDate(),
                     s.getOfferStartDate(), s.getOfferEndDate()))
             {
                 collisions++;
@@ -136,19 +206,7 @@ public class SellerProductValidations
         return true;
     }
 
-    private int getMaxCollisions(SellerEntity seller)
-    {
-        return seller.getPro() ? Utils.MAX_COLLISIONS_ALLOWED_PRO : Utils.MAX_COLLISIONS_ALLOWED;
-    }
 
-    private boolean datePeriodCollide(LocalDate startDate1, LocalDate endDate1, LocalDate startDate2, LocalDate endDate2)
-    {
-        if (startDate1 == null || endDate1 == null || startDate2 == null || endDate2 == null)
-            return false;
-        return ((startDate1.isBefore(startDate2) && endDate1.isAfter(startDate2)) ||   // If the period starts before the other period and ends after the other period
-                (startDate2.isBefore(startDate1) && endDate2.isAfter(startDate1)) ||  // If the other period starts before this period and ends after this period
-                startDate1.isEqual(startDate2));                                   // If the periods start at the same time
-    }
 
 
 }

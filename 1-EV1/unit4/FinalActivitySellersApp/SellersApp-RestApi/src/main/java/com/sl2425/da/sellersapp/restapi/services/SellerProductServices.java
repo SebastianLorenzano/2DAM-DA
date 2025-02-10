@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +39,20 @@ public class SellerProductServices
     private SellerServices sellerServices;
     @Autowired
     private SellerProductValidations sellerProductValidations;
+    @Autowired
+    private SellerProductUtils sellerProductUtils;
 
+
+    public SellerProductEntity findSellerProductById(int sellerProductId)
+    {
+        Optional<SellerProductEntity> optional = sellerProductDAO.findById(sellerProductId);
+        return optional.orElse(null);
+    }
+
+    public List<SellerProductEntity> findAllBySellerAndOfferExpired(SellerEntity seller)
+    {
+        return sellerProductDAO.findAllBySellerAndOfferExpired(seller);
+    }
 
     public List<SellerProductEntity> findAllSellerProductsBySeller(SellerEntity seller)
     {
@@ -63,7 +78,7 @@ public class SellerProductServices
         if (requestType == Utils.HttpRequests.POST)
             statutes = createSellerProduct(sellerProduct);
         else  if (requestType == Utils.HttpRequests.PUT)
-            statutes = updateSellerProduct(sellerProduct);
+            statutes = updateSellerProduct(sellerProduct, sellerProductDTO);
         else
             statutes.add(SellerProductCodeStatus.INVALID_REQUEST_TYPE);
         return statutes;
@@ -80,48 +95,22 @@ public class SellerProductServices
         return result;
     }
 
-    private Set<SellerProductCodeStatus> updateSellerProduct(SellerProductEntity sellerProduct)
+    private Set<SellerProductCodeStatus> updateSellerProduct(SellerProductEntity sellerProduct, SellerProductDTO sellerProductDTO)
     {
-        throw new NotImplementedException();
-        /*
-        Set<SellerProductCodeStatus> result = sellerProductValidations.validateUpdate(sellerProduct);
+        Set<SellerProductCodeStatus> result = new HashSet<>();
+        if (sellerProduct.getOfferEndDate() != null && sellerProduct.getOfferEndDate().isAfter(LocalDate.now()))
+        {
+            result.add(SellerProductCodeStatus.OFFER_HASNT_ENDED);
+            // return result; // If we don't want the code to keep looking for errors
+        }
+        result = sellerProductValidations.validateUpdate(sellerProduct);
+        if (result.isEmpty())
         {
             sellerProductDAO.save(sellerProduct);
             result.add(SellerProductCodeStatus.SUCCESS);
         }
         return result;
-         */
     }
-
-
-
-
-
-
-
-    /*
-    private SellerEntity fromDTO(SellerProductDTO s, SellerEntity seller)
-    {
-        if (s == null)
-            throw new IllegalArgumentException("Invalid sellerProduct");
-        ProductEntity product = productDAO.findById(s.getProductId());
-        if (product == null)
-            throw new IllegalArgumentException("Invalid product");
-        if (s.getPrice().compareTo(BigDecimal.ZERO) <= 0)
-            throw new IllegalArgumentException("Invalid price");
-        if (s.getOfferPrice() != null && s.getOfferPrice().compareTo(s.getPrice()) > 0)
-            throw new IllegalArgumentException("Invalid offer price");
-        if (s.getOfferStartDate().isAfter(s.getOfferEndDate()) ||
-            s.getOfferStartDate().isEqual(s.getOfferEndDate()))
-            throw new IllegalArgumentException("Invalid offer dates");
-        SellerEntity seller = sellerDAO.findByCifAndPassword(
-                s.getSellerDTO().getCif(), s.getSellerDTO().getPassword());
-        if (seller == null)
-            throw new IllegalArgumentException("Seller not found");
-        return seller;
-    }
-
-     */
 
     private Pair<SellerProductEntity, Set<SellerProductCodeStatus>> fromDTO(SellerProductDTO dto, SellerEntity sellerEntity)
     {
@@ -133,11 +122,13 @@ public class SellerProductServices
             statutes.add(SellerProductCodeStatus.PRODUCT_NOT_FOUND);
             return Pair.of(null, statutes);
         }
+        BigDecimal offerPrice = sellerProductUtils.getOfferPrice(dto.getPrice(), dto.getDiscount());
+
         result.setId(dto.getId());
         result.setSeller(sellerEntity);
         result.setProduct(product.get());
         result.setPrice(dto.getPrice());
-        result.setOfferPrice(dto.getOfferPrice());
+        result.setOfferPrice(offerPrice);
         result.setOfferStartDate(dto.getOfferStartDate());
         result.setOfferEndDate(dto.getOfferEndDate());
         result.setStock(dto.getStock());

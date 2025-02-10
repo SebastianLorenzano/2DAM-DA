@@ -10,7 +10,7 @@ import com.sl2425.da.sellersapp.restapi.services.ProductServices;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/products")
+@RequestMapping("/api/products")
 public class ProductController
 {
     @Autowired

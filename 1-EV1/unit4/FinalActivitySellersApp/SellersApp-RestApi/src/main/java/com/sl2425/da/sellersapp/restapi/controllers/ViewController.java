@@ -3,6 +3,7 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
@@ -165,6 +166,38 @@ public class ViewController
         SellerProductDTO newSellerProductDTO = new SellerProductDTO();
         sellerProductDTO.setCif(sellerProductDTO.getCif());
         model.addAttribute("sellerProductDTO", newSellerProductDTO);
+        return "sellerProducts-post";
+    }
+
+    @GetMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
+    public String showSellerProductsAddOffer(@AuthenticationPrincipal UserDetails user, Model model,
+                                             @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId)
+    {
+        Pair<Optional<SellerEntity>, LoginCodeStatus> pair = getSellerByCif(user.getUsername());
+        if (pair.getLeft().isEmpty())
+        {
+            model.addAttribute("error", "Seller not found");
+            return "index";
+        }
+
+        List<SellerProductEntity> sellerProducts = sellerProductServices.findAllBySellerAndOfferExpired(pair.getLeft().get());
+        model.addAttribute("sellerProducts", sellerProducts);
+        SellerProductDTO sellerProductDTO = new SellerProductDTO();
+        if (sellerProductId != 0)
+        {
+            sellerProductDTO = sellerProductServices.findSellerProductById(sellerProductId);
+            if (sellerProduct == null)
+            {
+                model.addAttribute("error", "Seller Product not found");
+                return "index";
+            }
+            model.addAttribute("sellerProductDTO", sellerProduct);
+        }
+        else
+
+
+        model.addAttribute("products", products);
+        model.addAttribute("sellerProductDTO", sellerProductDTO);
         return "sellerProducts-post";
 
     }
