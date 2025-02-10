@@ -60,7 +60,7 @@ public class ViewController
         return "login";
     }
 
-    @GetMapping({"/web/sellers-save", "/web/sellers-save.html"} )
+    @GetMapping({"/web/sellers/save", "/web/sellers-save.html"} )
     public String showSeller(@AuthenticationPrincipal UserDetails user, Model model)
     {
         Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCif(user.getUsername());
@@ -74,7 +74,7 @@ public class ViewController
         return "sellers-save";
     }
 
-    @PutMapping({"/web/sellers-save", "/web/sellers-save.html"})
+    @PutMapping({"/web/sellers/save", "/web/sellers-save.html"})
     public String saveSeller(@Valid @ModelAttribute("SellerUpdateDTO") SellerUpdateDTO sellerUpdateDTO,
                              BindingResult bindingResult, Model model)
     {
@@ -103,7 +103,7 @@ public class ViewController
     }
 
 
-    @GetMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})
+    @GetMapping({"/web/sellerProducts/post", "/web/sellerProducts-post.html"})
     public String showSellerProductsPost(@AuthenticationPrincipal UserDetails user, Model model,
                                          @RequestParam(name = "category", required = false, defaultValue = "0") int categoryId,
                                          @RequestParam(name = "productId", required = false, defaultValue = "0") int productId)
@@ -136,7 +136,7 @@ public class ViewController
 
     }
 
-    @PostMapping({"/web/sellerProducts-post", "/web/sellerProducts-post.html"})
+    @PostMapping({"/web/sellerProducts/post", "/web/sellerProducts-post.html"})
     public String saveSellerProduct(@Valid @ModelAttribute("sellerProductDTO") SellerProductDTO sellerProductDTO,
                                     BindingResult bindingResult, Model model) {
         List<CategoryEntity> categories = categoryServices.getAllCategories();

@@ -176,7 +176,7 @@
     </div>
 
     <!-- First Form: Select Category & Product -->
-    <form th:action="@{/web/sellerProducts-post}" method="get">
+    <form th:action="@{/web/sellerProducts/post}" method="get">
         <div class="form-group">
             <label for="category">Category:</label>
             <select id="category" name="category" onchange="this.form.submit()">
@@ -209,7 +209,7 @@
     <hr/>
 
     <!-- Second Form: Add Stock & Price -->
-    <form th:action="@{/web/sellerProducts-post}" th:object="${sellerProductDTO}" method="post">
+    <form th:action="@{/web/sellerProducts/post}" th:object="${sellerProductDTO}" method="post">
         <!-- Hidden Seller CIF -->
         <input type="hidden" th:field="*{cif}"/>
 

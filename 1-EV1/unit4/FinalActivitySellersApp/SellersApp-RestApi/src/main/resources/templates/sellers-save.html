@@ -178,7 +178,7 @@
     <!-- Return button -->
     <a th:href="@{/web/}" class="btn btn-return">Return</a>
 
-    <form th:action="@{/web/sellers-save}" th:object="${SellerUpdateDTO}" method="post" class="form-grid">
+    <form th:action="@{/web/sellers/save}" th:object="${SellerUpdateDTO}" method="post" class="form-grid">
         <input type="hidden" name="_method" value="PUT"/>
         <input type="hidden" th:field="*{id}"/>
         <input type="hidden" th:field="*{oldPassword}"/>

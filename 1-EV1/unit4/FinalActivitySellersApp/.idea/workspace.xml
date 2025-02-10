@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="" />
+    <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/controllers/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +128,7 @@
       <workItem from="1739118718136" duration="4064000" />
       <workItem from="1739139563732" duration="135000" />
       <workItem from="1739139705881" duration="216000" />
-      <workItem from="1739139927942" duration="10341000" />
+      <workItem from="1739139927942" duration="11067000" />
     </task>
     <servers />
   </component>
