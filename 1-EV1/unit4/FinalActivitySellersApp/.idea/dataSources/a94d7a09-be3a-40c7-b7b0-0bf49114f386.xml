@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>1215</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>1244</IntrospectionStateNumber>
       <ServerVersion>15.10</ServerVersion>
-      <StartupTime>1739140727</StartupTime>
+      <StartupTime>1739283575</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1399,7 +1407,7 @@ false posixrules
 13209||10|C|G
 13209||-9223372036854775808|U|G
 13209||10|U|G</Grants>
-      <IntrospectionStateNumber>1215</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1244</IntrospectionStateNumber>
       <ObjectId>16499</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4812,19 +4820,19 @@ false posixrules
     <schema id="261" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1215</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-02-09.23:06:32</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>1244</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-02-11.14:20:46</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <routine id="262" parent="261" name="select_available_products_sl2425_2">
       <ArgumentsDefinition>cif1 character varying, categoryid integer</ArgumentsDefinition>
-      <ObjectId>24576</ObjectId>
+      <ObjectId>32768</ObjectId>
       <ResultsDefinition>SETOF products</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>416</SourceTextLength>
-      <StateNumber>1214</StateNumber>
+      <StateNumber>1243</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>

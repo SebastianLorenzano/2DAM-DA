@@ -1,3 +1,6 @@
+DROP FUNCTION  IF EXISTS select_available_products_sl2425_2(cif1 VARCHAR, categoryId INT);
+DROP FUNCTION  IF EXISTS select_available_products_sl2425_2(cif VARCHAR, categoryId INT);
+
 CREATE OR REPLACE FUNCTION select_available_products_sl2425_2(
     cif1 VARCHAR,
     categoryId INT
@@ -17,11 +20,14 @@ END;
 $$ LANGUAGE plpgsql;
 
 
+
+
 ALTER TABLE IF EXISTS public.sellers
     ADD COLUMN url character varying(255) COLLATE pg_catalog."default";
 
 ALTER TABLE IF EXISTS public.sellers
     ADD COLUMN pro boolean NOT NULL DEFAULT false;
+
 
 UPDATE sellers
 SET pro = true
