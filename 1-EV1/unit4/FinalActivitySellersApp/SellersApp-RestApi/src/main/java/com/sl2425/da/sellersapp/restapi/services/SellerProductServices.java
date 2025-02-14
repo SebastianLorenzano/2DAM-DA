@@ -30,11 +30,7 @@ public class SellerProductServices
     @Autowired
     private ISellerProductEntityDAO sellerProductDAO;
     @Autowired
-    private ISellerEntityDAO sellerDAO;
-    @Autowired
     private IProductEntityDAO productDAO;
-    @Autowired
-    private ICategoryEntityDAO categoryDAO;
     @Autowired
     private SellerServices sellerServices;
     @Autowired

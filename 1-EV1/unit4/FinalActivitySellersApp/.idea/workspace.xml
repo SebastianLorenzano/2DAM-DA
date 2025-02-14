@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a94d7a09-be3a-40c7-b7b0-0bf49114f386/storage_v2/_src_/database/onlinemarketsl_2425._BaL2w/schema/public.abK9xQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/postgresDump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp/src/main/java/com/sl2425/da/sellersapp/Model/postgresDump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/src/main/java/com/sl2425/da/sellersapp/restapi/services/SellerProductServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +133,10 @@
       <workItem from="1739283550488" duration="430000" />
       <workItem from="1739302401714" duration="1117000" />
       <workItem from="1739303611115" duration="43000" />
+      <workItem from="1739308482397" duration="105000" />
+      <workItem from="1739439602037" duration="1000" />
+      <workItem from="1739544041820" duration="1823000" />
+      <workItem from="1739556291409" duration="1668000" />
     </task>
     <servers />
   </component>
