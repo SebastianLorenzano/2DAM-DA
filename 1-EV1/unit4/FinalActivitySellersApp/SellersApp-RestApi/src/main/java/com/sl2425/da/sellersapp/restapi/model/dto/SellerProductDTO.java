@@ -1,5 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
+import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sun.istack.NotNull;
 import jakarta.validation.constraints.*;
 
@@ -36,6 +37,10 @@ public class SellerProductDTO
     @PositiveOrZero(message = "Stock must be equal or greater than 0")
     @Max(value = 1000000000, message = "Stock must be less than 1.000.000.000")
     private Integer stock;
+
+    public SellerProductDTO()
+    {
+    }
 
     public Integer getId() {
         return id;

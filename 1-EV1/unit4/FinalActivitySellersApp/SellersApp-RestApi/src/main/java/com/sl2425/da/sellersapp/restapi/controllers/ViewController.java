@@ -29,6 +29,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -171,7 +172,8 @@ public class ViewController
 
     @GetMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
     public String showSellerProductsAddOffer(@AuthenticationPrincipal UserDetails user, Model model,
-                                             @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId)
+                                             @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId,
+                                             @RequestParam(name = "discount", required = false, defaultValue = "0") int discount)
     {
         Pair<Optional<SellerEntity>, LoginCodeStatus> pair = getSellerByCif(user.getUsername());
         if (pair.getLeft().isEmpty())
@@ -179,28 +181,72 @@ public class ViewController
             model.addAttribute("error", "Seller not found");
             return "index";
         }
-
-        List<SellerProductEntity> sellerProducts = sellerProductServices.findAllBySellerAndOfferExpired(pair.getLeft().get());
+        List<SellerProductEntity> sellerProducts = sellerProductServices.findAllSellerProductsBySeller(pair.getLeft().get());
         model.addAttribute("sellerProducts", sellerProducts);
+
         SellerProductDTO sellerProductDTO = new SellerProductDTO();
         if (sellerProductId != 0)
         {
-            sellerProductDTO = sellerProductServices.findSellerProductById(sellerProductId);
+            SellerProductEntity sellerProduct = sellerProductServices.findSellerProductById(sellerProductId);
             if (sellerProduct == null)
             {
                 model.addAttribute("error", "Seller Product not found");
                 return "index";
             }
-            model.addAttribute("sellerProductDTO", sellerProduct);
+            sellerProductDTO = sellerProductServices.toDTO(sellerProduct);
         }
-        else
 
-
-        model.addAttribute("products", products);
         model.addAttribute("sellerProductDTO", sellerProductDTO);
-        return "sellerProducts-post";
-
+        return "sellerProducts-addOffer";
     }
+
+    @PutMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
+    public String addOffer(@Valid @ModelAttribute("sellerProductDTO") SellerProductDTO sellerProductDTO,
+                                    BindingResult bindingResult, Model model) {
+        System.out.println("CIF: " + sellerProductDTO.getCif());
+        SellerEntity seller = sellerServices.getSellerByCif(sellerProductDTO.getCif()).getLeft().orElse(null);
+        if (seller == null) {
+            System.out.println("Seller not found");
+            model.addAttribute("error", "Seller not found");
+            return "index";
+        }
+        List<SellerProductEntity> sellerProducts = sellerProductServices.findAllSellerProductsBySeller(seller);
+        model.addAttribute("sellerProducts", sellerProducts); // Ensure it's always populated
+
+        if (bindingResult.hasErrors()) {
+            List<String> validationErrors = bindingResult.getAllErrors().stream()
+                    .map(error -> error.getDefaultMessage())
+                    .collect(Collectors.toList());
+            model.addAttribute("errors", validationErrors);
+            model.addAttribute("sellerProductDTO", sellerProductDTO);
+            return "sellerProducts-addOffer";
+        }
+
+        Set<SellerProductCodeStatus> statuses = sellerProductServices.saveSellerProduct(sellerProductDTO, Utils.HttpRequests.PUT);
+        for (SellerProductCodeStatus status : statuses) {
+            switch (status) {
+                case PRODUCT_NOT_FOUND -> model.addAttribute("errors", List.of("Product not found"));
+                case SELLER_PRODUCT_IS_NULL -> model.addAttribute("errors", List.of("Seller Product is null"));
+                case SELLER_PRODUCT_NOT_FOUND -> model.addAttribute("errors", List.of("Seller Product already exists"));
+                case PRICE_NOT_VALID -> model.addAttribute("errors", List.of("Price is not valid"));
+                case STOCK_NOT_VALID -> model.addAttribute("errors", "Stock is not valid");
+                case DATE_PERIOD_NULL -> model.addAttribute("errors", "Date period is null");
+                case OFFER_PRICE_NULL -> model.addAttribute("errors", "Offer price is null");
+                case OFFER_PRICE_NOT_VALID -> model.addAttribute("errors", "Offer price is not valid");
+                case OFFER_PRICE_TOO_HIGH -> model.addAttribute("errors", "Offer price is too high");
+                case DATE_PERIOD_NOT_PRESENT_OR_FUTURE -> model.addAttribute("errors", "Date period is not present or future");
+                case DATE_PERIOD_TOO_LONG -> model.addAttribute("errors", "Date period is too long");
+                case DATE_PERIOD_NOT_AVAILABLE -> model.addAttribute("errors", "Date period is already taken. Please choose another date period.");
+                case SUCCESS -> model.addAttribute("success", "Seller Product's offer saved successfully!");
+            }
+        }
+        SellerProductDTO newSellerProductDTO = new SellerProductDTO();
+        sellerProductDTO.setCif(sellerProductDTO.getCif());
+        model.addAttribute("sellerProductDTO", newSellerProductDTO);
+        return "sellerProducts-addOffer";
+    }
+
+
 
     private Pair<Optional<SellerEntity>, LoginCodeStatus> getSellerByCif(String cif)
     {

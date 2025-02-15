@@ -130,4 +130,20 @@ public class SellerProductServices
         result.setStock(dto.getStock());
         return Pair.of(result, statutes);
     }
+
+    public SellerProductDTO toDTO(SellerProductEntity sellerProduct)
+    {
+        SellerProductDTO sellerProductDTO = new SellerProductDTO();
+        sellerProductDTO.setId(sellerProduct.getId());
+        sellerProductDTO.setCif(sellerProduct.getSeller().getCif());
+        sellerProductDTO.setProductId(sellerProduct.getProduct().getId());
+        sellerProductDTO.setPrice(sellerProduct.getPrice());
+
+        sellerProductDTO.setDiscount(sellerProductUtils.getDiscount(sellerProduct.getPrice(), sellerProduct.getPrice())); // getDiscount(BigDecimal price, BigDecimal offerPrice)
+
+        sellerProductDTO.setOfferStartDate(sellerProduct.getOfferStartDate());
+        sellerProductDTO.setOfferEndDate(sellerProduct.getOfferEndDate());
+        sellerProductDTO.setStock(sellerProduct.getStock());
+        return sellerProductDTO;
+    }
 }

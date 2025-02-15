@@ -7,6 +7,7 @@ import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.sound.midi.SysexMessage;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -41,8 +42,6 @@ public class SellerProductValidations
 
         if (!dayPeriodNull(sellerProduct))
             result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_NULL);
-
-
         return result;
     }
 
@@ -85,15 +84,16 @@ public class SellerProductValidations
 
         if (!dayPeriodAvailable(sellerProduct))
             result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_AVAILABLE);
-
+        for (SellerProductCodeStatus s : result)
+            System.out.println(s);
         return result; //NOT COMPLETED
 
     }
 
     private boolean isOfferPriceWithinRange(SellerProductEntity sellerProduct)
     {
-        BigDecimal maxOfferPrice = spUtils.getOfferPrice(sellerProduct.getPrice(), getMaxDiscount(sellerProduct));
-        return sellerProduct.getOfferPrice().compareTo(maxOfferPrice) <= 0;
+        BigDecimal minimumOfferPrice = spUtils.getOfferPrice(sellerProduct.getPrice(), getMaxDiscount(sellerProduct));
+        return sellerProduct.getOfferPrice().compareTo(minimumOfferPrice) >= 0;
     }
 
 
@@ -190,19 +190,26 @@ public class SellerProductValidations
     {
         if (sellerProduct.getOfferStartDate() == null || sellerProduct.getOfferEndDate() == null)
             return false;
-        List<SellerProductEntity> sellerProducts = sellerProductDAO.findAllBySellerId(sellerProduct.getId());
+        System.out.println("Checking collisions");
+        List<SellerProductEntity> sellerProducts = sellerProductDAO.findAllBySellerId(sellerProduct.getSeller().getId());
         int collisions = 0;
         int maxCollisions = spUtils.getMaxCollisions(sellerProduct.getSeller());
         for (SellerProductEntity s : sellerProducts)
         {
-            if (spUtils.datePeriodCollide(s.getOfferStartDate(), s.getOfferEndDate(),
+            if (spUtils.datePeriodCollide(sellerProduct.getOfferStartDate(), sellerProduct.getOfferEndDate(),
                     s.getOfferStartDate(), s.getOfferEndDate()))
             {
+                System.out.println("Collision found");
                 collisions++;
-                if (collisions > maxCollisions)
+                System.out.println("Total Collisions: " + collisions);
+                if (collisions > maxCollisions) {
+                    System.out.println("Collisions exceeded");
                     return false;
+                }
             }
         }
+        System.out.println("Collisions within range");
+        System.out.println("Total Collisions: " + collisions);
         return true;
     }
 
