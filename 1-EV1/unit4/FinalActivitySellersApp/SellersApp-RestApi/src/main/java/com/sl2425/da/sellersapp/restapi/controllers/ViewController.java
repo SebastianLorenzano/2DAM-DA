@@ -38,9 +38,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping("/web")
 public class ViewController
 {
-
     @Autowired
     private ProductServices productServices;
     @Autowired
@@ -50,20 +50,20 @@ public class ViewController
     @Autowired
     private SellerProductServices sellerProductServices;
 
-    @GetMapping({"/web/", "/web/index", "/web/index.html"})
+    @GetMapping({"/", "/", "/index.html"})
     public String index()
     {
         return "index";
     }
 
-    @GetMapping({"/web/login", "/web/login.html"})
+    @GetMapping({"/login", "/login.html"})
     public String showLogin(Model model)
     {
         model.addAttribute("sellerDTO", new SellerLoginDTO());
         return "login";
     }
 
-    @GetMapping({"/web/sellers/save", "/web/sellers-save.html"} )
+    @GetMapping({"/sellers/save", "/sellers-save.html"} )
     public String showSeller(@AuthenticationPrincipal UserDetails user, Model model)
     {
         Pair<Optional<SellerEntity>, LoginCodeStatus> pair = sellerServices.getSellerByCif(user.getUsername());
@@ -77,7 +77,7 @@ public class ViewController
         return "sellers-save";
     }
 
-    @PutMapping({"/web/sellers/save", "/web/sellers-save.html"})
+    @PutMapping({"/sellers/save", "/sellers-save.html"})
     public String saveSeller(@Valid @ModelAttribute("SellerUpdateDTO") SellerUpdateDTO sellerUpdateDTO,
                              BindingResult bindingResult, Model model)
     {
@@ -106,7 +106,7 @@ public class ViewController
     }
 
 
-    @GetMapping({"/web/sellerProducts/post", "/web/sellerProducts-post.html"})
+    @GetMapping({"/sellerProducts/post", "/sellerProducts-post.html"})
     public String showSellerProductsPost(@AuthenticationPrincipal UserDetails user, Model model,
                                          @RequestParam(name = "category", required = false, defaultValue = "0") int categoryId,
                                          @RequestParam(name = "productId", required = false, defaultValue = "0") int productId)
@@ -139,7 +139,7 @@ public class ViewController
 
     }
 
-    @PostMapping({"/web/sellerProducts/post", "/web/sellerProducts-post.html"})
+    @PostMapping({"/sellerProducts/post", "/sellerProducts-post.html"})
     public String saveSellerProduct(@Valid @ModelAttribute("sellerProductDTO") SellerProductDTO sellerProductDTO,
                                     BindingResult bindingResult, Model model) {
         List<CategoryEntity> categories = categoryServices.getAllCategories();
@@ -174,7 +174,7 @@ public class ViewController
         return "sellerProducts-post";
     }
 
-    @GetMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
+    @GetMapping({"/sellerProducts/addOffer", "/sellerProducts-addOffer.html"})
     public String showSellerProductsAddOffer(@AuthenticationPrincipal UserDetails user, Model model,
                                              @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId)
     {
@@ -210,7 +210,7 @@ public class ViewController
         return "sellerProducts-addOffer";
     }
 
-    @PutMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
+    @PutMapping({"/sellerProducts/addOffer", "/sellerProducts-addOffer.html"})
     public String addOffer(@Valid @ModelAttribute("sellerProductDTO") SellerProductDTO sellerProductDTO,
                                     BindingResult bindingResult, Model model) {
         SellerEntity seller = sellerServices.getSellerByCif(sellerProductDTO.getCif()).getLeft().orElse(null);
