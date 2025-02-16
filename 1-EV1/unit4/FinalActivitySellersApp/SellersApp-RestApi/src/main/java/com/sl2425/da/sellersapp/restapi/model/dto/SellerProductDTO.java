@@ -25,7 +25,7 @@ public class SellerProductDTO
     private BigDecimal price;
 
     @Min(value = 1, message = "Discount percentage must be greater than 0")
-    @Max(value = 50, message = "Price must be less than 1.000.000.000")
+    @Max(value = 50, message = "Price must be less than 1.000.000.000") // 50% discount
     private int discount;
 
     @FutureOrPresent(message = "Offer start date must be today or in the future")

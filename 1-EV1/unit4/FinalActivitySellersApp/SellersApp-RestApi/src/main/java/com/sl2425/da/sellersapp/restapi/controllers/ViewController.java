@@ -149,9 +149,12 @@ public class ViewController
             List<String> validationErrors = bindingResult.getAllErrors().stream()
                     .map(error -> error.getDefaultMessage())
                     .collect(Collectors.toList());
-            model.addAttribute("errors", validationErrors);
-            model.addAttribute("sellerProductDTO", sellerProductDTO);
-            return "sellerProducts-post";
+            validationErrors.remove("Discount percentage must be greater than 0"); // Remove discount error message, because it's not required
+            if (!validationErrors.isEmpty()) {
+                model.addAttribute("errors", validationErrors);
+                model.addAttribute("sellerProductDTO", sellerProductDTO);
+                return "sellerProducts-post";
+            }
         }
 
         Set<SellerProductCodeStatus> statuses = sellerProductServices.saveSellerProduct(sellerProductDTO, Utils.HttpRequests.POST);
