@@ -23,8 +23,6 @@ import java.util.Set;
 public class SellerController
 {
     @Autowired
-    private ISellerEntityDAO sellerDAO;
-    @Autowired
     private SellerServices sellerServices;
 
     @GetMapping
