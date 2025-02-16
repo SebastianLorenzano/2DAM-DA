@@ -173,7 +173,7 @@ public class ViewController
     @GetMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
     public String showSellerProductsAddOffer(@AuthenticationPrincipal UserDetails user, Model model,
                                              @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId,
-                                             @RequestParam(name = "discount", required = false, defaultValue = "0") int discount)
+                                             @RequestParam(name = "hiddenDiscount", required = false, defaultValue = "0") int hiddenDiscount)
     {
         Pair<Optional<SellerEntity>, LoginCodeStatus> pair = getSellerByCif(user.getUsername());
         if (pair.getLeft().isEmpty())
@@ -194,6 +194,12 @@ public class ViewController
                 return "index";
             }
             sellerProductDTO = sellerProductServices.toDTO(sellerProduct);
+        }
+
+        if (hiddenDiscount != 0)
+        {
+            BigDecimal offerPrice = sellerProductServices.getOfferPrice(sellerProductDTO.getPrice(), hiddenDiscount);
+            model.addAttribute("offerPrice", offerPrice);
         }
 
         model.addAttribute("sellerProductDTO", sellerProductDTO);

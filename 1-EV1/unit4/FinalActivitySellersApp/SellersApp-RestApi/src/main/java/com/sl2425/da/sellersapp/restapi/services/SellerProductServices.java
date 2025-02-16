@@ -146,4 +146,9 @@ public class SellerProductServices
         sellerProductDTO.setStock(sellerProduct.getStock());
         return sellerProductDTO;
     }
+
+    public BigDecimal getOfferPrice(BigDecimal price, int discount)
+    {
+        return sellerProductUtils.getOfferPrice(price, discount);
+    }
 }
