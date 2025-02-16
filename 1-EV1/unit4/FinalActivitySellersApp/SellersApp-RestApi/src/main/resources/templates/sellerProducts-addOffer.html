@@ -104,8 +104,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-submit" th:disabled="${sellerProductDTO.offerStartDate == null
-        or sellerProductDTO.offerEndDate == 0 or sellerProductDTO.discount == null}">Add Offer</button>
+        <button type="submit" class="btn btn-submit" th:disabled="${sellerProductDTO.productId == null or sellerProductDTO.productId == 0}">Add Offer</button>
     </form>
 </div>
 <script>
