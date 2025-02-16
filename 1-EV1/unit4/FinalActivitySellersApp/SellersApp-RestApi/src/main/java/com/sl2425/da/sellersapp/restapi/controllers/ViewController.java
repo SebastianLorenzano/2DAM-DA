@@ -30,6 +30,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -172,8 +173,7 @@ public class ViewController
 
     @GetMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
     public String showSellerProductsAddOffer(@AuthenticationPrincipal UserDetails user, Model model,
-                                             @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId,
-                                             @RequestParam(name = "hiddenDiscount", required = false, defaultValue = "0") int hiddenDiscount)
+                                             @RequestParam(name = "sellerProductId", required = false, defaultValue = "0") int sellerProductId)
     {
         Pair<Optional<SellerEntity>, LoginCodeStatus> pair = getSellerByCif(user.getUsername());
         if (pair.getLeft().isEmpty())
@@ -194,14 +194,15 @@ public class ViewController
                 return "index";
             }
             sellerProductDTO = sellerProductServices.toDTO(sellerProduct);
-        }
 
-        if (hiddenDiscount != 0)
-        {
-            BigDecimal offerPrice = sellerProductServices.getOfferPrice(sellerProductDTO.getPrice(), hiddenDiscount);
-            model.addAttribute("offerPrice", offerPrice);
+            if (sellerProduct.getOfferStartDate() != null && sellerProduct.getOfferEndDate() != null && sellerProduct.getOfferPrice() != null)
+                if (sellerProduct.getOfferEndDate().isAfter(LocalDate.now()))
+                {
+                    model.addAttribute("currentOfferStartDate", sellerProduct.getOfferStartDate());
+                    model.addAttribute("currentOfferEndDate", sellerProduct.getOfferEndDate());
+                    model.addAttribute("currentOfferPrice", sellerProduct.getOfferPrice());
+                }
         }
-
         model.addAttribute("sellerProductDTO", sellerProductDTO);
         return "sellerProducts-addOffer";
     }
@@ -209,7 +210,6 @@ public class ViewController
     @PutMapping({"/web/sellerProducts/addOffer", "/web/sellerProducts-addOffer.html"})
     public String addOffer(@Valid @ModelAttribute("sellerProductDTO") SellerProductDTO sellerProductDTO,
                                     BindingResult bindingResult, Model model) {
-        System.out.println("CIF: " + sellerProductDTO.getCif());
         SellerEntity seller = sellerServices.getSellerByCif(sellerProductDTO.getCif()).getLeft().orElse(null);
         if (seller == null) {
             System.out.println("Seller not found");

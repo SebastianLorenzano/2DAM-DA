@@ -22,10 +22,6 @@ public class SellerProductUtils
 
     public boolean datePeriodCollide(LocalDate startDate1, LocalDate endDate1, LocalDate startDate2, LocalDate endDate2)
     {
-        System.out.println("startDate1: " + startDate1);
-        System.out.println("endDate1: " + endDate1);
-        System.out.println("startDate2: " + startDate2);
-        System.out.println("endDate2: " + endDate2);
         if (startDate1 == null || endDate1 == null || startDate2 == null || endDate2 == null)
             return false;
         return ((startDate1.isBefore(startDate2) && endDate1.isAfter(startDate2)) ||   // If the period starts before the other period and ends after the other period

@@ -160,20 +160,74 @@
             border-radius: 8px;
             padding: 12px 16px;
             font-size: 16px;
-            font-weight: bold;
             color: #0e74a5;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            justify-content: space-between; /* Places Full Price and Final Price side-by-side */
+            align-items: center;
+            gap: 2rem; /* Optional: Adjust space between the two prices */
+        }
+
+        .price-column {
+            flex: 1;
+            text-align: center;
         }
 
         .price-display-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        .price-display-value {
+            font-size: 20px;
+            color: #0e74a5;
+            font-weight: 600;
+        }
+        .current-offer {
+            background-color: #f0f8ff;
+            border: 2px solid #0e74a5;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .current-offer-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0e74a5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .current-offer-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .current-offer-item {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .current-offer-label {
             font-size: 14px;
             color: #666;
             margin-bottom: 4px;
         }
 
-        .price-display-value {
+        .current-offer-value {
+            font-weight: 600;
             font-size: 20px;
+            color: #0e74a5;
         }
 
         @media (max-width: 768px) {
@@ -194,6 +248,10 @@
 
             .price-display {
                 width: 100%;
+            }
+
+            .current-offer-details {
+                flex-direction: column;
             }
         }
     </style>
@@ -218,9 +276,9 @@
     </div>
 
     <!-- First Form: Select Product -->
-    <form id="productForm" th:action="@{/web/sellerProducts/addOffer}" method="get">
-        <!-- Hidden input for discount from sellerProductDTO -->
-        <input type="hidden" name="hiddenDiscount" th:value="*{sellerProductDTO.discount}"/>
+    <form id="productForm" th:action="@{/web/sellerProducts/addOffer}" method="get" th:object="${sellerProductDTO}">
+        <!-- Hidden inputs to send existing data -->
+        <input type="hidden" name="hiddenDiscount" th:value="*{discount}" />
         <div class="form-group">
             <label for="sellerProductId">Choose a product:</label>
             <select id="sellerProductId" name="sellerProductId" onchange="this.form.submit()">
@@ -234,6 +292,7 @@
         </div>
     </form>
 
+
     <hr/>
 
     <!-- Second Form: Add Offer Details -->
@@ -242,31 +301,58 @@
         <input type="hidden" th:field="*{id}"/>
         <input type="hidden" th:field="*{cif}"/>
         <input type="hidden" th:field="*{productId}"/>
-        <input type="hidden" id="originalPrice" th:value="*{price}" />
+        <input type="hidden" id="originalPrice" th:field="*{price}"/>
         <input type="hidden" th:field="*{stock}"/>
 
         <div class="form-group">
             <label th:for="offerStartDate">From:</label>
-            <input type="date" th:field="*{offerStartDate}" required>
+            <input type="date" th:field="*{offerStartDate}" th:min="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" required>
             <div class="text-danger" th:if="${#fields.hasErrors('offerStartDate')}" th:errors="*{offerStartDate}"></div>
         </div>
         <div class="form-group">
             <label th:for="offerEndDate">To:</label>
-            <input type="date" th:field="*{offerEndDate}" required>
+            <input type="date" th:field="*{offerEndDate}" th:min="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" required>
             <div class="text-danger" th:if="${#fields.hasErrors('offerEndDate')}" th:errors="*{offerEndDate}"></div>
         </div>
         <div class="form-group discount-price-container">
             <div class="discount-input">
                 <label th:for="discount">Discount (%):</label>
-                <input id="discount" type="number" th:field="*{discount}" min="1" max="50" step="0.01" required>
+                <input id="discount" type="number" min="1" max="50" step="1" th:field="*{discount}" required>
                 <div class="text-danger" th:if="${#fields.hasErrors('discount')}" th:errors="*{discount}"></div>
             </div>
             <div class="price-display">
-                <div class="price-display-label">Final Price:</div>
-                <div class="price-display-value">€<span id="finalPriceValue">0.00</span></div>
+                <!-- Full Price -->
+                <div class="price-column">
+                    <div class="price-display-label">Full Price:</div>
+                    <div class="price-display-value">€<span th:text="${#numbers.formatDecimal(sellerProductDTO.price, 1, 2)}">0.00</span></div>
+                </div>
+
+                <!-- Final Price -->
+                <div class="price-column">
+                    <div class="price-display-label">Discounted Price:</div>
+                    <div class="price-display-value" id="euroDiscountedPrice">€<span id="finalPriceValue">0.00</span></div>
+                </div>
             </div>
         </div>
 
+        <!-- Current Offer Display -->
+        <div th:if="${currentOfferStartDate != null}" class="current-offer">
+            <div class="current-offer-title">Current Offer</div>
+            <div class="current-offer-details">
+                <div class="current-offer-item">
+                    <div class="current-offer-label">Start Date:</div>
+                    <div class="current-offer-value" th:text="${#temporals.format(currentOfferStartDate, 'dd-MM-yyyy')}"></div>
+                </div>
+                <div class="current-offer-item">
+                    <div class="current-offer-label">End Date:</div>
+                    <div class="current-offer-value" th:text="${#temporals.format(currentOfferEndDate, 'dd-MM-yyyy')}"></div>
+                </div>
+                <div class="current-offer-item">
+                    <div class="current-offer-label">Offer Price:</div>
+                    <div class="current-offer-value" th:text="${'€' + #numbers.formatDecimal(currentOfferPrice, 1, 2)}"></div>
+                </div>
+            </div>
+        </div>
         <button type="submit" class="btn btn-submit">Add Offer</button>
     </form>
 </div>
@@ -275,11 +361,19 @@
         const price = parseFloat(document.getElementById('originalPrice').value) || 0;
         const discountInput = document.getElementById('discount');
         const finalPriceSpan = document.getElementById('finalPriceValue');
+        const euroDiscountedPrice = document.getElementById('euroDiscountedPrice');
 
         function updateFinalPrice() {
             const discount = parseFloat(discountInput.value) || 0;
             const discountAmount = (price * discount) / 100;
             const finalPrice = (price - discountAmount).toFixed(2);
+            if (finalPrice < 0) {
+                finalPriceSpan.style.color = 'red';
+                euroDiscountedPrice.style.color = 'red';
+            } else {
+                finalPriceSpan.style.color = '#0e74a5';
+                euroDiscountedPrice.style.color = '#0e74a5';
+            }
             finalPriceSpan.textContent = finalPrice;
         }
 
