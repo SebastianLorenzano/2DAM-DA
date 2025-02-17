@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -72,10 +73,9 @@ public class SellerProductAddOfferWebController
 
     @PutMapping({"/sellerProducts/addOffer", "/sellerProducts-addOffer.html"})
     public String addOffer(@Valid @ModelAttribute("sellerProductDTO") SellerProductDTO sellerProductDTO,
-                           BindingResult bindingResult, Model model) {
+                           BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
         SellerEntity seller = sellerServices.getSellerByCif(sellerProductDTO.getCif()).getLeft().orElse(null);
         if (seller == null) {
-            System.out.println("Seller not found");
             model.addAttribute("error", "Seller not found");
             return "index";
         }
@@ -88,6 +88,8 @@ public class SellerProductAddOfferWebController
                     .map(error -> error.getDefaultMessage())
                     .collect(Collectors.toList());
             model.addAttribute("errors", validationErrors);
+            sellerProducts = sellerProductServices.findAllSellerProductsBySeller(seller);
+            model.addAttribute("sellerProducts", sellerProducts); // Ensure it's always popula
             return "sellerProducts-addOffer";
         }
 
@@ -106,9 +108,15 @@ public class SellerProductAddOfferWebController
                 case DATE_PERIOD_NOT_PRESENT_OR_FUTURE -> model.addAttribute("errors", "Date period is not present or future");
                 case DATE_PERIOD_TOO_LONG -> model.addAttribute("errors", "Date period is too long");
                 case DATE_PERIOD_NOT_AVAILABLE -> model.addAttribute("errors", "Date period is already taken. Please choose another date period.");
-                case SUCCESS -> model.addAttribute("success", "Seller Product's offer saved successfully!");
+                case SUCCESS -> {
+                    model.addAttribute("currentOfferStartDate", sellerProductDTO.getOfferStartDate());
+                    model.addAttribute("currentOfferEndDate", sellerProductDTO.getOfferEndDate());
+                    model.addAttribute("currentOfferPrice", sellerProductServices.getOfferPrice(sellerProductDTO.getPrice(), sellerProductDTO.getDiscount()));
+                    model.addAttribute("success", "Seller Product's offer saved successfully!");
+                }
             }
         }
+
         return "sellerProducts-addOffer";
     }
 }
