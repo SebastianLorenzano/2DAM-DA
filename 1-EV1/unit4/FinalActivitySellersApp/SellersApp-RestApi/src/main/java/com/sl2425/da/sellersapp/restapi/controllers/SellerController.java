@@ -39,7 +39,11 @@ public class SellerController
     {
         Set<SellerCodeStatus> statuses = sellerServices.updateSeller(sellerUpdateDTO);
         if (statuses.contains(SellerCodeStatus.SUCCESS))
-            return ResponseEntity.ok().build();
+        {
+            Map<String, Object> successResponse = new HashMap<>();
+            successResponse.put("message", "Seller updated successfully.");
+            return ResponseEntity.ok().body(successResponse);
+        }
         Map<String, Object> errorResponse = new HashMap<>();
         errorResponse.put("message", "Seller update failed.");
         errorResponse.put("errors", statuses);

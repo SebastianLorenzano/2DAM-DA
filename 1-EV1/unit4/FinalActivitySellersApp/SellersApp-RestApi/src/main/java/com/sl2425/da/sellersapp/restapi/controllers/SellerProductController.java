@@ -3,6 +3,7 @@ package com.sl2425.da.sellersapp.restapi.controllers;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
+import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerProductCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.IProductEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
@@ -14,7 +15,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @RestController
@@ -37,17 +40,15 @@ public class SellerProductController
     {
         Set<SellerProductCodeStatus> statuses = sellerProductServices.saveSellerProduct(s, Utils.HttpRequests.POST);
         if (statuses.contains(SellerProductCodeStatus.SUCCESS))
-            return ResponseEntity.ok().body("SellerProduct saved successfully");
-        for (SellerProductCodeStatus status : statuses)
         {
-            if (status == SellerProductCodeStatus.SELLER_NOT_FOUND)
-                return ResponseEntity.badRequest().body("Seller not found");
-            if (status == SellerProductCodeStatus.PRODUCT_NOT_FOUND)
-                return ResponseEntity.badRequest().body("Product not found");
-            if (status == SellerProductCodeStatus.SELLER_PRODUCT_ALREADY_EXISTS)
-                return ResponseEntity.badRequest().body("SellerProduct already exists");
+            Map<String, Object> successResponse = new HashMap<>();
+            successResponse.put("message", "SellerProduct saved successfully.");
+            return ResponseEntity.ok().body(successResponse);
         }
-        return ResponseEntity.badRequest().body("Error saving SellerProduct");
+        Map<String, Object> errorResponse = new HashMap<>();
+        errorResponse.put("message", "Seller Product saving failed.");
+        errorResponse.put("errors", statuses);
+        return ResponseEntity.badRequest().body(errorResponse);
     }
 
     @PutMapping
@@ -55,18 +56,14 @@ public class SellerProductController
     {
         Set<SellerProductCodeStatus> statuses = sellerProductServices.saveSellerProduct(s, Utils.HttpRequests.PUT);
         if (statuses.contains(SellerProductCodeStatus.SUCCESS))
-            return ResponseEntity.ok().body("SellerProduct updated successfully");
-        for (SellerProductCodeStatus status : statuses)
         {
-            if (status == SellerProductCodeStatus.SELLER_NOT_FOUND)
-                return ResponseEntity.badRequest().body("Seller not found");
-            if (status == SellerProductCodeStatus.PRODUCT_NOT_FOUND)
-                return ResponseEntity.badRequest().body("Product not found");
-            if (status == SellerProductCodeStatus.SELLER_PRODUCT_NOT_FOUND)
-                return ResponseEntity.badRequest().body("SellerProduct not found");
+            Map<String, Object> successResponse = new HashMap<>();
+            successResponse.put("message", "SellerProduct saved successfully.");
+            return ResponseEntity.ok().body(successResponse);
         }
-        return ResponseEntity.badRequest().body("Error updating SellerProduct");
+        Map<String, Object> errorResponse = new HashMap<>();
+        errorResponse.put("message", "Seller Product saving failed.");
+        errorResponse.put("errors", statuses);
+        return ResponseEntity.badRequest().body(errorResponse);
     }
-
-
 }
