@@ -38,7 +38,8 @@ public class SellerProductUtils
     {
         BigDecimal discountBigDecimal = BigDecimal.valueOf(discount).divide(BigDecimal.valueOf(100));
         BigDecimal offerPrice = price.subtract(price.multiply(discountBigDecimal));
-
+        if (discount == 0)
+            return null;
         return offerPrice.setScale(2, RoundingMode.HALF_UP);
     }
 

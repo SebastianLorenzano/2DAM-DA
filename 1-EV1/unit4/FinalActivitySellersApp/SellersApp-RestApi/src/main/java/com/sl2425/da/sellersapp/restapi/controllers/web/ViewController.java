@@ -37,13 +37,7 @@ import java.util.stream.Collectors;
 public class ViewController
 {
     @Autowired
-    private ProductServices productServices;
-    @Autowired
-    CategoryServices categoryServices;
-    @Autowired
     private SellerServices sellerServices;
-    @Autowired
-    private SellerProductServices sellerProductServices;
 
     @GetMapping({"/", "/", "/index.html"})
     public String index()

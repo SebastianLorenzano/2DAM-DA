@@ -1,10 +1,9 @@
-package com.sl2425.da.sellersapp.restapi.controllers;
+package com.sl2425.da.sellersapp.restapi.controllers.api;
 
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
-import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerLoginDTO;
 import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
 import com.sl2425.da.sellersapp.restapi.services.SellerServices;
@@ -28,9 +27,14 @@ public class SellerController
     @GetMapping
     public ResponseEntity<?> getSellerByCifAndPassword(@RequestBody SellerLoginDTO s)
     {
+        System.out.println("SellerController.getSellerByCifAndPassword");
         Pair<Optional<SellerEntity>, LoginCodeStatus> result = sellerServices.getSellerByCifAndPassword(s);
-        if (result.getLeft().isPresent())
-            return ResponseEntity.ok().body(result.getLeft());
+        if (result.getLeft().isPresent()) {
+            System.out.println("SellerController.getSellerByCifAndPassword: Seller found");
+            return ResponseEntity.ok().body(result.getLeft().get());
+
+        }
+        System.out.println("SellerController.getSellerByCifAndPassword: Seller not found");
         return ResponseEntity.badRequest().body(result.getRight());
     }
 

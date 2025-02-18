@@ -10,6 +10,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -44,6 +45,7 @@ public class SellerServices
         return Pair.of(Optional.of(seller), LoginCodeStatus.SUCCESS);
     }
 
+    @Transactional
     public Set<SellerCodeStatus> updateSeller(SellerUpdateDTO sellerDTO)
     {
         Set<SellerCodeStatus> statuses = new HashSet<>();

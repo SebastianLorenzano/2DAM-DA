@@ -1,4 +1,4 @@
-package com.sl2425.da.sellersapp.restapi.controllers;
+package com.sl2425.da.sellersapp.restapi.controllers.api;
 
 import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
 import org.springframework.beans.factory.annotation.Autowired;

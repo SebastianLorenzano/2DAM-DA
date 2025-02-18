@@ -74,7 +74,7 @@ public class SellerProductServices
         if (requestType == Utils.HttpRequests.POST)
             statutes = createSellerProduct(sellerProduct);
         else  if (requestType == Utils.HttpRequests.PUT)
-            statutes = updateSellerProduct(sellerProduct, sellerProductDTO);
+            statutes = updateSellerProduct(sellerProduct);
         else
             statutes.add(SellerProductCodeStatus.INVALID_REQUEST_TYPE);
         return statutes;
@@ -91,12 +91,12 @@ public class SellerProductServices
         return result;
     }
 
-    private Set<SellerProductCodeStatus> updateSellerProduct(SellerProductEntity sellerProduct, SellerProductDTO sellerProductDTO)
+    private Set<SellerProductCodeStatus> updateSellerProduct(SellerProductEntity sellerProduct)
     {
         Set<SellerProductCodeStatus> result = new HashSet<>();
         if (sellerProduct.getOfferEndDate() != null && sellerProduct.getOfferEndDate().isAfter(LocalDate.now()))
         {
-            result.add(SellerProductCodeStatus.OFFER_HASNT_ENDED);
+            result.add(SellerProductCodeStatus.OFFER_HAS_NOT_ENDED);
             // return result; // If we don't want the code to keep looking for errors
         }
         result = sellerProductValidations.validateUpdate(sellerProduct);
@@ -118,8 +118,18 @@ public class SellerProductServices
             statutes.add(SellerProductCodeStatus.PRODUCT_NOT_FOUND);
             return Pair.of(null, statutes);
         }
-        BigDecimal offerPrice = sellerProductUtils.getOfferPrice(dto.getPrice(), dto.getDiscount());
 
+        SellerProductEntity checkSellerProduct = sellerProductDAO.findBySellerAndProduct(sellerEntity, product.get());
+
+        if (checkSellerProduct != null) // If the sellerProduct already exists
+        {
+            System.out.println("Price: " + checkSellerProduct.getPrice());
+            dto.setPrice(checkSellerProduct.getPrice());        // The price is not provided, so we keep the old price
+            dto.setStock(checkSellerProduct.getStock());        // The stock is not provided, so we keep the old stock
+            dto.setId(checkSellerProduct.getId());              // The id is not provided, so we keep the old id
+        }
+
+        BigDecimal offerPrice = sellerProductUtils.getOfferPrice(dto.getPrice(), dto.getDiscount());
         result.setId(dto.getId());
         result.setSeller(sellerEntity);
         result.setProduct(product.get());

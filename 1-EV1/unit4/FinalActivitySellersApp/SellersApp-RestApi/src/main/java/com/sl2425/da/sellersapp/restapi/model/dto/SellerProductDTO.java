@@ -106,20 +106,4 @@ public class SellerProductDTO
     public void setStock(Integer stock) {
         this.stock = stock;
     }
-
-    /*
-    public SellerProductEntity toEntity(SellerEntity seller)
-    {
-        var result =  new SellerProductEntity();
-        result.setId(this.id);
-        result.setSeller(seller);
-        result.setProduct(this.product);
-        result.setPrice(this.price);
-        result.setOfferPrice(this.offerPrice);
-        result.setOfferStartDate(this.offerStartDate);
-        result.setOfferEndDate(this.offerEndDate);
-        result.setStock(this.stock);
-        return result;
-    }
-    */
 }

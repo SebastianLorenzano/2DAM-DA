@@ -61,7 +61,7 @@ public class SellerUpdateDTO
         this.businessName = sellerEntity.getBusinessName();
         this.phone = sellerEntity.getPhone();
         this.email = sellerEntity.getEmail();
-        this.url = sellerEntity.getURL();
+        this.url = sellerEntity.getUrl();
     }
 
     public SellerEntity toSellerEntity(SellerEntity oldSeller, PasswordEncoder passwordEncoder)
@@ -73,7 +73,7 @@ public class SellerUpdateDTO
         sellerEntity.setBusinessName(businessName);
         sellerEntity.setPhone(phone);
         sellerEntity.setEmail(email);
-        sellerEntity.setURL(url);
+        sellerEntity.setUrl(url);
         sellerEntity.setPassword(oldSeller.getPassword());
         sellerEntity.setPlainPassword(oldSeller.getPlainPassword()); // Remove on production
         if (userIsChangingPasswordCorrectly())

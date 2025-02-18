@@ -17,6 +17,8 @@ public interface ISellerProductEntityDAO extends CrudRepository<SellerProductEnt
 
     List<SellerProductEntity> findAllBySellerId(int sellerId);
 
+    SellerProductEntity findBySellerAndProduct(SellerEntity seller, ProductEntity product);
+
     @Query ("SELECT s FROM SellerProductEntity s WHERE s.seller = :seller AND s.offerEndDate <= current_date")
     List<SellerProductEntity> findAllBySellerAndOfferExpired(SellerEntity seller);
 

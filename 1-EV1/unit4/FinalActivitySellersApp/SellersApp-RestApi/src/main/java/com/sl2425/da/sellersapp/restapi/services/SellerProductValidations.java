@@ -42,6 +42,9 @@ public class SellerProductValidations
 
         if (!dayPeriodNull(sellerProduct))
             result.add(SellerProductCodeStatus.DATE_PERIOD_NOT_NULL);
+
+        if (!offerPriceNull(sellerProduct))
+            result.add(SellerProductCodeStatus.OFFER_PRICE_NOT_NULL);
         return result;
     }
 
@@ -58,11 +61,6 @@ public class SellerProductValidations
             result.add(SellerProductCodeStatus.SELLER_PRODUCT_NOT_FOUND);
             return result;
         }
-        if (!isPriceValid(sellerProduct))
-            result.add(SellerProductCodeStatus.PRICE_NOT_VALID);
-
-        if (!isStockValid(sellerProduct))
-            result.add(SellerProductCodeStatus.STOCK_NOT_VALID);
 
         if (dayPeriodNull(sellerProduct))
             result.add(SellerProductCodeStatus.DATE_PERIOD_NULL);
