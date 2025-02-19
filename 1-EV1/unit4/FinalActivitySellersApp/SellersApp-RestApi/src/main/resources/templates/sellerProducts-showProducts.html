@@ -16,10 +16,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr th:each="sellerProduct : ${sellerProducts}">
+            <td th:text="${sellerProduct.getProduct().getProductName()}"></td>
+            <td th:text="${sellerProduct.getPrice()}"></td>
+            <td th:text="${sellerProduct.getProduct().getCategory().getCategoryName()}"></td>
         </tr>
         </tbody>
     </table>
