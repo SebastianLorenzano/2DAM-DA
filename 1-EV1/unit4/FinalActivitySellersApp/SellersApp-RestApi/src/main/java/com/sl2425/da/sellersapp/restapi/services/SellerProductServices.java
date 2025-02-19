@@ -39,6 +39,12 @@ public class SellerProductServices
     private SellerProductUtils sellerProductUtils;
 
 
+    public List<SellerProductEntity> findSellerProductsByProduct(ProductEntity product)
+    {
+        List<SellerProductEntity> sellerProducts = sellerProductDAO.findByProduct(product);
+        return sellerProducts;
+    }
+
     public SellerProductEntity findSellerProductById(int sellerProductId)
     {
         Optional<SellerProductEntity> optional = sellerProductDAO.findById(sellerProductId);

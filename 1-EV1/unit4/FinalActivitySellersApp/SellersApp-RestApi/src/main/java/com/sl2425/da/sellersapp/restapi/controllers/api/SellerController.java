@@ -27,14 +27,11 @@ public class SellerController
     @GetMapping
     public ResponseEntity<?> getSellerByCifAndPassword(@RequestBody SellerLoginDTO s)
     {
-        System.out.println("SellerController.getSellerByCifAndPassword");
         Pair<Optional<SellerEntity>, LoginCodeStatus> result = sellerServices.getSellerByCifAndPassword(s);
         if (result.getLeft().isPresent()) {
-            System.out.println("SellerController.getSellerByCifAndPassword: Seller found");
             return ResponseEntity.ok().body(result.getLeft().get());
 
         }
-        System.out.println("SellerController.getSellerByCifAndPassword: Seller not found");
         return ResponseEntity.badRequest().body(result.getRight());
     }
 

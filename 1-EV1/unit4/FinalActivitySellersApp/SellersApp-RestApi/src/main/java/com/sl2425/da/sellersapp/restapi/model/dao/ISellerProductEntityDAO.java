@@ -11,6 +11,8 @@ import java.util.List;
 
 public interface ISellerProductEntityDAO extends CrudRepository<SellerProductEntity, Integer>
 {
+    List<SellerProductEntity> findByProduct(ProductEntity product);
+
     public List<SellerProductEntity> findAllBySeller(SellerEntity seller);
 
     Boolean existsBySellerAndProduct(SellerEntity seller, ProductEntity product);
