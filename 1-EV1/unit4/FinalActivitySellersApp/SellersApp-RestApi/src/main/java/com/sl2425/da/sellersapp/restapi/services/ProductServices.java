@@ -7,6 +7,7 @@ import com.sl2425.da.sellersapp.restapi.model.dto.SellerContactDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,9 +35,9 @@ public class ProductServices
     {
         Optional<ProductEntity> product = productDAO.findById(productId);
         if (product.isEmpty())
-            return null;
+            throw new InvalidParameterException("Product doesn't exist.");
         List<SellerProductEntity> sellerProducts = sellerProductServices.findSellerProductsByProduct(product.get());
-        List<SellerContactDTO> result = new ArrayList<SellerContactDTO>();
+        List<SellerContactDTO> result = new ArrayList<>();
         for (SellerProductEntity sellerProduct : sellerProducts)
         {
             SellerContactDTO contact = SellerContactDTO.toDTO(sellerProduct.getSeller());

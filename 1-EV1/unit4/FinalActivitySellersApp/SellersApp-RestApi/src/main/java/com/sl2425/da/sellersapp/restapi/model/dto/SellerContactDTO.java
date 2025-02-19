@@ -1,12 +1,16 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class SellerContactDTO
 {
     private Integer id;
 
     private String cif;
+
+    private String name;
 
     private String phone;
 
@@ -26,13 +30,18 @@ public class SellerContactDTO
 
         result.setId(sellerEntity.getId());
         result.setCif(sellerEntity.getCif());
+        result.setName(sellerEntity.getName());
 
         result.setCif(sellerEntity.getCif());
         if (sellerEntity.getEmail() != null)
             result.setEmail(sellerEntity.getEmail());
+        else
+            result.setEmail("N/A");
 
         if (sellerEntity.getPhone() != null)
             result.setPhone(sellerEntity.getPhone());
+        else
+            result.setPhone("N/A");
 
         return result;
     }
@@ -67,5 +76,13 @@ public class SellerContactDTO
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

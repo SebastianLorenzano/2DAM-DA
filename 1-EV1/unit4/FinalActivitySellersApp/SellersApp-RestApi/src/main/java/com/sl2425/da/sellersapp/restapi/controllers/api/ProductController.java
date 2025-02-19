@@ -31,14 +31,22 @@ public class ProductController
                 dto.getCif(), dto.getCategoryId(), dto.getRemainingProducts()));
     }
 
-    @GetMapping({"/api/products/productId"})
+    @GetMapping({"/bySeller"})
     public ResponseEntity<?> getSellersWithProductId(
-            @RequestParam(name = "productId", required = true) int productId)
+            @RequestParam(name = "productId", required = true, defaultValue = "-1") int productId)
     {
-        var result = productServices.getSellerContactDTOByProductId(productId);
-        if (result == null)
-            return ResponseEntity.badRequest().body("Product doesn't exist.");
-        return ResponseEntity.ok().body(result);
+        if (productId <= 0)
+            return ResponseEntity.badRequest().body("ERROR: ProductId must be greater than 0.");
+        try
+        {
+            var result = productServices.getSellerContactDTOByProductId(productId);
+            return ResponseEntity.ok().body(result);
+        }
+        catch (Exception ex)
+        {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+
     }
 
 }

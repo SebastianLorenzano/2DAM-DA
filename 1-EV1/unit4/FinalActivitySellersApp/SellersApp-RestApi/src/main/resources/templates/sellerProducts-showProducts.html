@@ -1,29 +1,41 @@
 <!DOCTYPE html>
-<!-- saved from url=(0092)https://aules.edu.gva.es/fp/pluginfile.php/10148171/mod_resource/content/1/showproducts.html -->
 <html lang="es" xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- <input type="checkbox"-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/sellerProducts-showProducts.css}"/>
+    <title>SellersApp - ShowProducts</title>
 </head>
 <body>
 <div class="container">
-    <h1>Product List</h1>
-    <table>
+<h1 class="form-title">Product List</h1>
+    <!-- Return button -->
+    <a th:href="@{/web/}" class="btn btn-return">Return</a>
+<div class="table-container">
+    <table class="employee-table">
         <thead>
         <tr>
             <th>Name</th>
-            <th>Price</th>
+            <th th:if="${priceName == 'Price'}">Price</th>
+            <th th:if="${priceName == 'Offer price'}">Offer price</th>
             <th>Category</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="sellerProduct : ${sellerProducts}">
             <td th:text="${sellerProduct.getProduct().getProductName()}"></td>
-            <td th:text="${sellerProduct.getPrice()}"></td>
+            <td th:if="${priceName == 'Price'}" th:text="${sellerProduct.getPrice()}"></td>
+            <td th:if="${priceName == 'Offer price'}" th:text="${sellerProduct.getOfferPrice()}"></td>
             <td th:text="${sellerProduct.getProduct().getCategory().getCategoryName()}"></td>
         </tr>
         </tbody>
     </table>
 </div>
+    <form th:action="@{/web/sellerProducts/showProducts}" method="get">
+        <div class="btn btn-submit">
+            <label th:for="check">Show only offers</label>
+            <input name="checkValue" type="checkbox" th:checked="${checkbox}" onchange="this.form.submit()">
+        </div>
 
+    </form>
+</div>
 
 </body></html>

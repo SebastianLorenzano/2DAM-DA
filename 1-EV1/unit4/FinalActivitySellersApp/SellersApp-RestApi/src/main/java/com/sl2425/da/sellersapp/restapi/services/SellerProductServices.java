@@ -41,8 +41,7 @@ public class SellerProductServices
 
     public List<SellerProductEntity> findSellerProductsByProduct(ProductEntity product)
     {
-        List<SellerProductEntity> sellerProducts = sellerProductDAO.findByProduct(product);
-        return sellerProducts;
+        return sellerProductDAO.findByProduct(product);
     }
 
     public SellerProductEntity findSellerProductById(int sellerProductId)
@@ -167,4 +166,11 @@ public class SellerProductServices
     {
         return sellerProductUtils.getOfferPrice(price, discount);
     }
+
+    public boolean dayPeriodPresentOrFuture(SellerProductEntity sellerProduct)
+    {
+        return ( sellerProduct.getOfferStartDate().isEqual(LocalDate.now()) || sellerProduct.getOfferStartDate().isAfter(LocalDate.now()) )
+                && sellerProduct.getOfferEndDate().isAfter(LocalDate.now());
+    }
+
 }
