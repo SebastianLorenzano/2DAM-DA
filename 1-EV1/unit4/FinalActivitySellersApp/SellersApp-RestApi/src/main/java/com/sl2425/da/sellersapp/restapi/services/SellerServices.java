@@ -1,5 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
+import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
@@ -12,9 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class SellerServices
@@ -43,6 +42,11 @@ public class SellerServices
         if (!passwordEncoder.matches(sellerLoginDTO.getPassword(), seller.getPassword()))
             return Pair.of(Optional.empty(), LoginCodeStatus.INCORRECT_PASSWORD);
         return Pair.of(Optional.of(seller), LoginCodeStatus.SUCCESS);
+    }
+
+    public List<SellerEntity> getAllSellers()
+    {
+        return (ArrayList<SellerEntity>)sellerDAO.findAll();
     }
 
     @Transactional

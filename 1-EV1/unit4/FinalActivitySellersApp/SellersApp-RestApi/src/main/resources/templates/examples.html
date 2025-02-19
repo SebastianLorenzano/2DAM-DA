@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="min-h-screen flex flex-col items-center bg-gray-900 p-6">
+    <div class="w-full max-w-4xl bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-700 flex justify-between">
+            <h2 class="text-xl font-semibold text-purple-400">Visualización de los Empleados</h2>
+            <form th:action="@{/employees}" method="get">
+                <select id="department" name="departmentId" required
+                        class="mt-1 block rounded-md bg-gray-700 border-gray-600 text-gray-300 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 h-10 p-2"
+                        onchange="this.form.submit()">
+                    <option value="" th:selected="${departmentId == null}">Seleccione un departamento</option>
+                    <option th:each="department : ${departments}"
+                            th:value="${department.getId()}"
+                            th:text="${department.dname}"
+                            th:selected="${department.getId() == departmentId}">
+                    </option>
+                </select>
+            </form>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                <tr class="bg-gray-700">
+                    <th class="px-6 py-3 text-left text-xs font-medium text-purple-300 uppercase tracking-wide">ID</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-purple-300 uppercase tracking-wide">Nombre</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-purple-300 uppercase tracking-wide">Trabajo</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-purple-300 uppercase tracking-wide">Departamento</th>
+                </tr>
+                </thead>
+                <tbody class="bg-gray-800 divide-y divide-gray-700">
+                <tr th:each="employee : ${employees}" class="hover:bg-gray-700 transition-colors duration-200">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300" th:text="${employee.getId()}"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300" th:text="${employee.getEname()}"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300" th:text="${employee.getJob()}"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300" th:text="${employee.getDeptno().getDname()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="w-full max-w-4xl flex px-6 py-4">
+        <a href="/"><button class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition duration-300">Volver</button></a>
+    </div>
+</div>
+</body>
+</html>

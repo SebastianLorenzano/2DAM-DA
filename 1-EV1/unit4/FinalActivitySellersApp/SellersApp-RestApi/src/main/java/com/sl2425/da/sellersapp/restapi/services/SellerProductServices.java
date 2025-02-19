@@ -126,7 +126,7 @@ public class SellerProductServices
             System.out.println("Price: " + checkSellerProduct.getPrice());
             dto.setPrice(checkSellerProduct.getPrice());        // The price is not provided, so we keep the old price
             dto.setStock(checkSellerProduct.getStock());        // The stock is not provided, so we keep the old stock
-            dto.setId(checkSellerProduct.getId());              // The id is not provided, so we keep the old id
+            dto.setId(checkSellerProduct.getId());              // The id is not provided, so we keep the old idc
         }
 
         BigDecimal offerPrice = sellerProductUtils.getOfferPrice(dto.getPrice(), dto.getDiscount());

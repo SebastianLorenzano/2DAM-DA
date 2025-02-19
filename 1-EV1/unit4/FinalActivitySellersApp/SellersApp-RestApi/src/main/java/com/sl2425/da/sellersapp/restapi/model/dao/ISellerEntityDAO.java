@@ -1,6 +1,7 @@
 package com.sl2425.da.sellersapp.restapi.model.dao;
 
 import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import org.hibernate.dialect.SelectItemReferenceStrategy;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -10,7 +11,6 @@ public interface ISellerEntityDAO extends CrudRepository<SellerEntity, Integer>
 {
     SellerEntity findByCifAndPassword(String cif, String password);
     SellerEntity findByCif(String cif);
-
     boolean existsByCif(String cif);
 
     /*
