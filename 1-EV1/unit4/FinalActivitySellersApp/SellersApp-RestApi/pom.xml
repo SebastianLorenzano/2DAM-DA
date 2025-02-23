@@ -126,7 +126,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<inputSpec>C:/Programming/dam/DATA_ACCESS_SL_2425/1-EV1/unit4/FinalActivitySellersApp/SellersApp-RestApi/src/main/resources/FinalActivitySellersApp-openapi.yaml</inputSpec>
+					<inputSpec>${project.build.directory}/src/main/resources/FinalActivitySellersApp-openapi.yaml</inputSpec>
 					<generatorName>html</generatorName>
 					<output>${project.build.directory}/generated-docs</output>
 				</configuration>
