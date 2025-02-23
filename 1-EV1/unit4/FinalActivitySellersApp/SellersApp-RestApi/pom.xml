@@ -114,6 +114,23 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator-maven-plugin</artifactId>
+				<version>7.7.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<inputSpec>C:/Programming/dam/DATA_ACCESS_SL_2425/1-EV1/unit4/FinalActivitySellersApp/SellersApp-RestApi/src/main/resources/FinalActivitySellersApp-openapi.yaml</inputSpec>
+					<generatorName>html</generatorName>
+					<output>${project.build.directory}/generated-docs</output>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
