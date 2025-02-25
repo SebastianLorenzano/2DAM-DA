@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8cbcbb-d6ac-4313-b10b-bfd14399365c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SellersApp-RestApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellersApp-RestApi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +52,7 @@
     &quot;JUnit.SellersControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SellersControllerTest.getSellerByCifOk.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SellersControllerTest.updateSellerCorrectData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SellersControllerTest.updateSellerSellerNotFound.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SellersControllerTest.updateSeller_InvalidData.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SellersServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.SellersServiceTest.getSellerByCifOk.executor&quot;: &quot;Run&quot;,
@@ -107,7 +108,7 @@
       <command value="mvn clean package install" />
     </option>
   </component>
-  <component name="RunManager" selected="OpenAPI/Swagger Code Generator.FinalActivitySellersApp-openapi_3.yaml">
+  <component name="RunManager" selected="JUnit.SellersControllerTest">
     <configuration name="SellersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SellersApp-RestApi" />
       <extension name="coverage">
@@ -123,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SellersControllerTest.updateSellerCorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SellersControllerTest.updateSellerSellerNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SellersApp-RestApi" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +134,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.sl2425.da.sellersapp.restapi" />
       <option name="MAIN_CLASS_NAME" value="com.sl2425.da.sellersapp.restapi.SellersControllerTest" />
-      <option name="METHOD_NAME" value="updateSellerCorrectData" />
+      <option name="METHOD_NAME" value="updateSellerSellerNotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SellersControllerTest" />
+        <item itemvalue="JUnit.SellersControllerTest.updateSellerSellerNotFound" />
+        <item itemvalue="JUnit.SellersServiceTest" />
         <item itemvalue="OpenAPI/Swagger Code Generator.FinalActivitySellersApp-openapi_3.yaml" />
         <item itemvalue="JUnit.SellersServiceTest.getSellerByCifOk" />
-        <item itemvalue="JUnit.SellersServiceTest" />
-        <item itemvalue="JUnit.SellersControllerTest" />
-        <item itemvalue="JUnit.SellersControllerTest.updateSellerCorrectData" />
       </list>
     </recent_temporary>
   </component>
@@ -260,6 +261,11 @@
       <workItem from="1740065940617" duration="906000" />
       <workItem from="1740250829296" duration="12102000" />
       <workItem from="1740315551465" duration="66000" />
+      <workItem from="1740326317944" duration="50000" />
+      <workItem from="1740326472077" duration="191000" />
+      <workItem from="1740336741923" duration="66000" />
+      <workItem from="1740337712606" duration="153000" />
+      <workItem from="1740369248337" duration="737000" />
     </task>
     <servers />
   </component>
