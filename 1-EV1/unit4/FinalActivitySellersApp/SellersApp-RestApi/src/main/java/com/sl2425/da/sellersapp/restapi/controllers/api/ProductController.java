@@ -1,11 +1,7 @@
 package com.sl2425.da.sellersapp.restapi.controllers.api;
 
-import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerContactDTO;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerUpdateDTO;
+import com.sl2425.da.sellersapp.restapi.model.Entities.ProductEntity;
 import com.sl2425.da.sellersapp.restapi.services.SellerProductServices;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +9,6 @@ import com.sl2425.da.sellersapp.restapi.model.dto.ProductDTO;
 import com.sl2425.da.sellersapp.restapi.services.ProductServices;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/products")

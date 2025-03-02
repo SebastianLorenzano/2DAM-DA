@@ -1,11 +1,9 @@
 package com.sl2425.da.sellersapp.restapi.controllers.web;
 
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
-import com.sl2425.da.sellersapp.restapi.services.CategoryServices;
-import com.sl2425.da.sellersapp.restapi.services.ProductServices;
 import com.sl2425.da.sellersapp.restapi.services.SellerProductServices;
 import com.sl2425.da.sellersapp.restapi.services.SellerServices;
 import org.apache.commons.lang3.tuple.Pair;

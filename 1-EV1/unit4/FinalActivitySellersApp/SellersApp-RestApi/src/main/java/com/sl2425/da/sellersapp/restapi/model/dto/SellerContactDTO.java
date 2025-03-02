@@ -1,6 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 

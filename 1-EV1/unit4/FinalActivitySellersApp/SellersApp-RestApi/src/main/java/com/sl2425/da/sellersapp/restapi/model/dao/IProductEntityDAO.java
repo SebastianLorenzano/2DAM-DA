@@ -1,6 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.model.dao;
 
-import com.sl2425.da.sellersapp.Model.Entities.ProductEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.ProductEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,9 +1,7 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
-import com.sl2425.da.sellersapp.restapi.model.dto.SellerProductDTO;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

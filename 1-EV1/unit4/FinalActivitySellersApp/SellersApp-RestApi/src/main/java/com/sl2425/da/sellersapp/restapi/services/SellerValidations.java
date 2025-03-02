@@ -1,6 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 @Component
 public class SellerValidations

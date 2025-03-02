@@ -1,13 +1,11 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerProductEntity;
 import com.sl2425.da.sellersapp.restapi.model.Utils;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerProductCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerProductEntityDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.sound.midi.SysexMessage;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashSet;

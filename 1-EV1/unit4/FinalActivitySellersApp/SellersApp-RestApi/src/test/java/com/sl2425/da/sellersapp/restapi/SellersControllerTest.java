@@ -1,6 +1,6 @@
 package com.sl2425.da.sellersapp.restapi;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.controllers.api.SellerController;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;

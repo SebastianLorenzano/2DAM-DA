@@ -1,6 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

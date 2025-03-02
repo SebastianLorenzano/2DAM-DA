@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  sellersapp:
+    image: sellersapp
+    build: .
+    ports:
+      - "8443:443"  # Map host port 8443 to container port 443
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sellersdb
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update  # Adjust according to your needs
+    restart: always
+
+  postgres:
+    image: postgres:15  # Using PostgreSQL 15
+    restart: always
+    environment:
+      POSTGRES_DB: sellersdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

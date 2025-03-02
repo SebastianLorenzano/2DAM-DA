@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan(basePackages = "com.sl2425.da.sellersapp.Model.Entities")
+@EntityScan(basePackages = "com.sl2425.da.sellersapp.restapi.model.Entities")
 public class SellersAppRestApiApplication {
 
 

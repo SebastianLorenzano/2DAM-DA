@@ -1,7 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.services;
 
-import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.LoginCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.codeStatus.SellerCodeStatus;
 import com.sl2425.da.sellersapp.restapi.model.dao.ISellerEntityDAO;

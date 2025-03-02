@@ -1,8 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.model.dao;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerEntity;
-import org.hibernate.dialect.SelectItemReferenceStrategy;
-import org.springframework.data.jpa.repository.Query;
+import com.sl2425.da.sellersapp.restapi.model.Entities.SellerEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

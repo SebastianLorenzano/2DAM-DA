@@ -1,6 +1,6 @@
 package com.sl2425.da.sellersapp.restapi.controllers.api;
 
-import com.sl2425.da.sellersapp.Model.Entities.CategoryEntity;
+import com.sl2425.da.sellersapp.restapi.model.Entities.CategoryEntity;
 import com.sl2425.da.sellersapp.restapi.services.CategoryServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

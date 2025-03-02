@@ -1,6 +1,5 @@
 package com.sl2425.da.sellersapp.restapi.model.dto;
 
-import com.sl2425.da.sellersapp.Model.Entities.SellerProductEntity;
 import com.sun.istack.NotNull;
 import jakarta.validation.constraints.*;
 
